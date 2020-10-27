@@ -26,4 +26,4 @@ Apach : ...<br>
 <br><br>
 <h2>기획/개발문서</h2>
 개발기획서 (최종 업데이트 : 2020.10.28)<br>
-https://github.com//EatTheCode/Project_homework/blob/master/readme/AIPublisher_Development_Plan.pptx?raw=true
+<a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/AIPublisher_Development_Plan.pptx?raw=true"> 개발기획서 </a>
