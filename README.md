@@ -22,4 +22,4 @@ Apach : ...<br>
 <br><br>
 <h2>기획/개발문서</h2>
 개발기획서 (최종 업데이트 : 2020.10.28)<br>
-
+[This is a relative link to a nested file](readme/AIPublisher_Development_Plan.pptx)
