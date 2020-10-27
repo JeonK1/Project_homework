@@ -1,7 +1,7 @@
 # AIPublisher (아이출판사)
 <br>건국대학교 & NoriS 산학협력프로젝트2, AI 동화제작 서비스
 <br><br>
-<h2>건국대학교 팀원 구성</h2>
+<h2>건국대학교 팀원 구성</h2><br>
 ● 박무성 [팀장/프론트]<br>
 ● 최정환 [프론트]<br>
 ● 김도연 [백엔드(DB)]<br>
@@ -10,7 +10,7 @@
 ● 박소연 [기획/디자인]<br>
 ● 전계원 [개발기획/개발보조]
 <br><br>
-<h2>개발환경 및 Architecture</h2>
+<h2>개발환경 및 Architecture</h2><br>
 <h3> Design </h3>
 Figma : (업데이트 예정)<br>
 <h3> Version 정보 </h3>
