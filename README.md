@@ -8,15 +8,18 @@
 ● 이종우 [백엔드(GAN/KoNLPy)]<br>
 ● 백동훈 [백엔드(GAN/KoNLPy)]<br>
 ● 박소연 [기획/디자인]<br>
-● 전계원 [개발기획]<br>
+● 전계원 [개발기획]
+<br><br>
 <h2>개발환경 및 Architecture</h2>
 <img src="/readme/archi.png" width=600/>
 python : (업데이트 예정)<br>
 django : ...<br>
 Apach : ...<br>
 ....<br>
+<br><br>
 <h2>개발 일정 마일스톤</h2>
 
+<br><br>
 <h2>기획/개발문서</h2>
 개발기획서 (최종 업데이트 : 2020.10.28)<br>
-[개발기획서](/readme/AIPublisher_Development_Plan.pptx) 
+[개발기획서](readme/AIPublisher_Development_Plan.pptx) 
