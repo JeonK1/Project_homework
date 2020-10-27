@@ -11,11 +11,15 @@
 ● 전계원 [개발기획]
 <br><br>
 <h2>개발환경 및 Architecture</h2>
-<img src="/readme/archi.png" width=600/>
+### Design
+Figma : (업데이트 예정)<br>
+### Version 정보
 python : (업데이트 예정)<br>
 django : ...<br>
 Apach : ...<br>
 ....<br>
+### Architecture
+<img src="/readme/archi.png" width=400/><br>
 <br><br>
 <h2>개발 일정 마일스톤</h2>
 
