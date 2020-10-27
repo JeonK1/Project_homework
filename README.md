@@ -19,4 +19,4 @@ Apach : ...<br>
 
 <h2>기획/개발문서</h2>
 개발기획서 (최종 업데이트 : 2020.10.28)<br>
-[a relative link](/readme/AIPublisher_Development_Plan.pptx) 
+(/readme/AIPublisher_Development_Plan.pptx) 
