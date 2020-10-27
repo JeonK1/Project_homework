@@ -10,7 +10,7 @@
 ● 박소연 [기획/디자인]<br>
 ● 전계원 [개발기획/개발보조]
 <br><br>
-<h2>개발환경 및 Architecture</h2><br>
+<h2>개발환경 및 Architecture</h2>
 <h3> Design </h3>
 Figma : (업데이트 예정)<br>
 <h3> Version 정보 </h3>
