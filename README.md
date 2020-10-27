@@ -11,9 +11,9 @@
 ● 전계원 [개발기획]
 <br><br>
 <h2>개발환경 및 Architecture</h2>
-### Design
+<h3> Design </h3>
 Figma : (업데이트 예정)<br>
-### Version 정보
+<h3> Version 정보 </h3>
 python : (업데이트 예정)<br>
 django : ...<br>
 Apach : ...<br>
