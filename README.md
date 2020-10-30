@@ -8,12 +8,7 @@
 ● 이종우 [백엔드(GAN/KoNLPy)]<br>
 ● 백동훈 [백엔드(GAN/KoNLPy)]<br>
 ● 박소연 [기획/디자인]<br>
-<<<<<<< HEAD
-● 전계원 [개발기획/서버구축]
-=======
-● 전계원 [개발기획/개발보조]
->>>>>>> e55be40db7dcf037be8a49d3ae2897b54d556afc
-<br><br>
+● 전계원 [개발기획/서버구축]<br><br>
 <h2>개발환경 및 Architecture</h2>
 <h3> Design </h3>
 Figma : <a href="https://www.figma.com/file/2I5e8nm2OY6eFbSoDcGAyc/story-making?node-id=0%3A1">링크이동</a><br>
