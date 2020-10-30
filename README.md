@@ -18,15 +18,13 @@
 <h3> Design </h3>
 Figma : <a href="https://www.figma.com/file/2I5e8nm2OY6eFbSoDcGAyc/story-making?node-id=0%3A1">링크이동</a><br>
 <h3> Version 정보 </h3>
-python : (업데이트 예정)<br>
-django : ...<br>
-Apach : ...<br>
-....<br>
+(업데이트 예정)<br><br>
 <h3> Architecture </h3>
 <img src="/readme/archi.png" width=400/><br>
 <br><br>
-<h2>개발 일정 마일스톤(최종 업데이트 : 2020.10.28)</h2>
-<a href="https://docs.google.com/spreadsheets/d/1hevKGvI-bmilq7nAQvTttHMGRB8bzbCIXbjaxhf_FQc/edit#gid=398552217">링크</a>
+<h2>개발 일정 마일스톤(최종 업데이트 : 2020.10.30)</h2>
+<a href="https://docs.google.com/spreadsheets/d/1hevKGvI-bmilq7nAQvTttHMGRB8bzbCIXbjaxhf_FQc/edit#gid=398552217">링크</a><br>
+(20.10.30) 동화처럼 구현하는 기능에 관한 기획과 개발기획 추가(계원, 소연), 서버구축 기한 연장
 <img src="/readme/dev_milestone.png" width=400/><br>
 <br><br>
 <h2>기획/개발문서</h2>
