@@ -9,6 +9,12 @@
 ● 백동훈 [백엔드(GAN/KoNLPy)]<br>
 ● 박소연 [기획/디자인]<br>
 ● 전계원 [개발기획/서버구축]<br><br>
+<h2>환경구축 방법</h2>
+1. clone 혹은 pull 받습니다.
+2. install_venv를 실행킵니다. (venv가 자동으로 설치됩니다)
+3. install_requirements를 실행킵니다. (venv에 requirements.txt에 해당하는 모든 library들이 설치됩니다.)
+4. 완료
+<br><br>
 <h2>개발환경 및 Architecture</h2>
 <h3> Design </h3>
 Figma : <a href="https://www.figma.com/file/2I5e8nm2OY6eFbSoDcGAyc/story-making?node-id=0%3A1">링크이동</a><br>
