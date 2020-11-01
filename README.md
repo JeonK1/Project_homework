@@ -9,7 +9,7 @@
 ● 백동훈 [백엔드(GAN/KoNLPy)]<br>
 ● 박소연 [기획/디자인]<br>
 ● 전계원 [개발기획/서버구축]<br><br>
-<h2>환경구축 방법</h2>
+<h2>개발을 위한 환경구축 </h2>
 1. clone 혹은 pull 받습니다.<br>
 2. install_venv를 실행킵니다. (venv가 자동으로 설치됩니다)<br>
 3. install_requirements를 실행킵니다. (venv에 requirements.txt에 해당하는 모든 library들이 설치됩니다.)<br>
