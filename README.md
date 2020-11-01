@@ -19,7 +19,9 @@
 <h3> Design </h3>
 Figma : <a href="https://www.figma.com/file/2I5e8nm2OY6eFbSoDcGAyc/story-making?node-id=0%3A1">링크이동</a><br>
 <h3> Version 정보 </h3>
-(업데이트 예정)<br><br>
+python : python 3.7.6<br>
+기타 Library는 requirements.txt에 기재되어있습니다.<br>
+<br><br>
 <h3> Architecture </h3>
 <img src="/readme/archi.png" width=400/><br>
 <br><br>
