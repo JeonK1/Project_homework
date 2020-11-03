@@ -16,11 +16,11 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from AI_Publisher import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('AI_Publisher/main', views.login),
-    path('AI_Publisher/', views.index)
+    path('AI_Publisher/', include('AI_Publisher.urls')),
+
 ]
