@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
         <style>
         body {
-            background-color: #87BDA6;
+            background-color: RGB(222,237,231);
         }
         </style>
 
@@ -21,6 +21,10 @@
     </head>
 
     <body>
+    <script type="text/javascript">
+    var w = screen.availWidth; {# 모니터 가로 #}
+    var h = screen.availHeight; {# 모니터 세로 #}
+    </script>
 {#    기본 템플릿 안에 넣을 내용 Start#}
     {% block content %}
     {% endblock %}

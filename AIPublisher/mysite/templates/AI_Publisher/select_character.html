@@ -4,20 +4,19 @@
 
 {% block content %}
 
-
-
-    <!--<img style="width : 100%;height : 100%;object-fit:contain;" src="/static/img/shelf.png"></img> -->
-    <!-- <div class="background" style="position: relative; z-index : 1;"><img src="/static/img/background.png" alt="background"/></div> -->
-    <div class="shelf" style="position : absolute; left:0px; top: 1043px; z-index : 2;">
-        <img style="max-width: 100%; height: auto;" src="/static/img/shelf.png"/></div>
-    <div class="gallery" style="position : absolute; left:200px; top: 424px; z-index : 2;">
-        <img style="max-width: 100%; height: auto;" src="/static/img/gallery.png"/></div>
-    <div class="book_start" style="position : absolute; left:1200px; top: 300px; z-index : 2;">
-        <img style="max-width: 100%; height: auto;" src="/static/img/book_start.png"/></div>
-    <div class="AI_Publisher" style="position : absolute; left:0px; top: 0px; z-index : 3;">
-        <img style="max-width: 100%; height: auto;" src="/static/img/AI_Publisher.png"/></div>
-    <!-- <div class="upper_bar" style="position : absolute; left:0px; top: 0px; z-index : 2;"><img src="/static/img/upper_bar.png"/></div> -->
-
-    <!-- <a href="이동될 페이지 주소" target=_blank><img src=이미지주소> </a>-->
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        </style>
+    <div class="upper_bar" id="upper_bar" style="position : absolute; left:0px; top: 0px; z-index : 1;">
+        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/upper_bar.png"/></div>
+    <div class="CSelect_bar" id="CSelect_bar" style="position : absolute; left:0px; top: 100px; z-index : 1;">
+        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/CSelect_bar.png"/></div>
+    <div class="redraw" id="redraw" style="position : absolute; left:1800px; top: 800px; z-index : 1;">
+        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/redraw.png"/></div>
+    <a href="setting_character/" target=_self>
+    <div class="nextstep" id="nextstep" style="position : absolute; left:1805px; top: 870px; z-index : 1;">
+        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/nextstep.png"/></div></a>
 
 {% endblock %}
