@@ -1,7 +1,10 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("안녕하세요 AI_Publisher에 오신것을 환영합니다.")
+    return render(request, 'AI_Publisher/login_page.html')
 
+def login(request):
+    return render(request, 'AI_Publisher/main_page.html')
 # Create your views here.

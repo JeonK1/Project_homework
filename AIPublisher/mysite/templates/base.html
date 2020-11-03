@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+{#기본적인 base페이지#}
+
+<html lang="ko">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{#        <!-- Bootstrap CSS -->#}
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+{#        <!-- Style(Bootstrap으로 표현 불가능한 style) CSS -->#}
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+        <title>AI_Publsiher</title>
+    </head>
+
+    <body>
+{#    기본 템플릿 안에 넣을 내용 Start#}
+    {% block content %}
+    {% endblock %}
+{#    기본 템플릿 안에 넣을 내용 End#}
+    </body>
+
+</html>
