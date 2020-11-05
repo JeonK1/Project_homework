@@ -1,19 +1,23 @@
-{% extends 'base.html' %}
+{% extends 'base(main).html' %}
 {% load static %}
 
 
 {% block content %}
 
-    <style>
-        body {
-            background-color: #ffffff;
-        }
-        </style>
-    <div class="upper_bar" id="upper_bar" style="position : absolute; left:0px; top: 0px; z-index : 1;">
-        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/upper_bar.png"/></div>
-    <div class="CSetting_bar" id="CSetting_bar" style="position : absolute; left:0px; top: 100px; z-index : 1;">
-        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/CSetting_bar.png"/></div>
-    <div class="nextstep" id="nextstep" style="position : absolute; left:1805px; top: 870px; z-index : 1;">
-        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/nextstep.png"/></div>
+    <div class="CSetting_bar" id="CSetting_bar" style="position : absolute; left:55px; top: 115px; z-index : 1;">
+        <div style = "position : absolute; top:50%; left:50%; transform: translate(-50%, -50%);
+         font-size:2.5rem;color: white;z-index: 2;text-align: center;">
+        인물카드설정
+        </div>
+        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/STATBAR.png"/></div>
 
+    <a href="/AI_Publisher/main/setting_relation/" target=_self>
+    <div class="nextstep" id="nextstep" style="position : absolute; left:1805px; top: 1075px; z-index : 1;">
+        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/nextstep.png"/></div></a>
+
+    <div class="border" id="border" style="position : absolute; left:55px; top: 115px; z-index : 0;">
+        <img style="width: 100%; height: auto%;object-fit: scale-down;" src="/static/img/border.png"/></div>
+
+    <div class="bottom_bar" id="bottom_bar" style="position : absolute; left:0px; top: 1240px; z-index : 0;">
+        <img style="width: 100%; height: auto%;object-fit: scale-down;" src="/static/img/bottom_bar.png"/></div>
 {% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base(main).html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="RSetting_bar" id="RSetting_bar" style="position : absolute; left:55px; top: 115px; z-index : 1;">
+        <div style = "position : absolute; top:50%; left:50%; transform: translate(-50%, -50%);
+         font-size:2.5rem;color: white;z-index: 2;text-align: center;">
+        관계 설정
+        </div>
+        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/STATBAR.png"/></div>
+
+
+    <div class="border" id="border" style="position : absolute; left:55px; top: 115px; z-index : 0;">
+        <img style="width: 100%; height: auto%;object-fit: scale-down;" src="/static/img/border.png"/></div>
+
+    <div class="bottom_bar" id="bottom_bar" style="position : absolute; left:0px; top: 1240px; z-index : 0;">
+        <img style="width: 100%; height: auto%;object-fit: scale-down;" src="/static/img/bottom_bar.png"/></div>
+
+    <div class="STEP_BAR_REMAKE" id="STEP_BAR_REMAKE" style="position : absolute; left:420px; top: 200px; z-index : 1;">
+        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/STEP_BAR_REMAKE.png"/></div>
+    <div style = "position : absolute; left:510px; top: 220px; z-index : 0;
+        font-size:2.5rem;color: RGB(31,139,36);z-index: 3;text-align: center;word-spacing: 107px">
+        관계1 관계2 관계3 관계4 관계5
+        </div>
+
+    <div class="STEP" id="STEP" style="position : absolute; left:450px; top: 210px; z-index : 1;">
+        <img style="width: 100%; height: auto%;object-fit: scale-down;" src="/static/img/STEP.png"/></div>
+
+
+    <button class="nextstep" id="nextstep" onclick="relate_next()"
+            style="position : absolute; left:1805px; top: 1075px; z-index : 1;">
+        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/nextstep.png"/></button>
+
+
+    <script type="text/javascript">
+    var x = 0
+    function relate_next() {
+        x += 1;
+        if(x < 5){
+            img=document.createElement("img");
+            img.src="/static/img/STEP_Green.png"
+            img.style="position : absolute; top: 210px; z-index : 2;"
+            img.style.left = 225 + (220 * x) + "px";
+            img.width=235; img.height = 87;
+            document.body.appendChild(img);
+
+            img=document.createElement("img");
+            img.src="/static/img/STEP.png"
+            img.style="position : absolute; top: 210px; z-index : 2;"
+            img.style.left = 445 + (220 * x) + "px";
+            document.body.appendChild(img);
+
+        }else{
+        location.href="/AI_Publisher/main/cover_make/";
+        }
+    }
+    </script>
+
+{% endblock %}
