@@ -3,19 +3,22 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'main.css' %}">
-    <div id="naverIdLogin"></div>
+    <div id="naverIdLogin"style="position : absolute; border:100px; left:850px; top: 500px; z-index : 2;"></div>
+    <div class="AI_Publisher" style="position : absolute; left:760px; top: 350px; z-index : 2;"><img  src="/static/img/AI_Publisher.png"/></div>
     <div class="cactus" style="position : absolute; left:1721px; top: 495px; z-index : 2;"><img src="/static/img/cactus.png"/></div>
     <div class="shelf" style="position : absolute; left:0px; top: 1043px; z-index : 2;"><img src="/static/img/shelf.png"/></div>
     <div class="gallery" style="position : absolute; left:0px; top: 424px; z-index : 2;"><img src="/static/img/gallery.png"/></div>
 
-    <div class="login_button" style="position : absolute; border:100px; left:900px; top: 500px; z-index : 2;">네이버 버튼 이동할 위치</div>
+    <!-- 이건 무엇인가용 -->
+    <div class="login_button" style="position : absolute; border:100px; left:900px; top: 500px; z-index : 2;"></div>
+
     <script type="text/javascript">
 	    var naverLogin = new naver.LoginWithNaverId(
 		    {
 		    	clientId: "xXgo_JUs1mnL3JzJamfC",
 		    	callbackUrl: "http://127.0.0.1:8000/AI_Publisher/main",
 		    	isPopup: false, /* 팝업을 통한 연동처리 여부 */
-		    	loginButton: {color: "green", type: 3, height: 40} /* 로그인 버튼의 타입을 지정 */
+		    	loginButton: {color: "green", type: 3, height: 90} /* 로그인 버튼의 타입을 지정 */
 		    }
 	    );
 
