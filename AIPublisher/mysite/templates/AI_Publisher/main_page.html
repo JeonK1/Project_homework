@@ -1,11 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'base(main).html' %}
 {% load static %}
 
 
 {% block content %}
 
-    <div class="upper_bar" id="upper_bar" style="position : absolute; left:0px; top: 0px; z-index : 1;">
-        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/upper_bar.png"/></div>
+    <style>
+        body {
+            background-color: RGB(222,237,231)
+        }
+        </style>
 
     <div class="shelf" id="shelf" style="position : absolute; left:0px; top: 710px; z-index : 1;">
         <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/shelf.png"/></div>
@@ -18,10 +21,13 @@
     <div class="book_start" id="book_start" style="position : absolute; left:1200px; top: 250px; z-index : 1;">
         <img style="width: 60%; height: auto;object-fit: scale-down;" src="/static/img/book_start.png"/></div></a>
 
-    <div class="AI_Publisher" id="AI_publisher" style="position : absolute; left:0px; top: 0px; z-index : 2;">
-        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/AI_Publisher.png"/></div>
+    <div class="AI_Publisher" id="AI_publisher" style="position : absolute; left:20px; top: 18px; z-index : 2;">
+        <img style="width: 80%; height: auto;object-fit: scale-down;" src="/static/img/AI_Publisher.png"/></div>
 
     <!-- style="max-width: 100%; height: auto;object-fit: cover;" -->
+
+
+
 
 {% endblock %}
 

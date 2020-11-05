@@ -1,11 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'base(main).html' %}
 {% load static %}
 
 
 {% block content %}
 
-    <div class="upper_bar" id="upper_bar" style="position : absolute; left:0px; top: 0px; z-index : 1;">
-        <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/upper_bar.png"/></div>
+    <style>
+        body {
+            background-color: RGB(222,237,231)
+        }
+        </style>
+
     <div class="shelf" id="shelf" style="position : absolute; left:0px; top: 710px; z-index : 1;">
         <img style="width: 100%; height: auto;object-fit: scale-down;" src="/static/img/shelf.png"/></div>
 
