@@ -7,11 +7,10 @@ def index(request):
 
 
 def main_page(request):
-<<<<<<< HEAD
+
     return render(request, 'AI_Publisher/main_page.html')
-=======
     return render(request, 'AI_Publisher/')
->>>>>>> c5f95f9da6eefa1fad38104b89db218df637401b
+
 
 
 # Create your views here.
