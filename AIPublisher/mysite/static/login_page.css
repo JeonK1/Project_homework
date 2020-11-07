@@ -1,0 +1,101 @@
+/* BGcolor */
+#backGround {
+    position: absolute;
+    width: 2000px;
+    height: 1290px;
+    left: 0px;
+    top: 0px;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #DDEDE6;
+
+}
+
+/* AI Publisher */
+#Logo {
+    position: absolute;
+    width: 1079px;
+    height: 145px;
+    left: 461px;
+    top: 311px;
+
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 150%;
+    /* or 150px */
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #000000;
+
+    text-shadow: 10px 5px 10px rgba(73, 94, 85, 0.29);
+
+}
+/* shelf */
+#shelf_box {
+    position: absolute;
+    width: 2148px;
+    height: 966px;
+    left: -74px;
+    top: 424px;
+
+    filter: drop-shadow(15px 8px 15px rgba(0, 0, 0, 0.25));
+}
+
+/* KakaoTalk_20201029_222427404 */
+#shelf {
+    position: absolute;
+    width: 2148px;
+    height: 347px;
+    left: -74px;
+    top: 1043px;
+
+    background: url("img/shelf.png");
+    background-repeat: no-repeat;
+}
+
+/* KakaoTalk_20201029_222427404_02 */
+#gallery {
+    position: absolute;
+    width: 681px;
+    height: 619px;
+    left: -35px;
+    top: 424px;
+
+    background: url("img/gallery.png");
+    background-repeat: no-repeat;
+}
+
+/* KakaoTalk_20201029_222427404_01 */
+#cactus {
+    position: absolute;
+    width: 279px;
+    height: 548px;
+    left: 1540px;
+    top: 495px;
+
+    background: url("img/cactus.png");
+    background-repeat: no-repeat;
+}
+
+/* bottom_bar */
+#bottom_bar {
+    position: absolute;
+    width: 2000px;
+    height: 30px;
+    left: 1px;
+    top: 1260px;
+
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #88B9A4;
+}
