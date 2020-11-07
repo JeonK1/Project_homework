@@ -9,7 +9,7 @@
     right: 0%;
     top: 0%;
     bottom: 0%;
-
+    z-index: 0;
     background: #DDEDE6;
 
 }
@@ -53,7 +53,7 @@
     position: absolute;
     width: 2148px;
     height: 347px;
-    left: -74px;
+    left: 0px;
     top: 1043px;
 
     background: url("img/shelf.png");
@@ -65,7 +65,7 @@
     position: absolute;
     width: 681px;
     height: 619px;
-    left: -35px;
+    left: 0px;
     top: 424px;
 
     background: url("img/gallery.png");
@@ -98,4 +98,11 @@
     bottom: 0%;
 
     background: #88B9A4;
+}
+
+#naverIdLogin{
+    position:absolute;
+    left: 600px;
+    top: 500px;
+    z-index: 1;
 }
