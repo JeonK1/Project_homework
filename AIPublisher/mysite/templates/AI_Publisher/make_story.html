@@ -7,52 +7,60 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'make_story.css' %}">
+    <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
 
     <title>Make Story</title>
 </head>
 <body>
     <div class="BackGround" id="BackGround">
+        <!--왼쪽 메뉴-->
         <div class="LeftSidebar" id="LeftSidebar">
             <div class="LeftSidebar_right" id="LeftSidebar_right"></div>
             <div class="LeftSidebar_left" id="LeftSidebar_left"></div>
         </div>
 
+        <!--제목-->
         <div class="Field" id="Field">
             <div class="border" id="border"></div>
             <div class="STATBAR" id="STATBAR">
-                <div class="step" id="step">관계 설정</div>
+                <div class="step" id="step">이야기 제작</div>
             </div>
         </div>
 
+        <!-- 네비게이션 바 -->
         <div class="upper_bar" id="upper_bar">
             <div class="user_icon" id="user_icon"></div>
-            <div class="username" id="username">Coople</div>
+            <div class="username" id="username"></div>
         </div>
 
+        <!-- 텍스트 입력 -->
         <div class="input_text_box" id="input_text_box">
             <div class="input_text" id="input_text">문장을 입력하세요</div>
         </div>
 
+        <!-- 질문 -->
         <div class="Polygon_1" id="Polygon_1"></div>
 
+        <!-- 발단 전개 위기 절정 결말 -->
         <div class="STEP_BAR" id="STEP_BAR">
             <div class="STEP_1" id="STEP_1">
-                <div class="STEP_1_TEXT" id="STEP_1_TEXT">결말</div>
+                <div class="STEP_1_TEXT" id="STEP_1_TEXT">발단</div>
             </div>
             <div class="STEP_2" id="STEP_2">
-                <div class="STEP_2_TEXT" id="STEP_2_TEXT">절정</div>
+                <div class="STEP_2_TEXT" id="STEP_2_TEXT">전개</div>
             </div>
             <div class="STEP_3" id="STEP_3">
                 <div class="STEP_3_TEXT" id="STEP_3_TEXT">위기</div>
             </div>
             <div class="STEP_4" id="STEP_4">
-                <div class="STEP_1_TEXT" id="STEP_1_TEXT">전개</div>
+                <div class="STEP_4_TEXT" id="STEP_4_TEXT">절정</div>
             </div>
             <div class="STEP_5" id="STEP_5">
-                <div class="STEP_5_TEXT" id="STEP_5_TEXT">발단</div>
+                <div class="STEP_5_TEXT" id="STEP_5_TEXT">결말</div>
             </div>
         </div>
 
+        <!--왼쪽 카드 뭉치-->
         <div class="Select_Character_Card_Field" id="Select_Character_Card_Field">
             <div class="Card_small_1" id="Card_small_1"></div>
             <div class="Card_small_2" id="Card_small_2"></div>
@@ -60,10 +68,57 @@
             <div class="Card_small_4" id="Card_small_4"></div>
         </div>
 
+        <!--화면아래 초록색 바-->
         <div class="bottom_bar" id="bottom_bar"></div>
-        <div class="nextstep" id="nextstep"></div>
+
+        <!--다음 단계-->
+        <a href="/AI_Publisher/main/" target=_self>
+            <div class="next_step" id="next_step"></div></a>
+
+        <!--계정 메뉴-->
+        <div class="ID_Menu" id="ID_Menu">
+            <div class="menu_1" id="menu_1">
+                <div class="menu_feature_1" id="menu_feature_1"></div>
+                <div class="menu_text_1" id="menu_text_1">내 정보 관리</div>
+            </div>
+            <a href="/AI_Publisher/main/" target=_self>
+            <div class="menu_2" id="menu_2">
+                <div class="menu_feature_2" id="menu_feature_2"></div>
+                <div class="menu_text_2" id="menu_text_2">메인 화면</div>
+            </div></a>
+            <div class="menu_3" id="menu_3">
+                <div class="menu_feature_3" id="menu_feature_3"></div>
+                <div class="menu_text_3" id="menu_text_3">TEXT</div>
+            </div>
+            <div class="menu_4" id="menu_4">
+                <div class="menu_feature_4" id="menu_feature_4"></div>
+                <div class="menu_text_4" id="menu_text_4">TEXT</div>
+            </div>
+        </div>
+
     </div>
 
+    <script type="text/javascript">
+        // 사용자 이름
+        var username = document.getElementById("username");
+        username.innerHTML = "Coople";
 
+        // 유저 아이콘 눌렀을 때
+        $("#ID_Menu").hide();
+        var x = true;
+        $("#user_icon").click(function() {
+            if (x) {
+                $("#ID_Menu").show();
+                x = false
+            } else {
+                $("#ID_Menu").hide();
+                x = true
+            }
+        });
+
+
+
+
+    </script>
 </body>
 </html>

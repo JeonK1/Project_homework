@@ -21,9 +21,9 @@
 #LeftSidebar_right {
     position: absolute;
     left: -18%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
+    right: 0;
+    top: 0;
+    bottom: 0;
 
     background: #EFEFEF;
     box-shadow: 3px 6px 2px rgba(0, 0, 0, 0.29);
@@ -36,7 +36,7 @@
     position: absolute;
     left: -101%;
     right: 100%;
-    top: 0%;
+    top: 0;
     bottom: -10%;
 
     background: #FFFFFF;
@@ -78,8 +78,8 @@
 /* TEXT */
 #step {
     position: absolute;
-    left: 40.81%;
-    right: 38.91%;
+    left: 45%;
+    right: 30%;
     top: 0;
     bottom: 0;
 
@@ -95,7 +95,6 @@
 
     color: #FFFFFF;
 
-    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* upper_bar */
@@ -149,7 +148,7 @@
     width: 1385px;
     height: 65px;
     left: 341px;
-    top: 1148px;
+    top: 1128px;
 
     border: 3px solid #000000;
 }
@@ -159,7 +158,7 @@
     position: absolute;
     width: 507px;
     height: 40px;
-    left: 439px;
+    left: 507px;
     top: 12px;
 
 
@@ -219,10 +218,12 @@
 
     position: static;
     width: 220px;
-    height: 80px;
+    height: 70px;
     left: 930px;
     top: 10px;
 
+    background: #FFFFFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
     /* Inside Auto Layout */
@@ -236,13 +237,12 @@
 /* TEXT */
 #STEP_1_TEXT {
     position: static;
-    width: 200px;
-    height: 64px;
-    left: 10px;
-    top: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(75%, 0%);
 
     font-style: normal;
-    font-weight: 300;
+    font-weight: bold;
     font-size: 40px;
     line-height: 150%;
     /* or 60px */
@@ -254,12 +254,6 @@
 
     color: #1F8B24;
 
-    /* Inside Auto Layout */
-    flex: none;
-    order: 0;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 10px 0;
 }
 
 /* STEP */
@@ -272,7 +266,7 @@
 
     position: static;
     width: 220px;
-    height: 80px;
+    height: 70px;
     left: 700px;
     top: 10px;
 
@@ -289,15 +283,15 @@
 /* TEXT */
 #STEP_2_TEXT {
     position: static;
-    width: 200px;
-    height: 64px;
-    left: 10px;
-    top: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(75%, 0%);
 
     font-style: normal;
-    font-weight: 300;
+    font-weight: bold;
     font-size: 40px;
     line-height: 150%;
+
     /* or 60px */
     display: flex;
     align-items: center;
@@ -306,14 +300,6 @@
     text-transform: capitalize;
 
     color: #1F8B24;
-
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 0;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 10px 0;
 }
 
 /* STEP */
@@ -326,7 +312,7 @@
 
     position: static;
     width: 220px;
-    height: 80px;
+    height: 70px;
     left: 470px;
     top: 10px;
 
@@ -343,14 +329,13 @@
 /* TEXT */
 #STEP_3_TEXT {
     position: static;
-    width: 200px;
-    height: 64px;
-    left: 10px;
-    top: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(75%, 0%);
 
 
     font-style: normal;
-    font-weight: 300;
+    font-weight: bold;
     font-size: 40px;
     line-height: 150%;
     /* or 60px */
@@ -361,14 +346,6 @@
     text-transform: capitalize;
 
     color: #1F8B24;
-
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 0;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 10px 0;
 }
 
 /* STEP */
@@ -381,7 +358,7 @@
 
     position: static;
     width: 220px;
-    height: 80px;
+    height: 70px;
     left: 240px;
     top: 10px;
 
@@ -398,14 +375,13 @@
 /* TEXT */
 #STEP_4_TEXT {
     position: static;
-    width: 200px;
-    height: 64px;
-    left: 10px;
-    top: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(75%, 0%);
 
 
     font-style: normal;
-    font-weight: 300;
+    font-weight: bold;
     font-size: 40px;
     line-height: 150%;
     /* or 60px */
@@ -416,14 +392,6 @@
     text-transform: capitalize;
 
     color: #1F8B24;
-
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 0;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 10px 0;
 }
 
 /* STEP */
@@ -437,11 +405,9 @@
     position: static;
     width: 220px;
     height: 70px;
+    left: 240px;
+    top: 10px;
 
-
-
-    background: #FFFFFF;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
     /* Inside Auto Layout */
@@ -454,15 +420,13 @@
 
 /* TEXT */
 #STEP_5_TEXT {
-
     position: static;
-    width: 200px;
-    height: 64px;
-    left: 10px;
-    top: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(75%, 0%);
 
     font-style: normal;
-    font-weight: 300;
+    font-weight: bold;
     font-size: 40px;
     line-height: 150%;
 
@@ -474,14 +438,6 @@
     text-transform: capitalize;
 
     color: #1F8B24;
-
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 0;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 10px 0;
 }
 
 /* Group 26 */
@@ -554,7 +510,7 @@
 }
 
 /* arrow-right-square */
-#nextstep {
+#next_step {
     position: absolute;
     left: 92.15%;
     right: 4.85%;
@@ -562,5 +518,307 @@
     bottom: 6.98%;
 
     /* Black */
-    background: url("img/nextstep.png");
+    background-image: url("img/next_step.png");
+}
+
+/* Frame 2 */
+#ID_Menu {
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0 0 10px;
+    z-index: 2;
+
+    position: absolute;
+    width: 221px;
+    height: 310px;
+    left: 1779px;
+    top: 100px;
+
+    background: #FFFFFF;
+}
+
+/* Frame 3 */
+#menu_1 {
+    /* Auto Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 0 0 10px;
+
+    position: static;
+    width: 201px;
+    height: 65px;
+    left: 10px;
+    top: 10px;
+
+    background: #F3F3F3;
+    border-radius: 10px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 0 10px;
+}
+
+/* Rectangle 34 */
+#menu_feature_1 {
+    position: static;
+    width: 50px;
+    height: 45px;
+    left: 10px;
+    top: 10px;
+
+    background: #C4C4C4;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 10px 0;
+}
+
+/* 내 정보 관리 */
+#menu_text_1 {
+    position: static;
+    width: 121px;
+    height: 43px;
+    left: 70px;
+    top: 10px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 138%;
+    /* or 28px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.0075em;
+
+    color: #000000;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 10px 0;
+}
+
+/* Frame 4 */
+#menu_2 {
+    /* Auto Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 0 0 10px;
+
+    position: static;
+    width: 201px;
+    height: 65px;
+    left: 10px;
+    top: 85px;
+
+    background: #F3F3F3;
+    border-radius: 10px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 0 10px;
+}
+
+/* Rectangle 34 */
+#menu_feature_2 {
+    position: static;
+    width: 50px;
+    height: 45px;
+    left: 10px;
+    top: 10px;
+
+    background: #C4C4C4;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 10px 0;
+}
+
+/* text */
+#menu_text_2 {
+    position: static;
+    width: 121px;
+    height: 43px;
+    left: 70px;
+    top: 10px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 138%;
+    /* or 28px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.0075em;
+
+    color: #000000;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 10px 0;
+}
+
+/* Frame 5 */
+#menu_3 {
+    /* Auto Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 0 0 10px;
+
+    position: static;
+    width: 201px;
+    height: 65px;
+    left: 10px;
+    top: 160px;
+
+    background: #F3F3F3;
+    border-radius: 10px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 2;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 0 10px;
+}
+
+/* Rectangle 34 */
+#menu_feature_3 {
+    position: static;
+    width: 50px;
+    height: 45px;
+    left: 10px;
+    top: 10px;
+
+    background: #C4C4C4;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 10px 0;
+}
+
+/* text */
+#menu_text_3 {
+    position: static;
+    width: 121px;
+    height: 43px;
+    left: 70px;
+    top: 10px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 138%;
+    /* or 28px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.0075em;
+
+    color: #000000;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 10px 0;
+}
+
+/* Frame 6 */
+#menu_4 {
+    /* Auto Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 0 0 10px;
+
+    position: static;
+    width: 201px;
+    height: 65px;
+    left: 10px;
+    top: 235px;
+
+    background: #F3F3F3;
+    border-radius: 10px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 0 10px;
+}
+
+/* Rectangle 34 */
+#menu_feature_4 {
+    position: static;
+    width: 50px;
+    height: 45px;
+    left: 10px;
+    top: 10px;
+
+    background: #C4C4C4;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 10px 0;
+}
+
+/* text */
+#menu_text_4 {
+    position: static;
+    width: 121px;
+    height: 43px;
+    left: 70px;
+    top: 10px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 138%;
+    /* or 28px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.0075em;
+
+    color: #000000;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin: 10px 0;
 }
