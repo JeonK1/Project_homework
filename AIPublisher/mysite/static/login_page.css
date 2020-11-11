@@ -1,15 +1,9 @@
 /* BGcolor */
 #backGround {
-    position: absolute;
+    position: relative;
     width: 2000px;
     height: 1290px;
-    left: 0px;
-    top: 0px;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    z-index: 0;
+
     background: #DDEDE6;
 
 }
@@ -42,10 +36,10 @@
     position: absolute;
     width: 2148px;
     height: 966px;
-    left: 74px;
+    left: -74px;
     top: 424px;
 
-    filter: drop-shadow(15px 8px 15px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(15px 8px 15px rgba(0, 0, 0, 0.25))
 }
 
 /* KakaoTalk_20201029_222427404 */
@@ -53,7 +47,7 @@
     position: absolute;
     width: 2148px;
     height: 347px;
-    left: 0px;
+    left: -74px;
     top: 1043px;
 
     background: url("img/shelf.png");
@@ -65,8 +59,9 @@
     position: absolute;
     width: 681px;
     height: 619px;
-    left: 0px;
+    left: -35px;
     top: 424px;
+
 
     background: url("img/gallery.png");
     background-repeat: no-repeat;
@@ -79,6 +74,7 @@
     height: 548px;
     left: 1540px;
     top: 495px;
+
 
     background: url("img/cactus.png");
     background-repeat: no-repeat;

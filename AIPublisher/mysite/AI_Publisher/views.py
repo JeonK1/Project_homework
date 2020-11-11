@@ -5,12 +5,20 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'AI_Publisher/login_page.html')
 
-
 def main_page(request):
-
     return render(request, 'AI_Publisher/main_page.html')
-    return render(request, 'AI_Publisher/')
 
+def make_cover(request):
+    return render(request, 'AI_Publisher/make_cover.html')
+
+def make_story(request):
+    return render(request, 'AI_Publisher/make_story.html')
+
+def set_relation(request):
+    return render(request, 'AI_Publisher/set_relation.html')
+
+def set_character(request):
+    return render(request, 'AI_Publisher/set_character.html.html')
 
 
 # Create your views here.
