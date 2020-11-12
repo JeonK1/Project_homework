@@ -32,5 +32,6 @@ python : python 3.7.6<br>
 (20.10.30) 동화처럼 구현하는 기능에 관한 기획과 개발기획 추가(계원, 소연), 서버구축 기한 연장
 <img src="/readme/dev_milestone.png" width=400/><br>
 <br><br>
-<h2>기획/개발문서</h2>
+<h2>자료실</h2>
+<a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/BGandChar.zip"> 개발기획서 </a> (최종 업데이트 : 2020.11.12)<br>
 <a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/AIPublisher_Development_Plan.pptx?raw=true"> 개발기획서 </a> (최종 업데이트 : 2020.10.28)<br>
