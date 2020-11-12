@@ -22,5 +22,6 @@ from AI_Publisher import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('AI_Publisher/', include('AI_Publisher.urls')),
-
+    #allauth account system
+    path('accounts/', include('allauth.urls')),
 ]

@@ -1,66 +1,62 @@
+{% load socialaccount %}
 {% load static %}
 <!doctype html>
 
 <html lang="ko">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if user.is_authenticated %}
     <link rel="stylesheet" type="text/css" href="{% static 'main_page.css' %}">
+    <title>main_page</title>
+    {% else %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login_page.css' %}">
     <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
     <title>login_page</title>
+    {% endif %}
 </head>
 <body>
     <div class="background" id="backGround">
 
+        {% if user.is_anonymous %}
+        <div class="logo" id="Logo">AI PUBLISHER</div>
+        <div id="naverIdLogin"><a href="http://127.0.0.1:8000/accounts/naver/login">네이버 로그인</a></div>
+        {% endif %}
 
         <div class="shelf" id="shelf"></div>
         <div class="gallery" id="gallery"></div>
 
+        {% if user.is_anonymous %}
+        <div class="cactus" id="cactus"></div>
+        {% else %}
         <div class="make_story_sentence" id="make_str_sentence">새 동화 만들기</div>
         <div claas="make_story_box" id="make_str_box"></div>
         <div class="plus_square" id="plus_square"></div>
+        <div id="test"><a href="http://127.0.0.1:8000/accounts/logout/">{{user.email}}</a></div>
+        <form action="http://127.0.0.1:8000/accounts/logout/" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="/AI_Publisher/"/>
+            <input type="submit" value="로그아웃">
+        </form>
+        {% endif %}
 
         <div class="bottom_bar" id="bottom_bar"></div>
-
     </div>
 
-	<script>
-		var naverLogin = new naver.LoginWithNaverId(
-			{
-				clientId: "{xXgo_JUs1mnL3JzJamfC}",
-				callbackUrl: "{http://127.0.0.1:8000/AI_Publisher/main}",
-				isPopup: false,
-				callbackHandle: true
-				/* callback 페이지가 분리되었을 경우에 callback 페이지에서는 callback처리를 해줄수 있도록 설정합니다. */
-			}
-		);
+    {% if user.is_anonymous %}
+	<!--<script type="text/javascript">
+	    var naverLogin = new naver.LoginWithNaverId(
+		    {
+			    clientId: "xXgo_JUs1mnL3JzJamfC",
+			    callbackUrl: "http://127.0.0.1:8000/accounts/naver/login",
+			    isPopup: false, /* 팝업을 통한 연동처리 여부 */
+			    loginButton: {color: "green", type: 3, height: 60} /* 로그인 버튼의 타입을 지정 */
+    		}
+    	);
 
-		/* (3) 네아로 로그인 정보를 초기화하기 위하여 init을 호출 */
-		naverLogin.init();
-
-		/* (4) Callback의 처리. 정상적으로 Callback 처리가 완료될 경우 main page로 redirect(또는 Popup close) */
-		{#window.addEventListener('load', function () {#}
-		{#	naverLogin.getLoginStatus(function (status) {#}
-		{#		if (status) {#}
-		{#			/* (5) 필수적으로 받아야하는 프로필 정보가 있다면 callback처리 시점에 체크 */#}
-		{#			var email = naverLogin.user.getEmail();#}
-		{#			if( email == undefined || email == null) {#}
-		{#				alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");#}
-		{#				/* (5-1) 사용자 정보 재동의를 위하여 다시 네아로 동의페이지로 이동함 */#}
-		{#				naverLogin.reprompt();#}
-		{#				return;#}
-		{#			}#}
-        {##}
-		{#			window.location.replace("http://127.0.0.1:8000/AI_Publisher/main");#}
-		{#		} else {#}
-		{#			console.log("callback 처리에 실패하였습니다.");#}
-		{#		}#}
-		{#	});#}
-		{#});#}
-	</script>
+	    /* 설정정보를 초기화하고 연동을 준비 */
+	    naverLogin.init();
+    </script>-->
+    {% endif %}
 </body>
-
-
-
 </html>
