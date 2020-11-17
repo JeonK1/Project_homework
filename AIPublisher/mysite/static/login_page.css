@@ -98,7 +98,10 @@
 
 #naverIdLogin{
     position:absolute;
-    left: 600px;
+    left: 900px;
     top: 500px;
+
     z-index: 1;
+
 }
+

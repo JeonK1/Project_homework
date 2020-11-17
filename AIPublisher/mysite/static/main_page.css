@@ -94,3 +94,11 @@
     background-repeat: no-repeat;
 }
 
+#naverIdLogin{
+    position:absolute;
+    left: 950px;
+    top: 500px;
+    z-index: 2;
+    background-image: url("img/naver_login.PNG");
+    background-repeat: no-repeat;
+}
