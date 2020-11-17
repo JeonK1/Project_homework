@@ -119,6 +119,17 @@
     background: url("img/user_icon.png");
 }
 
+/* Polygon 2 */
+#user_icon_event{
+    position: absolute;
+    width: 17px;
+    height: 15px;
+    left: 1959px;
+    top: 69px;
+    z-index: 2;
+
+    background: url("img/user_icon_event.png");
+}
 
 /* username 님 */
 #username {
@@ -262,8 +273,8 @@
 }
 
 
-/* RigthSidebar */
-#RigthSidebar {
+/* RightSidebar */
+#RightSidebar {
     position: absolute;
     width: 165px;
     height: 736px;
@@ -272,7 +283,7 @@
 }
 
 /* Rectangle 25 */
-#RigthSidebar_left {
+#RightSidebar_left {
     position: absolute;
     left: 0;
     right: -18%;
@@ -285,7 +296,7 @@
 }
 /* Rectangle 33 */
 
-#RigthSidebar_right {
+#RightSidebar_right {
     position: absolute;
     left: 101%;
     right: -100%;
@@ -302,6 +313,7 @@
     right: 4.85%;
     top: 88.37%;
     bottom: 6.98%;
+    z-index: 3;
 
     /* Black */
     background-image: url("img/next_step.png");
