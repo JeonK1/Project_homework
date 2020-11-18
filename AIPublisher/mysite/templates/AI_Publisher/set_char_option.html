@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'set_char_option.css' %}">
+    <script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
+    <title>set_character</title>
+</head>
+<body>
+    <!--배경 및 프레임-->
+    <div class="backGround" id="backGround">
+        <div class="STATBAR" id="STATBAR">
+            <div class="step" id="step">인물카드 설정</div>
+        </div>
+        <div class="border" id="border"></div>
+
+        <!--다음 버튼-->
+    <a href="/AI_Publisher/set_relation/" target=_self>
+            <div class="next_step" id="next_step"></div></a>
+    </div>
+
+</body>
+
+</html>

@@ -1,9 +1,10 @@
-#backGround {
-    position: absolute;
-    width: 1894px;
-    height: 1120px;
-    left: 53px;
-    top: 119px;
+/* 표지제작 */
+#BackGround {
+    position: relative;
+    width: 2000px;
+    height: 1290px;
+
+    background: #FFFFFF;
 }
 
 #STATBAR {
@@ -24,7 +25,7 @@
     right: 38.91%;
     top: 0%;
     bottom: 0%;
-
+    z-index: 1;
     font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: normal;
@@ -43,25 +44,27 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+#border {
+
+    position: absolute;
+    width: 1890px;
+    height: 1100px;
+    left: 55px;
+    top: 139px;
+
+    background: rgba(196, 196, 196, 0.02);
+    border: 2px solid #88B9A4;
+    box-sizing: border-box;
+}
+
 #next_step {
     position: absolute;
     left: 92.15%;
     right: 4.85%;
     top: 88.37%;
     bottom: 6.98%;
+    z-index: 3;
 
+    /* Black */
     background-image: url("img/next_step.png");
-    background:no-repeat;
-}
-
-
-
-
-#bottom_bar {
-    position: absolute;
-    width: 2000px;
-    height: 30px;
-    left: 0px;
-    top: 1260px;
-    background: #88B9A4;
 }
