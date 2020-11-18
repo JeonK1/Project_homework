@@ -5,6 +5,7 @@
     height: 1120px;
     left: 53px;
     top: 119px;
+    z-index: 0;
 }
 
 #STATBAR {
@@ -63,10 +64,10 @@
     right: 4.85%;
     top: 88.37%;
     bottom: 6.98%;
+    z-index: 3;
 
     /* Black */
     background-image: url("img/next_step.png");
-    background:no-repeat;
 }
 
 #redraw {
@@ -91,3 +92,124 @@
     background: #88B9A4;
 }
 
+/* upper_bar */
+#upper_bar {
+    position: absolute;
+    width: 2000px;
+    height: 100px;
+
+    background: rgba(255, 255, 255, 0.890625);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.42);
+}
+
+/* Group 27 */
+#user_icon {
+    position: absolute;
+    width: 76px;
+    height: 76px;
+    left: 1901px;
+    top: 9px;
+
+    background: url("img/user_icon.png");
+}
+
+/* Polygon 2 */
+#user_icon_event{
+    position: absolute;
+    width: 17px;
+    height: 15px;
+    left: 1959px;
+    top: 69px;
+    z-index: 2;
+
+    background: url("img/user_icon_event.png");
+}
+
+/* username 님 */
+#username {
+    position: absolute;
+    left: 88.05%;
+    right: 4.95%;
+    top: 18%;
+    bottom: 25%;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+    /* or 30px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #000000;
+}
+
+/*캐릭터 박스 */
+#card_box {
+
+    position: absolute;
+    width: 1249px;
+    height: 334px;
+    left: 329px;
+    top: 777px;
+    z-index: 1;
+
+}
+
+
+#card_1 {
+
+    position: absolute;
+    width: 250px;
+    height: 334px;
+    left: 329px;
+    top: 777px;
+    z-index: 2;
+
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+#card_2 {
+    position: absolute;
+    width: 250px;
+    height: 334px;
+    left: 662px;
+    top: 777px;
+    z-index: 2;
+
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+#card_3 {
+
+    position: absolute;
+    width: 250px;
+    height: 334px;
+    left: 995px;
+    top: 777px;
+    z-index: 2;
+
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+#card_4 {
+
+    position: absolute;
+    width: 250px;
+    height: 334px;
+    left: 1328px;
+    top: 777px;
+    z-index: 2;
+
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}

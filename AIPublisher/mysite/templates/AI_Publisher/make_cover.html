@@ -30,6 +30,7 @@
         <!-- 네비게이션 바 -->
         <div class="upper_bar" id="upper_bar">
             <div class="user_icon" id="user_icon"></div>
+            <div class="user_icon_event" id="user_icon_event"></div>
             <div class="username" id="username"></div>
         </div>
 
@@ -51,12 +52,13 @@
 
         <!--화면아래 초록색 바-->
 
-        <div class="bottom_bar" id="bottom_bar"></div>
+            <div class="bottom_bar" id="bottom_bar"></div>
 
         <!--오른쪽 메뉴-->
-        <div class="RigthSidebar" id="RigthSidebar">
-            <div class="RigthSidebar_left" id="RigthSidebar_left"></div>
-            <div class="RigthSidebar_right" id="RigthSidebar_right"></div>
+
+        <div class="RightSidebar" id="RightSidebar">
+            <div class="RightSidebar_left" id="RightSidebar_left"></div>
+            <div class="RightSidebar_right" id="RightSidebar_right"></div>
         </div>
 
         <!--다음 단계-->
@@ -94,13 +96,16 @@
 
         // 유저 아이콘 눌렀을 때
         $("#ID_Menu").hide();
+        $("#user_icon_event").hide();
         var x = true;
         $("#user_icon").click(function() {
             if (x) {
                 $("#ID_Menu").show();
+                $("#user_icon_event").show();
                 x = false
             } else {
                 $("#ID_Menu").hide();
+                $("#user_icon_event").hide();
                 x = true
             }
         });

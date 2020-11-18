@@ -20,5 +20,6 @@ def set_relation(request):
 def set_character(request):
     return render(request, 'AI_Publisher/set_character.html')
 
-
+def set_char_option(request):
+    return render(request, 'AI_Publisher/set_char_option.html')
 # Create your views here.

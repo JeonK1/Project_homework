@@ -4,7 +4,7 @@
     height: 1290px;
     left: 0px;
     top: 0px;
-
+    z-index: 0;
     background: #DDEDE6;
 }
 
@@ -18,47 +18,49 @@
     background: #88B9A4;
 }
 
-#make_str_box{
+#make_str_box {
     position: absolute;
-    width: 569px;
+    width: 572px;
     height: 750px;
     left: 1127px;
     top: 218px;
+    background-image: url("img/make_new_story.png");
+    z-index: 1;
 
-    background: rgba(196, 196, 196, 0.49);
 }
 
-#make_str_sentence{
-    position: absolute;
-    width: 572px;
-    height: 89px;
-    left: 1127px;
-    top: 639px;
+/*#make_str_sentence{*/
+/*    position: absolute;*/
+/*    width: 572px;*/
+/*    height: 89px;*/
+/*    left: 1127px;*/
+/*    top: 639px;*/
 
-    font-family: Habibi;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 50px;
-    line-height: 150%;
-    /* or 75px */
+/*    font-family: Habibi;*/
+/*    font-style: normal;*/
+/*    font-weight: normal;*/
+/*    font-size: 50px;*/
+/*    line-height: 150%;*/
+/*    !* or 75px *!*/
 
-    text-align: center;
-    letter-spacing: 0.05em;
-    text-transform: capitalize;
+/*    text-align: center;*/
+/*    letter-spacing: 0.05em;*/
+/*    text-transform: capitalize;*/
+/*    z-index: 2;*/
+/*    color: #000000;*/
+/*}*/
 
-    color: #000000;
-}
+/*#plus_square {*/
+/*    position: absolute;*/
+/*    width: 81px;*/
+/*    height: 86px;*/
+/*    left: 1380px;*/
+/*    top: 533px;*/
+/*    z-index: 3;*/
+/*    background: url("img/plus-square.png");*/
+/*    background-repeat: no-repeat;*/
 
-#plus_square {
-    position: absolute;
-    width: 81px;
-    height: 86px;
-    left: 1380px;
-    top: 533px;
-
-    background: url("img/plus-square.png");
-    background-repeat: no-repeat;
-}
+/*}*/
 
 
 #shelf_box {
@@ -94,11 +96,3 @@
     background-repeat: no-repeat;
 }
 
-#naverIdLogin{
-    position:absolute;
-    left: 950px;
-    top: 500px;
-    z-index: 2;
-    background-image: url("img/naver_login.PNG");
-    background-repeat: no-repeat;
-}

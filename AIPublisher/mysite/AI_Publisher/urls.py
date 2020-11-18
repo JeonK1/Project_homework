@@ -9,4 +9,5 @@ urlpatterns = [
     path('make_story/', views.make_story),
     path('set_character/', views.set_character),
     path('set_relation/', views.set_relation),
+    path('set_char_option/', views.set_char_option),
 ]
