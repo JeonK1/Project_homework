@@ -22,4 +22,7 @@ def set_character(request):
 
 def set_char_option(request):
     return render(request, 'AI_Publisher/set_char_option.html')
+
+def show_gallery(request):
+    return render(request, 'AI_Publisher/show_gallery.html')
 # Create your views here.

@@ -1,0 +1,67 @@
+{% load static %}
+<!doctype html>
+
+<html lang="ko">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'show_gallery.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
+    <script type="text/javascript" src="{% static 'navbar.js' %}"></script>
+    <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
+
+    <title>Show Gallery</title>
+</head>
+<body onload="navbar_function()">
+
+    <div class="background" id="backGround">
+
+        <!-- 만든 동화책 -->
+        <div class="storybook_1" id="storybook_1"></div>
+        <div class="storybook_2" id="storybook_2"></div>
+        <div class="storybook_3" id="storybook_3"></div>
+
+        <!-- 왼쪽 넘기기 -->
+        <div class="left_move" id="left_move"></div>
+
+        <!-- 오른쪽 넘기기 -->
+        <div class="right_move" id="right_move"></div>
+
+        <!-- 책상 -->
+        <div class="shelf" id="shelf"></div>
+
+        <!--화면아래 초록색 바-->
+        <div class="bottom_bar" id="bottom_bar"></div>
+
+        <!--네비게이션 바-->
+        <div class="upper_bar" id="upper_bar">
+            <div class="user_icon" id="user_icon"></div>
+            <div class="user_icon_event" id="user_icon_event"></div>
+            <div class="username" id="username"></div>
+        </div>
+
+        <!--계정 메뉴-->
+        <div class="ID_Menu" id="ID_Menu">
+            <div class="menu_1" id="menu_1">
+                <div class="menu_feature_1" id="menu_feature_1"></div>
+                <div class="menu_text_1" id="menu_text_1">내 정보 관리</div>
+            </div>
+            <a href="/AI_Publisher/main/" target=_self>
+            <div class="menu_2" id="menu_2">
+                <div class="menu_feature_2" id="menu_feature_2"></div>
+                <div class="menu_text_2" id="menu_text_2">메인 화면</div>
+            </div></a>
+            <div class="menu_3" id="menu_3">
+                <div class="menu_feature_3" id="menu_feature_3"></div>
+                <div class="menu_text_3" id="menu_text_3">TEXT</div>
+            </div>
+            <div class="menu_4" id="menu_4">
+                <div class="menu_feature_4" id="menu_feature_4"></div>
+                <div class="menu_text_4" id="menu_text_4">TEXT</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

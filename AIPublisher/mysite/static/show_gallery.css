@@ -1,0 +1,93 @@
+#backGround {
+    position: relative;
+    width: 2000px;
+    height: 1290px;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+    background: #DDEDE6;
+}
+
+#bottom_bar{
+
+    position: absolute;
+    width: 2000px;
+    height: 30px;
+    left: 0px;
+    top: 1260px;
+    background: #88B9A4;
+}
+
+#shelf {
+    position: absolute;
+    width: 2074px;
+    height: 247px;
+    left: -74px;
+    top: 1043px;
+
+    background: url("img/shelf.png");
+    background-repeat: no-repeat;
+}
+
+
+/* 왼쪽 넘기기 */
+#left_move{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    left: 88px;
+    top: 542px;
+
+    /* Black */
+    background: #000000;
+    background: url("img/left_path.png");
+}
+
+/* 오른쪽 넘기기 */
+#right_move{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    left: 1922px;
+    top: 542px;
+
+    /* Black */
+    background: #000000;
+    background: url("img/right_path.png");
+}
+
+/* Rectangle 17 */
+#storybook_1{
+    position: absolute;
+    width: 467px;
+    height: 615px;
+    left: 208px;
+    top: 262px;
+
+    background: #D1D9D5;
+    filter: blur(4px);
+}
+
+/* Rectangle 18 */
+#storybook_2{
+    position: absolute;
+    width: 467px;
+    height: 615px;
+    left: 1390px;
+    top: 262px;
+
+    background: #D1D9D5;
+    filter: blur(4px);
+}
+
+/* Rectangle 19 */
+#storybook_3{
+    position: absolute;
+    width: 467px;
+    height: 615px;
+    left: 799px;
+    top: 262px;
+
+    background: #D1D9D5;
+    filter: blur(4px);
+}
