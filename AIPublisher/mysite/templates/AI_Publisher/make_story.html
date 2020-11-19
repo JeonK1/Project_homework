@@ -7,11 +7,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'make_story.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
+    <script type="text/javascript" src="{% static 'navbar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'make_story_move.js' %}"></script>
     <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
 
     <title>Make Story</title>
 </head>
-<body>
+<body onload="navbar_function();make_story_move()">
     <div class="BackGround" id="BackGround">
         <!--왼쪽 메뉴-->
         <div class="LeftSidebar" id="LeftSidebar">
@@ -35,13 +38,6 @@
             <div class="STATBAR" id="STATBAR">
                 <div class="step" id="step">이야기 제작</div>
             </div>
-        </div>
-
-        <!-- 네비게이션 바 -->
-        <div class="upper_bar" id="upper_bar">
-            <div class="user_icon" id="user_icon"></div>
-            <div class="user_icon_event" id="user_icon_event"></div>
-            <div class="username" id="username"></div>
         </div>
 
         <!-- 텍스트 입력 -->
@@ -91,6 +87,13 @@
         <!--다음 단계-->
         <div class="next_step" id="next_step"></div>
 
+        <!-- 네비게이션 바 -->
+        <div class="upper_bar" id="upper_bar">
+            <div class="user_icon" id="user_icon"></div>
+            <div class="user_icon_event" id="user_icon_event"></div>
+            <div class="username" id="username"></div>
+        </div>
+
         <!--계정 메뉴-->
         <div class="ID_Menu" id="ID_Menu">
             <div class="menu_1" id="menu_1">
@@ -113,263 +116,5 @@
         </div>
 
     </div>
-
-    <script type="text/javascript">
-        // 사용자 이름
-        var username = document.getElementById("username");
-        username.innerHTML = "Coople";
-
-        // 유저 아이콘 눌렀을 때
-        $("#ID_Menu").hide();
-        $("#user_icon_event").hide();
-        var x = true;
-        $("#user_icon").click(function() {
-            if (x) {
-                $("#ID_Menu").show();
-                $("#user_icon_event").show();
-                x = false
-            } else {
-                $("#ID_Menu").hide();
-                $("#user_icon_event").hide();
-                x = true
-            }
-        });
-
-
-
-        // 아래 화살표를 눌렀을 때
-        // 0-2 발단, 3-5 전개, 6-8 위기, 9-11 절정, 12-14 결말
-        $("#question_string").hide();
-        $("#question_string_small").hide();
-        $("#question_base_small").hide();
-        $("#RightSidebar").hide();
-        $("#camera").hide();
-
-        var count = 0;
-        $("#next_step").click(function() {
-            count += 1;
-            switch(count){
-                case 1:
-                    $("#question_base").hide();
-                    $("#question_string").show();
-                    $("#question_base_small").show();
-                    break;
-                case 2:
-                    $("#question_string").hide();
-                    $("#question_string_small").show();
-                    $("#RightSidebar").show();
-                    $("#camera").show();
-                    break;
-                case 3:
-                    $("#STEP_1").css("background-color","#D6ECD7");
-                    $("#STEP_1").css("box-shadow",'0px 0px 0px');
-                    $("#STEP_2").css("background-color","#FFFFFF");
-                    $("#STEP_2").css("box-shadow",'0 4px 4px #888');
-
-                    $("#RightSidebar").hide();
-                    $("#camera").hide();
-                    $("#question_string_small").hide();
-                    $("#question_base_small").hide();
-                    $("#question_base").show();
-                    break;
-                case 4:
-                    $("#question_base").hide();
-                    $("#question_string").show();
-                    $("#question_base_small").show();
-                    break;
-                case 5:
-                    $("#question_string").hide();
-                    $("#question_string_small").show();
-                    $("#RightSidebar").show();
-                    $("#camera").show();
-                    break;
-                case 6:
-                    $("#STEP_2").css("background-color","#D6ECD7");
-                    $("#STEP_2").css("box-shadow",'0px 0px 0px');
-                    $("#STEP_3").css("background-color","#FFFFFF");
-                    $("#STEP_3").css("box-shadow",'0 4px 4px #888');
-
-                    $("#RightSidebar").hide();
-                    $("#camera").hide();
-                    $("#question_string_small").hide();
-                    $("#question_base_small").hide();
-                    $("#question_base").show();
-                    break;
-                case 7:
-                    $("#question_base").hide();
-                    $("#question_string").show();
-                    $("#question_base_small").show();
-                    break;
-                case 8:
-                    $("#question_string").hide();
-                    $("#question_string_small").show();
-                    $("#RightSidebar").show();
-                    $("#camera").show();
-                    break;
-                case 9:
-                    $("#STEP_3").css("background-color","#D6ECD7");
-                    $("#STEP_3").css("box-shadow",'0px 0px 0px');
-                    $("#STEP_4").css("background-color","#FFFFFF");
-                    $("#STEP_4").css("box-shadow",'0 4px 4px #888');
-
-                    $("#RightSidebar").hide();
-                    $("#camera").hide();
-                    $("#question_string_small").hide();
-                    $("#question_base_small").hide();
-                    $("#question_base").show();
-                    break;
-                case 10:
-                    $("#question_base").hide();
-                    $("#question_string").show();
-                    $("#question_base_small").show();
-                    break;
-                case 11:
-                    $("#question_string").hide();
-                    $("#question_string_small").show();
-                    $("#RightSidebar").show();
-                    $("#camera").show();
-                    break;
-                case 12:
-                    $("#STEP_4").css("background-color","#D6ECD7");
-                    $("#STEP_4").css("box-shadow",'0px 0px 0px');
-                    $("#STEP_5").css("background-color","#FFFFFF");
-                    $("#STEP_5").css("box-shadow",'0 4px 4px #888');
-
-                    $("#RightSidebar").hide();
-                    $("#camera").hide();
-                    $("#question_string_small").hide();
-                    $("#question_base_small").hide();
-                    $("#question_base").show();
-                    break;
-                case 13:
-                    $("#question_base").hide();
-                    $("#question_string").show();
-                    $("#question_base_small").show();
-                    break;
-                case 14:
-                    $("#question_string").hide();
-                    $("#question_string_small").show();
-                    $("#RightSidebar").show();
-                    $("#camera").show();
-                    break;
-                case 15:
-                    count = 0;
-                    location.href = '/AI_Publisher/make_cover/'
-                    break;
-            }
-        });
-
-        // STEP 발단 눌렀을 때
-        $("#STEP_1").click(function() {
-            count = 0;
-            $("#STEP_1").css("background-color","#FFFFFF");
-            $("#STEP_1").css("box-shadow",'0 4px 4px #888');
-            $("#STEP_2").css("background-color","#D6ECD7");
-            $("#STEP_2").css("box-shadow",'0px 0px 0px');
-            $("#STEP_3").css("background-color","#D6ECD7");
-            $("#STEP_3").css("box-shadow",'0px 0px 0px');
-            $("#STEP_4").css("background-color","#D6ECD7");
-            $("#STEP_4").css("box-shadow",'0px 0px 0px');
-            $("#STEP_5").css("background-color","#D6ECD7");
-            $("#STEP_5").css("box-shadow",'0px 0px 0px');
-
-            $("#RightSidebar").hide();
-            $("#camera").hide();
-            $("#question_string").hide();
-            $("#question_string_small").hide();
-            $("#question_base_small").hide();
-            $("#question_base").show();
-        });
-
-        // STEP 전개 눌렀을 때
-        $("#STEP_2").click(function() {
-            count = 3;
-            $("#STEP_1").css("background-color","#D6ECD7");
-            $("#STEP_1").css("box-shadow",'0px 0px 0px');
-            $("#STEP_2").css("background-color","#FFFFFF");
-            $("#STEP_2").css("box-shadow",'0 4px 4px #888');
-            $("#STEP_3").css("background-color","#D6ECD7");
-            $("#STEP_3").css("box-shadow",'0px 0px 0px');
-            $("#STEP_4").css("background-color","#D6ECD7");
-            $("#STEP_4").css("box-shadow",'0px 0px 0px');
-            $("#STEP_5").css("background-color","#D6ECD7");
-            $("#STEP_5").css("box-shadow",'0px 0px 0px');
-
-            $("#RightSidebar").hide();
-            $("#camera").hide();
-            $("#question_string").hide();
-            $("#question_string_small").hide();
-            $("#question_base_small").hide();
-            $("#question_base").show();
-        });
-
-        // STEP 위기 눌렀을 때
-        $("#STEP_3").click(function() {
-            count = 6;
-            $("#STEP_1").css("background-color","#D6ECD7");
-            $("#STEP_1").css("box-shadow",'0px 0px 0px');
-            $("#STEP_2").css("background-color","#D6ECD7");
-            $("#STEP_2").css("box-shadow",'0px 0px 0px');
-            $("#STEP_3").css("background-color","#FFFFFF");
-            $("#STEP_3").css("box-shadow",'0 4px 4px #888');
-            $("#STEP_4").css("background-color","#D6ECD7");
-            $("#STEP_4").css("box-shadow",'0px 0px 0px');
-            $("#STEP_5").css("background-color","#D6ECD7");
-            $("#STEP_5").css("box-shadow",'0px 0px 0px');
-
-            $("#RightSidebar").hide();
-            $("#camera").hide();
-            $("#question_string").hide();
-            $("#question_string_small").hide();
-            $("#question_base_small").hide();
-            $("#question_base").show();
-        });
-
-        // STEP 절정 눌렀을 때
-        $("#STEP_4").click(function() {
-            count = 9;
-            $("#STEP_1").css("background-color","#D6ECD7");
-            $("#STEP_1").css("box-shadow",'0px 0px 0px');
-            $("#STEP_2").css("background-color","#D6ECD7");
-            $("#STEP_2").css("box-shadow",'0px 0px 0px');
-            $("#STEP_3").css("background-color","#D6ECD7");
-            $("#STEP_3").css("box-shadow",'0px 0px 0px');
-            $("#STEP_4").css("background-color","#FFFFFF");
-            $("#STEP_4").css("box-shadow",'0 4px 4px #888');
-            $("#STEP_5").css("background-color","#D6ECD7");
-            $("#STEP_5").css("box-shadow",'0px 0px 0px');
-
-            $("#RightSidebar").hide();
-            $("#camera").hide();
-            $("#question_string").hide();
-            $("#question_string_small").hide();
-            $("#question_base_small").hide();
-            $("#question_base").show();
-        });
-
-        // STEP 결말 눌렀을 때
-        $("#STEP_5").click(function() {
-            count = 12;
-            $("#STEP_1").css("background-color","#D6ECD7");
-            $("#STEP_1").css("box-shadow",'0px 0px 0px');
-            $("#STEP_2").css("background-color","#D6ECD7");
-            $("#STEP_2").css("box-shadow",'0px 0px 0px');
-            $("#STEP_3").css("background-color","#D6ECD7");
-            $("#STEP_3").css("box-shadow",'0px 0px 0px');
-            $("#STEP_4").css("background-color","#D6ECD7");
-            $("#STEP_4").css("box-shadow",'0px 0px 0px');
-            $("#STEP_5").css("background-color","#FFFFFF");
-            $("#STEP_5").css("box-shadow",'0 4px 4px #888');
-
-            $("#RightSidebar").hide();
-            $("#camera").hide();
-            $("#question_string").hide();
-            $("#question_string_small").hide();
-            $("#question_base_small").hide();
-            $("#question_base").show();
-        });
-
-
-    </script>
 </body>
 </html>

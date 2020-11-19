@@ -7,11 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'make_cover.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
+    <script type="text/javascript" src="{% static 'navbar.js' %}"></script>
     <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
 
     <title>Make Cover</title>
 </head>
-<body>
+<body onload="navbar_function()">
     <div class="BackGround" id="BackGround">
         <!--왼쪽 메뉴-->
         <div class="LeftSidebar" id="LeftSidebar">
@@ -25,13 +27,6 @@
             <div class="STATBAR" id="STATBAR">
                 <div class="step" id="step">표지 제작</div>
             </div>
-        </div>
-
-        <!-- 네비게이션 바 -->
-        <div class="upper_bar" id="upper_bar">
-            <div class="user_icon" id="user_icon"></div>
-            <div class="user_icon_event" id="user_icon_event"></div>
-            <div class="username" id="username"></div>
         </div>
 
         <!-- 텍스트 입력 -->
@@ -52,7 +47,7 @@
 
         <!--화면아래 초록색 바-->
 
-            <div class="bottom_bar" id="bottom_bar"></div>
+        <div class="bottom_bar" id="bottom_bar"></div>
 
         <!--오른쪽 메뉴-->
 
@@ -64,6 +59,13 @@
         <!--다음 단계-->
         <a href="/AI_Publisher/main/" target=_self>
             <div class="next_step" id="next_step"></div></a>
+
+        <!-- 네비게이션 바 -->
+        <div class="upper_bar" id="upper_bar">
+            <div class="user_icon" id="user_icon"></div>
+            <div class="user_icon_event" id="user_icon_event"></div>
+            <div class="username" id="username"></div>
+        </div>
 
         <!--계정 메뉴-->
         <div class="ID_Menu" id="ID_Menu">
@@ -89,26 +91,7 @@
     </div>
 
     <script type="text/javascript">
-        //사용자 이름
-        var username = document.getElementById("username");
-        username.innerHTML = "Coople";
 
-
-        // 유저 아이콘 눌렀을 때
-        $("#ID_Menu").hide();
-        $("#user_icon_event").hide();
-        var x = true;
-        $("#user_icon").click(function() {
-            if (x) {
-                $("#ID_Menu").show();
-                $("#user_icon_event").show();
-                x = false
-            } else {
-                $("#ID_Menu").hide();
-                $("#user_icon_event").hide();
-                x = true
-            }
-        });
 
 
     </script>

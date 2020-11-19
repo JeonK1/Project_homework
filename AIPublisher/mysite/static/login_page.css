@@ -32,21 +32,12 @@
 
 }
 /* shelf */
-#shelf_box {
-    position: absolute;
-    width: 2148px;
-    height: 966px;
-    left: -74px;
-    top: 424px;
-
-    filter: drop-shadow(15px 8px 15px rgba(0, 0, 0, 0.25))
-}
 
 /* KakaoTalk_20201029_222427404 */
 #shelf {
     position: absolute;
-    width: 2148px;
-    height: 347px;
+    width: 2074px;
+    height: 247px;
     left: -74px;
     top: 1043px;
 
@@ -85,13 +76,9 @@
     position: absolute;
     width: 2000px;
     height: 30px;
-    left: 1px;
+    left: 0px;
     top: 1260px;
 
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
 
     background: #88B9A4;
 }

@@ -13,7 +13,7 @@
     position: absolute;
     width: 2000px;
     height: 30px;
-    left: 1px;
+    left: 0px;
     top: 1260px;
     background: #88B9A4;
 }
@@ -63,22 +63,12 @@
 /*}*/
 
 
-#shelf_box {
-    position: absolute;
-    width: 2148px;
-    height: 966px;
-    left: -48px;
-    top: 419px;
-
-    filter: drop-shadow(15px 8px 15px rgba(0, 0, 0, 0.25));
-}
-
 #shelf {
     position: absolute;
-    width: 2148px;
-    height: 347px;
-    left: -48px;
-    top: 1038px;
+    width: 2074px;
+    height: 247px;
+    left: -74px;
+    top: 1043px;
 
     background: url("img/shelf.png");
     background-repeat: no-repeat;

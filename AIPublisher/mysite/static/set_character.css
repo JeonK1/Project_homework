@@ -1,39 +1,56 @@
 /* BGcolor */
-#backGround {
+#BackGround {
+    position: relative;
+    width: 2000px;
+    height: 1290px;
+
+    background: #FFFFFF;
+}
+
+/* Group 19 */
+#Field {
     position: absolute;
     width: 1894px;
     height: 1120px;
     left: 53px;
     top: 119px;
-    z-index: 0;
 }
 
-#STATBAR {
 
+/* border */
+#border {
+    position: absolute;
+    width: 1890px;
+    height: 1100px;
+
+    background: rgba(196, 196, 196, 0.02);
+    border: 2px solid #88B9A4;
+    box-sizing: border-box;
+}
+
+/* STATBAR */
+#STATBAR {
     position: absolute;
     width: 1894px;
     height: 80px;
-    left: 53px;
-    top: 119px;
+
     background: #88B9A4;
     border-radius: 11px;
+
 }
 
+/* TEXT */
 #step {
-
     position: absolute;
-    left: 40.81%;
-    right: 38.91%;
-    top: 0%;
-    bottom: 0%;
-    z-index: 1;
-    font-family: IBM Plex Sans;
-    font-style: normal;
-    font-weight: normal;
+    left: 45%;
+    right: 30%;
+    top: 0;
+    bottom: 0;
+
+
     font-size: 36px;
     line-height: 150%;
     /* or 54px */
-
     display: flex;
     align-items: center;
     text-align: center;
@@ -42,20 +59,17 @@
 
     color: #FFFFFF;
 
-    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-#border {
-
+/* bottom_bar */
+#bottom_bar {
     position: absolute;
-    width: 1890px;
-    height: 1100px;
-    left: 55px;
-    top: 139px;
+    width: 2000px;
+    height: 30px;
+    left: 0;
+    top: 1260px;
 
-    background: rgba(196, 196, 196, 0.02);
-    border: 2px solid #88B9A4;
-    box-sizing: border-box;
+    background: #88B9A4;
 }
 
 #next_step {
@@ -80,70 +94,6 @@
 
     background-image: url("img/redraw.png");
 
-}
-
-#bottom_bar {
-    position: absolute;
-    width: 2000px;
-    height: 30px;
-    left: 0px;
-    top: 1265px;
-
-    background: #88B9A4;
-}
-
-/* upper_bar */
-#upper_bar {
-    position: absolute;
-    width: 2000px;
-    height: 100px;
-
-    background: rgba(255, 255, 255, 0.890625);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.42);
-}
-
-/* Group 27 */
-#user_icon {
-    position: absolute;
-    width: 76px;
-    height: 76px;
-    left: 1901px;
-    top: 9px;
-
-    background: url("img/user_icon.png");
-}
-
-/* Polygon 2 */
-#user_icon_event{
-    position: absolute;
-    width: 17px;
-    height: 15px;
-    left: 1959px;
-    top: 69px;
-    z-index: 2;
-
-    background: url("img/user_icon_event.png");
-}
-
-/* username 님 */
-#username {
-    position: absolute;
-    left: 88.05%;
-    right: 4.95%;
-    top: 18%;
-    bottom: 25%;
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 150%;
-    /* or 30px */
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.05em;
-    text-transform: capitalize;
-
-    color: #000000;
 }
 
 /*캐릭터 박스 */
