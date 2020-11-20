@@ -33,7 +33,7 @@ python : python 3.7.6<br>
 <img src="/readme/dev_milestone.png" width=400/><br>
 <br><br>
 <h2>자료실</h2>
-<a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/Wordlist_1.xlsx?raw=true"> Wordlist_1.xlsx </a> (최종 업데이트 : 2020.11.12)<br>
+<a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/Wordlist_1.xlsx?raw=true"> Wordlist_1.xlsx </a> (최종 업데이트 : 2020.11.20)<br>
 <a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/BGandChar.zip?raw=true"> 캐릭터/배경 소스 </a> (최종 업데이트 : 2020.11.12)<br>
 <a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/Char2.zip?raw=true"> 캐릭터 추가 소스 </a> (최종 업데이트 : 2020.11.20)<br>
 <a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/AIPublisher_Development_Plan.pptx?raw=true"> 개발기획서 </a> (최종 업데이트 : 2020.10.28)<br>
