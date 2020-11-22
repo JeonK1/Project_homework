@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'set_relation.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
     <script type="text/javascript" src="{% static 'navbar.js' %}"></script>
+    <script type="text/javascript" src="{% static 'set_relation.js' %}"></script>
     <script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
     <title>set_relation</title>
 </head>
@@ -27,8 +28,10 @@
         <div class="bottom_bar" id="bottom_bar"></div>
 
         <!--다음 버튼-->
+        <!--Todo : 나중에 5개 다 안채웠는데 넘어갈려고하면 막아줘야함-->
         <a href="/AI_Publisher/make_story/" target=_self>
-            <div class="next_step" id="next_step"></div></a>
+            <div class="next_step" id="next_step"></div>
+        </a>
 
 
         <!--네비게이션 바-->
@@ -58,8 +61,67 @@
                 <div class="menu_text_4" id="menu_text_4">TEXT</div>
             </div>
         </div>
+        <!-- 왼쪽 인물 목록 메뉴 -->
+        <div class="character_menu" id="character_menu">
+            <div class="character_card" id="character_1" onclick="sendSubChar(1);" style="background-image: url('../../static/img/characters/{{charList.0}}');">
+                <div class="relation_context"></div>
+            </div>
+            <div class="character_card" id="character_2" onclick="sendSubChar(2);" style="background-image: url('../../static/img/characters/{{charList.1}}');"></div>
+            <div class="character_card" id="character_3" onclick="sendSubChar(3);" style="background-image: url('../../static/img/characters/{{charList.2}}');"></div>
+            <div class="character_card" id="character_4" onclick="sendSubChar(4);" style="background-image: url('../../static/img/characters/{{charList.3}}');"></div>
+        </div>
+        <!-- 하단 8개 관계 설정 카드-->
+        <div class="relation_menu" id="relation_menu">
+            <div class="relation_card_positive" id="relation_card_pos1">
+                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_pos.0}}</div>
+            </div>
+            <div class="relation_card_positive" id="relation_card_pos2">
+                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_pos.1}}</div>
+            </div>
+            <div class="relation_card_positive" id="relation_card_pos3">
+                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_pos.2}}</div>
+            </div>
+            <div class="relation_card_neutrality" id="relation_card_neu1">
+                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neu.0}}</div>
+            </div>
+            <div class="relation_card_neutrality" id="relation_card_neu2">
+                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neu.1}}</div>
+            </div>
+            <div class="relation_card_negative" id="relation_card_neg1">
+                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neg.0}}</div>
+            </div>
+            <div class="relation_card_negative" id="relation_card_neg2">
+                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neg.1}}</div>
+            </div>
+            <div class="relation_card_negative" id="relation_card_neg3">
+                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neg.2}}</div>
+            </div>
+        </div>
+        <!-- 중앙 5개 선택된 관계 카드-->
+        <div class="relation_selected_menu" id="relation_selected_menu">
+            <div class="relation_selected_card" id="relation_selected_card1">
+                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
+            </div>
+            <div class="relation_selected_card" id="relation_selected_card2">
+                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
+            </div>
+            <div class="relation_selected_card" id="relation_selected_card3">
+                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
+            </div>
+            <div class="relation_selected_card" id="relation_selected_card4">
+                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
+            </div>
+            <div class="relation_selected_card" id="relation_selected_card5">
+                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
+            </div>
+        </div>
+        <!-- 주인공과 서브인물 -->
+        <div>
+            <div class="character_selected_card" id="character_main" style="background-image: url('../../static/img/characters/{{charMain}}');"></div>
+            <div class="img_star" id="img_star"></div>
+        </div>
+        <div class="character_selected_card" id="character_sub"></div>
     </div>
-
 </body>
 
 </html>
