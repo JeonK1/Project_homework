@@ -7,6 +7,11 @@ function make_story_move(){
     $("#RightSidebar").hide();
     $("#camera").hide();
 
+    var arrtext = new Array(5); //배열선언
+    for (var i = 0; i < arrtext.length; i++){
+        arrtext[i] = new Array(3)
+    }
+
     var count = 0;
     $("#next_step").click(function() {
         count += 1;
@@ -230,4 +235,32 @@ function make_story_move(){
         $("#question_base_small").hide();
         $("#question_base").show();
     });
+
+    // text 적기
+    $("#input_text_box").keydown(function(key) {
+        if(key.keyCode == 13){
+
+        }
+    });
+
+    // question_text
+    // 발단
+    // - <주인공> 에게 <배경>은 어떤 곳인가요?
+    // - <주인공>과 <사건>은 어떤 관련이 있나요?
+    // - <주인공> 은 <상대> 에게 왜 <감정1>을 느끼나요?
+    //
+    // 전개
+    // - <주인공>은 어떻게 <사건>을 해결하고자 하나요?
+    // - 왜 <주인공>은 <감정1> 에서 <감정2>가 되었나요?
+    //
+    // 위기
+    // - 왜 <주인공>은 <감정2> 에서 <감정3>가 되었나요?
+    //
+    // 절정
+    // - 왜 <주인공>은 <감정3> 에서 <감정4>가 되었나요?
+    //
+    // 결말
+    // - 왜 <주인공>은 <감정4> 에서 <감정5>가 되었나요?
+    // - 이 이야기의 결말은 어떻게 되나요?
+
 }

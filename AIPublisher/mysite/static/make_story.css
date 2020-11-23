@@ -138,6 +138,7 @@
     left: 341px;
     top: 1128px;
 
+
     border: 3px solid #000000;
 }
 
@@ -160,7 +161,7 @@
     letter-spacing: 0.0168em;
     font-feature-settings: 'tnum' on, 'lnum' on;
 
-    color: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 0, 0, 0);
 }
 
 /* STEP_BAR */
@@ -507,6 +508,26 @@
     top: 480px;
 
     background: #C4C4C4;
+}
+
+#question_text {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 0;
+    bottom: 0;
+
+
+    font-size: 20px;
+    line-height: 150%;
+    /* or 54px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #FFFFFF;
 }
 
 /* Polygon 1 */
