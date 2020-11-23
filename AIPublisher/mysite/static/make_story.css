@@ -138,7 +138,6 @@
     left: 341px;
     top: 1128px;
 
-
     border: 3px solid #000000;
 
     font-weight: normal;
@@ -154,7 +153,27 @@
     color: #000000
 }
 
+/* Frame 1 */
+#input_text {
+    position: absolute;
+    width: 1379px;
+    height: 61px;
+
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #000000
+}
+
 /* STEP_BAR */
+
 
 /* Auto Layout */
 #STEP_BAR {
@@ -545,6 +564,26 @@
 
     background: #C4C4C4;
     border-radius: 60px;
+}
+
+#question_string_text{
+    position: absolute;
+    left: 5%;
+    right: 0%;
+    top: 0;
+    bottom: 0;
+
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 150%;
+    /* or 54px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #FFFFFF;
 }
 
 /* Rectangle 24 */

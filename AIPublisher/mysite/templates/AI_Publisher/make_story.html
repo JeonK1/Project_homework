@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'make_story.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
+    <script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'navbar.js' %}"></script>
     <script type="text/javascript" src="{% static 'make_story.js' %}"></script>
-    <script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
     <title>Make Story</title>
 </head>
-<body onload="navbar_function();stepbar_move();nextstep_move();show_question();">
+<body onload="navbar_function();stepbar_move();nextstep_move();show_text();">
     <div class="BackGround" id="BackGround">
         <!--왼쪽 메뉴-->
         <div class="LeftSidebar" id="LeftSidebar">
@@ -39,7 +39,11 @@
         </div>
 
         <!-- 텍스트 입력 -->
-        <input type="text" class="input_text_box" id="input_text_box" disabled="">
+        <div class="input_text_box" id="input_text_box">
+            <input type="text" class="input_text" id="input_text" disabled="">
+        </div>
+
+
 
         <!-- 1단계 -->
         <!-- 질문 -->
@@ -49,7 +53,9 @@
 
         <!-- 2단계 -->
         <!-- 문장, base 축소 -->
-        <div class="question_string" id="question_string"></div>
+        <div class="question_string" id="question_string">
+            <div class="question_string_text" id="question_string_text"></div>
+        </div>
         <div class="question_base_small" id="question_base_small"></div>
 
         <!-- 발단 전개 위기 절정 결말 -->
