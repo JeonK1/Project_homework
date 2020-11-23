@@ -1,6 +1,7 @@
 // 사용자 위치
 var count = 0;
 
+
 // 아래 화살표를 눌렀을 때
 function nextstep_move() {
     // 0-2 발단, 3-5 전개, 6-8 위기, 9-11 절정, 12-14 결말
@@ -15,11 +16,13 @@ function nextstep_move() {
         count += 1;
         switch (count) {
             case 1:
+                $("#input_text_box").attr("disabled", false);
                 $("#question_base").hide();
                 $("#question_string").show();
                 $("#question_base_small").show();
                 break;
             case 2:
+                $("#input_text_box").attr("disabled", true);
                 $("#question_string").hide();
                 $("#question_string_small").show();
                 $("#RightSidebar").show();
@@ -40,11 +43,13 @@ function nextstep_move() {
                 $("#question_base").show();
                 break;
             case 4:
+                $("#input_text_box").attr("disabled", false);
                 $("#question_base").hide();
                 $("#question_string").show();
                 $("#question_base_small").show();
                 break;
             case 5:
+                $("#input_text_box").attr("disabled", true);
                 $("#question_string").hide();
                 $("#question_string_small").show();
                 $("#RightSidebar").show();
@@ -65,11 +70,13 @@ function nextstep_move() {
                 $("#question_base").show();
                 break;
             case 7:
+                $("#input_text_box").attr("disabled", false);
                 $("#question_base").hide();
                 $("#question_string").show();
                 $("#question_base_small").show();
                 break;
             case 8:
+                $("#input_text_box").attr("disabled", true);
                 $("#question_string").hide();
                 $("#question_string_small").show();
                 $("#RightSidebar").show();
@@ -90,11 +97,13 @@ function nextstep_move() {
                 $("#question_base").show();
                 break;
             case 10:
+                $("#input_text_box").attr("disabled", false);
                 $("#question_base").hide();
                 $("#question_string").show();
                 $("#question_base_small").show();
                 break;
             case 11:
+                $("#input_text_box").attr("disabled", true);
                 $("#question_string").hide();
                 $("#question_string_small").show();
                 $("#RightSidebar").show();
@@ -115,11 +124,13 @@ function nextstep_move() {
                 $("#question_base").show();
                 break;
             case 13:
+                $("#input_text_box").attr("disabled", false);
                 $("#question_base").hide();
                 $("#question_string").show();
                 $("#question_base_small").show();
                 break;
             case 14:
+                $("#input_text_box").attr("disabled", true);
                 $("#question_string").hide();
                 $("#question_string_small").show();
                 $("#RightSidebar").show();
@@ -148,8 +159,9 @@ function stepbar_move(){
         $("#STEP_5").css("background-color","#D6ECD7");
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
 
-        $("#question_base_text").text("아")
 
+        $("#question_base_text").text("아")
+        $("#input_text_box").attr("disabled", true);
         $("#RightSidebar").hide();
         $("#camera").hide();
         $("#question_string").hide();
@@ -173,6 +185,7 @@ function stepbar_move(){
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
 
         $("#question_base_text").text("왜이리")
+        $("#input_text_box").attr("disabled", true);
 
         $("#RightSidebar").hide();
         $("#camera").hide();
@@ -197,6 +210,7 @@ function stepbar_move(){
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
 
         $("#question_base_text").text("시끄러운")
+        $("#input_text_box").attr("disabled", true);
 
         $("#RightSidebar").hide();
         $("#camera").hide();
@@ -221,6 +235,7 @@ function stepbar_move(){
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
 
         $("#question_base_text").text("것이냐")
+        $("#input_text_box").attr("disabled", true);
 
         $("#RightSidebar").hide();
         $("#camera").hide();
@@ -245,6 +260,7 @@ function stepbar_move(){
         $("#STEP_5").css("box-shadow",'0 4px 4px #888');
 
         $("#question_base_text").text("두두둥장")
+        $("#input_text_box").attr("disabled", true);
 
         $("#RightSidebar").hide();
         $("#camera").hide();

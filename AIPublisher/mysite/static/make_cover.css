@@ -106,7 +106,7 @@
     height: 65px;
     left: 341px;
     top: 1128px;
-
+    z-index: 3;
 
     border: 3px solid #000000;
 
