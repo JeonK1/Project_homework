@@ -5,7 +5,8 @@ from . import views
 urlpatterns = [
     path('', views.main_page),
     path('main/', views.main_page),
-    path('make_cover/', views.make_cover),
+    # path('make_cover/', views.make_cover),
+    path('make_cover/', views.Makecover.as_view(), name="make_cover"),
     # path('make_story/', views.make_story),
     path('make_story/', views.Makestory.as_view(), name="make_story"),
     path('set_character/', views.set_character),

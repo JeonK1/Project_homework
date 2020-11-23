@@ -4,12 +4,12 @@ var count = 0;
 // 아래 화살표를 눌렀을 때
 function nextstep_move() {
     // 0-2 발단, 3-5 전개, 6-8 위기, 9-11 절정, 12-14 결말
+    $("#question_base_text").text("아")
     $("#question_string").hide();
     $("#question_string_small").hide();
     $("#question_base_small").hide();
     $("#RightSidebar").hide();
     $("#camera").hide();
-
 
     $("#next_step").click(function () {
         count += 1;
@@ -30,6 +30,8 @@ function nextstep_move() {
                 $("#STEP_1").css("box-shadow", '0px 0px 0px');
                 $("#STEP_2").css("background-color", "#FFFFFF");
                 $("#STEP_2").css("box-shadow", '0 4px 4px #888');
+
+                $("#question_base_text").text("왜이리")
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -54,6 +56,8 @@ function nextstep_move() {
                 $("#STEP_3").css("background-color", "#FFFFFF");
                 $("#STEP_3").css("box-shadow", '0 4px 4px #888');
 
+                $("#question_base_text").text("시끄러운")
+
                 $("#RightSidebar").hide();
                 $("#camera").hide();
                 $("#question_string_small").hide();
@@ -77,6 +81,8 @@ function nextstep_move() {
                 $("#STEP_4").css("background-color", "#FFFFFF");
                 $("#STEP_4").css("box-shadow", '0 4px 4px #888');
 
+                $("#question_base_text").text("것이냐")
+
                 $("#RightSidebar").hide();
                 $("#camera").hide();
                 $("#question_string_small").hide();
@@ -99,6 +105,8 @@ function nextstep_move() {
                 $("#STEP_4").css("box-shadow", '0px 0px 0px');
                 $("#STEP_5").css("background-color", "#FFFFFF");
                 $("#STEP_5").css("box-shadow", '0 4px 4px #888');
+
+                $("#question_base_text").text("두두둥장")
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -140,6 +148,8 @@ function stepbar_move(){
         $("#STEP_5").css("background-color","#D6ECD7");
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
 
+        $("#question_base_text").text("아")
+
         $("#RightSidebar").hide();
         $("#camera").hide();
         $("#question_string").hide();
@@ -161,6 +171,8 @@ function stepbar_move(){
         $("#STEP_4").css("box-shadow",'0px 0px 0px');
         $("#STEP_5").css("background-color","#D6ECD7");
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
+
+        $("#question_base_text").text("왜이리")
 
         $("#RightSidebar").hide();
         $("#camera").hide();
@@ -184,6 +196,8 @@ function stepbar_move(){
         $("#STEP_5").css("background-color","#D6ECD7");
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
 
+        $("#question_base_text").text("시끄러운")
+
         $("#RightSidebar").hide();
         $("#camera").hide();
         $("#question_string").hide();
@@ -205,6 +219,8 @@ function stepbar_move(){
         $("#STEP_4").css("box-shadow",'0 4px 4px #888');
         $("#STEP_5").css("background-color","#D6ECD7");
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
+
+        $("#question_base_text").text("것이냐")
 
         $("#RightSidebar").hide();
         $("#camera").hide();
@@ -228,6 +244,8 @@ function stepbar_move(){
         $("#STEP_5").css("background-color","#FFFFFF");
         $("#STEP_5").css("box-shadow",'0 4px 4px #888');
 
+        $("#question_base_text").text("두두둥장")
+
         $("#RightSidebar").hide();
         $("#camera").hide();
         $("#question_string").hide();
@@ -236,4 +254,14 @@ function stepbar_move(){
         $("#question_base").show();
     });
 }
+
+// 사용자가 적은 글 보여주기
+function show_text(){
+
+}
+
+// 질문글 보여주기
+
+
+// 등장인물 배치하기
 
