@@ -3,7 +3,6 @@ function navbar_function(){
     var username = document.getElementById("username");
     username.innerHTML = "Coople";
 
-
     // 유저 아이콘 눌렀을 때
     $("#ID_Menu").hide();
     $("#user_icon_event").hide();
