@@ -163,3 +163,118 @@
     border: 1px solid #000000;
     box-sizing: border-box;
 }
+#card_stack_box {
+    position: absolute;
+    width: 329px;
+    height: 414px;
+    left: 790px;
+    top: 274px;
+}
+
+#card_stack_1 {
+
+    /* Card_char */
+
+    position: absolute;
+    width: 270px;
+    height: 360px;
+    left: 790px;
+    top: 328px;
+
+    border: 1px solid #000000;
+
+
+    /* Rectangle 13 */
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #FCCA46;
+
+
+    /* Rectangle 14 */
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #FCCA46;
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+#card_stack_2 {
+    /* Card_char */
+
+    position: absolute;
+    width: 270px;
+    height: 360px;
+    left: 819px;
+    top: 298px;
+
+    border: 1px solid #000000;
+
+
+    /* Rectangle 13 */
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #FCCA46;
+
+
+    /* Rectangle 14 */
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #FCCA46;
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#card_stack_3 {
+
+    /* Card_char */
+
+    position: absolute;
+    width: 270px;
+    height: 360px;
+    left: 849px;
+    top: 274px;
+
+    border: 1px solid #000000;
+
+
+    /* Rectangle 13 */
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #FCCA46;
+
+
+    /* Rectangle 14 */
+
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #FCCA46;
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+}
