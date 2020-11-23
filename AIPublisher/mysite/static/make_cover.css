@@ -107,18 +107,8 @@
     left: 341px;
     top: 1128px;
 
+
     border: 3px solid #000000;
-}
-
-
-/* 제목을 입력하세요 */
-#input_text {
-    position: absolute;
-    width: 507px;
-    height: 40px;
-    left: 507px;
-    top: 12px;
-
 
     font-weight: normal;
     font-size: 36px;
@@ -130,7 +120,7 @@
     letter-spacing: 0.0168em;
     font-feature-settings: 'tnum' on, 'lnum' on;
 
-    color: rgba(0, 0, 0, 0.2);
+    color: #000000
 }
 
 
@@ -164,6 +154,7 @@
     top: 438px;
 
     background: #C4C4C4;
+    background-size : cover;
     border: 1px solid #000000;
     box-sizing: border-box;
 }
@@ -177,6 +168,7 @@
     top: 596px;
 
     background: #C4C4C4;
+    background-size : cover;
     border: 1px solid #000000;
     box-sizing: border-box;
 }
@@ -189,6 +181,7 @@
     top: 754px;
 
     background: #C4C4C4;
+    background-size : cover;
     border: 1px solid #000000;
     box-sizing: border-box;
 }
@@ -201,6 +194,7 @@
     top: 912px;
 
     background: #C4C4C4;
+    background-size : cover;
     border: 1px solid #000000;
     box-sizing: border-box;
 }

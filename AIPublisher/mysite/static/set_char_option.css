@@ -3,7 +3,7 @@
     position: relative;
     width: 2000px;
     height: 1290px;
-
+    z-index: 0;
     background: #FFFFFF;
 }
 
@@ -119,4 +119,191 @@
 
     /* Black */
     background-image: url("img/next_step.png");
+}
+
+#card_box {
+    position: absolute;
+    width: 99px;
+    height: 738px;
+    left: 156px;
+    top: 351px;
+
+}
+
+#card1 {
+    position: absolute;
+    width: 99px;
+    height: 132px;
+    left: 156px;
+    top: 351px;
+    background: #FCCA46;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+#card2 {
+    position: absolute;
+    width: 99px;
+    height: 132px;
+    left: 156px;
+    top: 555px;
+
+    background: #FCCA46;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+#card3 {
+    position: absolute;
+    width: 99px;
+    height: 132px;
+    left: 156px;
+    top: 755px;
+    background: #FCCA46;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+#card4 {
+
+    position: absolute;
+    width: 99px;
+    height: 132px;
+    left: 156px;
+    top: 957px;
+
+    background: #FCCA46;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+#set_card {
+    position: absolute;
+    width: 250px;
+    height: 334px;
+    left: 569px;
+    top: 477px;
+    z-index: 1;
+
+    background: #FBEAAF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+#option_box {
+    position: absolute;
+    width: 507px;
+    height: 283px;
+    left: 974px;
+    top: 528px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+
+    display: flex;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #000000;
+}
+
+#name{
+    position: absolute;
+    width: 507px;
+    height: 283px;
+    left: 974px;
+    top: 588px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 150%;
+    z-index: 1;
+    /* or 54px */
+
+    display: flex;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #000000;
+}
+
+#personality{
+    position: absolute;
+    width: 507px;
+    height: 283px;
+    left: 974px;
+    top: 648px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+
+    display: flex;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #000000;
+}
+
+#etc{
+    position: absolute;
+    width: 507px;
+    height: 283px;
+    left: 974px;
+    top: 708px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+
+    display: flex;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #000000;
+}
+
+#main_char{
+    position: absolute;
+    width: 507px;
+    height: 283px;
+    left: 974px;
+    top: 768px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+    z-index: 1;
+
+    display: flex;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #000000;
+}
+
+#name_text{
+    
+    width: 300px;
+    height: 40px;
+    font-size: 36px;
+    z-index: 2;
+}
+
+#etc_text{
+
+    width: 300px;
+    height: 40px;
+    font-size: 36px;
+    z-index: 2;
 }

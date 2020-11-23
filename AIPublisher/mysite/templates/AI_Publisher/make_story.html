@@ -12,7 +12,7 @@
     <script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
     <title>Make Story</title>
 </head>
-<body onload="navbar_function();stepbar_move();nextstep_move()">
+<body onload="navbar_function();stepbar_move();nextstep_move();show_question();">
     <div class="BackGround" id="BackGround">
         <!--왼쪽 메뉴-->
         <div class="LeftSidebar" id="LeftSidebar">
@@ -43,7 +43,9 @@
 
         <!-- 1단계 -->
         <!-- 질문 -->
-        <div class="question_base" id="question_base"></div>
+        <div class="question_base" id="question_base">
+            <div class="question_base_text" id="question_base_text"></div>
+        </div>
 
         <!-- 2단계 -->
         <!-- 문장, base 축소 -->
@@ -71,10 +73,10 @@
 
         <!--왼쪽 카드 뭉치-->
         <div class="Select_Character_Card_Field" id="Select_Character_Card_Field">
-            <div class="Card_small_1" id="Card_small_1"></div>
-            <div class="Card_small_2" id="Card_small_2"></div>
-            <div class="Card_small_3" id="Card_small_3"></div>
-            <div class="Card_small_4" id="Card_small_4"></div>
+            <div class="Card_small_1" id="Card_small_1" style="background-image: url('../../static/img/characters/{{charList.0}}');"></div>
+            <div class="Card_small_2" id="Card_small_2" style="background-image: url('../../static/img/characters/{{charList.1}}');"></div>
+            <div class="Card_small_3" id="Card_small_3" style="background-image: url('../../static/img/characters/{{charList.2}}');"></div>
+            <div class="Card_small_4" id="Card_small_4" style="background-image: url('../../static/img/characters/{{charList.3}}');"></div>
         </div>
 
         <!--화면아래 초록색 바-->

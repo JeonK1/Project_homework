@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'set_char_option.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
+    <script type="text/javascript" src="../../static/char_option.js"></script>
     <script type="text/javascript" src="{% static 'navbar.js' %}"></script>
     <script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
     <title>set_character</title>
@@ -36,6 +37,31 @@
             <div class="user_icon_event" id="user_icon_event"></div>
             <div class="username" id="username"></div>
         </div>
+
+        <!--왼쪽 캐릭터 카드 메뉴-->
+        <div class="character_card" id="card1"></div>
+        <div class="character_card" id="card2"></div>
+        <div class="character_card" id="card3"></div>
+        <div class="character_card" id="card4"></div>
+
+        <!--왼쪽 캐릭터 카드 메뉴-->
+        <div class="main_card" id="set_card"></div>
+
+        <!--캐릭터 설정-->
+        <div class="card_option" id="option_box">인물 설정하기</div>
+        <div class="card_option" id="name">
+           이름: <input id="name_text" type="text" name="card_option" >
+        </div>
+        <div class="card_option" id="personality">성격: </div>
+        <div class="card_option" id="etc">
+            기타: <input id="etc_text" type="text" name="card_option" >
+        </div>
+        <form>
+        <div class="card_option" id="main_char" >
+            <label for="ck1">주인공: </label>
+            <input id="ck1" type="checkbox" name="card_option" style="zoom:3.0;" z-index="2">
+        </div>
+        </form>
 
         <!--계정 메뉴-->
         <div class="ID_Menu" id="ID_Menu">
