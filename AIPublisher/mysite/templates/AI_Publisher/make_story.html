@@ -3,18 +3,16 @@
 
 <html lang="ko">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'make_story.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
     <script type="text/javascript" src="{% static 'navbar.js' %}"></script>
-    <script type="text/javascript" src="{% static 'make_story_move.js' %}"></script>
-    <script src="{% static 'jquery-3.5.1.min.js' %}"></script>
-
+    <script type="text/javascript" src="{% static 'make_story.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
     <title>Make Story</title>
 </head>
-<body onload="navbar_function();make_story_move()">
+<body onload="navbar_function();stepbar_move();nextstep_move()">
     <div class="BackGround" id="BackGround">
         <!--왼쪽 메뉴-->
         <div class="LeftSidebar" id="LeftSidebar">
@@ -41,15 +39,11 @@
         </div>
 
         <!-- 텍스트 입력 -->
-        <input type="text" class="input_text_box" id="input_text_box"
-               style="font-size:40px;align-items: center;text-align: center;">
-
+        <input type="text" class="input_text_box" id="input_text_box">
 
         <!-- 1단계 -->
         <!-- 질문 -->
-        <div class="question_base" id="question_base">
-            <div class="question_text" id="question_text"></div>
-        </div>
+        <div class="question_base" id="question_base"></div>
 
         <!-- 2단계 -->
         <!-- 문장, base 축소 -->
@@ -117,6 +111,6 @@
             </div>
         </div>
 
-    </input>
+    </div>
 </body>
 </html>
