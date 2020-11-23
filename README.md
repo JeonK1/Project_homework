@@ -9,7 +9,7 @@
 ● 백동훈 [백엔드(GAN/KoNLPy)]<br>
 ● 박소연 [기획/디자인]<br>
 ● 전계원 [개발기획/서버구축]<br><br>
-<h2>개발을 위한 환경구축 </h2>
+<h2>개발을 위한 환경구축(for windows) </h2>
 1. clone 혹은 pull 받습니다.<br>
 2. install_venv를 실행킵니다. (venv가 자동으로 설치됩니다)<br>
  >> 주의 : virtualenv가 설치되어있어야합니다.<br>
@@ -33,5 +33,7 @@ python : python 3.7.6<br>
 <img src="/readme/dev_milestone.png" width=400/><br>
 <br><br>
 <h2>자료실</h2>
+<a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/Wordlist_1.xlsx?raw=true"> Wordlist_1.xlsx </a> (최종 업데이트 : 2020.11.20)<br>
 <a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/BGandChar.zip?raw=true"> 캐릭터/배경 소스 </a> (최종 업데이트 : 2020.11.12)<br>
+<a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/Char2.zip?raw=true"> 캐릭터 추가 소스 </a> (최종 업데이트 : 2020.11.20)<br>
 <a href="https://github.com//EatTheCode/Project_homework/blob/master/readme/AIPublisher_Development_Plan.pptx?raw=true"> 개발기획서 </a> (최종 업데이트 : 2020.10.28)<br>
