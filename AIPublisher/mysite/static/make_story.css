@@ -593,6 +593,7 @@
     height: 77px;
     left: 524px;
     top: 1045px;
+    z-index: 4;
 
     background: #C4C4C4;
     border-radius: 11px;

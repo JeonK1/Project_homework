@@ -362,7 +362,158 @@ function show_text(){
         }
     });
 }
-// 질문글 보여주기
+function question_small_move(){
+
+    $("#question_base_small").click(function(){
+        switch(count){
+            case 1:
+            case 2:
+                count = 0;
+                $("#question_base_text").html(expos.toString().replace(/,/g,'<br/>'))
+                $("#input_text").attr("disabled", true);
+                $('#input_text').val('');
+                $("#question_string_text").text('');
+
+                $("#RightSidebar").hide();
+                $("#camera").hide();
+                $("#question_string").hide();
+                $("#question_string_small").hide();
+                $("#question_base_small").hide();
+                $("#question_base").show();
+                break;
+
+            case 4:
+            case 5:
+                count = 3;
+                $("#question_base_text").html(compli.toString().replace(/,/g,'<br/>'))
+                $("#input_text").attr("disabled", true);
+                $('#input_text').val('');
+                $("#question_string_text").text('');
+
+                $("#RightSidebar").hide();
+                $("#camera").hide();
+                $("#question_string").hide();
+                $("#question_string_small").hide();
+                $("#question_base_small").hide();
+                $("#question_base").show();
+                break;
+
+            case 7:
+            case 8:
+                count = 6;
+                $("#question_base_text").html(crisis.toString().replace(/,/g,'<br/>'))
+                $("#input_text").attr("disabled", true);
+                $('#input_text').val('');
+                $("#question_string_text").text('');
+
+                $("#RightSidebar").hide();
+                $("#camera").hide();
+                $("#question_string").hide();
+                $("#question_string_small").hide();
+                $("#question_base_small").hide();
+                $("#question_base").show();
+                break;
+
+            case 10:
+            case 11:
+                count = 9;
+                $("#question_base_text").html(climax.toString().replace(/,/g,'<br/>'))
+                $("#input_text").attr("disabled", true);
+                $('#input_text').val('');
+                $("#question_string_text").text('');
+
+                $("#RightSidebar").hide();
+                $("#camera").hide();
+                $("#question_string").hide();
+                $("#question_string_small").hide();
+                $("#question_base_small").hide();
+                $("#question_base").show();
+                break;
+
+            case 13:
+            case 14:
+                count = 12;
+                $("#question_base_text").html(result.toString().replace(/,/g,'<br/>'))
+                $("#input_text").attr("disabled", true);
+                $('#input_text').val('');
+                $("#question_string_text").text('');
+
+                $("#RightSidebar").hide();
+                $("#camera").hide();
+                $("#question_string").hide();
+                $("#question_string_small").hide();
+                $("#question_base_small").hide();
+                $("#question_base").show();
+                break;
+        }
+    });
+
+    $("#question_string_small").click(function(){
+        switch(count){
+            case 2:
+                count = 1;
+                $("#question_string_small").hide();
+                $("#RightSidebar").hide();
+                $("#camera").hide();
+
+                $("#input_text").attr("disabled", false);
+                $("#question_base").hide();
+                $("#question_string").show();
+                $("#question_base_small").show();
+                $("#question_string_text").text(arrtext[0].toString().replace(/,/g," "));
+                break;
+            case 5:
+                count = 4;
+                $("#question_string_small").hide();
+                $("#RightSidebar").hide();
+                $("#camera").hide();
+
+                $("#input_text").attr("disabled", false);
+                $("#question_base").hide();
+                $("#question_string").show();
+                $("#question_base_small").show();
+                $("#question_string_text").text(arrtext[1].toString().replace(/,/g," "));
+                break;
+            case 8:
+                count = 7;
+                $("#question_string_small").hide();
+                $("#RightSidebar").hide();
+                $("#camera").hide();
+
+                $("#input_text").attr("disabled", false);
+                $("#question_base").hide();
+                $("#question_string").show();
+                $("#question_base_small").show();
+                $("#question_string_text").text(arrtext[2].toString().replace(/,/g," "));
+                break;
+            case 11:
+                count = 10;
+                $("#question_string_small").hide();
+                $("#RightSidebar").hide();
+                $("#camera").hide();
+
+                $("#input_text").attr("disabled", false);
+                $("#question_base").hide();
+                $("#question_string").show();
+                $("#question_base_small").show();
+                $("#question_string_text").text(arrtext[3].toString().replace(/,/g," "));
+                break;
+            case 14:
+                count = 13;
+                $("#question_string_small").hide();
+                $("#RightSidebar").hide();
+                $("#camera").hide();
+
+                $("#input_text").attr("disabled", false);
+                $("#question_base").hide();
+                $("#question_string").show();
+                $("#question_base_small").show();
+                $("#question_string_text").text(arrtext[4].toString().replace(/,/g," "));
+                break;
+            }
+
+    });
+}
 
 // 등장인물 배치하기
 
