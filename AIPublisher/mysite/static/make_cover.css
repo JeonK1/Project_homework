@@ -100,6 +100,30 @@
 
 
 /* Frame 1 */
+/* Frame 1 */
+#input_text_box {
+    position: absolute;
+    width: 1385px;
+    height: 65px;
+    left: 341px;
+    top: 1128px;
+
+    border: 3px solid #000000;
+
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #000000
+}
+
+/* Frame 1 */
 #input_text_box {
     position: absolute;
     width: 1385px;
@@ -109,6 +133,26 @@
     z-index: 3;
 
     border: 3px solid #000000;
+
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #000000
+}
+
+/* Frame 1 */
+#input_text {
+    position: absolute;
+    width: 1379px;
+    height: 61px;
+    z-index: 3;
 
     font-weight: normal;
     font-size: 36px;
@@ -134,7 +178,27 @@
     top: 303px;
 
     background: rgba(196, 196, 196, 0.49);
-    filter: blur(4px);
+
+}
+
+#Cover_text {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 0;
+    bottom: 500px;
+
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 150%;
+    /* or 54px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
+
+    color: #000000;
 }
 
 /* Group 26 */

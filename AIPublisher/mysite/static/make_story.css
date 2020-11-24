@@ -525,13 +525,13 @@
 
 #question_base_text {
     position: absolute;
-    left: 5%;
-    right: 0%;
+    left: 2%;
+    right: 2%;
     top: 0;
     bottom: 0;
 
     font-weight: bold;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 150%;
     /* or 54px */
     display: flex;
@@ -568,8 +568,8 @@
 
 #question_string_text{
     position: absolute;
-    left: 5%;
-    right: 0%;
+    left: 2%;
+    right: 2%;
     top: 0;
     bottom: 0;
 
