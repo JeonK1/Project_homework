@@ -611,6 +611,65 @@
     background: url("img/camera.png");
 
 }
+#Select_Ground_Card_Field {
+    position: absolute;
+    width: 99px;
+    height: 606px;
+    left: 1794px;
+}
 
+
+/* Ground_small */
+#Ground_small_1 {
+    position: absolute;
+    width: 132px;
+    height: 99px;
+    top: 425px;
+
+    background: #C4C4C4;
+    background-size : cover;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+
+/* Ground_small */
+#Ground_small_2 {
+    position: absolute;
+    width: 132px;
+    height: 99px;
+    top: 560px;
+
+    background: #C4C4C4;
+    background-size : cover;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+/* Ground_small */
+#Ground_small_3 {
+    position: absolute;
+    width: 132px;
+    height: 99px;
+    top: 695px;
+
+    background: #C4C4C4;
+    background-size : cover;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+/* Ground_small */
+#Ground_small_4 {
+    position: absolute;
+    width: 132px;
+    height: 99px;
+    top: 830px;
+
+    background: #C4C4C4;
+    background-size : cover;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
 
 
