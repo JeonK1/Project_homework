@@ -11,6 +11,10 @@
     <script type="text/javascript" src="{% static 'set_relation.js' %}"></script>
     <script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
     <title>set_relation</title>
+    <!-- post values -->
+    <form method='post' action='/AI_Publisher/make_story/' target=_self style="display: none;" name="sendJson" id="sendJson">
+        <input type='hidden' name='jsonData' id='jsonData' value=""/>
+    </form>
 </head>
 <body onload="navbar_function();">
     <!--배경 및 프레임-->
@@ -29,9 +33,10 @@
 
         <!--다음 버튼-->
         <!--Todo : 나중에 5개 다 안채웠는데 넘어갈려고하면 막아줘야함-->
-        <a href="/AI_Publisher/make_story/" target=_self>
-            <div class="next_step" id="next_step"></div>
-        </a>
+        <div class="next_step" id="next_step" onclick="sendToNextPage();"></div>
+        <!--<a href="/AI_Publisher/make_story/" target=_self>-->
+            <!--<div class="next_step" id="next_step"></div>-->
+        <!--</a>-->
 
 
         <!--네비게이션 바-->

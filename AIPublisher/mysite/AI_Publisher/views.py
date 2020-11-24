@@ -4,7 +4,7 @@ from django.views.generic import ListView
 from .models import CharList
 from .models import BookTextList
 from .models import BookContetnsList
-
+import json
 
 def index(request):
     return render(request, 'AI_Publisher/login_page.html')
@@ -43,14 +43,19 @@ def make_cover(request):
 #         return context
 
 def make_story(request):
-    # charList = CharList.objects
-    bookTextList = BookTextList.objects
-    # bookContetnsList = BookContetnsList.objects
-    charList = ["1.jpg", "2.jpeg", "3.jpg", "4.jpg"]
-    bookContetnsList = ["1.png", "2.png", "3.png", "4.png"]
-    return render(request, 'AI_Publisher/make_story.html', {'charList' : charList,
-                                                            'bookTextList' : bookTextList,
-                                                            'bookContetnsList' : bookContetnsList})
+    if request.method == 'POST':
+        message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
+        getjson = json.loads(message) #Json 풀어주기
+        return render(request, 'AI_Publisher/make_story.html', {'getJSONData' : getjson})
+    else:
+        # charList = CharList.objects
+        bookTextList = BookTextList.objects
+        # bookContetnsList = BookContetnsList.objects
+        charList = ["1.jpg", "2.jpeg", "3.jpg", "4.jpg"]
+        bookContetnsList = ["1.png", "2.png", "3.png", "4.png"]
+        return render(request, 'AI_Publisher/make_story.html', {'charList' : charList,
+                                                                'bookTextList' : bookTextList,
+                                                                'bookContetnsList' : bookContetnsList})
 
 
 # def set_relation(request):

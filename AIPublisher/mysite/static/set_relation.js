@@ -51,3 +51,27 @@ function sendSubChar(num){
     query = "url('" + bgImageUrl + "')";
     document.getElementById('character_sub').style.backgroundImage = query;
 }
+
+function sendToNextPage(){
+
+    var arrCharacter = new Array();
+    for(i=1;i<=4; i++){
+        charIdName = "character_"+i;
+        bgImageUrl = document.getElementById(charIdName).style.backgroundImage.slice(4, -1).replace(/"/g, "");
+        arrCharacter.push(bgImageUrl);
+    }
+
+    var arrRelation = new Array();
+    for(i=0; i<5; i++){
+        arrRelation.push(relationList[i]);
+    }
+
+    var jsonObject = new Object();
+    jsonObject.charList = arrCharacter;
+    jsonObject.relList = arrRelation;
+    var jsonData = JSON.stringify(jsonObject);
+    console.log(jsonData);
+
+    document.getElementById("jsonData").value = jsonData;
+    document.getElementById("sendJson").submit();
+}
