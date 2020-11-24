@@ -53,7 +53,7 @@ def make_story(request):
         # bookContetnsList = BookContetnsList.objects
         charList = ["1.jpg", "2.jpeg", "3.jpg", "4.jpg"]
         bookContetnsList = ["1.png", "2.png", "3.png", "4.png"]
-        return render(request, 'AI_Publisher/make_story.html', {'charList' : charList,
+        return render(request, 'AI_Publisher/make_story.html', {'getJSONData' : charList,
                                                                 'bookTextList' : bookTextList,
                                                                 'bookContetnsList' : bookContetnsList})
 
@@ -71,6 +71,8 @@ def set_relation(request):
                                                               'card_pos':card_pos,
                                                               'card_neu':card_neu,
                                                               'card_neg':card_neg})
+def get_relation_keyprob(request):
+    return render(request, 'AI_Publisher/get_relation_keyprob.html')
 
 def set_character(request):
     return render(request, 'AI_Publisher/set_character.html')
