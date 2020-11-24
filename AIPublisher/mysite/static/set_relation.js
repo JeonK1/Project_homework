@@ -53,7 +53,6 @@ function sendSubChar(num){
 }
 
 function sendToNextPage(){
-
     var arrCharacter = new Array();
     for(i=1;i<=4; i++){
         charIdName = "character_"+i;
