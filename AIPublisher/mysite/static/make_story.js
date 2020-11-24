@@ -7,6 +7,10 @@ for(var i = 0; i < arrtext.length; i++){
     arrtext[i] = new Array()
 }
 
+// 사용자가 적용한 배경 저장
+var arrback = new Array(5);
+
+
 // 주인공, 배경, 사건, 상대, 감정1, 감정2, 감정3, 감정4, 감정5
 // 여기서 받으면 될듯
 var hero = "이기철";
@@ -49,6 +53,7 @@ function nextstep_move() {
         count += 1;
         switch (count) {
             case 1:
+                $( "#Field" ).css( "background-image", "");
                 $("#input_text").attr("disabled", false);
                 $("#question_base").hide();
                 $("#question_string").show();
@@ -56,6 +61,7 @@ function nextstep_move() {
                 $("#question_string_text").text(arrtext[0].toString().replace(/,/g," "));
                 break;
             case 2:
+                $( "#Field" ).css( "background-image", arrback[0]);
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
                 $("#question_string_text").text('');
@@ -70,6 +76,7 @@ function nextstep_move() {
                 $("#STEP_1").css("box-shadow", '0px 0px 0px');
                 $("#STEP_2").css("background-color", "#FFFFFF");
                 $("#STEP_2").css("box-shadow", '0 4px 4px #888');
+                $( "#Field" ).css( "background-image", "");
 
                 $("#question_base_text").html(compli.toString().replace(/,/g,'<br/>'))
 
@@ -81,6 +88,7 @@ function nextstep_move() {
                 $("#question_base").show();
                 break;
             case 4:
+                $( "#Field" ).css( "background-image", "");
                 $("#input_text").attr("disabled", false);
                 $("#question_base").hide();
                 $("#question_string").show();
@@ -88,6 +96,7 @@ function nextstep_move() {
                 $("#question_string_text").text(arrtext[1].toString().replace(/,/g," "));
                 break;
             case 5:
+                $( "#Field" ).css( "background-image", arrback[1]);
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
                 $("#question_string_text").text('');
@@ -102,6 +111,7 @@ function nextstep_move() {
                 $("#STEP_2").css("box-shadow", '0px 0px 0px');
                 $("#STEP_3").css("background-color", "#FFFFFF");
                 $("#STEP_3").css("box-shadow", '0 4px 4px #888');
+                $( "#Field" ).css( "background-image", "");
 
                 $("#question_base_text").html(crisis.toString().replace(/,/g,'<br/>'))
 
@@ -113,6 +123,7 @@ function nextstep_move() {
                 $("#question_base").show();
                 break;
             case 7:
+                $( "#Field" ).css( "background-image", "");
                 $("#input_text").attr("disabled", false);
                 $("#question_base").hide();
                 $("#question_string").show();
@@ -120,6 +131,7 @@ function nextstep_move() {
                 $("#question_string_text").text(arrtext[2].toString().replace(/,/g," "));
                 break;
             case 8:
+                $( "#Field" ).css( "background-image", arrback[2]);
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
                 $("#question_string_text").text('');
@@ -134,6 +146,7 @@ function nextstep_move() {
                 $("#STEP_3").css("box-shadow", '0px 0px 0px');
                 $("#STEP_4").css("background-color", "#FFFFFF");
                 $("#STEP_4").css("box-shadow", '0 4px 4px #888');
+                $( "#Field" ).css( "background-image", "");
 
                 $("#question_base_text").html(climax.toString().replace(/,/g,'<br/>'))
 
@@ -145,6 +158,7 @@ function nextstep_move() {
                 $("#question_base").show();
                 break;
             case 10:
+                $( "#Field" ).css( "background-image", "");
                 $("#input_text").attr("disabled", false);
                 $("#question_base").hide();
                 $("#question_string").show();
@@ -152,6 +166,7 @@ function nextstep_move() {
                 $("#question_string_text").text(arrtext[3].toString().replace(/,/g," "));
                 break;
             case 11:
+                $( "#Field" ).css( "background-image", arrback[3]);
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
                 $("#question_string_text").text('');
@@ -166,6 +181,7 @@ function nextstep_move() {
                 $("#STEP_4").css("box-shadow", '0px 0px 0px');
                 $("#STEP_5").css("background-color", "#FFFFFF");
                 $("#STEP_5").css("box-shadow", '0 4px 4px #888');
+                $( "#Field" ).css( "background-image", "");
 
                 $("#question_base_text").html(result.toString().replace(/,/g,'<br/>'))
 
@@ -177,6 +193,7 @@ function nextstep_move() {
                 $("#question_base").show();
                 break;
             case 13:
+                $( "#Field" ).css( "background-image", "");
                 $("#input_text").attr("disabled", false);
                 $("#question_base").hide();
                 $("#question_string").show();
@@ -184,6 +201,7 @@ function nextstep_move() {
                 $("#question_string_text").text(arrtext[4].toString().replace(/,/g," "));
                 break;
             case 14:
+                $( "#Field" ).css( "background-image", arrback[4]);
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
                 $("#question_string_text").text('');
@@ -215,6 +233,7 @@ function stepbar_move(){
         $("#STEP_4").css("box-shadow",'0px 0px 0px');
         $("#STEP_5").css("background-color","#D6ECD7");
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
+        $( "#Field" ).css( "background-image", "");
 
 
         $("#question_base_text").html(expos.toString().replace(/,/g,'<br/>'))
@@ -244,6 +263,7 @@ function stepbar_move(){
         $("#STEP_4").css("box-shadow",'0px 0px 0px');
         $("#STEP_5").css("background-color","#D6ECD7");
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
+        $( "#Field" ).css( "background-image", "");
 
         $("#question_base_text").html(compli.toString().replace(/,/g,'<br/>'))
         $("#input_text").attr("disabled", true);
@@ -272,6 +292,7 @@ function stepbar_move(){
         $("#STEP_4").css("box-shadow",'0px 0px 0px');
         $("#STEP_5").css("background-color","#D6ECD7");
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
+        $( "#Field" ).css( "background-image", "");
 
         $("#question_base_text").html(crisis.toString().replace(/,/g,'<br/>'))
         $("#input_text").attr("disabled", true);
@@ -300,6 +321,7 @@ function stepbar_move(){
         $("#STEP_4").css("box-shadow",'0 4px 4px #888');
         $("#STEP_5").css("background-color","#D6ECD7");
         $("#STEP_5").css("box-shadow",'0px 0px 0px');
+        $( "#Field" ).css( "background-image", "");
 
         $("#question_base_text").html(climax.toString().replace(/,/g,'<br/>'))
         $("#input_text").attr("disabled", true);
@@ -328,6 +350,7 @@ function stepbar_move(){
         $("#STEP_4").css("box-shadow",'0px 0px 0px');
         $("#STEP_5").css("background-color","#FFFFFF");
         $("#STEP_5").css("box-shadow",'0 4px 4px #888');
+        $( "#Field" ).css( "background-image", "");
 
         $("#question_base_text").html(result.toString().replace(/,/g,'<br/>'))
         $("#input_text").attr("disabled", true);
@@ -385,6 +408,7 @@ function question_small_move(){
             case 1:
             case 2:
                 count = 0;
+                $( "#Field" ).css( "background-image", "");
                 $("#question_base_text").html(expos.toString().replace(/,/g,'<br/>'))
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
@@ -402,6 +426,7 @@ function question_small_move(){
             case 4:
             case 5:
                 count = 3;
+                $( "#Field" ).css( "background-image", "");
                 $("#question_base_text").html(compli.toString().replace(/,/g,'<br/>'))
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
@@ -419,6 +444,7 @@ function question_small_move(){
             case 7:
             case 8:
                 count = 6;
+                $( "#Field" ).css( "background-image", "");
                 $("#question_base_text").html(crisis.toString().replace(/,/g,'<br/>'))
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
@@ -436,6 +462,7 @@ function question_small_move(){
             case 10:
             case 11:
                 count = 9;
+                $( "#Field" ).css( "background-image", "");
                 $("#question_base_text").html(climax.toString().replace(/,/g,'<br/>'))
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
@@ -453,6 +480,7 @@ function question_small_move(){
             case 13:
             case 14:
                 count = 12;
+                $( "#Field" ).css( "background-image", "");
                 $("#question_base_text").html(result.toString().replace(/,/g,'<br/>'))
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
@@ -473,6 +501,7 @@ function question_small_move(){
         switch(count){
             case 2:
                 count = 1;
+                $( "#Field" ).css( "background-image", "");
                 $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#RightSidebar").hide();
@@ -486,6 +515,7 @@ function question_small_move(){
                 break;
             case 5:
                 count = 4;
+                $( "#Field" ).css( "background-image", "");
                 $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#RightSidebar").hide();
@@ -499,6 +529,7 @@ function question_small_move(){
                 break;
             case 8:
                 count = 7;
+                $( "#Field" ).css( "background-image", "");
                 $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#RightSidebar").hide();
@@ -512,6 +543,7 @@ function question_small_move(){
                 break;
             case 11:
                 count = 10;
+                $( "#Field" ).css( "background-image", "");
                 $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#RightSidebar").hide();
@@ -525,6 +557,7 @@ function question_small_move(){
                 break;
             case 14:
                 count = 13;
+                $( "#Field" ).css( "background-image", "");
                 $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#RightSidebar").hide();
@@ -543,3 +576,40 @@ function question_small_move(){
 
 // 등장인물 배치하기
 
+// 배경 만들기
+function select_background(){
+    var remain = 0;
+    var quotie = 0;
+    var sum = 0; // 0~4 까지 어디에 넣는 배경인지
+    $("#Ground_small_1").click(function () {
+        remain = parseInt(count / 3);
+        quotie = count % 3;
+        sum = remain + quotie - 2;
+        $( "#Field" ).css( "background-image",($( "#Ground_small_1" ).css( "background-image" )));
+        arrback[sum] = $( "#Ground_small_1" ).css( "background-image" );
+    });
+
+    $("#Ground_small_2").click(function () {
+        remain = parseInt(count / 3);
+        quotie = count % 3;
+        sum = remain + quotie - 2;
+        $( "#Field" ).css( "background-image",($( "#Ground_small_2" ).css( "background-image" )));
+        arrback[sum] = $( "#Ground_small_2" ).css( "background-image" );
+    });
+
+    $("#Ground_small_3").click(function () {
+        remain = parseInt(count / 3);
+        quotie = count % 3;
+        sum = remain + quotie - 2;
+        $( "#Field" ).css( "background-image",($( "#Ground_small_3" ).css( "background-image" )));
+        arrback[sum] = $( "#Ground_small_3" ).css( "background-image" );
+    });
+
+    $("#Ground_small_4").click(function () {
+        remain = parseInt(count / 3);
+        quotie = count % 3;
+        sum = remain + quotie - 2;
+        $( "#Field" ).css( "background-image",($( "#Ground_small_4" ).css( "background-image" )));
+        arrback[sum] = $( "#Ground_small_4" ).css( "background-image" );
+    });
+}
