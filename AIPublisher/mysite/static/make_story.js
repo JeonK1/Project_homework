@@ -37,6 +37,8 @@ var result = new Array("- 왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]
 function nextstep_move() {
     // 0-2 발단, 3-5 전개, 6-8 위기, 9-11 절정, 12-14 결말
     $("#question_base_text").html(expos.toString().replace(/,/g,'<br/>'));
+
+    $("#Select_Ground_Card_Field").hide();
     $("#question_string").hide();
     $("#question_string_small").hide();
     $("#question_base_small").hide();
@@ -58,6 +60,7 @@ function nextstep_move() {
                 $('#input_text').val('');
                 $("#question_string_text").text('');
                 $("#question_string").hide();
+                $("#Select_Ground_Card_Field").show();
                 $("#question_string_small").show();
                 $("#RightSidebar").show();
                 $("#camera").show();
@@ -72,6 +75,7 @@ function nextstep_move() {
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
+                $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#question_base_small").hide();
                 $("#question_base").show();
@@ -88,6 +92,7 @@ function nextstep_move() {
                 $('#input_text').val('');
                 $("#question_string_text").text('');
                 $("#question_string").hide();
+                $("#Select_Ground_Card_Field").show();
                 $("#question_string_small").show();
                 $("#RightSidebar").show();
                 $("#camera").show();
@@ -102,6 +107,7 @@ function nextstep_move() {
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
+                $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#question_base_small").hide();
                 $("#question_base").show();
@@ -118,6 +124,7 @@ function nextstep_move() {
                 $('#input_text').val('');
                 $("#question_string_text").text('');
                 $("#question_string").hide();
+                $("#Select_Ground_Card_Field").show();
                 $("#question_string_small").show();
                 $("#RightSidebar").show();
                 $("#camera").show();
@@ -132,6 +139,7 @@ function nextstep_move() {
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
+                $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#question_base_small").hide();
                 $("#question_base").show();
@@ -148,6 +156,7 @@ function nextstep_move() {
                 $('#input_text').val('');
                 $("#question_string_text").text('');
                 $("#question_string").hide();
+                $("#Select_Ground_Card_Field").show();
                 $("#question_string_small").show();
                 $("#RightSidebar").show();
                 $("#camera").show();
@@ -162,6 +171,7 @@ function nextstep_move() {
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
+                $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#question_base_small").hide();
                 $("#question_base").show();
@@ -178,6 +188,7 @@ function nextstep_move() {
                 $('#input_text').val('');
                 $("#question_string_text").text('');
                 $("#question_string").hide();
+                $("#Select_Ground_Card_Field").show();
                 $("#question_string_small").show();
                 $("#RightSidebar").show();
                 $("#camera").show();
@@ -210,6 +221,7 @@ function stepbar_move(){
         $("#input_text").attr("disabled", true);
         $('#input_text').val('');
         $("#question_string_text").text('');
+        $("#Select_Ground_Card_Field").hide();
 
         $("#RightSidebar").hide();
         $("#camera").hide();
@@ -237,6 +249,7 @@ function stepbar_move(){
         $("#input_text").attr("disabled", true);
         $('#input_text').val('');
         $("#question_string_text").text('');
+        $("#Select_Ground_Card_Field").hide();
 
         $("#RightSidebar").hide();
         $("#camera").hide();
@@ -264,6 +277,7 @@ function stepbar_move(){
         $("#input_text").attr("disabled", true);
         $('#input_text').val('');
         $("#question_string_text").text('');
+        $("#Select_Ground_Card_Field").hide();
 
         $("#RightSidebar").hide();
         $("#camera").hide();
@@ -291,6 +305,7 @@ function stepbar_move(){
         $("#input_text").attr("disabled", true);
         $('#input_text').val('');
         $("#question_string_text").text('');
+        $("#Select_Ground_Card_Field").hide();
 
         $("#RightSidebar").hide();
         $("#camera").hide();
@@ -318,6 +333,7 @@ function stepbar_move(){
         $("#input_text").attr("disabled", true);
         $('#input_text').val('');
         $("#question_string_text").text('');
+        $("#Select_Ground_Card_Field").hide();
 
         $("#RightSidebar").hide();
         $("#camera").hide();
@@ -373,6 +389,7 @@ function question_small_move(){
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
                 $("#question_string_text").text('');
+                $("#Select_Ground_Card_Field").hide();
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -389,6 +406,7 @@ function question_small_move(){
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
                 $("#question_string_text").text('');
+                $("#Select_Ground_Card_Field").hide();
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -405,6 +423,7 @@ function question_small_move(){
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
                 $("#question_string_text").text('');
+                $("#Select_Ground_Card_Field").hide();
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -421,6 +440,7 @@ function question_small_move(){
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
                 $("#question_string_text").text('');
+                $("#Select_Ground_Card_Field").hide();
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -437,6 +457,7 @@ function question_small_move(){
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
                 $("#question_string_text").text('');
+                $("#Select_Ground_Card_Field").hide();
 
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -452,6 +473,7 @@ function question_small_move(){
         switch(count){
             case 2:
                 count = 1;
+                $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -464,6 +486,7 @@ function question_small_move(){
                 break;
             case 5:
                 count = 4;
+                $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -476,6 +499,7 @@ function question_small_move(){
                 break;
             case 8:
                 count = 7;
+                $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -488,6 +512,7 @@ function question_small_move(){
                 break;
             case 11:
                 count = 10;
+                $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#RightSidebar").hide();
                 $("#camera").hide();
@@ -500,6 +525,7 @@ function question_small_move(){
                 break;
             case 14:
                 count = 13;
+                $("#Select_Ground_Card_Field").hide();
                 $("#question_string_small").hide();
                 $("#RightSidebar").hide();
                 $("#camera").hide();
