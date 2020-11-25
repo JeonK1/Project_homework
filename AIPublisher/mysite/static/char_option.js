@@ -25,14 +25,13 @@ function setCard(){
         }
     }
     var objImg = document.getElementById("set_card");
-    console.log(objImg)
-    objImg.src = ImgArray[0];
-    console.log(objImg.src)
+
     console.log(ImgArray)
     console.log(check)
 
     $("#card1").click(function() {
         var x;
+        objImg.style.backgroundImage = "url('"+ImgArray[0]+"')";
         for(var i=0; i<check.length;i++){
             if(check[i]){
                 x = i;
@@ -47,7 +46,7 @@ function setCard(){
         character[x][1]=document.getElementById("name_text").value;
         character[x][2]="성격들어갈 자리"
         character[x][3]=document.getElementById("etc_text").value;
-        if($(ck1).is(":checked") == true) {// 주인공은 1명만 가능합니다.
+        if($('input:checkbox[id="ck1"]').is(":checked") == true) {// 주인공은 1명만 가능합니다.
             for(i=0;i<4;i++)
             {
                 character[i][4] = false;
@@ -59,9 +58,9 @@ function setCard(){
         document.getElementById("set_card").style.backgroundImage = ImgArray[0];
         document.getElementById("name_text").value = "";
         document.getElementById("etc_text").value = "";
-        if($(ck1).is(":checked") == true)
+        if($('input:checkbox[id="ck1"]').is(":checked") == true)
         {
-            $(ck1).is(":checked").attr( 'checked', false );
+            $('input:checkbox[id="ck1"]').attr( 'checked', false );
         }
         check[x]=false;
         check2[x]=true;
@@ -71,7 +70,7 @@ function setCard(){
             document.getElementById("name_text").value = character[0][1];
             document.getElementById("etc_text").value = character[0][3];
             if(character[0][4]){
-                $(ck1).is(":checked").attr( 'checked', true );
+                $('input:checkbox[id="ck1"]').attr( 'checked', false );
             }
 
         }
@@ -79,6 +78,7 @@ function setCard(){
 
     $("#card2").click(function() {
         var x;
+        objImg.style.backgroundImage = "url('"+ImgArray[0]+"')";
         for(var i=0; i<check.length;i++){
             if(check[i]){
                 x = i;
@@ -93,7 +93,7 @@ function setCard(){
         character[x][1]=document.getElementById("name_text").value;
         character[x][2]="성격들어갈 자리"
         character[x][3]=document.getElementById("etc_text").value;
-        if($(ck1).is(":checked") == true) {// 주인공은 1명만 가능합니다.
+        if($('input:checkbox[id="ck1"]').is(":checked") == true) {// 주인공은 1명만 가능합니다.
             for(i=0;i<4;i++)
             {
                 character[i][4] = false;
@@ -105,9 +105,9 @@ function setCard(){
         document.getElementById("set_card").style.backgroundImage = ImgArray[1];
         document.getElementById("name_text").value = "";
         document.getElementById("etc_text").value = "";
-        if($(ck1).is(":checked") == true)
+        if($('input:checkbox[id="ck1"]').is(":checked") == true)
         {
-            $(ck1).is(":checked").attr( 'checked', false );
+            $('input:checkbox[id="ck1"]').attr( 'checked', false );
         }
         check[x]=false;
         check2[x]=true;
@@ -117,7 +117,7 @@ function setCard(){
             document.getElementById("name_text").value = character[1][1];
             document.getElementById("etc_text").value = character[1][3];
             if(character[1][4]){
-                $(ck1).is(":checked").attr( 'checked', true );
+               $('input:checkbox[id="ck1"]').attr( 'checked', true );
             }
 
         }
@@ -125,6 +125,7 @@ function setCard(){
 
     $("#card3").click(function() {
         var x;
+        objImg.style.backgroundImage = "url('"+ImgArray[0]+"')";
         for(var i=0; i<check.length;i++){
             if(check[i]){
                 x = i;
@@ -139,7 +140,7 @@ function setCard(){
         character[x][1]=document.getElementById("name_text").value;
         character[x][2]="성격들어갈 자리"
         character[x][3]=document.getElementById("etc_text").value;
-        if($(ck1).is(":checked") == true) {// 주인공은 1명만 가능합니다.
+        if($('input:checkbox[id="ck1"]').is(":checked") == true) {// 주인공은 1명만 가능합니다.
             for(i=0;i<4;i++)
             {
                 character[i][4] = false;
@@ -151,9 +152,9 @@ function setCard(){
         document.getElementById("set_card").style.backgroundImage = ImgArray[2];
         document.getElementById("name_text").value = "";
         document.getElementById("etc_text").value = "";
-        if($(ck1).is(":checked") == true)
+        if($('input:checkbox[id="ck1"]').is(":checked") == true)
         {
-            $(ck1).is(":checked").attr( 'checked', false );
+            $('input:checkbox[id="ck1"]').attr( 'checked', false );
         }
         check[x]=false;
         check2[x]=true;
@@ -163,7 +164,7 @@ function setCard(){
             document.getElementById("name_text").value = character[2][1];
             document.getElementById("etc_text").value = character[2][3];
             if(character[2][4]){
-                $(ck1).is(":checked").attr( 'checked', true );
+                $('input:checkbox[id="ck1"]').attr( 'checked', true );
             }
 
         }
@@ -171,6 +172,7 @@ function setCard(){
 
     $("#card4").click(function() {
         var x;
+        objImg.style.backgroundImage = "url('"+ImgArray[0]+"')";
         for(var i=0; i<check.length;i++){
             if(check[i]){
                 x = i;
@@ -185,7 +187,7 @@ function setCard(){
         character[x][1]=document.getElementById("name_text").value;
         character[x][2]="성격들어갈 자리"
         character[x][3]=document.getElementById("etc_text").value;
-        if($(ck1).is(":checked") == true) {// 주인공은 1명만 가능합니다.
+        if($('input:checkbox[id="ck1"]').is(":checked") == true) {// 주인공은 1명만 가능합니다.
             for(i=0;i<4;i++)
             {
                 character[i][4] = false;
@@ -197,9 +199,9 @@ function setCard(){
         document.getElementById("set_card").style.backgroundImage = ImgArray[3];
         document.getElementById("name_text").value = "";
         document.getElementById("etc_text").value = "";
-        if($(ck1).is(":checked") == true)
+        if($('input:checkbox[id="ck1"]').is(":checked") == true)
         {
-            $(ck1).is(":checked").attr( 'checked', false );
+            $('input:checkbox[id="ck1"]').attr( 'checked', false );
         }
         check[x]=false;
         check2[x]=true;
@@ -209,7 +211,7 @@ function setCard(){
             document.getElementById("name_text").value = character[3][1];
             document.getElementById("etc_text").value = character[3][3];
             if(character[3][4]){
-                $(ck1).is(":checked").attr( 'checked', true );
+                $('input:checkbox[id="ck1"]').attr( 'checked', true );
             }
 
         }

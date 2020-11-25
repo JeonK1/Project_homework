@@ -17,24 +17,12 @@
 </head>
 <body>
     <div class="background" id="backGround">
-
         {% if user.is_anonymous %}
-        <div class="background" id="backGround">
             <div class="logo" id="mainlogo"></div>
             <div class="logo" id="logo">AI PUBLISHER</div>
-            <div id="naverIdLogin"><a href="http://127.0.0.1:8000/accounts/naver/login"></a></div>
-        </div>
-        {% endif %}
-        <div class="background" id="backGround">
-            <div class="shelf" id="shelf"></div>
-            <div class="gallery" id="gallery"></div>
-        </div>
-        {% if user.is_anonymous %}
-
+            <div id="naverIdLogin" onclick="location.href='http://127.0.0.1:8000/accounts/naver/login'"></div>
         {% else %}
-{#            <div class="make_story_sentence" id="make_str_sentence"><a href="http://127.0.0.1:8000/AI_Publisher/set_character">새 동화 만들기</a></div>#}
-            <div claas="make_story_box" id="make_str_box" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/set_character'"></div>
-{#        <div class="plus_square" id="plus_square"><a href="http://127.0.0.1:8000/AI_Publisher/set_character"></a></div>#}
+        <div claas="make_story_box" id="make_str_box" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/set_character'"></div>
         <div id="test"><a href="http://127.0.0.1:8000/accounts/logout/">{{user.email}}</a></div>
         <form action="http://127.0.0.1:8000/accounts/logout/" method="post">
             {% csrf_token %}
@@ -43,23 +31,7 @@
         </form>
         {% endif %}
 
-        <div class="bottom_bar" id="bottom_bar"></div>
+
     </div>
-
-    {% if user.is_anonymous %}
-	<!--<script type="text/javascript">
-	    var naverLogin = new naver.LoginWithNaverId(
-		    {
-			    clientId: "xXgo_JUs1mnL3JzJamfC",
-			    callbackUrl: "http://127.0.0.1:8000/accounts/naver/login",
-			    isPopup: false, /* 팝업을 통한 연동처리 여부 */
-			    loginButton: {color: "green", type: 3, height: 60} /* 로그인 버튼의 타입을 지정 */
-    		}
-    	);
-
-	    /* 설정정보를 초기화하고 연동을 준비 */
-	    naverLogin.init();
-    </script>-->
-    {% endif %}
 </body>
 </html>
