@@ -41,7 +41,6 @@ var result = new Array("- 왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]
 function nextstep_move() {
     // 0-2 발단, 3-5 전개, 6-8 위기, 9-11 절정, 12-14 결말
     $("#question_base_text").html(expos.toString().replace(/,/g,'<br/>'));
-
     $("#Select_Ground_Card_Field").hide();
     $("#question_string").hide();
     $("#question_string_small").hide();
@@ -61,6 +60,7 @@ function nextstep_move() {
                 $("#question_string_text").text(arrtext[0].toString().replace(/,/g," "));
                 break;
             case 2:
+                drag_character();
                 $( "#Field" ).css( "background-image", arrback[0]);
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
@@ -72,6 +72,7 @@ function nextstep_move() {
                 $("#camera").show();
                 break;
             case 3:
+                drag_character_stop();
                 $("#STEP_1").css("background-color", "#D6ECD7");
                 $("#STEP_1").css("box-shadow", '0px 0px 0px');
                 $("#STEP_2").css("background-color", "#FFFFFF");
@@ -96,6 +97,7 @@ function nextstep_move() {
                 $("#question_string_text").text(arrtext[1].toString().replace(/,/g," "));
                 break;
             case 5:
+                drag_character();
                 $( "#Field" ).css( "background-image", arrback[1]);
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
@@ -107,6 +109,7 @@ function nextstep_move() {
                 $("#camera").show();
                 break;
             case 6:
+                drag_character_stop();
                 $("#STEP_2").css("background-color", "#D6ECD7");
                 $("#STEP_2").css("box-shadow", '0px 0px 0px');
                 $("#STEP_3").css("background-color", "#FFFFFF");
@@ -131,6 +134,7 @@ function nextstep_move() {
                 $("#question_string_text").text(arrtext[2].toString().replace(/,/g," "));
                 break;
             case 8:
+                drag_character();
                 $( "#Field" ).css( "background-image", arrback[2]);
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
@@ -142,6 +146,7 @@ function nextstep_move() {
                 $("#camera").show();
                 break;
             case 9:
+                drag_character_stop();
                 $("#STEP_3").css("background-color", "#D6ECD7");
                 $("#STEP_3").css("box-shadow", '0px 0px 0px');
                 $("#STEP_4").css("background-color", "#FFFFFF");
@@ -166,6 +171,7 @@ function nextstep_move() {
                 $("#question_string_text").text(arrtext[3].toString().replace(/,/g," "));
                 break;
             case 11:
+                drag_character();
                 $( "#Field" ).css( "background-image", arrback[3]);
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
@@ -177,6 +183,7 @@ function nextstep_move() {
                 $("#camera").show();
                 break;
             case 12:
+                drag_character_stop();
                 $("#STEP_4").css("background-color", "#D6ECD7");
                 $("#STEP_4").css("box-shadow", '0px 0px 0px');
                 $("#STEP_5").css("background-color", "#FFFFFF");
@@ -201,6 +208,7 @@ function nextstep_move() {
                 $("#question_string_text").text(arrtext[4].toString().replace(/,/g," "));
                 break;
             case 14:
+                drag_character();
                 $( "#Field" ).css( "background-image", arrback[4]);
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
@@ -408,11 +416,16 @@ function question_small_move(){
             case 1:
             case 2:
                 count = 0;
+                // 배경 초기화
                 $( "#Field" ).css( "background-image", "");
+                // 질문
                 $("#question_base_text").html(expos.toString().replace(/,/g,'<br/>'))
+                // 텍스트 박스 비활성화 / 초기화
                 $("#input_text").attr("disabled", true);
                 $('#input_text').val('');
+                // 텍스트 입력 초기화
                 $("#question_string_text").text('');
+                // 배경 선택 숨기기
                 $("#Select_Ground_Card_Field").hide();
 
                 $("#RightSidebar").hide();
@@ -573,14 +586,82 @@ function question_small_move(){
 
     });
 }
-
 // 등장인물 배치하기
 function drag_character(){
+
+    var cloneElements = new Array(4);
+    cloneElements[0] = $('#Card_small_1').clone();
+    cloneElements[1] = $('#Card_small_2').clone();
+    cloneElements[2] = $('#Card_small_3').clone();
+    cloneElements[3] = $('#Card_small_4').clone();
+    // 변수 cloneElements를 만들어 복사된 요소들을 저장
+
+    for(var i = 0; i < cloneElements.length; i++)
+        cloneElements[i].appendTo('#Select_Character_Card_Field').css("z-index","1");
+
+
     $("#Card_small_1").draggable();
+    $("#Card_small_1").resizable({
+        //함께 커질영역
+        alsoResize: ".wrap-box",
+        animateDuration: 300,
+        animateEasing: "swing",
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true,
+        //minHeight, maxHeight, minWidth, maxWidth 최소,최대 크기지정
+    });
+
     $("#Card_small_2").draggable();
+    $("#Card_small_2").resizable({
+        //함께 커질영역
+        alsoResize: ".wrap-box",
+        animateDuration: 300,
+        animateEasing: "swing",
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true,
+        //minHeight, maxHeight, minWidth, maxWidth 최소,최대 크기지정
+    });
     $("#Card_small_3").draggable();
+    $("#Card_small_3").resizable({
+        //함께 커질영역
+        alsoResize: ".wrap-box",
+        animateDuration: 300,
+        animateEasing: "swing",
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true,
+        //minHeight, maxHeight, minWidth, maxWidth 최소,최대 크기지정
+    });
     $("#Card_small_4").draggable();
+    $("#Card_small_4").resizable({
+        //함께 커질영역
+        alsoResize: ".wrap-box",
+        animateDuration: 300,
+        animateEasing: "swing",
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true,
+        //minHeight, maxHeight, minWidth, maxWidth 최소,최대 크기지정
+    });
 }
+function drag_character_stop() {
+    $("#Card_small_1").draggable({ disabled: true });
+    $("#Card_small_1").resizable({ disabled: true });
+    $("#Card_small_2").draggable({ disabled: true });
+    $("#Card_small_2").resizable({ disabled: true });
+    $("#Card_small_3").draggable({ disabled: true });
+    $("#Card_small_3").resizable({ disabled: true });
+    $("#Card_small_4").draggable({ disabled: true });
+    $("#Card_small_4").resizable({ disabled: true });
+}
+
+
 // 배경 만들기
 function select_background(){
     var remain = 0;
