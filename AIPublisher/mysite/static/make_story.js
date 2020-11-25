@@ -575,7 +575,12 @@ function question_small_move(){
 }
 
 // 등장인물 배치하기
-
+function drag_character(){
+    $("#Card_small_1").draggable();
+    $("#Card_small_2").draggable();
+    $("#Card_small_3").draggable();
+    $("#Card_small_4").draggable();
+}
 // 배경 만들기
 function select_background(){
     var remain = 0;

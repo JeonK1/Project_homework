@@ -445,6 +445,7 @@
     width: 99px;
     height: 132px;
     top: 438px;
+    z-index: 2;
 
     background: #C4C4C4;
     background-size : cover;
@@ -459,6 +460,7 @@
     width: 99px;
     height: 132px;
     top: 596px;
+    z-index: 2;
 
     background: #C4C4C4;
     background-size : cover;
@@ -472,6 +474,7 @@
     width: 99px;
     height: 132px;
     top: 754px;
+    z-index: 2;
 
     background: #C4C4C4;
     background-size : cover;
@@ -485,6 +488,7 @@
     width: 99px;
     height: 132px;
     top: 912px;
+    z-index: 2;
 
     background: #C4C4C4;
     background-size : cover;
