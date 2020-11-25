@@ -19,15 +19,18 @@
     <div class="background" id="backGround">
 
         {% if user.is_anonymous %}
-        <div class="logo" id="Logo">AI PUBLISHER</div>
-        <div id="naverIdLogin"><a href="http://127.0.0.1:8000/accounts/naver/login"><img src="../../static/img/naver_login.PNG" width="400" height="60"></a></div>
+        <div class="background" id="backGround">
+            <div class="logo" id="mainlogo"></div>
+            <div class="logo" id="logo">AI PUBLISHER</div>
+            <div id="naverIdLogin"><a href="http://127.0.0.1:8000/accounts/naver/login"></a></div>
+        </div>
         {% endif %}
-
-        <div class="shelf" id="shelf"></div>
-        <div class="gallery" id="gallery"></div>
-
+        <div class="background" id="backGround">
+            <div class="shelf" id="shelf"></div>
+            <div class="gallery" id="gallery"></div>
+        </div>
         {% if user.is_anonymous %}
-        <div class="cactus" id="cactus"></div>
+
         {% else %}
 {#            <div class="make_story_sentence" id="make_str_sentence"><a href="http://127.0.0.1:8000/AI_Publisher/set_character">새 동화 만들기</a></div>#}
             <div claas="make_story_box" id="make_str_box" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/set_character'"></div>
