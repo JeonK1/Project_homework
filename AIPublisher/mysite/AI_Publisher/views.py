@@ -69,11 +69,19 @@ def set_relation(request):
     card_neu = ['모르는 사이', '애매한듯']
     card_neg = ['사이안좋음', '아주 안좋아요', '약간 안좋아요']
 
-    return render(request, 'AI_Publisher/set_relation.html', {'charList' : charList,
-                                                              'charMain':charMain,
-                                                              'card_pos':card_pos,
-                                                              'card_neu':card_neu,
-                                                              'card_neg':card_neg})
+    if request.method == 'POST':
+        message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
+        getjson = json.loads(message) #Json 풀어주기
+        return render(request, 'AI_Publisher/make_story.html', {'getJSONData' : getjson,
+                                                                'card_pos': card_pos,
+                                                                'card_neu': card_neu,
+                                                                'card_neg': card_neg})
+    else:
+        return render(request, 'AI_Publisher/set_relation.html', {'charList' : charList,
+                                                                  'charMain':charMain,
+                                                                  'card_pos':card_pos,
+                                                                  'card_neu':card_neu,
+                                                                  'card_neg':card_neg})
 def get_relation_keyprob(request):
     return render(request, 'AI_Publisher/get_relation_keyprob.html')
 

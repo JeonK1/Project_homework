@@ -53,7 +53,7 @@ function setCard(){
         document.getElementById("etc_text").value = "";
         if($("input:checkbox[id='ck1']").is(":checked") == true)
         {
-            $( "input:checkbox[id='ck1']" ).attr( 'checked', false );
+            $( "input:checkbox[id='ck1']" ).attr('checked', false );
         }
         check[x]=false;
         check2[x]=true;
