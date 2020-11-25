@@ -78,7 +78,12 @@ def set_character(request):
     return render(request, 'AI_Publisher/set_character.html')
 
 def set_char_option(request):
-    return render(request, 'AI_Publisher/set_char_option.html')
+
+    message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
+    getjson = json.loads(message) #Json 풀어주기
+
+    return render(request, 'AI_Publisher/set_char_option.html', {'getJSONData' : getjson})
+
 
 def show_gallery(request):
     return render(request, 'AI_Publisher/show_gallery.html')

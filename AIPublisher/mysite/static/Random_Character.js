@@ -1,6 +1,10 @@
+var check = new Array(6);
+var imgArray = new Array(6);
+var imgNum = new Array(6);
+
 function random_character() {
     // 이미지 배열에 할당, [][0]은 이미지 내용, [][1]은 이미지가 사용되었는가를 표시.
-    var imgArray = new Array(6);
+
 
 
     for (var i = 0; i < imgArray.length; i++) {
@@ -8,7 +12,7 @@ function random_character() {
     }
 
     // for(var i=0;i<6;i++){
-    //     imgArray[i][0] = "img/characters/character "+(i+1)+".jpg";
+    //     imgArray[i][0] = "../../static/img/characters/"+(i+1)+".jpg";
     //     imgArray[i][1] = 0
     // }
     imgArray[0][0] = "../../static/img/characters/1.jpg";
@@ -24,7 +28,8 @@ function random_character() {
     imgArray[5][0] = "../../static/img/characters/6.jpg";
     imgArray[5][1] = 0;
     // 이미지 숫자만큼 뽑을 풀 만들기
-    var imgNum = new Array(6);
+
+
     for (var i = 0; i < imgNum.length; i++) {
         imgNum[i] = i;
     }
@@ -44,7 +49,8 @@ function random_character() {
     var objImg4 = document.getElementById("card4");
 
 
-    //src 입력
+    //src 입력var check = new Array(6);
+    // var imgNum = new Array(6);
     objImg1.src = imgArray[imgNum[0]][0];
     objImg2.src = imgArray[imgNum[1]][0];
     objImg3.src = imgArray[imgNum[2]][0];
@@ -56,7 +62,7 @@ function random_character() {
     // var divImg3 = document.getElementById("card_3");
     // var divImg4 = document.getElementById("card_4");
 
-    var check = new Array(6);
+
     for (var i = 0; i < check.length; i++) {
         check[i] = false;
     }
@@ -164,3 +170,22 @@ function random_character() {
 
 }
 
+function next_page(){
+    console.log(imgArray);
+    var arrCharacter = new Array();
+    for(i=1;i<=4; i++){
+
+        if(check[i-1]) {
+            charIdName = "card"+i;
+
+            bgImageUrl = imgArray[imgNum[i-1]][0];
+            arrCharacter.push(bgImageUrl);
+        }
+    }
+
+    var jsonObject = new Object();
+    jsonObject.charList = arrCharacter;
+    var jsonData = JSON.stringify(jsonObject);
+    document.getElementById("jsonData").value = jsonData;
+    document.getElementById("sendJson").submit();
+}

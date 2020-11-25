@@ -136,9 +136,12 @@
     height: 132px;
     left: 156px;
     top: 351px;
+    z-index: 1;
     background: #FCCA46;
     border: 1px solid #000000;
     box-sizing: border-box;
+
+    background-size: 99px 132px;
 }
 
 #card2 {
@@ -147,10 +150,12 @@
     height: 132px;
     left: 156px;
     top: 555px;
-
+    z-index: 1;
     background: #FCCA46;
     border: 1px solid #000000;
     box-sizing: border-box;
+
+    background-size: 99px 132px;
 }
 
 #card3 {
@@ -159,9 +164,12 @@
     height: 132px;
     left: 156px;
     top: 755px;
+    z-index: 1;
     background: #FCCA46;
     border: 1px solid #000000;
     box-sizing: border-box;
+
+    background-size: 99px 132px;
 }
 
 #card4 {
@@ -171,10 +179,12 @@
     height: 132px;
     left: 156px;
     top: 957px;
-
+    z-index: 1;
     background: #FCCA46;
     border: 1px solid #000000;
     box-sizing: border-box;
+
+    background-size: 99px 132px;
 }
 
 #set_card {
@@ -188,6 +198,8 @@
     background: #FBEAAF;
     border: 1px solid #000000;
     box-sizing: border-box;
+
+    background-size: 250px 334px;
 }
 
 #option_box {
