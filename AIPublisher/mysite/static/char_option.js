@@ -9,6 +9,7 @@ for(var i=0;i<character.length;i++){
 function setCard(){
     var characterID = "card";
     console.log(characterID)
+
     for(var i=0;i<4;i++){
         characterID = "card"+(i+1);
         //""이거랑 url(~~~) 이 부분 없애주는 역할.
@@ -23,23 +24,29 @@ function setCard(){
             check2[i]=false;
         }
     }
+    var objImg = document.getElementById("set_card");
+
     console.log(ImgArray)
     console.log(check)
 
     $("#card1").click(function() {
         var x;
+        objImg.style.backgroundImage = "url('"+ImgArray[0]+"')";
         for(var i=0; i<check.length;i++){
             if(check[i]){
                 x = i;
                 break;
             }
         }
+        console.log(x);
+        console.log(check);
+        console.log(check2);
 
         character[x][0]=ImgArray[x];
         character[x][1]=document.getElementById("name_text").value;
         character[x][2]="성격들어갈 자리"
         character[x][3]=document.getElementById("etc_text").value;
-        if($("input:checkbox[id='ck1']").is(":checked") == true) {// 주인공은 1명만 가능합니다.
+        if($('input:checkbox[id="ck1"]').is(":checked") == true) {// 주인공은 1명만 가능합니다.
             for(i=0;i<4;i++)
             {
                 character[i][4] = false;
@@ -51,7 +58,7 @@ function setCard(){
         document.getElementById("set_card").style.backgroundImage = ImgArray[0];
         document.getElementById("name_text").value = "";
         document.getElementById("etc_text").value = "";
-        if($("input:checkbox[id='ck1']").is(":checked") == true)
+        if($('input:checkbox[id="ck1"]').is(":checked") == true)
         {
             $( "input:checkbox[id='ck1']" ).attr('checked', false );
         }
@@ -63,7 +70,7 @@ function setCard(){
             document.getElementById("name_text").value = character[0][1];
             document.getElementById("etc_text").value = character[0][3];
             if(character[0][4]){
-                $( "input:checkbox[id='ck1']" ).attr( 'checked', true );
+                $('input:checkbox[id="ck1"]').attr( 'checked', false );
             }
 
         }
@@ -71,6 +78,7 @@ function setCard(){
 
     $("#card2").click(function() {
         var x;
+        objImg.style.backgroundImage = "url('"+ImgArray[0]+"')";
         for(var i=0; i<check.length;i++){
             if(check[i]){
                 x = i;
@@ -78,11 +86,14 @@ function setCard(){
             }
         }
         console.log(x);
+        console.log(check);
+        console.log(check2);
+
         character[x][0]=ImgArray[x];
         character[x][1]=document.getElementById("name_text").value;
         character[x][2]="성격들어갈 자리"
         character[x][3]=document.getElementById("etc_text").value;
-        if($("input:checkbox[id='ck1']").is(":checked") == true) {// 주인공은 1명만 가능합니다.
+        if($('input:checkbox[id="ck1"]').is(":checked") == true) {// 주인공은 1명만 가능합니다.
             for(i=0;i<4;i++)
             {
                 character[i][4] = false;
@@ -94,9 +105,9 @@ function setCard(){
         document.getElementById("set_card").style.backgroundImage = ImgArray[1];
         document.getElementById("name_text").value = "";
         document.getElementById("etc_text").value = "";
-        if($("input:checkbox[id='ck1']").is(":checked") == true)
+        if($('input:checkbox[id="ck1"]').is(":checked") == true)
         {
-            $( "input:checkbox[id='ck1']" ).attr( 'checked', false );
+            $('input:checkbox[id="ck1"]').attr( 'checked', false );
         }
         check[x]=false;
         check2[x]=true;
@@ -106,7 +117,7 @@ function setCard(){
             document.getElementById("name_text").value = character[1][1];
             document.getElementById("etc_text").value = character[1][3];
             if(character[1][4]){
-                $( "input:checkbox[id='ck1']" ).attr( 'checked', true );
+               $('input:checkbox[id="ck1"]').attr( 'checked', true );
             }
 
         }
@@ -114,18 +125,22 @@ function setCard(){
 
     $("#card3").click(function() {
         var x;
+        objImg.style.backgroundImage = "url('"+ImgArray[0]+"')";
         for(var i=0; i<check.length;i++){
             if(check[i]){
                 x = i;
                 break;
             }
         }
+        console.log(x);
+        console.log(check);
+        console.log(check2);
 
         character[x][0]=ImgArray[x];
         character[x][1]=document.getElementById("name_text").value;
         character[x][2]="성격들어갈 자리"
         character[x][3]=document.getElementById("etc_text").value;
-        if($("input:checkbox[id='ck1']").is(":checked") == true) {// 주인공은 1명만 가능합니다.
+        if($('input:checkbox[id="ck1"]').is(":checked") == true) {// 주인공은 1명만 가능합니다.
             for(i=0;i<4;i++)
             {
                 character[i][4] = false;
@@ -137,9 +152,9 @@ function setCard(){
         document.getElementById("set_card").style.backgroundImage = ImgArray[2];
         document.getElementById("name_text").value = "";
         document.getElementById("etc_text").value = "";
-        if($("input:checkbox[id='ck1']").is(":checked") == true)
+        if($('input:checkbox[id="ck1"]').is(":checked") == true)
         {
-            $( "input:checkbox[id='ck1']" ).attr( 'checked', false );
+            $('input:checkbox[id="ck1"]').attr( 'checked', false );
         }
         check[x]=false;
         check2[x]=true;
@@ -149,7 +164,7 @@ function setCard(){
             document.getElementById("name_text").value = character[2][1];
             document.getElementById("etc_text").value = character[2][3];
             if(character[2][4]){
-                $( "input:checkbox[id='ck1']" ).attr( 'checked', true );
+                $('input:checkbox[id="ck1"]').attr( 'checked', true );
             }
 
         }
@@ -157,18 +172,22 @@ function setCard(){
 
     $("#card4").click(function() {
         var x;
+        objImg.style.backgroundImage = "url('"+ImgArray[0]+"')";
         for(var i=0; i<check.length;i++){
             if(check[i]){
                 x = i;
                 break;
             }
         }
+        console.log(x);
+        console.log(check);
+        console.log(check2);
 
         character[x][0]=ImgArray[x];
         character[x][1]=document.getElementById("name_text").value;
         character[x][2]="성격들어갈 자리"
         character[x][3]=document.getElementById("etc_text").value;
-        if($("input:checkbox[id='ck1']").is(":checked") == true) {// 주인공은 1명만 가능합니다.
+        if($('input:checkbox[id="ck1"]').is(":checked") == true) {// 주인공은 1명만 가능합니다.
             for(i=0;i<4;i++)
             {
                 character[i][4] = false;
@@ -180,9 +199,9 @@ function setCard(){
         document.getElementById("set_card").style.backgroundImage = ImgArray[3];
         document.getElementById("name_text").value = "";
         document.getElementById("etc_text").value = "";
-        if($("input:checkbox[id='ck1']").is(":checked") == true)
+        if($('input:checkbox[id="ck1"]').is(":checked") == true)
         {
-            $( "input:checkbox[id='ck1']" ).attr( 'checked', false );
+            $('input:checkbox[id="ck1"]').attr( 'checked', false );
         }
         check[x]=false;
         check2[x]=true;
@@ -192,7 +211,7 @@ function setCard(){
             document.getElementById("name_text").value = character[3][1];
             document.getElementById("etc_text").value = character[3][3];
             if(character[3][4]){
-                $( "input:checkbox[id='ck1']" ).attr( 'checked', true );
+                $('input:checkbox[id="ck1"]').attr( 'checked', true );
             }
 
         }
