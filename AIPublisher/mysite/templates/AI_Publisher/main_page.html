@@ -22,13 +22,15 @@
             <div class="logo" id="logo">AI PUBLISHER</div>
             <div id="naverIdLogin" onclick="location.href='http://127.0.0.1:8000/accounts/naver/login'"></div>
         {% else %}
-        <div claas="make_story_box" id="make_str_box" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/set_character'"></div>
-        <div id="test"><a href="http://127.0.0.1:8000/accounts/logout/">{{user.email}}</a></div>
-        <form action="http://127.0.0.1:8000/accounts/logout/" method="post">
+            <div claas="nextstep" id="make_str_box" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/set_character'"></div>
+            <div claas="nextstep" id="gallery" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/show_gallery'"></div>
+            <div class="decoration" id="shelf"></div>
+            <div id="test"><a href="http://127.0.0.1:8000/accounts/logout/">{{user.email}}</a></div>
+            <form action="http://127.0.0.1:8000/accounts/logout/" method="post">
             {% csrf_token %}
             <input type="hidden" name="next" value="/AI_Publisher/"/>
             <input type="submit" value="로그아웃">
-        </form>
+            </form>
         {% endif %}
 
 
