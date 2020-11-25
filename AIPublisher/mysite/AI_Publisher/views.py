@@ -46,7 +46,10 @@ def make_story(request):
     if request.method == 'POST':
         message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
         getjson = json.loads(message) #Json 풀어주기
-        return render(request, 'AI_Publisher/make_story.html', {'getJSONData' : getjson})
+        bookContetnsList = ["1.png", "2.png", "3.png", "4.png"]
+        return render(request, 'AI_Publisher/make_story.html', {'getJSONData' : getjson,
+                                                                'bookContetnsList' : bookContetnsList})
+ 
     else:
         # charList = CharList.objects
         bookTextList = BookTextList.objects
