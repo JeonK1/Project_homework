@@ -68,11 +68,12 @@ def set_relation(request):
     card_pos = ['사이좋아요', '아주 좋아요', '약간 좋아요']
     card_neu = ['모르는 사이', '애매한듯']
     card_neg = ['사이안좋음', '아주 안좋아요', '약간 안좋아요']
+    #Json 정보확인은 set_char_option.js 의 sendToNextPage()함수를 참조하세요
 
     if request.method == 'POST':
         message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
         getjson = json.loads(message) #Json 풀어주기
-        return render(request, 'AI_Publisher/make_story.html', {'getJSONData' : getjson,
+        return render(request, 'AI_Publisher/set_relation.html', {'getJSONData' : getjson,
                                                                 'card_pos': card_pos,
                                                                 'card_neu': card_neu,
                                                                 'card_neg': card_neg})

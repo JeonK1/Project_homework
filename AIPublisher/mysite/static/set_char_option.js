@@ -36,6 +36,7 @@ function settingCharData(num){
 
 function sendToNextPage(){
     //다음페이지로 POST 데이터 넘기기
+    var jsonObject = new Object();
     var arrCharacter = new Array();
     for(i=0;i<4; i++){
         charIdName = "card"+(i+1);
@@ -46,22 +47,17 @@ function sendToNextPage(){
         //characterObject.personality = personalityList[i]; // 성격 부분은 어떻게 하는지 몰라서 일단 비워둠
         characterObject.etc = etcList[i];
         if(i == mainCharacterNo){
-            characterObject.isMainChar = 1; // 현재 번호가 주인공일 때
+            // 현재 번호가 주인공일 때
+            characterObject.isMainChar = 1;
+            jsonObject.mainChar = characterObject
         } else {
-            characterObject.isMainChar = 0; // 현재 번호가 주인공이 아닐 때
+            // 현재 번호가 주인공이 아닐 때
+            characterObject.isMainChar = 0;
+            arrCharacter.push(characterObject);
         }
-
-        arrCharacter.push(characterObject);
     }
-
-    var arrRelation = new Array();
-    for(i=0; i<5; i++){
-        arrRelation.push(relationList[i]);
-    }
-
-    var jsonObject = new Object();
     jsonObject.charList = arrCharacter;
-    jsonObject.relList = arrRelation;
+
     var jsonData = JSON.stringify(jsonObject);
     console.log(jsonData);
 

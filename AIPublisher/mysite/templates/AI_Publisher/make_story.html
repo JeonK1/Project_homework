@@ -13,6 +13,10 @@
     <script type="text/javascript" src="{% static 'navbar.js' %}"></script>
     <script type="text/javascript" src="{% static 'make_story.js' %}"></script>
     <title>Make Story</title>
+    <!-- post values -->
+    <form method='post' action='/AI_Publisher/make_story/' target=_self style="display: none;" name="sendJson" id="sendJson">
+        <input type='hidden' name='jsonData' id='jsonData' value="{{getJSONData}}"/>
+    </form>
 </head>
 <body onload="navbar_function();stepbar_move();
 nextstep_move();show_text();question_small_move();

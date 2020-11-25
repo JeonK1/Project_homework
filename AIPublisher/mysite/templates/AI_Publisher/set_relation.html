@@ -13,7 +13,7 @@
     <title>set_relation</title>
     <!-- post values -->
     <form method='post' action='/AI_Publisher/make_story/' target=_self style="display: none;" name="sendJson" id="sendJson">
-        <input type='hidden' name='jsonData' id='jsonData' value=""/>
+        <input type='hidden' name='jsonData' id='jsonData' value="{{getJSONData}}"/>
     </form>
 </head>
 <body onload="navbar_function();">
@@ -59,13 +59,12 @@
             </div></a>
         </div>
         <!-- 왼쪽 인물 목록 메뉴 -->
+
         <div class="character_menu" id="character_menu">
-            <div class="character_card" id="character_1" onclick="sendSubChar(1);" style="background-image: url('../../static/img/characters/{{charList.0}}');">
-                <div class="relation_context"></div>
-            </div>
-            <div class="character_card" id="character_2" onclick="sendSubChar(2);" style="background-image: url('../../static/img/characters/{{charList.1}}');"></div>
-            <div class="character_card" id="character_3" onclick="sendSubChar(3);" style="background-image: url('../../static/img/characters/{{charList.2}}');"></div>
-            <div class="character_card" id="character_4" onclick="sendSubChar(4);" style="background-image: url('../../static/img/characters/{{charList.3}}');"></div>
+            <div class="character_card" id="character_1" style="background-image: url('{{ getJSONData.mainChar.url }}');"></div>
+            <div class="character_card" id="character_2" onclick="sendSubChar(2);" style="background-image: url('{{ getJSONData.charList.0.url }}');"></div>
+            <div class="character_card" id="character_3" onclick="sendSubChar(3);" style="background-image: url('{{ getJSONData.charList.1.url }}');"></div>
+            <div class="character_card" id="character_4" onclick="sendSubChar(4);" style="background-image: url('{{ getJSONData.charList.2.url }}');"></div>
         </div>
         <!-- 하단 8개 관계 설정 카드-->
         <div class="relation_menu" id="relation_menu">
@@ -114,7 +113,7 @@
         </div>
         <!-- 주인공과 서브인물 -->
         <div>
-            <div class="character_selected_card" id="character_main" style="background-image: url('../../static/img/characters/{{charMain}}');"></div>
+            <div class="character_selected_card" id="character_main" style="background-image: url('{{ getJSONData.mainChar.url }}');"></div>
             <div class="img_star" id="img_star"></div>
         </div>
         <div class="character_selected_card" id="character_sub"></div>

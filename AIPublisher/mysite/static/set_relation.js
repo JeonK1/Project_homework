@@ -1,5 +1,6 @@
 var relationListId = ["", "", "", "", ""]; // 설정한 5개의 관계 들어간 현황
 var relationList = ["", "", "", "", ""]; // 설정한 5개의 관계 들어간 현황
+var subCharNo = -1 // 대립되는 서브주인공 번호
 
 function onDragStart(e){
     console.warn('drag Start'+e.target.id);
@@ -46,6 +47,7 @@ function onDrop(e){
 }
 
 function sendSubChar(num){
+    subCharNo=num;
     charIdName = "character_"+num;
     bgImageUrl = document.getElementById(charIdName).style.backgroundImage.slice(4, -1).replace(/"/g, "");
     query = "url('" + bgImageUrl + "')";
@@ -53,21 +55,22 @@ function sendSubChar(num){
 }
 
 function sendToNextPage(){
-    var arrCharacter = new Array();
-    for(i=1;i<=4; i++){
-        charIdName = "character_"+i;
-        bgImageUrl = document.getElementById(charIdName).style.backgroundImage.slice(4, -1).replace(/"/g, "");
-        arrCharacter.push(bgImageUrl);
-    }
+    jsonData = document.getElementById("jsonData").value;
+    // jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
+    jsonData = jsonData.replaceAll('\'', '\"');
+    jsonObject = JSON.parse(jsonData);
 
+    //부 주인공은 charList에서 지우고, subChar object로 새로 넣어줌
+    jsonObject.subChar = jsonObject.charList[subCharNo-2];
+    delete jsonObject.charList[subCharNo-2];
+
+    //관계 정보 넣어주기
     var arrRelation = new Array();
     for(i=0; i<5; i++){
         arrRelation.push(relationList[i]);
     }
-
-    var jsonObject = new Object();
-    jsonObject.charList = arrCharacter;
     jsonObject.relList = arrRelation;
+
     var jsonData = JSON.stringify(jsonObject);
     console.log(jsonData);
 
