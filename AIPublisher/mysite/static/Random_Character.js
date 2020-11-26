@@ -116,7 +116,7 @@ function random_character() {
     var count = 0;
 
    //이미지 다시뽑기
-    $("#redraw").click(function() {
+    $("#redraw_image").click(function() {
         count += 1;
 
         if(count < 3) {

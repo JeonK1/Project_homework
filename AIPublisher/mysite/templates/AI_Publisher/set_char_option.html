@@ -23,23 +23,32 @@
     <div class="BackGround" id="BackGround">
 
         <!--제목-->
-        <div class="Field" id="Field">
-            <div class="border" id="border"></div>
-            <div class="STATBAR" id="STATBAR">
-                <div class="step" id="step">인물카드 설정</div>
+       <div class="Field" id="Field">
+            <div class="stepbox" id="stepbar">
+                <div class="step" id="step1">인물카드선택</div>
+                <div class="step" id="step2">인물카드설정</div>
+                <div class="step" id="step3">관계카드설정</div>
             </div>
         </div>
 
-        <!--화면아래 초록색 바-->
-        <div class="bottom_bar" id="bottom_bar"></div>
+
 
         <!--다음 버튼-->
         <!--Todo : 내용 다 안채워줬으면 못넘어가게 하기-->
-        <div class="next_step" id="next_step" onclick="sendToNextPage();"></div>
+
+        <div class="next_shape" id="next_shape">
+            <div class="next_step_body_1" id="next_step_body_1">
+                <div class="next_step_body_2" id="next_step_body_2">
+                    <div class="next_step_text" id="next_step_text">Next</div>
+                    <div class="next_step_image" id="next_step_image" onclick="sendToNextPage();"></div>
+                </div>
+            </div>
+        </div>
         <!--<a href="/AI_Publisher/get_relation_keyprob/" target=_self>-->
             <!--<div class="next_step" id="next_step"></div></a>-->
 
         <!--왼쪽 캐릭터 카드 메뉴-->
+
         <div class="character_card" id="card1" style="background-image: url('{{getJSONData.charList.0}}');" onclick="settingCharData(0)"></div>
         <div class="character_card" id="card2" style="background-image: url('{{getJSONData.charList.1}}');" onclick="settingCharData(1)"></div>
         <div class="character_card" id="card3" style="background-image: url('{{getJSONData.charList.2}}');" onclick="settingCharData(2)"></div>
@@ -48,21 +57,29 @@
         <!--중간의 캐릭터 카드 메뉴-->
         <div class="main_card" id="set_card" style="background-image: url('{{getJSONData.charList.0}}');"></div>
 
-        <!--캐릭터 설정-->
-        <div class="card_option" id="option_box">인물 설정하기</div>
-        <div class="card_option" id="name">
-           이름: <input id="name_text" type="text" name="card_option" >
+        <!--캐릭터 설정 이름-->
+        <div class="card_option" id="name_box">
+            <div class="card_option" id="name">이름</div>
+            <input id="name_text" type="text" name="card_option" >
+
         </div>
-        <div class="card_option" id="personality">성격: </div>
-        <div class="card_option" id="etc">
-            기타: <input id="etc_text" type="text" name="card_option" >
+        <!--캐릭터 설정 성격-->
+        <div class="card_option" id="personality_box">
+            <div class="card_option" id="personality">성격</div>
+            <input id="personality_text" type="text" name="card_option" >
         </div>
-        <form>
-        <div class="card_option" id="main_char" >
-            <label for="ck1">주인공: </label>
-            <input id="ck1" type="checkbox" name="card_option" style="zoom:3.0;" z-index="2">
+        <!--캐릭터 설정 기타-->
+        <div class="card_option" id="etc_box">
+            <div id="card_option" id="etc">기타</div>
+            <input id="etc_text" type="text" name="card_option" >
         </div>
-        </form>
+
+            <!--캐릭터 설정 기타-->
+        <div class="card_option" id="main_char_box">
+            <input id="ck1" type="checkbox" name="card_option">
+            <div class="card_option" id="main_char"> 주인공인가요?</div>
+        </div>
+
 
         <!-- 네비게이션 바 -->
         <div class="upper_bar" id="upper_bar">
