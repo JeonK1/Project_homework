@@ -2,7 +2,7 @@
 #upper_bar {
     position: absolute;
     width: 1440px;
-    height: 75px;
+    height: 56px;
     left: calc(50% - 1440px/2);
     top: 0px;
     z-index: 10;
@@ -10,37 +10,15 @@
     background: #FFFFFF;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.42);
 }
-#AI_Publisher{
-    position: absolute;
-    width: 189px;
-    height: 29px;
-    left: calc(50% - 189px/2 - 491.5px);
-    top: calc(50% - 29px/2 + 3px);
-
-    font-family: B612;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 150%;
-    /* or 45px */
-
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.05em;
-    text-transform: capitalize;
-
-    color: #000000;
-
-}
 
 #AI_Publisher_image{
     position: absolute;
-    width: 84px;
-    height: 75px;
+    width: 113px;
+    height: 45px;
     left: 50px;
-    top: 0px;
+    top: 6px;
 
-    background-image: url(img/mainlogo.png);
+    background-image: url(img/navbar_logo.png);
     background-size : cover;
 }
 
@@ -48,392 +26,37 @@
 #user_icon {
     position: absolute;
 
-    width: 54.72px;
-    height: 57px;
-    left: 1321px;
-    top: 12px;
+    width: 24px;
+    height: 24px;
+    left: 1366px;
+    top: 16px;
 
     background-image: url(img/user_icon.png);
-    background-size : cover;
-}
-
-/* Polygon 2 */
-#user_icon_event{
-    position: absolute;
-    width: 15px;
-    height: 12px;
-    left: 1363px;
-    top: 55px;
-    z-index: 1;
-
-    background-image: url(img/user_icon_event.png);
     background-size : cover;
 }
 
 /* username 님 */
 #username {
     position: absolute;
-    left: 81.39%;
-    right: 9.31%;
-    top: 25.33%;
-    bottom: 17.33%;
+    width: 73px;
+    height: 24px;
+    left: calc(50% - 73px/2 + 605.5px);
+    top: calc(50% - 24px/2);
 
-    font-family: B612;
+    font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 150%;
-    /* or 30px */
+
+    /* identical to box height, or 24px */
     display: flex;
     align-items: center;
     text-align: right;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.035em;
     text-transform: capitalize;
 
     color: #000000;
 }
 
-/* Frame 2 */
-#ID_Menu {
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    z-index: 9;
 
-    position: absolute;
-    width: 240px;
-    height: 144px;
-    left: 1150px;
-    top: 75px;
-
-    /* White */
-
-    background: #FFFFFF;
-    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
-}
-
-#menu_1 {
-    position: absolute;
-    width: 240px;
-    height: 48px;
-    left: 0px;
-    top: 0px;
-
-
-    /* Inside Auto Layout */
-    align-self: stretch;
-    margin: 0px 0px;
-
-    /* Blue / 01 */
-
-    background: #C5DCFA;
-    opacity: 0.5;
-    border-radius: 0px 12px 12px 0px;
-}
-#menu_1_item{
-    /* Nav Item */
-
-
-    /* Auto Layout */
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-
-    position: absolute;
-    width: 90px;
-    left: 0px;
-    top: 0px;
-    bottom: 96px;
-
-
-    /* Inside Auto Layout */
-    margin: 0px 0px;
-}
-
-#menu_1_text_box{
-    /* Body */
-
-
-    /* Auto Layout */
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 4px 12px;
-
-    position: absolute;
-    width: 100px;
-    height: 48px;
-    left: 0px;
-    top: 0px;
-
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 0px;
-}
-
-#menu_1_text{
-    position: static;
-    width: 80px;
-    height: 16px;
-    left: 12px;
-    top: 16px;
-
-    font-family: B612;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 10px;
-    line-height: 158%;
-    /* identical to box height, or 16px */
-
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-
-    /* Grey / 04 */
-
-    color: #818181;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 12px 0px;
-
-}
-
-/* Frame 4 */
-#menu_2 {
-    position: absolute;
-    width: 240px;
-    height: 48px;
-    left: 0px;
-    top: 48px;
-
-
-    /* Inside Auto Layout */
-
-    align-self: stretch;
-    margin: 0px 0px;
-}
-#menu_2_item{
-    /* Nav Item */
-
-
-    /* Auto Layout */
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-
-    position: absolute;
-    width: 210px;
-    left: 8px;
-    top: 0px;
-    bottom: 0px;
-
-}
-#menu_2_icon_box{
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    left: 0px;
-    top: 0px;
-
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 0px;
-}
-
-#menu_2_icon{
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: calc(50% - 24px/2);
-    top: calc(50% - 24px/2);
-
-    background : url(img/terrain.png);
-}
-
-#menu_2_text_box{
-    /* Auto Layout */
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 4px 8px;
-
-    position: absolute;
-    width: 162px;
-    height: 48px;
-    left: 48px;
-    top: 0px;
-
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 0px;
-}
-
-#menu_2_text{
-    position: static;
-    width: 150px;
-    height: 24px;
-    left: 8px;
-    top: 12px;
-
-    /* IBM Plex / Subtitle 1 */
-
-    font-family: IBM Plex Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 150%;
-    /* identical to box height, or 24px */
-
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.005em;
-    font-feature-settings: 'tnum' on, 'lnum' on;
-
-    /* Grey / 06 */
-
-    color: #414141;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 12px 0px;
-}
-
-/* Frame 4 */
-#menu_3 {
-    /* Navigation - #Master Hor. */
-
-    position: absolute;
-    width: 240px;
-    height: 48px;
-    left: 0px;
-    top: 96px;
-
-    /* Inside Auto Layout */
-
-    align-self: stretch;
-    margin: 0px 0px;
-}
-#menu_3_item{
-    /* Auto Layout */
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-
-    position: absolute;
-    width: 159px;
-    left: 8px;
-    top: 0px;
-    bottom: 0px;
-
-}
-#menu_3_icon_box{
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    left: 0px;
-    top: 0px;
-
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 0px;
-}
-
-#menu_3_icon{
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: calc(50% - 24px/2);
-    top: calc(50% - 24px/2);
-
-    background : url(img/share.png);
-}
-
-#menu_3_text_box{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 4px 8px;
-
-    position: absolute;
-    width: 111px;
-    height: 48px;
-    left: 48px;
-    top: 0px;
-    /* Auto Layout */
-
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 0px;
-
-}
-
-#menu_3_text{
-    position: static;
-    width: 95px;
-    height: 24px;
-    left: 8px;
-    top: 12px;
-
-    /* IBM Plex / Subtitle 1 */
-
-    font-family: IBM Plex Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 150%;
-    /* identical to box height, or 24px */
-
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.005em;
-    font-feature-settings: 'tnum' on, 'lnum' on;
-
-    /* Grey / 06 */
-
-    color: #414141;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 12px 0px;
-}
