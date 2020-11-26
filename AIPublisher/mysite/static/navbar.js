@@ -18,4 +18,22 @@ function navbar_function(){
             x = true
         }
     });
+
+    $('#menu_2').mouseenter(function(){
+        $('#menu_2').css({background:"#C5DCFA"});
+    });
+
+    $('#menu_2').mouseleave(function(){
+        $('#menu_2').css({background:"#FFFFFF"});
+    });
+
+    $('#menu_3').mouseenter(function(){
+        $('#menu_3').css({background:"#C5DCFA"});
+    });
+
+    $('#menu_3').mouseleave(function(){
+        $('#menu_3').css({background:"#FFFFFF"});
+    });
+
+
 }
