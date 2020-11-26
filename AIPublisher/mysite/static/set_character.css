@@ -184,6 +184,38 @@
     box-sizing: border-box;
 }
 
+#card1 {
+    position: absolute;
+    width: 111px;
+    height: 181px;
+    left: calc(50% - 111px / 2);
+    top: calc(50% - 181px / 2 + 0.5px);
+}
+
+#card2 {
+    position: absolute;
+    width: 111px;
+    height: 181px;
+    left: calc(50% - 111px / 2);
+    top: calc(50% - 181px / 2 + 0.5px);
+}
+
+#card3 {
+    position: absolute;
+    width: 111px;
+    height: 181px;
+    left: calc(50% - 111px / 2);
+    top: calc(50% - 181px / 2 + 0.5px);
+}
+
+#card4 {
+    position: absolute;
+    width: 111px;
+    height: 181px;
+    left: calc(50% - 111px / 2);
+    top: calc(50% - 181px / 2 + 0.5px);
+}
+
 #card_stack_box {
     position: absolute;
     width: 231px;
