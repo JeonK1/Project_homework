@@ -1,138 +1,75 @@
-html{
-    margin: 1%;
-    width: 80%;
-    height: 80%;
-
-}
-body{
-    min-height: 70%;
-}
-
+/* BGcolor */
 #BackGround {
-    position: absolute;
-    width: 1440px;
-    height: 1024px;
-    left: calc(50% - 1440px / 2);
-    top: calc(50% - 1024px / 2);
-    z-index: 0;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    width: 2000px;
+    height: 1290px;
 
-    background:#007fff;
+    background: #FFFFFF;
 }
 
+/* Group 19 */
 #Field {
-
     position: absolute;
-    width: 1340px;
-    height: 949px;
-    left: calc(50% - 1340px / 2);
-    top: calc(50% - 949px / 2 + 37.5px);
-
-
-    offset: center;
-    z-index: 0;
-
-    background: #FFFBE6;
+    width: 1894px;
+    height: 1120px;
+    left: 53px;
+    top: 119px;
 }
 
-#stepbar {
+
+/* border */
+#border {
     position: absolute;
-    width: 39px;
-    height: 631px;
-    left: calc(50% - 39px / 2);
-    top: calc(50% - 631px / 2);
-    z-index: 1;
+    width: 1890px;
+    height: 1100px;
+
+    background: rgba(196, 196, 196, 0.02);
+    border: 2px solid #88B9A4;
+    box-sizing: border-box;
+}
+
+/* STATBAR */
+#STATBAR {
+    position: absolute;
+    width: 1894px;
+    height: 80px;
+
+    background: #88B9A4;
+    border-radius: 11px;
 
 }
 
-#step1 {
-
+/* TEXT */
+#step {
     position: absolute;
-    width: 39px;
-    height: 207px;
-    left: calc(50% - 39px / 2 - 684.5px);
-    top: calc(50% - 207px / 2 - 212.5px);
+    left: 45%;
+    right: 30%;
+    top: 0;
+    bottom: 0;
 
 
-    font-family: B612;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
+    font-size: 36px;
     line-height: 150%;
-    /* or 22px */
-
+    /* or 54px */
     display: flex;
     align-items: center;
     text-align: center;
-    letter-spacing: 0.05em;
-    text-transform: capitalize;
+    letter-spacing: 0.0168em;
+    font-feature-settings: 'tnum' on, 'lnum' on;
 
-    color: #000000;
-
-
-    background: #B9E4C9;
-    border-radius: 8px;
+    color: #FFFFFF;
 
 }
 
-#step2 {
-
+/* bottom_bar */
+#bottom_bar {
     position: absolute;
-    width: 39px;
-    height: 207px;
-    left: calc(50% - 39px / 2 - 684.5px);
-    top: calc(50% - 207px / 2 - 0.5px);
+    width: 2000px;
+    height: 30px;
+    left: 0;
+    top: 1260px;
 
-
-    font-family: B612;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 150%;
-    /* or 22px */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.05em;
-    text-transform: capitalize;
-
-    color: #666666;
-    /* or 22px */
-
-
-    background: #E6E2CF;
-    border-radius: 8px;
-
-}
-
-#step3 {
-
-    position: absolute;
-    width: 39px;
-    height: 207px;
-    left: calc(50% - 39px / 2 - 684.5px);
-    top: calc(50% - 207px / 2 + 211.5px);
-
-    font-family: B612;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 150%;
-    /* or 22px */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.05em;
-    text-transform: capitalize;
-
-    color: #666666;
-
-
-    background: #E6E2CF;
-    border-radius: 8px;
+    background: #88B9A4;
 }
 
 #next_step {
@@ -163,10 +100,10 @@ body{
 #card_box {
 
     position: absolute;
-    width: 886px;
-    height: 276px;
-    left: calc(50% - 886px / 2 + 1px);
-    top: calc(50% - 276px / 2 + 203px);
+    width: 1249px;
+    height: 334px;
+    left: 329px;
+    top: 777px;
     z-index: 1;
 
 }

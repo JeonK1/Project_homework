@@ -271,7 +271,7 @@
     width: 107px;
     height: 48px;
     left: 1278px;
-    top: 887px;
+    top: 884px;
 }
 #next_step_body_1{
     /* Text / Next */
@@ -333,7 +333,7 @@
     position: absolute;
     width: 39px;
     height: 5px;
-    left: 16px;
+    left: 10px;
     top: 0px;
 
     font-family: B612;
@@ -357,20 +357,13 @@
 
 /* arrow-right */
 #next_step_image{
-    position: static;
-    width: 39px;
-    height: 5px;
-    left: 16px;
-    top: 0px;
+    position: absolute;
+    left: 62.62%;
+    right: 14.95%;
+    top: 29.17%;
+    bottom: 27.17%;
 
 
-    background: #FFFFFF;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 2;
-    flex-grow: 0;
-    margin: 12px 0px;
 
     background-image: url(img/arrow-right.png);
 }
@@ -418,21 +411,21 @@
 
 /* Card_small */
 #Card_small_2 {
-position: absolute;
-width: 85px;
-height: 114px;
-left: calc(50% - 85px/2 - 2.5px);
-top: calc(50% - 114px/2 - 67px);
+    position: absolute;
+    width: 85px;
+    height: 114px;
+    left: calc(50% - 85px/2 - 2.5px);
+    top: calc(50% - 114px/2 - 67px);
 
-background: #C4C4C4;
-border: 1px solid #000000;
-box-sizing: border-box;
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    box-sizing: border-box;
 
-/* Inside Auto Layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-margin: 0px 20px;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 20px;
 
 
 }
@@ -458,21 +451,21 @@ margin: 0px 20px;
 
 /* Card_small */
 #Card_small_4 {
-position: absolute;
-width: 85px;
-height: 114px;
-left: calc(50% - 85px/2 - 2.5px);
-top: calc(50% - 114px/2 + 201px);
+    position: absolute;
+    width: 85px;
+    height: 114px;
+    left: calc(50% - 85px/2 - 2.5px);
+    top: calc(50% - 114px/2 + 201px);
 
-background: #C4C4C4;
-border: 1px solid #000000;
-box-sizing: border-box;
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    box-sizing: border-box;
 
-/* Inside Auto Layout */
-flex: none;
-order: 3;
-flex-grow: 0;
-margin: 0px 20px;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+    margin: 0px 20px;
 }
 
 /* story border */
@@ -715,7 +708,7 @@ margin: 0px 20px;
     position: absolute;
     width: 110px;
     height: 536px;
-    left: calc(50% - 110px/2 + 615px);
+    left: calc(50% - 110px/2 + 590px);
     top: calc(50% - 536px/2 - 2px);
     z-index: 1;
 
@@ -728,9 +721,9 @@ margin: 0px 20px;
 
 #Ground_small_1{
     position: absolute;
-    width: 85px;
+    width: 90px;
     height: 72px;
-    left: 15px;
+    left: 5px;
     top: 40px;
 
     background: url(shutterstock_1389881558 [Converted].png);
@@ -747,10 +740,10 @@ margin: 0px 20px;
 
 #Ground_small_2{
     position: absolute;
-    width: 85px;
+    width: 90px;
     height: 76px;
-    left: 15px;
-    top: 132px;
+    left: 5px;
+    top: 145px;
 
     background: url(shutterstock_1395173636 [Converted].png);
 
@@ -765,10 +758,10 @@ margin: 0px 20px;
 
 #Ground_small_3{
     position: absolute;
-    width: 85px;
+    width: 90px;
     height: 76px;
-    left: 15px;
-    top: 228px;
+    left: 5px;
+    top: 250px;
 
     background: url(shutterstock_1741068734 [Converted].png);
 
@@ -783,10 +776,10 @@ margin: 0px 20px;
 
 #Ground_small_4{
     position: absolute;
-    width: 85px;
+    width: 90px;
     height: 76px;
-    left: 15px;
-    top: 324px;
+    left: 5px;
+    top: 355px;
 
     background: url(shutterstock_1460612807 [Converted].png);
 
@@ -797,4 +790,28 @@ margin: 0px 20px;
     align-self: stretch;
     flex-grow: 0;
     margin: 0px 20px;
+}
+
+#camera{
+    /* BG */
+
+
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    left: 0px;
+    top: 460px;
+
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 4;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 20px;
+
+    background: url(img/camera.png);
+    background-size : cover;
+
 }
