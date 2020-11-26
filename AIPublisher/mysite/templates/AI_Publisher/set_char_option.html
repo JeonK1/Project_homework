@@ -18,12 +18,12 @@
     </form>
 </head>
 <!--<body onload="navbar_function();setCard();">-->
-<body onload="navbar_function();">
+<body onload="navbar_function();initCharData();">
     <!--배경 및 프레임-->
     <div class="BackGround" id="BackGround">
 
         <!--제목-->
-       <div class="Field" id="Field">
+        <div class="Field" id="Field">
             <div class="stepbox" id="stepbar">
                 <div class="step" id="step1">인물카드선택</div>
                 <div class="step" id="step2">인물카드설정</div>
@@ -34,13 +34,11 @@
 
 
         <!--다음 버튼-->
-        <!--Todo : 내용 다 안채워줬으면 못넘어가게 하기-->
-
-        <div class="next_shape" id="next_shape">
+        <div class="next_shape" id="next_shape" onclick="sendToNextPage();" >
             <div class="next_step_body_1" id="next_step_body_1">
                 <div class="next_step_body_2" id="next_step_body_2">
                     <div class="next_step_text" id="next_step_text">Next</div>
-                    <div class="next_step_image" id="next_step_image" onclick="sendToNextPage();"></div>
+                    <div class="next_step_image" id="next_step_image"></div>
                 </div>
             </div>
         </div>
@@ -48,30 +46,33 @@
             <!--<div class="next_step" id="next_step"></div></a>-->
 
         <!--왼쪽 캐릭터 카드 메뉴-->
-
-        <div class="character_card" id="card1" style="background-image: url('{{getJSONData.charList.0}}');" onclick="settingCharData(0)"></div>
-        <div class="character_card" id="card2" style="background-image: url('{{getJSONData.charList.1}}');" onclick="settingCharData(1)"></div>
-        <div class="character_card" id="card3" style="background-image: url('{{getJSONData.charList.2}}');" onclick="settingCharData(2)"></div>
-        <div class="character_card" id="card4" style="background-image: url('{{getJSONData.charList.3}}');" onclick="settingCharData(3)"></div>
-
+        <div class="character_card_wrap" id="character_card_wrap">
+        {% for character in getJSONData.charList %}
+            <div class="character_card" id="card{{forloop.counter}}" onclick="settingCharData({{forloop.counter | add:"-1"}})">
+                <img class="card_img" id="card_{{forloop.counter}}" src={{character}}>
+            </div>
+        {% endfor %}
+        </div>
         <!--중간의 캐릭터 카드 메뉴-->
-        <div class="main_card" id="set_card" style="background-image: url('{{getJSONData.charList.0}}');"></div>
+        <div class="main_card" id="set_card"">
+            <img class="card_img" id="setCard" src={{getJSONData.charList.0}}>
+        </div>
 
         <!--캐릭터 설정 이름-->
         <div class="card_option" id="name_box">
             <div class="card_option" id="name">이름</div>
-            <input id="name_text" type="text" name="card_option" >
+            <input class="char_input_text" id="name_text" type="text" name="card_option" >
 
         </div>
         <!--캐릭터 설정 성격-->
         <div class="card_option" id="personality_box">
             <div class="card_option" id="personality">성격</div>
-            <input id="personality_text" type="text" name="card_option" >
+            <input class="char_input_text" id="personality_text" type="text" name="card_option" >
         </div>
         <!--캐릭터 설정 기타-->
         <div class="card_option" id="etc_box">
             <div id="card_option" id="etc">기타</div>
-            <input id="etc_text" type="text" name="card_option" >
+            <input class="char_input_text" id="etc_text" type="text" sname="card_option" >
         </div>
 
             <!--캐릭터 설정 기타-->
@@ -118,9 +119,6 @@
                 </div>
             </div>
         </div>
-
     </div>
-
 </body>
-
 </html>

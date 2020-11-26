@@ -5,7 +5,7 @@
     left: calc(50% - 1440px / 2);
     top: calc(50% - 1024px / 2 );
     z-index: 0;
-    background: aqua;
+    background: #ffffff;
 }
 
 /* Group 19 */
@@ -25,7 +25,6 @@
     height: 631px;
     left: calc(50% - 39px / 2 );
     top: calc(50% - 631px / 2 );
-
 }
 
 /* TEXT */
@@ -118,7 +117,12 @@
     top: 221px;
 
 }
-
+.card_img {
+    width:90%;
+    height:90%;
+    object-fit: contain;
+    margin: 5px;
+ }
 #card1 {
     position: absolute;
     width: 85px;
@@ -133,7 +137,6 @@
     box-sizing: border-box;
     border-radius: 8px;
     background-size: 85px 114px;
-
 }
 
 #card2 {
@@ -206,6 +209,8 @@
     border-radius: 12px;
 
     background-size: 199px 276px;
+    padding-top:10px;
+    padding-left:15px;
 }
 
 #option_box {
@@ -253,6 +258,13 @@
 
 }
 
+.char_input_text{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+}
 #name_text {
     display: flex;
     flex-direction: row;

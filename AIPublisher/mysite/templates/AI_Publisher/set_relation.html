@@ -41,6 +41,12 @@
         <!-- 왼쪽 인물 목록 메뉴 -->
 
         <div class="character_menu" id="character_menu">
+            <!--{% for character in getJSONData.charList %}-->
+                <!--<div class="character_card" id="card{{forloop.counter}}" onclick="settingCharData({{forloop.counter | add:"-1"}})"-->
+                    <!--<img class="card_img" id="card_{{forloop.counter}}" src={{character}}>-->
+                <!--</div>-->
+            <!--{% endfor %}-->
+
             <div class="character_card" id="character_1" style="background-image: url('{{ getJSONData.mainChar.url }}');"></div>
             <div class="character_card" id="character_2" onclick="sendSubChar(2);" style="background-image: url('{{ getJSONData.charList.0.url }}');"></div>
             <div class="character_card" id="character_3" onclick="sendSubChar(3);" style="background-image: url('{{ getJSONData.charList.1.url }}');"></div>

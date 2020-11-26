@@ -57,58 +57,60 @@ function random_character() {
     }
 
     //이미지 고르기.
-    $("#card1").click(function() {
+    var selectBoxShadowStr = "5px 5px 7px black";
+    var unSelectBoxShadowStr = "0px 0px 0px black";
+    $("#card_1").click(function() {
         if (imgArray[imgNum[0]][1] == 0) {
             check[0] = true;
             imgArray[imgNum[0]][1] = 1;
-            objImg1.border = "30px";
+            document.getElementById("card_1").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[0] = false;
             imgArray[imgNum[0]][1] = 0;
-            objImg1.border = "0px";
+            document.getElementById("card_1").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
-   $("#card2").click(function() {
+   $("#card_2").click(function() {
         if (imgArray[imgNum[1]][1] == 0) {
 
             check[1] = true;
             imgArray[imgNum[1]][1] = 1;
-            objImg2.border = "30px";
+            document.getElementById("card_2").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[1] = false;
             imgArray[imgNum[1]][1] = 0;
-            objImg2.border = "0px";
+            document.getElementById("card_2").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
-   $("#card3").click(function() {
+   $("#card_3").click(function() {
         if (imgArray[imgNum[2]][1] == 0) {
 
             check[2] = true;
             imgArray[imgNum[2]][1] = 1;
-            objImg3.border = "30px";
+            document.getElementById("card_3").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[2] = false;
             imgArray[imgNum[2]][1] = 0;
-            objImg3.border = "0px";
+            document.getElementById("card_3").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
-   $("#card4").click(function() {
+   $("#card_4").click(function() {
         if (imgArray[imgNum[3]][1] == 0) {
 
             check[3] = true;
             imgArray[imgNum[3]][1] = 1;
-            objImg4.border = "30px";
+            document.getElementById("card_4").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[3] = false;
             imgArray[imgNum[3]][1] = 0;
-            objImg4.border = "0px";
+            document.getElementById("card_4").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
@@ -116,7 +118,7 @@ function random_character() {
     var count = 0;
 
    //이미지 다시뽑기
-    $("#redraw_image").click(function() {
+    $("#redraw_shape").click(function() {
         count += 1;
 
         if(count < 3) {
@@ -151,30 +153,36 @@ function random_character() {
                 objImg4.src = imgArray[imgNum[3]][0];
             }
         }
+    });
+    $("#next_shape").click(function() {
+        var arrCharacter = new Array();
 
+        //캐릭터 개수 세어서, 0명 선택인거 막아주기
+        var charCnt = 0;
+        for(i=0; i<4; i++){
+            if(check[i])
+                charCnt+=1;
+        }
+        if(charCnt<2){
+            alert('캐릭터를 적어도 두명 선택해주세요');
+        } else {
+            for(i=1;i<=4; i++){
+                if(check[i-1]) {
+                    charIdName = "card"+i;
 
+                    bgImageUrl = imgArray[imgNum[i-1]][0];
+                    arrCharacter.push(bgImageUrl);
+                }
+            }
 
-
+            var jsonObject = new Object();
+            jsonObject.charList = arrCharacter;
+            var jsonData = JSON.stringify(jsonObject);
+            console.log(jsonData);
+            document.getElementById("jsonData").value = jsonData;
+            document.getElementById("sendJson").submit();
+        }
     });
 
-}
 
-function next_page(){
-    console.log(imgArray);
-    var arrCharacter = new Array();
-    for(i=1;i<=4; i++){
-
-        if(check[i-1]) {
-            charIdName = "card"+i;
-
-            bgImageUrl = imgArray[imgNum[i-1]][0];
-            arrCharacter.push(bgImageUrl);
-        }
-    }
-
-    var jsonObject = new Object();
-    jsonObject.charList = arrCharacter;
-    var jsonData = JSON.stringify(jsonObject);
-    document.getElementById("jsonData").value = jsonData;
-    document.getElementById("sendJson").submit();
 }

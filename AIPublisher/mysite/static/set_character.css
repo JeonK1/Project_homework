@@ -6,7 +6,7 @@
     left: calc(50% - 1440px / 2);
     top: calc(50% - 1024px / 2 );
     z-index: 0;
-    background: aqua;
+    background: #ffffff;
 }
 
 /* Group 19 */
@@ -282,13 +282,13 @@
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
-    z-index: 2;
 
     position: absolute;
     width: 107px;
     height: 48px;
     left: 1278px;
     top: 884px;
+    z-index: 3;
 }
 #next_step_body_1{
     /* Text / Next */
