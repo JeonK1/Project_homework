@@ -33,24 +33,23 @@
 
         <!--다음 버튼-->
         <!--Todo : 나중에 5개 다 안채웠는데 넘어갈려고하면 막아줘야함-->
-        <div class="next_step" id="next_step" onclick="sendToNextPage();"></div>
-        <!--<a href="/AI_Publisher/make_story/" target=_self>-->
-            <!--<div class="next_step" id="next_step"></div>-->
-        <!--</a>-->
+        <div class="next_shape" id="next_shape" onclick="sendToNextPage();" >
+            <div class="next_step_body_1" id="next_step_body_1">
+                <div class="next_step_body_2" id="next_step_body_2">
+                    <div class="next_step_text" id="next_step_text">Next</div>
+                    <div class="next_step_image" id="next_step_image"></div>
+                </div>
+            </div>
+        </div>
 
         <!-- 왼쪽 인물 목록 메뉴 -->
 
         <div class="character_menu" id="character_menu">
-            <!--{% for character in getJSONData.charList %}-->
-                <!--<div class="character_card" id="card{{forloop.counter}}" onclick="settingCharData({{forloop.counter | add:"-1"}})"-->
-                    <!--<img class="card_img" id="card_{{forloop.counter}}" src={{character}}>-->
-                <!--</div>-->
-            <!--{% endfor %}-->
-
-            <div class="character_card" id="character_1" style="background-image: url('{{ getJSONData.mainChar.url }}');"></div>
-            <div class="character_card" id="character_2" onclick="sendSubChar(2);" style="background-image: url('{{ getJSONData.charList.0.url }}');"></div>
-            <div class="character_card" id="character_3" onclick="sendSubChar(3);" style="background-image: url('{{ getJSONData.charList.1.url }}');"></div>
-            <div class="character_card" id="character_4" onclick="sendSubChar(4);" style="background-image: url('{{ getJSONData.charList.2.url }}');"></div>
+            {% for character in charList %}
+                <div class="character_card" id="character_{{forloop.counter}}" onclick="sendSubChar({{forloop.counter}})">
+                    <img class="card_img" id="card_{{forloop.counter}}" src={{character.url}}>
+                </div>
+            {% endfor %}
         </div>
         <!-- 하단 8개 관계 설정 카드-->
         <div class="relation_menu" id="relation_menu">
@@ -98,11 +97,13 @@
             </div>
         </div>
         <!-- 주인공과 서브인물 -->
-        <div>
-            <div class="character_selected_card" id="character_main" style="background-image: url('{{ getJSONData.mainChar.url }}');"></div>
+        <div div class="character_selected_card" id="character_main" >
+            <img class="card_img" src="{{ charMain.url }}"/>
             <div class="img_star" id="img_star"></div>
         </div>
-        <div class="character_selected_card" id="character_sub"></div>
+        <div class="character_selected_card" id="character_sub">
+            <img class="card_img" id="characterSub"/>
+        </div>
 
                 <!-- 네비게이션 바 -->
         <div class="upper_bar" id="upper_bar">

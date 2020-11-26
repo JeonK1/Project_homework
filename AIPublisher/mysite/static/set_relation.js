@@ -48,32 +48,58 @@ function onDrop(e){
 
 function sendSubChar(num){
     subCharNo=num;
-    charIdName = "character_"+num;
-    bgImageUrl = document.getElementById(charIdName).style.backgroundImage.slice(4, -1).replace(/"/g, "");
-    query = "url('" + bgImageUrl + "')";
-    document.getElementById('character_sub').style.backgroundImage = query;
+    charIdName = "card_"+num;
+    document.getElementById('characterSub').src = document.getElementById(charIdName).src;
 }
 
 function sendToNextPage(){
-    jsonData = document.getElementById("jsonData").value;
-    // jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
-    jsonData = jsonData.replaceAll('\'', '\"');
-    jsonObject = JSON.parse(jsonData);
-
-    //부 주인공은 charList에서 지우고, subChar object로 새로 넣어줌
-    jsonObject.subChar = jsonObject.charList[subCharNo-2];
-    delete jsonObject.charList[subCharNo-2];
-
-    //관계 정보 넣어주기
-    var arrRelation = new Array();
+    // 예외처리
+    var relCnt = 0;
     for(i=0; i<5; i++){
-        arrRelation.push(relationList[i]);
+        if(relationList[i]==""){
+            // 비어는 개수 세어보기
+            relCnt += 1;
+        }
     }
-    jsonObject.relList = arrRelation;
+    if(relCnt > 0){
+        //비어있는 관계 카드가 1개 이상임
+        alert('관계 카드를 모두 설정해주세요');
+    } else if(subCharNo==-1) {
+        //부 주인공 선택안함
+        alert('관계 설정에 사용될 인물을 선택해주세요');
+    } else {
+        jsonData = document.getElementById("jsonData").value;
+        // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
+        jsonData = jsonData.replaceAll('\'', '\"');
+        jsonObject = JSON.parse(jsonData);
 
-    var jsonData = JSON.stringify(jsonObject);
-    console.log(jsonData);
+        var sendJsonObject = new Object();
+        var subCharUrl = document.getElementById('characterSub').src;
+        var otherCharList = new Array();
+        for(i=0; i<jsonObject.charList.length; i++){
+            if(jsonObject.charList[i].isMainChar == 1){
+                //주인공
+                sendJsonObject.mainChar = jsonObject.charList[i];
+            } else if(jsonObject.charList[i].url.includes(subCharUrl)) {
+                //부 주인공
+                sendJsonObject.subChar = jsonObject.charList[i];
+            } else {
+                otherCharList.push(jsonObject.charList[i]);
+            }
+        }
+        sendJsonObject.charList = otherCharList;
 
-    document.getElementById("jsonData").value = jsonData;
-    document.getElementById("sendJson").submit();
+        //관계 정보 넣어주기
+        var arrRelation = new Array();
+        for(i=0; i<5; i++){
+            arrRelation.push(relationList[i]);
+        }
+        sendJsonObject.relList = arrRelation;
+
+        var jsonData = JSON.stringify(sendJsonObject);
+        console.log(jsonData);
+
+        document.getElementById("jsonData").value = jsonData;
+        document.getElementById("sendJson").submit();
+    }
 }

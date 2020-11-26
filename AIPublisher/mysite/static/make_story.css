@@ -309,8 +309,9 @@
     top: calc(50% - 114px/2 - 202px);
 
     background: #C4C4C4;
-    border: 1px solid #000000;
+    border-radius: 8px;
     box-sizing: border-box;
+    radius: 8px;
 
     /* Inside Auto Layout */
     flex: none;
@@ -329,8 +330,9 @@
     top: calc(50% - 114px/2 - 63px);
 
     background: #C4C4C4;
-    border: 1px solid #000000;
+    border-radius: 8px;
     box-sizing: border-box;
+    radius: 8px;
 
     /* Inside Auto Layout */
     flex: none;
@@ -350,8 +352,9 @@
     top: calc(50% - 114px/2 + 76px);
 
     background: #C4C4C4;
-    border: 1px solid #000000;
+    border-radius: 8px;
     box-sizing: border-box;
+    radius: 8px;
 
     /* Inside Auto Layout */
     flex: none;
@@ -369,8 +372,9 @@
     top: calc(50% - 114px/2 + 215px);
 
     background: #C4C4C4;
-    border: 1px solid #000000;
+    border-radius: 8px;
     box-sizing: border-box;
+    radius: 8px;
 
     /* Inside Auto Layout */
     flex: none;
@@ -772,3 +776,9 @@
     background-size : cover;
 
 }
+.card_img {
+    width:90%;
+    height:90%;
+    object-fit: contain;
+    margin: 5px;
+ }

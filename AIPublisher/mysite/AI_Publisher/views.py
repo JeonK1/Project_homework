@@ -73,16 +73,27 @@ def set_relation(request):
     if request.method == 'POST':
         message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
         getjson = json.loads(message) #Json 풀어주기
+        allCharList = getjson['charList']
+        charMain = ""
+        charList = []
+        for i in range(len(allCharList)):
+            if (allCharList[i]['isMainChar']==1):
+                charMain = allCharList[i]
+            else:
+                charList.append(allCharList[i])
         return render(request, 'AI_Publisher/set_relation.html', {'getJSONData' : getjson,
-                                                                'card_pos': card_pos,
+                                                                    'charList' : charList,
+                                                                  'charMain': charMain,
+                                                                  'card_pos': card_pos,
                                                                 'card_neu': card_neu,
                                                                 'card_neg': card_neg})
     else:
         return render(request, 'AI_Publisher/set_relation.html', {'charList' : charList,
-                                                                  'charMain':charMain,
-                                                                  'card_pos':card_pos,
-                                                                  'card_neu':card_neu,
-                                                                  'card_neg':card_neg})
+                                                                  'charMain': charMain,
+                                                                  'card_pos': card_pos,
+                                                                'card_neu': card_neu,
+                                                                'card_neg': card_neg})
+
 def get_relation_keyprob(request):
     return render(request, 'AI_Publisher/get_relation_keyprob.html')
 
