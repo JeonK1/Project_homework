@@ -1,75 +1,138 @@
-/* BGcolor */
+html{
+    margin: 1%;
+    width: 80%;
+    height: 80%;
+
+}
+body{
+    min-height: 70%;
+}
+
 #BackGround {
-    position: relative;
-    width: 2000px;
-    height: 1290px;
+    position: absolute;
+    width: 1440px;
+    height: 1024px;
+    left: calc(50% - 1440px / 2);
+    top: calc(50% - 1024px / 2);
+    z-index: 0;
+    margin-left: auto;
+    margin-right: auto;
 
-    background: #FFFFFF;
+    background:#007fff;
 }
 
-/* Group 19 */
 #Field {
+
     position: absolute;
-    width: 1894px;
-    height: 1120px;
-    left: 53px;
-    top: 119px;
+    width: 1340px;
+    height: 949px;
+    left: calc(50% - 1340px / 2);
+    top: calc(50% - 949px / 2 + 37.5px);
+
+
+    offset: center;
+    z-index: 0;
+
+    background: #FFFBE6;
 }
 
-
-/* border */
-#border {
+#stepbar {
     position: absolute;
-    width: 1890px;
-    height: 1100px;
-
-    background: rgba(196, 196, 196, 0.02);
-    border: 2px solid #88B9A4;
-    box-sizing: border-box;
-}
-
-/* STATBAR */
-#STATBAR {
-    position: absolute;
-    width: 1894px;
-    height: 80px;
-
-    background: #88B9A4;
-    border-radius: 11px;
+    width: 39px;
+    height: 631px;
+    left: calc(50% - 39px / 2);
+    top: calc(50% - 631px / 2);
+    z-index: 1;
 
 }
 
-/* TEXT */
-#step {
+#step1 {
+
     position: absolute;
-    left: 45%;
-    right: 30%;
-    top: 0;
-    bottom: 0;
+    width: 39px;
+    height: 207px;
+    left: calc(50% - 39px / 2 - 684.5px);
+    top: calc(50% - 207px / 2 - 212.5px);
 
 
-    font-size: 36px;
+    font-family: B612;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
     line-height: 150%;
-    /* or 54px */
+    /* or 22px */
+
     display: flex;
     align-items: center;
     text-align: center;
-    letter-spacing: 0.0168em;
-    font-feature-settings: 'tnum' on, 'lnum' on;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
 
-    color: #FFFFFF;
+    color: #000000;
+
+
+    background: #B9E4C9;
+    border-radius: 8px;
 
 }
 
-/* bottom_bar */
-#bottom_bar {
-    position: absolute;
-    width: 2000px;
-    height: 30px;
-    left: 0;
-    top: 1260px;
+#step2 {
 
-    background: #88B9A4;
+    position: absolute;
+    width: 39px;
+    height: 207px;
+    left: calc(50% - 39px / 2 - 684.5px);
+    top: calc(50% - 207px / 2 - 0.5px);
+
+
+    font-family: B612;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 150%;
+    /* or 22px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #666666;
+    /* or 22px */
+
+
+    background: #E6E2CF;
+    border-radius: 8px;
+
+}
+
+#step3 {
+
+    position: absolute;
+    width: 39px;
+    height: 207px;
+    left: calc(50% - 39px / 2 - 684.5px);
+    top: calc(50% - 207px / 2 + 211.5px);
+
+    font-family: B612;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 150%;
+    /* or 22px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #666666;
+
+
+    background: #E6E2CF;
+    border-radius: 8px;
 }
 
 #next_step {
@@ -100,10 +163,10 @@
 #card_box {
 
     position: absolute;
-    width: 1249px;
-    height: 334px;
-    left: 329px;
-    top: 777px;
+    width: 886px;
+    height: 276px;
+    left: calc(50% - 886px / 2 + 1px);
+    top: calc(50% - 276px / 2 + 203px);
     z-index: 1;
 
 }
