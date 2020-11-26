@@ -18,61 +18,62 @@
         <input type='hidden' name='jsonData' id='jsonData' value="{{getJSONData}}"/>
     </form>
 </head>
-<body onload="navbar_function();stepbar_move();
-nextstep_move();show_text();question_small_move();
-select_background();">
+
+<body onload="navbar_function();">
+
     <div class="BackGround" id="BackGround">
+
+        <!-- 베이지색 바탕-->
+        <div class="Field" id="Field"></div>
+
         <!--왼쪽 메뉴-->
         <div class="LeftSidebar" id="LeftSidebar">
-            <div class="LeftSidebar_right" id="LeftSidebar_right"></div>
-            <div class="LeftSidebar_left" id="LeftSidebar_left"></div>
+            <!--왼쪽 카드 뭉치-->
+            <div class="Card_small_1" id="Card_small_1" style="background-image: url('{{getJSONData.charList.0}}');"></div>
+            <div class="Card_small_2" id="Card_small_2" style="background-image: url('{{getJSONData.charList.1}}');"></div>
+            <div class="Card_small_3" id="Card_small_3" style="background-image: url('{{getJSONData.charList.2}}');"></div>
+            <div class="Card_small_4" id="Card_small_4" style="background-image: url('{{getJSONData.charList.3}}');"></div>
+        </div>
+
+        <!-- 스토리 보드 -->
+        <div class="story_border" id="story_border">
+            <div class="story_frame" id="story_frame">
+                <div class="left_frame" id="left_frame"></div>
+                <div class="right_frame" id="right_frame"></div>
+            </div>
+        </div>
+
+        <!-- 가이드와 키워드 -->
+        <div class="guide_keyword" id="guide_keyword">
+            <div class="guide" id="guide">
+                <div class="guide_box" id="guide_box"></div>
+                <div class="guide_text" id="guide_text">가이드 질문</div>
+            </div>
+            <div class="keyword" id="keyword">
+                <div class="keyword_box" id="keyword_box"></div>
+                <div class="keyword_text" id="keyword_text">상황키워드</div>
+            </div>
+        </div>
+
+        <!-- 텍스트 입력 -->
+        <div class="input_text_box" id="input_text_box">
+            <input type="text" class="input_text" id="input_text" disabled="">ㅎㅎㅎ
         </div>
 
         <!-- 3단계 -->
         <!--오른쪽 메뉴-->
         <div class="RightSidebar" id="RightSidebar">
-            <div class="RightSidebar_left" id="RightSidebar_left"></div>
-            <div class="RightSidebar_right" id="RightSidebar_right"></div>
-        </div>
-
-        <!-- 오른쪽 배경 뭉치 -->
-        <div class="Select_Ground_Card_Field" id="Select_Ground_Card_Field">
             <div class="Ground_small_1" id="Ground_small_1" style="background-image: url('../../static/img/ground/{{bookContetnsList.0}}');"></div>
             <div class="Ground_small_2" id="Ground_small_2" style="background-image: url('../../static/img/ground/{{bookContetnsList.1}}');"></div>
             <div class="Ground_small_3" id="Ground_small_3" style="background-image: url('../../static/img/ground/{{bookContetnsList.2}}');"></div>
             <div class="Ground_small_4" id="Ground_small_4" style="background-image: url('../../static/img/ground/{{bookContetnsList.3}}');"></div>
         </div>
 
+
         <div class="camera" id="camera"></div>
         <div class="question_string_small" id="question_string_small"></div>
 
-        <!--제목-->
-        <div class="Field" id="Field">
-            <div class="border" id="border"></div>
-            <div class="STATBAR" id="STATBAR">
-                <div class="step" id="step">이야기 제작</div>
-            </div>
-        </div>
 
-        <!-- 텍스트 입력 -->
-        <div class="input_text_box" id="input_text_box">
-            <input type="text" class="input_text" id="input_text" disabled="">
-        </div>
-
-
-
-        <!-- 1단계 -->
-        <!-- 질문 -->
-        <div class="question_base" id="question_base">
-            <div class="question_base_text" id="question_base_text"></div>
-        </div>
-
-        <!-- 2단계 -->
-        <!-- 문장, base 축소 -->
-        <div class="question_string" id="question_string">
-            <div class="question_string_text" id="question_string_text"></div>
-        </div>
-        <div class="question_base_small" id="question_base_small"></div>
 
         <!-- 발단 전개 위기 절정 결말 -->
         <div class="STEP_BAR" id="STEP_BAR">
@@ -93,22 +94,20 @@ select_background();">
             </div>
         </div>
 
-        <!--왼쪽 카드 뭉치-->
-        <div class="Select_Character_Card_Field" id="Select_Character_Card_Field">
-            <div class="Card_small_1" id="Card_small_1" style="background-image: url('{{getJSONData.charList.0}}');"></div>
-            <div class="Card_small_2" id="Card_small_2" style="background-image: url('{{getJSONData.charList.1}}');"></div>
-            <div class="Card_small_3" id="Card_small_3" style="background-image: url('{{getJSONData.charList.2}}');"></div>
-            <div class="Card_small_4" id="Card_small_4" style="background-image: url('{{getJSONData.charList.3}}');"></div>
-        </div>
-
-        <!--화면아래 초록색 바-->
-        <div class="bottom_bar" id="bottom_bar"></div>
-
         <!--다음 단계-->
-        <div class="next_step" id="next_step"></div>
+        <div class="next_shape" id="next_shape">
+            <div class="next_step_body_1" id="next_step_body_1">
+                <div class="next_step_body_2" id="next_step_body_2">
+                    <div class="next_step_text" id="next_step_text">next</div>
+                    <div class="next_step_shape" id="next_step_shape"></div>
+                </div>
+            </div>
+        </div>
 
         <!-- 네비게이션 바 -->
         <div class="upper_bar" id="upper_bar">
+            <div class="AI_Publisher" id="AI_Publisher">AI_Publisher</div>
+            <div class="AI_Publisher_image" id="AI_Publisher_image"></div>
             <div class="user_icon" id="user_icon"></div>
             <div class="user_icon_event" id="user_icon_event"></div>
             <div class="username" id="username"></div>
@@ -117,14 +116,35 @@ select_background();">
         <!--계정 메뉴-->
         <div class="ID_Menu" id="ID_Menu">
             <div class="menu_1" id="menu_1">
-                <div class="menu_feature_1" id="menu_feature_1"></div>
-                <div class="menu_text_1" id="menu_text_1">내 정보 관리</div>
+                <div class="menu_1_item" id="menu_1_item">
+                    <div class="menu_1_icon_box" id="menu_1_icon_box">
+                        <div class="menu_1_icon" id="menu_1_icon"></div>
+                    </div>
+                    <div class="menu_1_text_box" id="menu_1_text_box">
+                        <div class="menu_1_text" id="menu_1_text">Photos</div>
+                    </div>
+                </div>
             </div>
-            <a href="/AI_Publisher/main/" target=_self>
             <div class="menu_2" id="menu_2">
-                <div class="menu_feature_2" id="menu_feature_2"></div>
-                <div class="menu_text_2" id="menu_text_2">메인 화면</div>
-            </div></a>
+                <div class="menu_2_item" id="menu_2_item">
+                    <div class="menu_2_icon_box" id="menu_2_icon_box">
+                        <div class="menu_2_icon" id="menu_2_icon"></div>
+                    </div>
+                    <div class="menu_2_text_box" id="menu_2_text_box">
+                        <div class="menu_2_text" id="menu_2_text">Sharing</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu_3" id="menu_3">
+                <div class="menu_3_item" id="menu_3_item">
+                    <div class="menu_3_icon_box" id="menu_3_icon_box">
+                        <div class="menu_3_icon" id="menu_3_icon"></div>
+                    </div>
+                    <div class="menu_3_text_box" id="menu_3_text_box">
+                        <div class="menu_3_text" id="menu_3_text">Homescreen</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
