@@ -470,6 +470,6 @@
     right: 14.04%;
     top: 32.06%;
     bottom: 32.07%;
-
+    z-index: 2;
     background-image: url(img/redraw.png);
 }
