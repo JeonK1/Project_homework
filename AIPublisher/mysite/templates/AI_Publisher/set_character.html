@@ -38,18 +38,20 @@
         <!--화면아래 초록색 바-->
         <div class="bottom_bar" id="bottom_bar"></div>
 
-        <!--다음 버튼-->
-        <div class="next_step" id="next_step" onclick="next_page()"></div>
+
 
         <!--다시 뽑기-->
         <div class="redraw" id="redraw"></div>
 
         <!--캐릭터 배치-->
 
-        <div class="card1" id="card_1"><img id="card1" width="250px" height="334px"></div>
-        <div class="card2" id="card_2"><img id="card2" width="250px" height="334px"></div>
-        <div class="card3" id="card_3"><img id="card3" width="250px" height="334px"></div>
-        <div class="card4" id="card_4"><img id="card4" width="250px" height="334px"></div>
+        <div class="cardbox" id="card_box">
+            <div class="card1" id="card_1"><img id="card1" width="199px" height="276px"></div>
+            <div class="card2" id="card_2"><img id="card2" width="199px" height="276px"></div>
+            <div class="card3" id="card_3"><img id="card3" width="199px" height="276px"></div>
+            <div class="card4" id="card_4"><img id="card4" width="199px" height="276px"></div>
+        </div>
+
 
 
         <!-- 네비게이션 바 -->
@@ -90,7 +92,27 @@
             </div>
         </div>
 
+        <!--다음 단계-->
+        <div class="next_shape" id="next_shape">
+            <div class="next_step_body_1" id="next_step_body_1">
+                <div class="next_step_body_2" id="next_step_body_2">
+                    <div class="next_step_text" id="next_step_text">Next</div>
+                    <div class="next_step_image" id="next_step_image"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="redraw" id="redraw_shape">
+            <div class="redraw" id="redraw_body_1">
+                <div class="redraw" id="redraw_body_2">
+                    <div class="redraw" id="redraw_text">Again</div>
+                    <div class="redraw" id="redraw_image"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 </body>
 
 </html>
