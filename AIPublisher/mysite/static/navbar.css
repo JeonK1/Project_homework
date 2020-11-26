@@ -134,6 +134,8 @@
 }
 #menu_1_item{
     /* Nav Item */
+
+
     /* Auto Layout */
 
     display: flex;
@@ -142,53 +144,31 @@
     padding: 0px;
 
     position: absolute;
-    width: 117px;
-    left: 8px;
-    top: 0px;
-    bottom: 0px;
-}
-
-#menu_1_icon_box{
-    /* Icon */
-    position: absolute;
-    width: 48px;
-    height: 48px;
+    width: 90px;
     left: 0px;
     top: 0px;
+    bottom: 96px;
 
 
     /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
     margin: 0px 0px;
-
-}
-
-#menu_1_icon{
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: calc(50% - 24px/2);
-    top: calc(50% - 24px/2);
-
-    background : url(img/terrain.png);
 }
 
 #menu_1_text_box{
     /* Body */
+
+
     /* Auto Layout */
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 4px 8px;
+    padding: 4px 12px;
 
     position: absolute;
-    width: 69px;
+    width: 100px;
     height: 48px;
-    left: 48px;
+    left: 0px;
     top: 0px;
 
 
@@ -202,28 +182,26 @@
 
 #menu_1_text{
     position: static;
-    width: 53px;
-    height: 24px;
-    left: 8px;
-    top: 12px;
+    width: 80px;
+    height: 16px;
+    left: 12px;
+    top: 16px;
 
-    /* IBM Plex / Subtitle 1 */
-
-    font-family: IBM Plex Sans;
+    font-family: B612;
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
-    line-height: 150%;
-    /* identical to box height, or 24px */
+    font-size: 10px;
+    line-height: 158%;
+    /* identical to box height, or 16px */
 
     display: flex;
     align-items: center;
-    letter-spacing: 0.005em;
-    font-feature-settings: 'tnum' on, 'lnum' on;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
 
-    /* Blue / 05 */
+    /* Grey / 04 */
 
-    color: #0F56B3;
+    color: #818181;
 
     /* Inside Auto Layout */
 
@@ -260,7 +238,7 @@
     padding: 0px;
 
     position: absolute;
-    width: 123px;
+    width: 210px;
     left: 8px;
     top: 0px;
     bottom: 0px;
@@ -289,7 +267,7 @@
     left: calc(50% - 24px/2);
     top: calc(50% - 24px/2);
 
-    background : url(img/share.png);
+    background : url(img/terrain.png);
 }
 
 #menu_2_text_box{
@@ -301,7 +279,7 @@
     padding: 4px 8px;
 
     position: absolute;
-    width: 75px;
+    width: 162px;
     height: 48px;
     left: 48px;
     top: 0px;
@@ -317,7 +295,7 @@
 
 #menu_2_text{
     position: static;
-    width: 59px;
+    width: 150px;
     height: 24px;
     left: 8px;
     top: 12px;
@@ -401,7 +379,7 @@
     left: calc(50% - 24px/2);
     top: calc(50% - 24px/2);
 
-    background : url(img/home.png);
+    background : url(img/share.png);
 }
 
 #menu_3_text_box{
