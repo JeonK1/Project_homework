@@ -25,17 +25,48 @@
             </div>
         {% else %}
             <div class="background" id="baseground">
-                <div class="background" id="backGround">
-                    <div claas="nextstep" id="make_str_box" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/set_character'"></div>
-            <div claas="nextstep" id="gallery" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/show_gallery'"></div>
-            <div class="decoration" id="shelf"></div>
-            <div id="test"><a href="http://127.0.0.1:8000/accounts/logout/">{{user.email}}</a></div>
-            <form action="http://127.0.0.1:8000/accounts/logout/" method="post">
-                {% csrf_token %}
-                <input type="hidden" name="next" value="/AI_Publisher/"/>
-                <input type="submit" value="로그아웃">
-            </form>
+
+
+                <div class="gallery" id="gallery">
+                    <div class="gallery" id="gallery_text">나의 책장</div>
+                    <div class="gallery" id="gallery_btn" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/show_gallery'">책장으로 이동</div>
                 </div>
+
+
+                <div claas="nextstep" id="make_str_box">
+                    <div class="nextstep" id="make_str_text1">나만의 동화 만들기</div>
+                    <div class="nextstep" id="make_str_text2">쉽고 재미있게 동화를 만들어보세요.</div>
+                    <div class="nextstep" id="make_str_btn"  onclick="location.href='http://127.0.0.1:8000/AI_Publisher/set_character'">새 동화 만들기</div>
+                </div>
+
+                <div class="example" id="example_box">
+                    <div class="example" id="example_text1">페페와<br>할아버지</div>
+                    <div class="example" id="example_text2">예시 동화를 읽어보세요.</div>
+                    <div class="example" id="example_btn">읽기</div>
+                </div>
+
+                <div class="introduce" id="introduction_box">
+                    <div class="introduce" id="introduction_text1">About us</div>
+                    <div class="introduce" id="introduction_text2">AI publisher는 무엇인가요?<br>어떤 일을 할  수 있나요?</div>
+                    <div class="introduce" id="introduction_btn">더 알아보기</div>
+                </div>
+
+                <div class="upload" id="upload_box">
+                    <div class="upload" id="upload_text1">Upload File</div>
+                    <div class="upload" id="upload_img_background">
+                        <div class="upload" id="upload_img"></div>
+                    </div>
+                    <div class="upload" id="upload_text2">Drag n Drop here<h1 id="browse_text1">Or</h1><h1 id="browse_text2">Browse</h1></div>
+                    <div class="upload" id="dragndrop"></div>
+                    <div class="upload" id="upload_btn">Upload Now</div>
+                </div>
+
+                <div id="test"><a href="http://127.0.0.1:8000/accounts/logout/">{{user.email}}</a></div>
+                <form action="http://127.0.0.1:8000/accounts/logout/" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="/AI_Publisher/"/>
+                    <input type="submit" value="로그아웃">
+                </form>
             </div>
         {% endif %}
 

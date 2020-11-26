@@ -14,99 +14,44 @@
 
     <title>Make Cover</title>
 </head>
-<body onload="navbar_function();cover_text();select_background()">
+<body onload="navbar_function();">
     <div class="BackGround" id="BackGround">
-        <!--왼쪽 메뉴-->
-        <div class="LeftSidebar" id="LeftSidebar">
-            <div class="LeftSidebar_right" id="LeftSidebar_right"></div>
-            <div class="LeftSidebar_left" id="LeftSidebar_left"></div>
-        </div>
-
-        <!--제목-->
-        <div class="Field" id="Field">
-            <div class="border" id="border"></div>
-            <div class="STATBAR" id="STATBAR">
-                <div class="step" id="step">표지 제작</div>
-            </div>
-        </div>
+        <!-- 살색 배경 -->
+        <div class="Field" id="Field"></div>
 
         <!-- 텍스트 입력 -->
-        <div class="input_text_box" id="input_text_box">
-            <input type="text" class="input_text" id="input_text">
-        </div>
+        <input type="text" class="input_text" id="input_text">
 
         <!--표지-->
-        <div class="Cover" id="Cover">
-            <div class="Cover_text" id="Cover_text"></div>
-        </div>
-
-        <!--왼쪽 카드 뭉치-->
-        <div class="Select_Character_Card_Field" id="Select_Character_Card_Field">
-            <div class="Card_small_1" id="Card_small_1" style="background-image: url('../../static/img/characters/{{charList.0}}');"></div>
-            <div class="Card_small_2" id="Card_small_2" style="background-image: url('../../static/img/characters/{{charList.1}}');"></div>
-            <div class="Card_small_3" id="Card_small_3" style="background-image: url('../../static/img/characters/{{charList.2}}');"></div>
-            <div class="Card_small_4" id="Card_small_4" style="background-image: url('../../static/img/characters/{{charList.3}}');"></div>
-        </div>
-
-        <!--화면아래 초록색 바-->
-
-        <div class="bottom_bar" id="bottom_bar"></div>
+        <div class="Cover" id="Cover"></div>
+        <div class="Cover_title" id="Cover_title"></div>
 
         <!--오른쪽 메뉴-->
-
         <div class="RightSidebar" id="RightSidebar">
-            <div class="RightSidebar_left" id="RightSidebar_left"></div>
-            <div class="RightSidebar_right" id="RightSidebar_right"></div>
-        </div>
-
-        <!-- 오른쪽 배경 뭉치 -->
-        <div class="Select_Ground_Card_Field" id="Select_Ground_Card_Field">
             <div class="Ground_small_1" id="Ground_small_1" style="background-image: url('../../static/img/ground/{{bookContetnsList.0}}');"></div>
             <div class="Ground_small_2" id="Ground_small_2" style="background-image: url('../../static/img/ground/{{bookContetnsList.1}}');"></div>
             <div class="Ground_small_3" id="Ground_small_3" style="background-image: url('../../static/img/ground/{{bookContetnsList.2}}');"></div>
             <div class="Ground_small_4" id="Ground_small_4" style="background-image: url('../../static/img/ground/{{bookContetnsList.3}}');"></div>
+            <div class="camera" id="camera"></div>
         </div>
 
-        <!--다음 단계-->
-        <a href="/AI_Publisher/main/" target=_self>
-            <div class="next_step" id="next_step"></div></a>
+        <!--왼쪽 메뉴-->
+        <div class="LeftSidebar" id="LeftSidebar">
+            <!--왼쪽 카드 뭉치-->
+            <div class="Card_small_1" id="Card_small_1" style="background-image: url('{{getJSONData.charList.0}}');"></div>
+            <div class="Card_small_2" id="Card_small_2" style="background-image: url('{{getJSONData.charList.1}}');"></div>
+            <div class="Card_small_3" id="Card_small_3" style="background-image: url('{{getJSONData.charList.2}}');"></div>
+            <div class="Card_small_4" id="Card_small_4" style="background-image: url('{{getJSONData.charList.3}}');"></div>
+        </div>
 
-                <!-- 네비게이션 바 -->
+        <!-- 동화 제작 완성 -->
+        <div class="button_complete" id="button_complete"></div>
+
+        <!-- 네비게이션 바 -->
         <div class="upper_bar" id="upper_bar">
-            <div class="AI_Publisher" id="AI_Publisher">AI_Publisher</div>
             <div class="AI_Publisher_image" id="AI_Publisher_image"></div>
             <div class="user_icon" id="user_icon"></div>
-            <div class="user_icon_event" id="user_icon_event"></div>
             <div class="username" id="username"></div>
-        </div>
-
-        <!--계정 메뉴-->
-        <div class="ID_Menu" id="ID_Menu">
-            <div class="menu_1_item" id="menu_1_item">
-                <div class="menu_1_text_box" id="menu_1_text_box">
-                    <div class="menu_1_text" id="menu_1_text">내 정보 관리</div>
-                </div>
-            </div>
-            <div class="menu_2" id="menu_2">
-                <div class="menu_2_item" id="menu_2_item">
-                    <div class="menu_2_icon_box" id="menu_2_icon_box">
-                        <div class="menu_2_icon" id="menu_2_icon"></div>
-                    </div>
-                    <div class="menu_2_text_box" id="menu_2_text_box">
-                        <div class="menu_2_text" id="menu_2_text">Converted Photos</div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu_3" id="menu_3">
-                <div class="menu_3_item" id="menu_3_item">
-                    <div class="menu_3_icon_box" id="menu_3_icon_box">
-                        <div class="menu_3_icon" id="menu_3_icon"></div>
-                    </div>
-                    <div class="menu_3_text_box" id="menu_3_text_box">
-                        <div class="menu_3_text" id="menu_3_text">sharing</div>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </div>
