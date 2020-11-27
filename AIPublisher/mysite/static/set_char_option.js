@@ -66,10 +66,10 @@ function sendToNextPage(){
     }
     if(isCharNameAllExist != arrCharacter.length){
         // 이름을 작성하지 않은 인물이 있음
-        alert('이름을 작성하지 않은 등장인물이 있습니다.');
+        createModal("warning", "경고", "이름을 작성하지 않은 인물이 있어요");
     } else if (isMainCharSelected == 0){
         // 주인공을 설정하지 않은 인물이 있음
-        alert('주인공이 설정되지 않았습니다.');
+        createModal("warning", "경고", "주인공을 설정해주세요");
     } else {
         //다음페이지로 POST 데이터 넘기기
         var jsonObject = new Object();
@@ -78,4 +78,43 @@ function sendToNextPage(){
         document.getElementById("jsonData").value = jsonData;
         document.getElementById("sendJson").submit();
     }
+}
+
+function createModal(type, title, message){
+    if(type=="warning"){
+        //경고일 때
+        document.querySelector('#modal_button_ok').style.display = '';
+        document.querySelector('#modal_button_yes').style.display = 'none';
+        document.querySelector('#modal_button_no').style.display = 'none';
+
+        document.querySelector('.modal_wrap').style.display ='block';
+        document.querySelector('.black_bg').style.display ='block';
+        document.querySelector('#modal_title').innerText = title;
+        document.querySelector('#modal_context').innerText = message;
+    }
+}
+
+function createSpeechBox(){
+    document.getElementById("speech_box").style.display="";
+}
+function removeSpeechBox(){
+    document.getElementById("speech_box").style.display="none";
+}
+function createWordList(){
+    document.getElementById("charWord_wrap").style.visibility="";
+}
+function removeWordList(){
+    document.getElementById("charWord_wrap").style.visibility="hidden";
+}
+// 모달 창
+function removeModal(){
+    document.querySelector('.modal_wrap').style.display ='none';
+    document.querySelector('.black_bg').style.display ='none';
+}
+function modalOk(){
+    removeModal();
+}
+function modalYes(){
+}
+function modalNo(){
 }

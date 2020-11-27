@@ -166,7 +166,7 @@ function random_character() {
                 charCnt+=1;
         }
         if(charCnt<2){
-            alert('캐릭터를 적어도 두명 선택해주세요');
+            createModal("warning", "경고", "캐릭터를 적어도 두명 선택해주세요");
         } else {
             for(i=1;i<=4; i++){
                 if(check[i-1]) {
@@ -183,4 +183,30 @@ function random_character() {
             document.getElementById("sendJson").submit();
         }
     });
+}
+
+function createModal(type, title, message){
+    if(type=="warning"){
+        //경고일 때
+        document.querySelector('#modal_button_ok').style.display = '';
+        document.querySelector('#modal_button_yes').style.display = 'none';
+        document.querySelector('#modal_button_no').style.display = 'none';
+
+        document.querySelector('.modal_wrap').style.display ='block';
+        document.querySelector('.black_bg').style.display ='block';
+        document.querySelector('#modal_title').innerText = title;
+        document.querySelector('#modal_context').innerText = message;
+    }
+}
+
+function removeModal(){
+    document.querySelector('.modal_wrap').style.display ='none';
+    document.querySelector('.black_bg').style.display ='none';
+}
+function modalOk(){
+    removeModal();
+}
+function modalYes(){
+}
+function modalNo(){
 }

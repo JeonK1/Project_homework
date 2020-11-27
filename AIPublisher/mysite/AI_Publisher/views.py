@@ -135,6 +135,7 @@ def set_character(request):
 def set_char_option(request):
     message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
     getjson = json.loads(message) #Json 풀어주기
+    print(getjson)
     return render(request, 'AI_Publisher/set_char_option.html', {'getJSONData' : getjson})
 
 
