@@ -3,4 +3,12 @@ function navbar_function(){
     var username = document.getElementById("username");
     username.innerHTML = "Coople";
 
+    $("#AI_Publisher_image").click(function (){
+
+        alert("경고창");
+
+
+
+    });
+
 }

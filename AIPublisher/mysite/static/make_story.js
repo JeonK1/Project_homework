@@ -36,8 +36,124 @@ var climax = new Array("- 왜 "+hero+"은(는) "+emotion[2]+"에서 "+emotion[3]
 var result = new Array("- 왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]+"가 되었나요?",
                        "- 이 이야기의 결말은 어떻게 되나요?")
 
+function make_move(){
 
+    if(click_step() == true){
+        count = click_step();
+        display_window();
+    }
+    $("#button_next").click(function () {
+        count += 1;
+        display_window();
+    });
+}
 
+function click_background(){
+
+    $("#Ground_small_1").click(function () {
+
+        $( "#left_frame" ).css( {"background-image" : ($( "#Ground_small_1" ).css( "background-image" )),
+                                  "background-position":"left","background-size":"cover"});
+
+        $( "#right_frame" ).css( {"background-image" : ($( "#Ground_small_1" ).css( "background-image" )),
+                                  "background-position":"right","background-size":"cover"});
+    });
+    $("#Ground_small_2").click(function () {
+
+        $( "#left_frame" ).css( {"background-image" : ($( "#Ground_small_2" ).css( "background-image" )),
+                                  "background-position":"left","background-size":"cover"});
+
+        $( "#right_frame" ).css( {"background-image" : ($( "#Ground_small_2" ).css( "background-image" )),
+                                  "background-position":"right","background-size":"cover"});
+    });
+    $("#Ground_small_3").click(function () {
+
+        $( "#left_frame" ).css( {"background-image" : ($( "#Ground_small_3" ).css( "background-image" )),
+                                  "background-position":"left","background-size":"cover"});
+
+        $( "#right_frame" ).css( {"background-image" : ($( "#Ground_small_3" ).css( "background-image" )),
+                                  "background-position":"right","background-size":"cover"});
+    });
+    $("#Ground_small_4").click(function () {
+
+        $( "#left_frame" ).css( {"background-image" : ($( "#Ground_small_4" ).css( "background-image" )),
+                                  "background-position":"left","background-size":"cover"});
+
+        $( "#right_frame" ).css( {"background-image" : ($( "#Ground_small_4" ).css( "background-image" )),
+                                  "background-position":"right","background-size":"cover"});
+    });
+}
+
+function click_step(){
+    $("#STEP_1").click(function () {
+        alert("678")
+        count = 0;
+    });
+    $("#STEP_2").click(function () {
+        count = 1;
+    });
+    $("#STEP_3").click(function () {
+        count = 2;
+    });
+    $("#STEP_4").click(function () {
+        count = 3;
+    });
+    $("#STEP_5").click(function () {
+        count = 4;
+    });
+
+    return count;
+}
+
+function display_window(){
+    $("#RightSidebar").hide();
+    switch(count){
+        //발단
+        case 0:
+        $("#RightSidebar").hide();
+            break;
+        //전개
+        case 1:
+        click_background();
+        $("#RightSidebar").show();
+        $("#STEP_1").css('background','#E6E2CF');
+        $("#STEP_1_TEXT").css('color','#666666');
+        $("#STEP_2").css('background','#B9E4C9');
+        $("#STEP_2_TEXT").css('color','#000000');
+            break;
+        //위기
+        case 2:
+        click_background();
+        $("#RightSidebar").show();
+        $("#STEP_2").css('background','#E6E2CF');
+        $("#STEP_2_TEXT").css('color','#666666');
+        $("#STEP_3").css('background','#B9E4C9');
+        $("#STEP_3_TEXT").css('color','#000000');
+            break;
+        //절정
+        case 3:
+        click_background();
+        $("#RightSidebar").show();
+        $("#STEP_3").css('background','#E6E2CF');
+        $("#STEP_3_TEXT").css('color','#666666');
+        $("#STEP_4").css('background','#B9E4C9');
+        $("#STEP_4_TEXT").css('color','#000000');
+            break;
+        //결말
+        case 4:
+        click_background();
+        $("#RightSidebar").show();
+        $("#STEP_4").css('background','#E6E2CF');
+        $("#STEP_4_TEXT").css('color','#666666');
+        $("#STEP_5").css('background','#B9E4C9');
+        $("#STEP_5_TEXT").css('color','#000000');
+            break;
+        // 종료
+        case 5:
+            break;
+    }
+
+}
 
 // 사용자가 적은 글 보여주기
 function show_text(){
