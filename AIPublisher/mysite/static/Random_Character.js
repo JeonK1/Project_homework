@@ -1,6 +1,7 @@
 var check = new Array(80);
 var imgArray = new Array(80);
 var imgNum = new Array(80);
+var cardSelected = [0,0,0,0];
 
 function random_character() {
     // 이미지 배열에 할당, [][0]은 이미지 내용, [][1]은 이미지가 사용되었는가를 표시.
@@ -60,56 +61,45 @@ function random_character() {
     var selectBoxShadowStr = "5px 5px 7px black";
     var unSelectBoxShadowStr = "0px 0px 0px black";
     $("#card_1").click(function() {
-        if (imgArray[imgNum[0]][1] == 0) {
+        if (!check[0]) {
             check[0] = true;
-            imgArray[imgNum[0]][1] = 1;
             document.getElementById("card_1").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[0] = false;
-            imgArray[imgNum[0]][1] = 0;
             document.getElementById("card_1").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
    $("#card_2").click(function() {
-        if (imgArray[imgNum[1]][1] == 0) {
-
+        if (!check[1]) {
             check[1] = true;
-            imgArray[imgNum[1]][1] = 1;
             document.getElementById("card_2").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[1] = false;
-            imgArray[imgNum[1]][1] = 0;
             document.getElementById("card_2").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
    $("#card_3").click(function() {
-        if (imgArray[imgNum[2]][1] == 0) {
-
+        if (!check[2]) {
             check[2] = true;
-            imgArray[imgNum[2]][1] = 1;
             document.getElementById("card_3").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[2] = false;
-            imgArray[imgNum[2]][1] = 0;
             document.getElementById("card_3").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
    $("#card_4").click(function() {
-        if (imgArray[imgNum[3]][1] == 0) {
-
+        if (!check[3]) {
             check[3] = true;
-            imgArray[imgNum[3]][1] = 1;
             document.getElementById("card_4").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[3] = false;
-            imgArray[imgNum[3]][1] = 0;
             document.getElementById("card_4").style.boxShadow = unSelectBoxShadowStr;
         }
     });
@@ -165,28 +155,6 @@ function random_character() {
             req.send();
         }
     });
-    $("#next_shape").click(function() {
-        var arrCharacter = new Array();
-
-        //캐릭터 개수 세어서, 0명 선택인거 막아주기
-        var charCnt = 0;
-        for(i=0; i<4; i++){
-            if(check[i])
-                charCnt+=1;
-        }
-        if(charCnt<2){
-            alert('캐릭터를 적어도 두명 선택해주세요');
-        } else {
-            for(i=1;i<=4; i++){
-                if(check[i-1]) {
-                    charIdName = "card"+i;
-
-                    bgImageUrl = imgArray[imgNum[i-1]][0];
-                    arrCharacter.push(bgImageUrl);
-                }
-            }
-        }
-    });
 
     $("#next_shape").click(function() {
         var arrCharacter = new Array();
@@ -203,8 +171,7 @@ function random_character() {
             for(i=1;i<=4; i++){
                 if(check[i-1]) {
                     charIdName = "card"+i;
-
-                    bgImageUrl = imgArray[imgNum[i-1]][0];
+                    bgImageUrl = document.getElementById(charIdName).src;
                     arrCharacter.push(bgImageUrl);
                 }
             }

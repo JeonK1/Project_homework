@@ -31,12 +31,13 @@ function saveCharData(){
             arrCharacter[i].isMainChar = 0;
         }
         arrCharacter[curNo].isMainChar = 1;
+    } else {
+        arrCharacter[curNo].isMainChar = 0;
     }
 }
 function settingCharData(num){
     // 해당 num의 data를 불러와서 세팅해주기
     saveCharData();
-
     curNo = num; // 현재 보고잇는 캐릭터 바꾸고
     // 현재 캐릭터 정보 load하기
     document.getElementById("name_text").value = arrCharacter[curNo].name;
