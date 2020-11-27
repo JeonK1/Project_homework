@@ -185,9 +185,9 @@ function random_character() {
                     arrCharacter.push(bgImageUrl);
                 }
             }
+        }
+    });
 
-<<<<<<< HEAD
-}
     $("#next_shape").click(function() {
         var arrCharacter = new Array();
 
@@ -208,9 +208,6 @@ function random_character() {
                     arrCharacter.push(bgImageUrl);
                 }
             }
-
-=======
->>>>>>> 89179ac37da35c5763f9a317db6d80aa65f1b6d4
             var jsonObject = new Object();
             jsonObject.charList = arrCharacter;
             var jsonData = JSON.stringify(jsonObject);
@@ -219,6 +216,4 @@ function random_character() {
             document.getElementById("sendJson").submit();
         }
     });
-
-
 }
