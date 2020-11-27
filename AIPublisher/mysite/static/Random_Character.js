@@ -165,7 +165,28 @@ function random_character() {
             req.send();
         }
     });
+    $("#next_shape").click(function() {
+        var arrCharacter = new Array();
 
+        //캐릭터 개수 세어서, 0명 선택인거 막아주기
+        var charCnt = 0;
+        for(i=0; i<4; i++){
+            if(check[i])
+                charCnt+=1;
+        }
+        if(charCnt<2){
+            alert('캐릭터를 적어도 두명 선택해주세요');
+        } else {
+            for(i=1;i<=4; i++){
+                if(check[i-1]) {
+                    charIdName = "card"+i;
+
+                    bgImageUrl = imgArray[imgNum[i-1]][0];
+                    arrCharacter.push(bgImageUrl);
+                }
+            }
+
+<<<<<<< HEAD
 }
     $("#next_shape").click(function() {
         var arrCharacter = new Array();
@@ -188,6 +209,8 @@ function random_character() {
                 }
             }
 
+=======
+>>>>>>> 89179ac37da35c5763f9a317db6d80aa65f1b6d4
             var jsonObject = new Object();
             jsonObject.charList = arrCharacter;
             var jsonData = JSON.stringify(jsonObject);

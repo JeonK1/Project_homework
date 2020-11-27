@@ -18,74 +18,105 @@
     </form>
 </head>
 <!--<body onload="navbar_function();setCard();">-->
-<body onload="navbar_function();">
+<body onload="navbar_function();initCharData();">
     <!--배경 및 프레임-->
     <div class="BackGround" id="BackGround">
 
         <!--제목-->
         <div class="Field" id="Field">
-            <div class="border" id="border"></div>
-            <div class="STATBAR" id="STATBAR">
-                <div class="step" id="step">인물카드 설정</div>
+            <div class="stepbox" id="stepbar">
+                <div class="step" id="step1">인물카드선택</div>
+                <div class="step" id="step2">인물카드설정</div>
+                <div class="step" id="step3">관계카드설정</div>
             </div>
         </div>
 
-        <!--화면아래 초록색 바-->
-        <div class="bottom_bar" id="bottom_bar"></div>
+
 
         <!--다음 버튼-->
-        <!--Todo : 내용 다 안채워줬으면 못넘어가게 하기-->
-        <div class="next_step" id="next_step" onclick="sendToNextPage();"></div>
+        <div class="next_shape" id="next_shape" onclick="sendToNextPage();" >
+            <div class="next_step_body_1" id="next_step_body_1">
+                <div class="next_step_body_2" id="next_step_body_2">
+                    <div class="next_step_text" id="next_step_text">Next</div>
+                    <div class="next_step_image" id="next_step_image"></div>
+                </div>
+            </div>
+        </div>
         <!--<a href="/AI_Publisher/get_relation_keyprob/" target=_self>-->
             <!--<div class="next_step" id="next_step"></div></a>-->
 
+        <!--왼쪽 캐릭터 카드 메뉴-->
+        <div class="character_card_wrap" id="character_card_wrap">
+        {% for character in getJSONData.charList %}
+            <div class="character_card" id="card{{forloop.counter}}" onclick="settingCharData({{forloop.counter | add:"-1"}})">
+                <img class="card_img" id="card_{{forloop.counter}}" src={{character}}>
+            </div>
+        {% endfor %}
+        </div>
+        <!--중간의 캐릭터 카드 메뉴-->
+        <div class="main_card" id="set_card">
+            <img class="card_img" id="setCard" src={{getJSONData.charList.0}}>
+        </div>
+
+        <!--캐릭터 설정 이름-->
+        <div class="card_option" id="name_box">
+            <div class="card_option" id="name">이름</div>
+            <input class="char_input_text" id="name_text" type="text" name="card_option" >
+
+        </div>
+        <!--캐릭터 설정 성격-->
+        <div class="card_option" id="personality_box">
+            <div class="card_option" id="personality">성격</div>
+            <input class="char_input_text" id="personality_text" type="text" name="card_option" >
+        </div>
+        <!--캐릭터 설정 기타-->
+        <div class="card_option" id="etc_box">
+            <div id="card_option" id="etc">기타</div>
+            <input class="char_input_text" id="etc_text" type="text" sname="card_option" >
+        </div>
+
+            <!--캐릭터 설정 기타-->
+        <div class="card_option" id="main_char_box">
+            <input id="ck1" type="checkbox" name="card_option">
+            <div class="card_option" id="main_char"> 주인공인가요?</div>
+        </div>
+
+
         <!-- 네비게이션 바 -->
         <div class="upper_bar" id="upper_bar">
+            <div class="AI_Publisher_image" id="AI_Publisher_image"></div>
             <div class="user_icon" id="user_icon"></div>
-            <div class="user_icon_event" id="user_icon_event"></div>
             <div class="username" id="username"></div>
         </div>
 
-        <!--왼쪽 캐릭터 카드 메뉴-->
-        <div class="character_card" id="card1" style="background-image: url('{{getJSONData.charList.0}}');" onclick="settingCharData(0)"></div>
-        <div class="character_card" id="card2" style="background-image: url('{{getJSONData.charList.1}}');" onclick="settingCharData(1)"></div>
-        <div class="character_card" id="card3" style="background-image: url('{{getJSONData.charList.2}}');" onclick="settingCharData(2)"></div>
-        <div class="character_card" id="card4" style="background-image: url('{{getJSONData.charList.3}}');" onclick="settingCharData(3)"></div>
-
-        <!--중간의 캐릭터 카드 메뉴-->
-        <div class="main_card" id="set_card" style="background-image: url('{{getJSONData.charList.0}}');"></div>
-
-        <!--캐릭터 설정-->
-        <div class="card_option" id="option_box">인물 설정하기</div>
-        <div class="card_option" id="name">
-           이름: <input id="name_text" type="text" name="card_option" >
-        </div>
-        <div class="card_option" id="personality">성격: </div>
-        <div class="card_option" id="etc">
-            기타: <input id="etc_text" type="text" name="card_option" >
-        </div>
-        <form>
-        <div class="card_option" id="main_char" >
-            <label for="ck1">주인공: </label>
-            <input id="ck1" type="checkbox" name="card_option" style="zoom:3.0;" z-index="2">
-        </div>
-        </form>
-
         <!--계정 메뉴-->
         <div class="ID_Menu" id="ID_Menu">
-            <div class="menu_1" id="menu_1">
-                <div class="menu_feature_1" id="menu_feature_1"></div>
-                <div class="menu_text_1" id="menu_text_1">내 정보 관리</div>
+            <div class="menu_1_item" id="menu_1_item">
+                <div class="menu_1_text_box" id="menu_1_text_box">
+                    <div class="menu_1_text" id="menu_1_text">내 정보 관리</div>
+                </div>
             </div>
-            <a href="/AI_Publisher/main/" target=_self>
             <div class="menu_2" id="menu_2">
-                <div class="menu_feature_2" id="menu_feature_2"></div>
-                <div class="menu_text_2" id="menu_text_2">메인 화면</div>
-            </div></a>
+                <div class="menu_2_item" id="menu_2_item">
+                    <div class="menu_2_icon_box" id="menu_2_icon_box">
+                        <div class="menu_2_icon" id="menu_2_icon"></div>
+                    </div>
+                    <div class="menu_2_text_box" id="menu_2_text_box">
+                        <div class="menu_2_text" id="menu_2_text">Converted Photos</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu_3" id="menu_3">
+                <div class="menu_3_item" id="menu_3_item">
+                    <div class="menu_3_icon_box" id="menu_3_icon_box">
+                        <div class="menu_3_icon" id="menu_3_icon"></div>
+                    </div>
+                    <div class="menu_3_text_box" id="menu_3_text_box">
+                        <div class="menu_3_text" id="menu_3_text">sharing</div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-
 </body>
-
 </html>

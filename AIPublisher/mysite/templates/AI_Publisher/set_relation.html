@@ -22,50 +22,63 @@
 
         <!--제목-->
         <div class="Field" id="Field">
-            <div class="border" id="border"></div>
-            <div class="STATBAR" id="STATBAR">
-                <div class="step" id="step">관계 설정</div>
+            <div class="stepbox" id="stepbar">
+                <div class="step" id="step1">인물카드선택</div>
+                <div class="step" id="step2">인물카드설정</div>
+                <div class="step" id="step3">관계카드설정</div>
             </div>
         </div>
 
-        <!--화면아래 초록색 바-->
-        <div class="bottom_bar" id="bottom_bar"></div>
 
         <!--다음 버튼-->
         <!--Todo : 나중에 5개 다 안채웠는데 넘어갈려고하면 막아줘야함-->
-        <div class="next_step" id="next_step" onclick="sendToNextPage();"></div>
-        <!--<a href="/AI_Publisher/make_story/" target=_self>-->
-            <!--<div class="next_step" id="next_step"></div>-->
-        <!--</a>-->
-
-
-        <!--네비게이션 바-->
-        <div class="upper_bar" id="upper_bar">
-            <div class="user_icon" id="user_icon"></div>
-            <div class="user_icon_event" id="user_icon_event"></div>
-            <div class="username" id="username"></div>
-        </div>
-
-        <!--계정 메뉴-->
-        <div class="ID_Menu" id="ID_Menu">
-            <div class="menu_1" id="menu_1">
-                <div class="menu_feature_1" id="menu_feature_1"></div>
-                <div class="menu_text_1" id="menu_text_1">내 정보 관리</div>
+        <div class="next_shape" id="next_shape" onclick="sendToNextPage();" >
+            <div class="next_step_body_1" id="next_step_body_1">
+                <div class="next_step_body_2" id="next_step_body_2">
+                    <div class="next_step_text" id="next_step_text">Next</div>
+                    <div class="next_step_image" id="next_step_image"></div>
+                </div>
             </div>
-            <a href="/AI_Publisher/main/" target=_self>
-            <div class="menu_2" id="menu_2">
-                <div class="menu_feature_2" id="menu_feature_2"></div>
-                <div class="menu_text_2" id="menu_text_2">메인 화면</div>
-            </div></a>
         </div>
+
         <!-- 왼쪽 인물 목록 메뉴 -->
 
         <div class="character_menu" id="character_menu">
-            <div class="character_card" id="character_1" style="background-image: url('{{ getJSONData.mainChar.url }}');"></div>
-            <div class="character_card" id="character_2" onclick="sendSubChar(2);" style="background-image: url('{{ getJSONData.charList.0.url }}');"></div>
-            <div class="character_card" id="character_3" onclick="sendSubChar(3);" style="background-image: url('{{ getJSONData.charList.1.url }}');"></div>
-            <div class="character_card" id="character_4" onclick="sendSubChar(4);" style="background-image: url('{{ getJSONData.charList.2.url }}');"></div>
+            {% for character in charList %}
+                <div class="character_card" id="character_{{forloop.counter}}" onclick="sendSubChar({{forloop.counter}})">
+                    <img class="card_img" id="card_{{forloop.counter}}" src={{character.url}}>
+                </div>
+            {% endfor %}
         </div>
+
+        <!-- 주인공과 서브인물 -->
+        <div div class="character_selected_card" id="character_main" >
+            <img class="card_img" src="{{ charMain.url }}"/>
+            <div class="img_star" id="img_star"></div>
+        </div>
+        <div class="character_selected_card" id="character_sub">
+            <img class="card_img" id="characterSub"/>
+        </div>
+
+        <!-- 중앙 5개 선택된 관계 카드-->
+        <div class="relation_selected_menu" id="relation_selected_menu">
+            <div class="relation_selected_card" id="relation_selected_card1">
+                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
+            </div>
+            <div class="relation_selected_card" id="relation_selected_card2">
+                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
+            </div>
+            <div class="relation_selected_card" id="relation_selected_card3">
+                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
+            </div>
+            <div class="relation_selected_card" id="relation_selected_card4">
+                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
+            </div>
+            <div class="relation_selected_card" id="relation_selected_card5">
+                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
+            </div>
+        </div>
+
         <!-- 하단 8개 관계 설정 카드-->
         <div class="relation_menu" id="relation_menu">
             <div class="relation_card_positive" id="relation_card_pos1">
@@ -93,30 +106,17 @@
                 <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neg.2}}</div>
             </div>
         </div>
-        <!-- 중앙 5개 선택된 관계 카드-->
-        <div class="relation_selected_menu" id="relation_selected_menu">
-            <div class="relation_selected_card" id="relation_selected_card1">
-                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
-            </div>
-            <div class="relation_selected_card" id="relation_selected_card2">
-                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
-            </div>
-            <div class="relation_selected_card" id="relation_selected_card3">
-                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
-            </div>
-            <div class="relation_selected_card" id="relation_selected_card4">
-                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
-            </div>
-            <div class="relation_selected_card" id="relation_selected_card5">
-                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
-            </div>
+
+
+
+
+                <!-- 네비게이션 바 -->
+        <div class="upper_bar" id="upper_bar">
+            <div class="AI_Publisher_image" id="AI_Publisher_image"></div>
+            <div class="user_icon" id="user_icon"></div>
+            <div class="username" id="username"></div>
         </div>
-        <!-- 주인공과 서브인물 -->
-        <div>
-            <div class="character_selected_card" id="character_main" style="background-image: url('{{ getJSONData.mainChar.url }}');"></div>
-            <div class="img_star" id="img_star"></div>
-        </div>
-        <div class="character_selected_card" id="character_sub"></div>
+
     </div>
 </body>
 

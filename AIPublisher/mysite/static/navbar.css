@@ -1,213 +1,62 @@
 /* upper_bar */
 #upper_bar {
     position: absolute;
-    width: 2000px;
-    height: 100px;
+    width: 1440px;
+    height: 56px;
+    left: calc(50% - 1440px/2);
+    top: 0px;
+    z-index: 10;
 
-    background: rgba(255, 255, 255, 0.890625);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.42);
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.42);
+}
+
+#AI_Publisher_image{
+    position: absolute;
+    width: 113px;
+    height: 45px;
+    left: 50px;
+    top: 6px;
+
+    background-image: url(img/navbar_logo.png);
+    background-size : cover;
 }
 
 /* Group 27 */
 #user_icon {
     position: absolute;
-    width: 76px;
-    height: 76px;
-    left: 1901px;
-    top: 9px;
+
+    width: 24px;
+    height: 24px;
+    left: 1366px;
+    top: 16px;
 
     background-image: url(img/user_icon.png);
-}
-
-/* Polygon 2 */
-#user_icon_event{
-    position: absolute;
-    width: 17px;
-    height: 15px;
-    left: 1959px;
-    top: 69px;
-    z-index: 2;
-
-    background-image: url(img/user_icon_event.png);
+    background-size : cover;
 }
 
 /* username 님 */
 #username {
     position: absolute;
-    left: 88.05%;
-    right: 4.95%;
-    top: 18%;
-    bottom: 25%;
+    width: 73px;
+    height: 24px;
+    left: calc(50% - 73px/2 + 605.5px);
+    top: calc(50% - 24px/2);
 
+    font-family: IBM Plex Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 150%;
-    /* or 30px */
+
+    /* identical to box height, or 24px */
     display: flex;
     align-items: center;
-    letter-spacing: 0.05em;
+    text-align: right;
+    letter-spacing: -0.035em;
     text-transform: capitalize;
 
     color: #000000;
 }
 
-/* Frame 2 */
-#ID_Menu {
-    /* Auto Layout */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 0 0 10px;
-    z-index: 2;
 
-    position: absolute;
-    width: 221px;
-    height: 180px;
-    left: 1779px;
-    top: 100px;
-
-    background: #FFFFFF;
-}
-
-/* Frame 3 */
-#menu_1 {
-    /* Auto Layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 10px 0 0 10px;
-
-    position: static;
-    width: 201px;
-    height: 65px;
-    left: 10px;
-    top: 10px;
-
-    background: #F3F3F3;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 0;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 0 10px;
-}
-
-/* Rectangle 34 */
-#menu_feature_1 {
-    position: static;
-    width: 50px;
-    height: 45px;
-    left: 10px;
-    top: 10px;
-
-    background: #C4C4C4;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 0;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 10px 0;
-}
-
-/* 내 정보 관리 */
-#menu_text_1 {
-    position: static;
-    width: 121px;
-    height: 43px;
-    left: 70px;
-    top: 10px;
-
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 138%;
-    /* or 28px */
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.0075em;
-
-    color: #000000;
-
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 1;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 10px 0;
-}
-
-/* Frame 4 */
-#menu_2 {
-    /* Auto Layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 10px 0 0 10px;
-
-    position: static;
-    width: 201px;
-    height: 65px;
-    left: 10px;
-    top: 85px;
-
-    background: #F3F3F3;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 1;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 0 10px;
-}
-
-/* Rectangle 34 */
-#menu_feature_2 {
-    position: static;
-    width: 50px;
-    height: 45px;
-    left: 10px;
-    top: 10px;
-
-    background: #C4C4C4;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 0;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 10px 0;
-}
-
-/* text */
-#menu_text_2 {
-    position: static;
-    width: 121px;
-    height: 43px;
-    left: 70px;
-    top: 10px;
-
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 138%;
-    /* or 28px */
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.0075em;
-
-    color: #000000;
-
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 1;
-    align-self: flex-start;
-    flex-grow: 0;
-    margin: 10px 0;
-}
