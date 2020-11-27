@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.generic import ListView
 from .models import WordList
@@ -73,7 +74,7 @@ def get_relation_card():
     cards = WordList.objects.filter(WordType=3).order_by('?')[:3]
     for card in cards:
         cardlist.append(card.WordContext)
-    return cardlist;
+    return cardlist
 
 def set_relation(request):
     #dummy data
@@ -103,6 +104,19 @@ def set_relation(request):
                                                                   'card_neg':card_neg})
 def get_relation_keyprob(request):
     return render(request, 'AI_Publisher/get_relation_keyprob.html')
+
+#
+def get_random_character(request):
+    exclude = (json.loads(request.GET.get('data')))['exclude']
+    required = (json.loads(request.GET.get('data')))['required']
+    cards = CharList.objects.all()
+    for filename in exclude:
+        card = cards.exclude(CharPic=filename)
+    cards = cards.order_by('?')[:required]
+    pathlist = []
+    for i in range(required):
+        pathlist.append(cards[i].CharPic)
+    return JsonResponse({"result" : pathlist})
 
 def set_character(request):
     return render(request, 'AI_Publisher/set_character.html')

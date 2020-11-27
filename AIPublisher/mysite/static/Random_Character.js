@@ -1,6 +1,6 @@
-var check = new Array(6);
-var imgArray = new Array(6);
-var imgNum = new Array(6);
+var check = new Array(80);
+var imgArray = new Array(80);
+var imgNum = new Array(80);
 
 function random_character() {
     // 이미지 배열에 할당, [][0]은 이미지 내용, [][1]은 이미지가 사용되었는가를 표시.
@@ -11,22 +11,11 @@ function random_character() {
         imgArray[i] = new Array(2);
     }
 
-    // for(var i=0;i<6;i++){
-    //     imgArray[i][0] = "../../static/img/characters/"+(i+1)+".jpg";
-    //     imgArray[i][1] = 0
-    // }
-    imgArray[0][0] = "../../static/img/characters/1.jpg";
-    imgArray[0][1] = 0;
-    imgArray[1][0] = "../../static/img/characters/2.jpeg";
-    imgArray[1][1] = 0;
-    imgArray[2][0] = "../../static/img/characters/3.jpg";
-    imgArray[2][1] = 0;
-    imgArray[3][0] = "../../static/img/characters/4.jpg";
-    imgArray[3][1] = 0;
-    imgArray[4][0] = "../../static/img/characters/5.jpg";
-    imgArray[4][1] = 0;
-    imgArray[5][0] = "../../static/img/characters/6.jpg";
-    imgArray[5][1] = 0;
+    for(var i=0;i<imgArray.length;i++){
+        imgArray[i][0] = "../../static/img/char/"+ (i+1) +".png";
+        imgArray[i][1] = 0
+    }
+
     // 이미지 숫자만큼 뽑을 풀 만들기
 
 
@@ -68,58 +57,60 @@ function random_character() {
     }
 
     //이미지 고르기.
-    $("#card1").click(function() {
+    var selectBoxShadowStr = "5px 5px 7px black";
+    var unSelectBoxShadowStr = "0px 0px 0px black";
+    $("#card_1").click(function() {
         if (imgArray[imgNum[0]][1] == 0) {
             check[0] = true;
             imgArray[imgNum[0]][1] = 1;
-            objImg1.border = "30px";
+            document.getElementById("card_1").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[0] = false;
             imgArray[imgNum[0]][1] = 0;
-            objImg1.border = "3px";
+            document.getElementById("card_1").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
-   $("#card2").click(function() {
+   $("#card_2").click(function() {
         if (imgArray[imgNum[1]][1] == 0) {
 
             check[1] = true;
             imgArray[imgNum[1]][1] = 1;
-            objImg2.border = "30px";
+            document.getElementById("card_2").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[1] = false;
             imgArray[imgNum[1]][1] = 0;
-            objImg2.border = "3px";
+            document.getElementById("card_2").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
-   $("#card3").click(function() {
+   $("#card_3").click(function() {
         if (imgArray[imgNum[2]][1] == 0) {
 
             check[2] = true;
             imgArray[imgNum[2]][1] = 1;
-            objImg3.border = "30px";
+            document.getElementById("card_3").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[2] = false;
             imgArray[imgNum[2]][1] = 0;
-            objImg3.border = "3px";
+            document.getElementById("card_3").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
-   $("#card4").click(function() {
+   $("#card_4").click(function() {
         if (imgArray[imgNum[3]][1] == 0) {
 
             check[3] = true;
             imgArray[imgNum[3]][1] = 1;
-            objImg4.border = "30px";
+            document.getElementById("card_4").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[3] = false;
             imgArray[imgNum[3]][1] = 0;
-            objImg4.border = "3px";
+            document.getElementById("card_4").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
@@ -127,65 +118,84 @@ function random_character() {
     var count = 0;
 
    //이미지 다시뽑기
-    $("#redraw").click(function() {
+    $("#redraw_shape").click(function() {
         count += 1;
-
+        var num = 0;
         if(count < 3) {
-            //안 썼던 카드끼리 비교해서 섞어 버리기.
-            for (var i = 0; i < imgNum.length; i++) {
-                var j = Math.floor(Math.random() * imgNum.length);
-                // [array[i], array[j]] = [array[j], array[i]];
-                if(check[i] == false && check[j] == false) {
-                    var x = imgNum[i];
-                    imgNum[i] = imgNum[j];
-                    imgNum[j] = x;
+            for(var i = 0; i < imgNum.length; i++) {
+                if (check[i] == false) {
+                    num +=1;
                 }
             }
-
-            if(!check[0])
-            {
-                objImg1.src = imgArray[imgNum[0]][0];
+            var url_GET = '../get_random_character?data='
+            url_GET = url_GET + JSON.stringify({required: num, exclude: imgNum});
+            var req = new XMLHttpRequest();
+            req.open('GET', url_GET, true);
+            req.resposeType = 'json';
+            req.onreadystatechange = function(e) {
+                if (req.readyState === XMLHttpRequest.DONE) {
+                    if (req.status == 200) {
+                        newcards = JSON.parse(req.response)["result"];
+                        j = 0;
+                        for (var i = 0; i < imgNum.length; i++) {
+                            if(check[i] == false) {
+                                imgNum[i] = newcards[j];
+                                j++;
+                            }
+                        }
+                        if(!check[0])
+                        {
+                            objImg1.src = "/static/img/char/" + imgNum[0];
+                        }
+                        if(!check[1])
+                        {
+                            objImg2.src = "/static/img/char/" + imgNum[1];
+                        }
+                        if(!check[2])
+                        {
+                            objImg3.src = "/static/img/char/" + imgNum[2];
+                        }
+                        if(!check[3])
+                        {
+                            objImg4.src = "/static/img/char/" + imgNum[3];
+                        }
+                    }
+                }
             }
-
-            if(!check[1])
-            {
-                objImg2.src = imgArray[imgNum[1]][0];
-            }
-
-            if(!check[2])
-            {
-                objImg3.src = imgArray[imgNum[2]][0];
-            }
-
-            if(!check[3])
-            {
-                objImg4.src = imgArray[imgNum[3]][0];
-            }
+            req.send();
         }
-
-
-
-
     });
 
 }
+    $("#next_shape").click(function() {
+        var arrCharacter = new Array();
 
-function next_page(){
-    console.log(imgArray);
-    var arrCharacter = new Array();
-    for(i=1;i<=4; i++){
-
-        if(check[i-1]) {
-            charIdName = "card"+i;
-
-            bgImageUrl = imgArray[imgNum[i-1]][0];
-            arrCharacter.push(bgImageUrl);
+        //캐릭터 개수 세어서, 0명 선택인거 막아주기
+        var charCnt = 0;
+        for(i=0; i<4; i++){
+            if(check[i])
+                charCnt+=1;
         }
-    }
+        if(charCnt<2){
+            alert('캐릭터를 적어도 두명 선택해주세요');
+        } else {
+            for(i=1;i<=4; i++){
+                if(check[i-1]) {
+                    charIdName = "card"+i;
 
-    var jsonObject = new Object();
-    jsonObject.charList = arrCharacter;
-    var jsonData = JSON.stringify(jsonObject);
-    document.getElementById("jsonData").value = jsonData;
-    document.getElementById("sendJson").submit();
+                    bgImageUrl = imgArray[imgNum[i-1]][0];
+                    arrCharacter.push(bgImageUrl);
+                }
+            }
+
+            var jsonObject = new Object();
+            jsonObject.charList = arrCharacter;
+            var jsonData = JSON.stringify(jsonObject);
+            console.log(jsonData);
+            document.getElementById("jsonData").value = jsonData;
+            document.getElementById("sendJson").submit();
+        }
+    });
+
+
 }

@@ -15,4 +15,6 @@ urlpatterns = [
     # path('set_relation/', views.SetRelation.as_view(), name="set_relation"),
     path('set_char_option/', views.set_char_option),
     path('show_gallery/', views.show_gallery),
+    #
+    path('get_random_character/', views.get_random_character),
 ]

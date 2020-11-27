@@ -32,17 +32,17 @@ for i in range(len(backlist)-1):
 sql4 += backlist[len(backlist)-1][1] + "');"
 
 # sqlite3을 쓰는 경우 이곳의 주석처리를 해제한다.
-'''
+
 connection_sqlite3 = sqlite3.connect("db.sqlite3")
 cursor_sqlite3 = connection_sqlite3.cursor()
-cursor_sqlite3.excute(sql1)
-cursor_sqlite3.excute(sql2)
-cursor_sqlite3.excute(sql3)
-cursor_sqlite3.excute(sql4)
+cursor_sqlite3.execute(sql1)
+cursor_sqlite3.execute(sql2)
+cursor_sqlite3.execute(sql3)
+cursor_sqlite3.execute(sql4)
 connection_sqlite3.commit()
 cursor_sqlite3.close()
 connection_sqlite3.close()
-'''
+
 
 # mysql을 쓰는 경우 이곳의 주석처리를 해제한다.
 '''
