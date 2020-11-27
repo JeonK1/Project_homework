@@ -301,56 +301,7 @@
     margin: 0px 20px;
 }
 
-
-
-
-/* border */
-#border {
-    position: absolute;
-    width: 1890px;
-    height: 1100px;
-    z-index: 1;
-
-    background: rgba(196, 196, 196, 0.02);
-    border: 2px solid #88B9A4;
-    box-sizing: border-box;
-}
-
-/* STATBAR */
-#STATBAR {
-    position: absolute;
-    width: 1894px;
-    height: 80px;
-
-    background: #88B9A4;
-    border-radius: 11px;
-
-}
-
-/* TEXT */
-#step {
-    position: absolute;
-    left: 47%;
-    right: 30%;
-    top: 0;
-    bottom: 0;
-
-
-    font-size: 36px;
-    line-height: 150%;
-    /* or 54px */
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.0168em;
-    font-feature-settings: 'tnum' on, 'lnum' on;
-
-    color: #FFFFFF;
-}
-
-
-
-#button_complete{
+#make_shape{
     /* Auto Layout */
     display: flex;
     flex-direction: row;
@@ -358,17 +309,101 @@
     padding: 0px;
 
     position: absolute;
-    width: 109px;
+    width: 107px;
     height: 48px;
-    right: 55px;
-    top: calc(50% - 48px/2 + 399px);
-    z-index: 2;
+    left: 1278px;
+    top: 884px;
+    z-index: 3;
+}
+#make_step_body_1{
+    /* Text / Next */
+    /* Auto Layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: static;
+    width: 107px;
+    left: calc(50% - 107px/2);
+    top: 0%;
+    bottom: 0%;
 
     /* 2 */
+
     background: #37966F;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background-image: url("img/complete.png");
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+#make_step_body_2{
+    /* Body */
+    /* Auto Layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 16px;
+
+    position: static;
+    width: 107px;
+    left: calc(50% - 107px/2);
+    top: 0px;
+    bottom: 0px;
+
+    border-radius: 8px;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 10px 0px;
+}
+
+/* Caption */
+#make_step_text{
+    position: absolute;
+    width: 39px;
+    height: 5px;
+    left: 10px;
+    top: -2px;
+
+    font-family: B612;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #FFFFFF;
 
 
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 12px 0px;
+}
+
+/* arrow-right */
+#make_step_image{
+    position: absolute;
+    left: 62.62%;
+    right: 14.95%;
+    top: 20.17%;
+    bottom: 27.17%;
+
+    background-image: url(img/make_shape.png);
 }
