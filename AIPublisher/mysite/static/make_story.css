@@ -377,7 +377,7 @@
 
     position: absolute;
     width: 110px;
-    height: 608px;
+    height: 596px;
     left: 50px;
     top: calc(50% - 608px/2);
 
@@ -791,7 +791,7 @@
     width: 85px;
     height: 76px;
     left: 5px;
-    top: 145px;
+    top: 132px;
 
     background: url(img/ground/2.png);
 
@@ -809,7 +809,7 @@
     width: 85px;
     height: 76px;
     left: 5px;
-    top: 250px;
+    top: 228px;
 
     background: url(img/ground/3.png);
 
@@ -827,9 +827,27 @@
     width: 85px;
     height: 76px;
     left: 5px;
-    top: 355px;
+    top: 324px;
 
     background: url(img/ground/4.png);
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 20px;
+}
+
+#Ground_small_5{
+    position: absolute;
+    width: 85px;
+    height: 76px;
+    left: 5px;
+    top: 420px;
+
+    background: url(img/ground/5.png);
 
     /* Inside Auto Layout */
 
@@ -848,7 +866,7 @@
     width: 100px;
     height: 90px;
     left: -5px;
-    top: 460px;
+    top: 512px;
 
 
     /* Inside Auto Layout */
