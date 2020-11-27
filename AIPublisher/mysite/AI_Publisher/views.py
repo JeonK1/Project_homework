@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import ListView
+from .models import WordList
 from .models import CharList
 from .models import BookTextList
 from .models import BookContetnsList
@@ -60,14 +61,31 @@ def make_story(request):
                                                                 'bookTextList' : bookTextList,
                                                                 'bookContetnsList' : bookContetnsList})
 
+# 단어 중에서 positive 3개 neutral 2개 negative 3개를 뽑아 리스트로 반환
+def get_relation_card():
+    cards = WordList.objects.filter(WordType=1).order_by('?')[:3]
+    cardlist = []
+    for card in cards:
+        cardlist.append(card.WordContext)
+    cards = WordList.objects.filter(WordType=2).order_by('?')[:2]
+    for card in cards:
+        cardlist.append(card.WordContext)
+    cards = WordList.objects.filter(WordType=3).order_by('?')[:3]
+    for card in cards:
+        cardlist.append(card.WordContext)
+    return cardlist;
 
 def set_relation(request):
     #dummy data
     charList = ["1.jpg", "2.jpeg", "3.jpg", "4.jpg"]
     charMain = "4.jpg"
-    card_pos = ['사이좋아요', '아주 좋아요', '약간 좋아요']
-    card_neu = ['모르는 사이', '애매한듯']
-    card_neg = ['사이안좋음', '아주 안좋아요', '약간 안좋아요']
+    #card_pos = ['사이좋아요', '아주 좋아요', '약간 좋아요']
+    #card_neu = ['모르는 사이', '애매한듯']
+    #card_neg = ['사이안좋음', '아주 안좋아요', '약간 안좋아요']
+    cardlist = get_relation_card()
+    card_pos = cardlist[:3]
+    card_neu = cardlist[3:5]
+    card_neg = cardlist[5:8]
     #Json 정보확인은 set_char_option.js 의 sendToNextPage()함수를 참조하세요
 
     if request.method == 'POST':
