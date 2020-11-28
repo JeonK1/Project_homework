@@ -509,7 +509,7 @@
 
 /* Rectangle 64 */
 #left_frame{
-    position: static;
+    position: absolute;
     width: 510px;
     height: 680px;
     left: 0px;
@@ -528,7 +528,7 @@
 
 /* Rectangle 65 */
 #right_frame{
-    position: static;
+    position: absolute;
     width: 510px;
     height: 680px;
     left: 510px;
@@ -887,3 +887,60 @@
     object-fit: contain;
     margin: 5px;
  }
+
+/* decorate_character */
+#decorate_ch_1 {
+    position: absolute;
+    width: 70px;
+    height: 110px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+
+/* decorate_character */
+#decorate_ch_2 {
+    position: absolute;
+    width: 70px;
+    height: 110px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* decorate_character */
+#decorate_ch_3 {
+    position: absolute;
+    width: 70px;
+    height: 110px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+/* decorate_character */
+#decorate_ch_4 {
+    position: absolute;
+    width: 70px;
+    height: 110px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+
+.deco_img {
+    width:90%;
+    height:90%;
+    object-fit: contain;
+    margin: 5px;
+}

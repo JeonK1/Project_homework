@@ -17,6 +17,12 @@ for(var i = 0; i < arrback.length; i++) {
     arrback[i] = "";
 }
 
+//어떤 캐릭터를 story에 넣을지
+var viewarray = new Array(4);
+    for (var i = 0; i < viewarray.length; i++){
+        viewarray[i] = true; //초기화
+    }
+
 // 주인공, 배경, 사건, 상대, 감정1, 감정2, 감정3, 감정4, 감정5
 // 여기서 받으면 될듯
 var hero = "이기철";
@@ -43,10 +49,15 @@ var result = new Array("왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]+"
                        "이 이야기의 결말은 어떻게 되나요?")
 
 
+
 function story_make(){
     $("#RightSidebar").hide();
     $("#keyword_text").text(event);
     $("#guide_text").text(expos);
+    $("#decorate_ch_1").hide();
+    $("#decorate_ch_2").hide();
+    $("#decorate_ch_3").hide();
+    $("#decorate_ch_4").hide();
 
     // 넥스트 버튼 눌렀을 때
     $("#next_shape").click(function () {
@@ -56,7 +67,7 @@ function story_make(){
     });
 
     // 왼쪽 단계 눌렀을 때때
-   $("#STEP_1").click(function() {
+    $("#STEP_1").click(function() {
         count = 0;
         next_move(count);
         step_color_change(count);
@@ -84,6 +95,119 @@ function story_make(){
         count = 4;
         next_move(count);
         step_color_change(count);
+    });
+
+    // 캐릭터 눌렀을 때
+    $("#decorate_ch_1").resizable({
+        handles : 'se',
+        containment:"#story_frame",
+        maxWidth: 500,
+        minWidth: 85,
+        maxHeight: 400,
+        minHeight: 114,
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true
+    });
+    $("#decorate_ch_1").draggable({
+        cursor:"pointer", // 커서 모양
+        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
+    });
+
+    $("#decorate_ch_2").resizable({
+        handles : 'se',
+        containment:"#story_frame",
+        maxWidth: 500,
+        minWidth: 85,
+        maxHeight: 400,
+        minHeight: 114,
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true
+    });
+    $("#decorate_ch_2").draggable({
+        cursor:"pointer", // 커서 모양
+        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
+    });
+    $("#decorate_ch_3").resizable({
+        handles : 'se',
+        containment:"#story_frame",
+        maxWidth: 500,
+        minWidth: 85,
+        maxHeight: 400,
+        minHeight: 114,
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true
+    });
+
+    $("#decorate_ch_3").draggable({
+        cursor:"pointer", // 커서 모양
+        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
+    });
+    $("#decorate_ch_4").resizable({
+        handles : 'se',
+        containment:"#story_frame",
+        maxWidth: 500,
+        minWidth: 85,
+        maxHeight: 400,
+        minHeight: 114,
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true
+    });
+
+    $("#decorate_ch_4").draggable({
+        cursor:"pointer", // 커서 모양
+        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
+    });
+
+    $("#Card_small_1").click(function () {
+    if(viewarray[0] == true){
+        viewarray[0] = false;
+        $("#decorate_ch_1").show();
+        } else {
+        viewarray[0] = true;
+        $("#decorate_ch_1").hide();
+        }
+    });
+
+    $("#Card_small_2").click(function () {
+    if(viewarray[1] == true){
+        viewarray[1] = false;
+        $("#decorate_ch_2").show();
+        } else {
+        viewarray[1] = true;
+        $("#decorate_ch_2").hide();
+        }
+    });
+
+    $("#Card_small_3").click(function () {
+    if(viewarray[2] == true){
+        viewarray[2] = false;
+        $("#decorate_ch_3").show();
+        } else {
+        viewarray[2] = true;
+        $("#decorate_ch_3").hide();
+        }
+    });
+
+    $("#Card_small_4").click(function () {
+    if(viewarray[3] == true){
+        viewarray[3] = false;
+        $("#decorate_ch_4").show();
+        } else {
+        viewarray[3] = true;
+        $("#decorate_ch_4").hide();
+        }
     });
 }
 

@@ -21,12 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="dc92fb1b-8459-4c64-b59e-433edb93be73" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI_Publisher/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI_Publisher/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/user_info.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/user_info.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/AI_Publisher/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/AI_Publisher/main_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/AI_Publisher/user_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/AI_Publisher/user_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/make_cover.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/make_cover.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/make_story.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/make_story.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/make_story.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/make_story.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/AI_Publisher/make_story.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/AI_Publisher/make_story.html" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +64,19 @@
       <recent name="D:\ZickBakGuri\Laboratory\gitProjects\Noris\AIPublisher\mysite\templates\AI_Publisher" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -80,22 +93,24 @@
       <workItem from="1606558848807" duration="1458000" />
       <workItem from="1606560544774" duration="4782000" />
       <workItem from="1606567225366" duration="3303000" />
+      <workItem from="1606573632880" duration="2561000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

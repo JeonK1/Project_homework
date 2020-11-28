@@ -50,8 +50,22 @@
             <div class="story_frame" id="story_frame">
                 <div class="left_frame" id="left_frame"></div>
                 <div class="right_frame" id="right_frame"></div>
+                <!-- 표지 캐릭터 꾸미기 -->
+                <div class="decorate_ch_1" id="decorate_ch_1" >
+                        <img class="deco_img" id="decorate_1" src={{getJSONData.mainChar.url}}>
+                </div>
+                <div class="decorate_ch_2" id="decorate_ch_2">
+                        <img class="deco_img" id="decorate_2" src={{getJSONData.subChar.url}}>
+                </div>
+                {% for character in getJSONData.charList %}
+                    <div class="decorate_character" id="decorate_ch_{{forloop.counter | add:2}}">
+                    <!--<div class="character_card" id="character_{{forloop.counter}}" onclick="sendSubChar({{forloop.counter}})">-->
+                        <img class="deco_img" id="decorate_{{forloop.counter}}" src={{character.url}}>
+                    </div>
+                {% endfor %}
             </div>
         </div>
+
 
         <!-- 가이드와 키워드 -->
         <div class="guide_keyword" id="guide_keyword">
