@@ -226,83 +226,91 @@
 /*    margin: 0px 20px;*/
 /*}*/
 
-.relation_card_positive{
+.relation_card_positive {
     position: absolute;
-    width: 99px;
-    height: 132px;
+    width: 85px;
+    height: 114px;
 
     background: #9CD9FC;
-    border: 1px solid #000000;
+    /* 5.5 */
+
+    border: 1px solid #E6E2CF;
     box-sizing: border-box;
+    border-radius: 8px;
 
     z-index: 15;
     cursor: move;
 }
 
-.relation_card_neutrality{
+.relation_card_neutrality {
     position: absolute;
-    width: 99px;
-    height: 132px;
-
+    width: 85px;
+    height: 114px;
     background: #FCE19C;
-    border: 1px solid #000000;
-    box-sizing: border-box;
+    /* 5.5 */
 
+    border: 1px solid #E6E2CF;
+    box-sizing: border-box;
+    border-radius: 8px;
     z-index: 15;
     cursor: move;
 }
 
-.relation_card_negative{
+.relation_card_negative {
     position: absolute;
-    width: 99px;
-    height: 132px;
+    width: 85px;
+    height: 114px;
 
     background: #FCB59C;
-    border: 1px solid #000000;
+    /* 5.5 */
+
+    border: 1px solid #E6E2CF;
     box-sizing: border-box;
+    border-radius: 8px;
 
     z-index: 15;
     cursor: move;
 }
 
-#relation_card_pos1{
-    left: 516px;
-    top: 1054px;
+#relation_card_pos1 {
+    left: calc(50% - 85px / 2 - 337.5px);
+    top: calc(50% - 114px / 2 + 363px);
 }
 
-#relation_card_pos2{
-    left: 635px;
-    top: 1054px;
+#relation_card_pos2 {
+    left: calc(50% - 85px / 2 - 242.5px);
+    top: calc(50% - 114px / 2 + 363px);
 }
 
-#relation_card_pos3{
-    left: 754px;
-    top: 1054px;
+#relation_card_pos3 {
+    left: calc(50% - 85px / 2 - 147.5px);
+    top: calc(50% - 114px / 2 + 363px);
 }
 
-#relation_card_neu1{
-    left: 923px;
-    top: 1054px;
+#relation_card_neu1 {
+    left: calc(50% - 85px / 2 - 39.5px);
+    top: calc(50% - 114px / 2 + 363px);
 }
 
-#relation_card_neu2{
-    left: 1042px;
-    top: 1054px;
+#relation_card_neu2 {
+    left: calc(50% - 85px / 2 + 55.5px);
+    top: calc(50% - 114px / 2 + 363px);
 }
 
-#relation_card_neg1{
-    left: 1196px;
-    top: 1054px;
+#relation_card_neg1 {
+    left: calc(50% - 85px / 2 + 165.5px);
+    top: calc(50% - 114px / 2 + 363px);
+
 }
 
-#relation_card_neg2{
-    left: 1315px;
-    top: 1054px;
+#relation_card_neg2 {
+    left: calc(50% - 85px / 2 + 260.5px);
+    top: calc(50% - 114px / 2 + 363px);
 }
 
-#relation_card_neg3{
-    left: 1434px;
-    top: 1054px;
+#relation_card_neg3 {
+    left: calc(50% - 85px / 2 + 355.5px);
+    top: calc(50% - 114px / 2 + 363px);
 }
 
 .character_selected_card{
@@ -350,8 +358,8 @@
 
 .relation_selected_card{
     position: absolute;
-    width: 99px;
-    height: 132px;
+    width: 85px;
+    height: 114px;
 
     background: rgba(196, 196, 196, 0.35);
     border: 1px solid rgba(0, 0, 0, 0.4);
@@ -362,8 +370,8 @@
 
 .relation_selected_card_pos{
     position: absolute;
-    width: 99px;
-    height: 132px;
+    width: 85px;
+    height: 114px;
 
     background: #9CD9FC;
     border: 1px solid #000000;
@@ -374,8 +382,8 @@
 
 .relation_selected_card_neu{
     position: absolute;
-    width: 99px;
-    height: 132px;
+    width: 85px;
+    height: 114px;
 
     background: #FCE19C;
     border: 1px solid #000000;
@@ -385,8 +393,8 @@
 }
 .relation_selected_card_neg{
     position: absolute;
-    width: 99px;
-    height: 132px;
+    width: 85px;
+    height: 114px;
 
     background: #FCB59C;
     border: 1px solid #000000;
@@ -420,7 +428,7 @@
     left: calc(50% - 85px / 2 - 240px);
     top: calc(50% - 114px / 2);
 
-    background: #FFFFFF;
+
     border-radius: 8px;
 }
 
@@ -431,7 +439,7 @@
     left: calc(50% - 85px / 2 - 120px);
     top: calc(50% - 114px / 2);
 
-    background: #FFFFFF;
+
     border-radius: 8px;
 }
 
@@ -442,7 +450,7 @@
     left: calc(50% - 85px / 2);
     top: calc(50% - 114px / 2);
 
-    background: #FFFFFF;
+
     border-radius: 8px;
 }
 
@@ -453,7 +461,7 @@
     left: calc(50% - 85px / 2 + 120px);
     top: calc(50% - 114px / 2 );
 
-    background: #FFFFFF;
+
     border-radius: 8px;
 }
 
@@ -464,7 +472,7 @@
     left: calc(50% - 85px / 2 + 240px);
     top: calc(50% - 114px / 2);
 
-    background: #FFFFFF;
+
     border-radius: 8px;
 }
 

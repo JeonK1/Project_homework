@@ -1,6 +1,6 @@
 var curNo = 0; //현재 작성중인 캐릭터 번호, 초기값은 첫번째 캐릭터라서 0이다.
 var arrCharacter = new Array();
-
+var pListObject;
 function initCharData(){
     arrCharacter = new Array();
     for(i=0;i<4; i++){
@@ -94,6 +94,31 @@ function createModal(type, title, message){
     }
 }
 
+function create_personality_element(str) {
+    var element = document.createElement("div");
+    element.className = "charWord_word";
+    element.innerHTML = str;
+    pListObject.append(element);
+}
+
+function get_personality_word() {
+    var url_GET = '../get_personality_word/';
+    var req = new XMLHttpRequest();
+    req.open('GET', url_GET, true);
+    req.responseType = 'json';
+    req.onreadystatechange = function(e) {
+        if (req.readyState === XMLHttpRequest.DONE) {
+            if (req.status == 200) {
+                var words = req.response["result"];
+                for (var i = 0; i < words.length; i++) {
+                    create_personality_element(words[i]);
+                }
+            }
+        }
+    }
+    req.send();
+}
+
 function createSpeechBox(){
     document.getElementById("speech_box").style.display="";
 }
@@ -102,6 +127,11 @@ function removeSpeechBox(){
 }
 function createWordList(){
     document.getElementById("charWord_wrap").style.visibility="";
+    pListObject = document.getElementById("charWord_list");
+    if (pListObject.hasChildNodes() == false) {
+        get_personality_word();
+    }
+
 }
 function removeWordList(){
     document.getElementById("charWord_wrap").style.visibility="hidden";

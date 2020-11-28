@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="dc92fb1b-8459-4c64-b59e-433edb93be73" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/static/make_cover.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/make_cover.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/make_story.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/make_story.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/make_story.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/make_story.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/AI_Publisher/make_story.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/AI_Publisher/make_story.html" afterDir="false" />
+>>>>>>> 6418fb6056c6b45ce04ab3feb3eb67c04d85e7f9
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,6 +36,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FUSProjectUsageTrigger">
     <session id="10970511">
       <usages-collector id="statistics.lifecycle.project">
@@ -243,8 +269,33 @@
       </pane>
       <pane id="Scope" />
     </panes>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="JupyterTrust" id="f478a0f8-a280-4a9d-ae98-14717bf3536c" />
+  <component name="ProjectId" id="1kthe15YQW7vxsaIQ17Q436wfEd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+>>>>>>> 6418fb6056c6b45ce04ab3feb3eb67c04d85e7f9
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Project_homework\AIPublisher\mysite\templates\AI_Publisher" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ZickBakGuri\Laboratory\gitProjects\Noris\AIPublisher\mysite\static\img" />
       <recent name="D:\ZickBakGuri\Laboratory\gitProjects\Noris\AIPublisher\mysite\static" />
@@ -263,6 +314,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -273,9 +325,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606056629149</updated>
+      <workItem from="1606525892412" duration="5027000" />
+      <workItem from="1606531769367" duration="2184000" />
+      <workItem from="1606555490513" duration="1428000" />
+      <workItem from="1606558848807" duration="1458000" />
+      <workItem from="1606560544774" duration="4782000" />
+      <workItem from="1606567225366" duration="3303000" />
+      <workItem from="1606573632880" duration="2561000" />
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="1273" y="86" width="1294" height="1321" extended-state="0" />
     <editor active="true" />
@@ -526,5 +586,22 @@
         </state>
       </provider>
     </entry>
+=======
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+>>>>>>> 6418fb6056c6b45ce04ab3feb3eb67c04d85e7f9
   </component>
 </project>

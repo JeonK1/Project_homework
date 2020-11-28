@@ -15,14 +15,22 @@ def main_page(request):
     return render(request, 'AI_Publisher/main_page.html')
 
 def make_cover(request):
-    # charList = CharList.objects
-    bookTextList = BookTextList.objects
-    # bookContetnsList = BookContetnsList.objects
-    charList = ["1.jpg", "2.jpeg", "3.jpg", "4.jpg"]
-    bookContetnsList = ["1.png", "2.png", "3.png", "4.png", "5.png"]
-    return render(request, 'AI_Publisher/make_cover.html', {'charList' : charList,
-                                                            'bookTextList' : bookTextList,
-                                                            'bookContetnsList' : bookContetnsList})
+    if request.method == 'POST':
+        message = request.POST.get('jsonData')  # POST로 날라온 jsonData 받아주기
+        getjson = json.loads(message)  # Json 풀어주기
+        bookContetnsList = ["1.png", "2.png", "3.png", "4.png", "5.png"]
+        return render(request, 'AI_Publisher/make_cover.html', {'getJSONData': getjson,
+                                                                'bookContetnsList': bookContetnsList})
+
+    else:
+        # charList = CharList.objects
+        bookTextList = BookTextList.objects
+        # bookContetnsList = BookContetnsList.objects
+        charList = ["1.jpg", "2.jpeg", "3.jpg", "4.jpg"]
+        bookContetnsList = ["1.png", "2.png", "3.png", "4.png", "5.png"]
+        return render(request, 'AI_Publisher/make_cover.html', {'getJSONData': charList,
+                                                                'bookTextList': bookTextList,
+                                                                'bookContetnsList': bookContetnsList})
 # class Makecover(ListView):
 #     template_name = "AI_Publisher/make_cover.html"
 #     model = CharList
@@ -129,6 +137,13 @@ def get_random_character(request):
         pathlist.append(cards[i].CharPic)
     return JsonResponse({"result" : pathlist})
 
+def get_personality_word(request):
+    words = WordList.objects.filter(WordType=4)
+    wordlist = []
+    for i in range(len(words)):
+        wordlist.append(words[i].WordContext)
+    return JsonResponse({"result" : wordlist})
+
 def set_character(request):
     return render(request, 'AI_Publisher/set_character.html')
 
@@ -141,3 +156,9 @@ def set_char_option(request):
 
 def show_gallery(request):
     return render(request, 'AI_Publisher/show_gallery.html')
+
+def user_info(request):
+    # dummy data
+    background = ["Asset 004.png", "Asset 005.png", "Asset 001.png", "Asset 003.png"]
+    
+    return render(request, 'AI_Publisher/user_info.html',{'background': background})

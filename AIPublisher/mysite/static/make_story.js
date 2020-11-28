@@ -1,5 +1,9 @@
 // 사용자 위치
 var count = 0;
+var char_button = new Array(4);
+for(var i = 0; i < char_button.length; i++){
+    char_button[i] = false
+}
 
 // 사용자가 적은 글들 저장
 var arrtext = new Array(5);
@@ -13,6 +17,12 @@ for(var i = 0; i < arrback.length; i++) {
     arrback[i] = "";
 }
 
+//어떤 캐릭터를 story에 넣을지
+var viewarray = new Array(4);
+    for (var i = 0; i < viewarray.length; i++){
+        viewarray[i] = true; //초기화
+    }
+
 // 주인공, 배경, 사건, 상대, 감정1, 감정2, 감정3, 감정4, 감정5
 // 여기서 받으면 될듯
 var hero = "이기철";
@@ -22,32 +32,41 @@ var partner = "이희선";
 var emotion = new Array('사랑','행복','의심','분노','슬픔');
 
 // 발단
-var expos = new Array("- "+hero+"에게 "+ground+"은(는) 어떤 곳인가요?",
-            "- "+hero+"과 "+event+"은(는) 어떤 관련이 있나요?",
-            "- "+hero+"은(는) "+partner+"에게 왜 "+emotion[0]+"을 느끼나요?");
+var expos = new Array(hero+"에게 "+ground+"은(는) 어떤 곳인가요?",
+            hero+"과 "+event+"은(는) 어떤 관련이 있나요?",
+            hero+"은(는) "+partner+"에게 왜 "+emotion[0]+"을 느끼나요?");
 // 전개
-var compli = new Array("- "+hero+"은(는) 어떻게 "+event+"을 해결하고자 하나요?",
-                       "- 왜 "+hero+"은(는) "+emotion[0]+"에서 "+emotion[1]+"가 되었나요?");
+var compli = new Array(hero+"은(는) 어떻게 "+event+"을 해결하고자 하나요?",
+                       "왜 "+hero+"은(는) "+emotion[0]+"에서 "+emotion[1]+"가 되었나요?");
 // 위기
-var crisis = new Array("- 왜 "+hero+"은(는) "+emotion[1]+"에서 "+emotion[2]+"가 되었나요?")
+var crisis = new Array("왜 "+hero+"은(는) "+emotion[1]+"에서 "+emotion[2]+"가 되었나요?")
 
 //절정
-var climax = new Array("- 왜 "+hero+"은(는) "+emotion[2]+"에서 "+emotion[3]+"가 되었나요?")
+var climax = new Array("왜 "+hero+"은(는) "+emotion[2]+"에서 "+emotion[3]+"가 되었나요?")
 
 //결말
-var result = new Array("- 왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]+"가 되었나요?",
-                       "- 이 이야기의 결말은 어떻게 되나요?")
+var result = new Array("왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]+"가 되었나요?",
+                       "이 이야기의 결말은 어떻게 되나요?")
+
 
 
 function story_make(){
     $("#RightSidebar").hide();
+    $("#keyword_text").text(event);
+    $("#guide_text").text(expos);
+    $("#decorate_ch_1").hide();
+    $("#decorate_ch_2").hide();
+    $("#decorate_ch_3").hide();
+    $("#decorate_ch_4").hide();
 
+    // 넥스트 버튼 눌렀을 때
     $("#next_shape").click(function () {
         count += 1;
         next_move(count);
         step_color_change(count);
     });
 
+    // 왼쪽 단계 눌렀을 때때
     $("#STEP_1").click(function() {
         count = 0;
         next_move(count);
@@ -77,13 +96,125 @@ function story_make(){
         next_move(count);
         step_color_change(count);
     });
+
+    // 캐릭터 눌렀을 때
+    $("#decorate_ch_1").resizable({
+        handles : 'se',
+        containment:"#story_frame",
+        maxWidth: 500,
+        minWidth: 85,
+        maxHeight: 400,
+        minHeight: 114,
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true
+    });
+    $("#decorate_ch_1").draggable({
+        cursor:"pointer", // 커서 모양
+        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
+    });
+
+    $("#decorate_ch_2").resizable({
+        handles : 'se',
+        containment:"#story_frame",
+        maxWidth: 500,
+        minWidth: 85,
+        maxHeight: 400,
+        minHeight: 114,
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true
+    });
+    $("#decorate_ch_2").draggable({
+        cursor:"pointer", // 커서 모양
+        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
+    });
+    $("#decorate_ch_3").resizable({
+        handles : 'se',
+        containment:"#story_frame",
+        maxWidth: 500,
+        minWidth: 85,
+        maxHeight: 400,
+        minHeight: 114,
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true
+    });
+
+    $("#decorate_ch_3").draggable({
+        cursor:"pointer", // 커서 모양
+        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
+    });
+    $("#decorate_ch_4").resizable({
+        handles : 'se',
+        containment:"#story_frame",
+        maxWidth: 500,
+        minWidth: 85,
+        maxHeight: 400,
+        minHeight: 114,
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true
+    });
+
+    $("#decorate_ch_4").draggable({
+        cursor:"pointer", // 커서 모양
+        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
+    });
+
+    $("#Card_small_1").click(function () {
+    if(viewarray[0] == true){
+        viewarray[0] = false;
+        $("#decorate_ch_1").show();
+        } else {
+        viewarray[0] = true;
+        $("#decorate_ch_1").hide();
+        }
+    });
+
+    $("#Card_small_2").click(function () {
+    if(viewarray[1] == true){
+        viewarray[1] = false;
+        $("#decorate_ch_2").show();
+        } else {
+        viewarray[1] = true;
+        $("#decorate_ch_2").hide();
+        }
+    });
+
+    $("#Card_small_3").click(function () {
+    if(viewarray[2] == true){
+        viewarray[2] = false;
+        $("#decorate_ch_3").show();
+        } else {
+        viewarray[2] = true;
+        $("#decorate_ch_3").hide();
+        }
+    });
+
+    $("#Card_small_4").click(function () {
+    if(viewarray[3] == true){
+        viewarray[3] = false;
+        $("#decorate_ch_4").show();
+        } else {
+        viewarray[3] = true;
+        $("#decorate_ch_4").hide();
+        }
+    });
 }
 
 function next_move(count){
 
     switch(count){
         case 0:
-            alert(arrback[0][0]);
             $("#left_frame").css( {"background-image":arrback[count],
                                 "background-position":"left",
                                 "background-size":"1020px 680px"});
@@ -92,6 +223,7 @@ function next_move(count){
                                 "background-size":"1020px 680px"});
             $('#input_text').val('');
             $("#RightSidebar").hide();
+            $("#guide_text").text(expos);
             break;
         case 1:
             $("#left_frame").css( {"background-image":arrback[count],
@@ -102,6 +234,7 @@ function next_move(count){
                                 "background-size":"1020px 680px"});
             $('#input_text').val('');
             $("#RightSidebar").show();
+            $("#guide_text").text(compli);
             break;
         case 2:
             $("#left_frame").css( {"background-image":arrback[count],
@@ -112,6 +245,7 @@ function next_move(count){
                                 "background-size":"1020px 680px"});
             $('#input_text').val('');
             $("#RightSidebar").show();
+            $("#guide_text").text(crisis);
             break;
         case 3:
             $("#left_frame").css( {"background-image":arrback[count],
@@ -122,6 +256,7 @@ function next_move(count){
                                 "background-size":"1020px 680px"});
             $('#input_text').val('');
             $("#RightSidebar").show();
+            $("#guide_text").text(climax);
             break;
         case 4:
             $("#left_frame").css( {"background-image":arrback[count],
@@ -132,9 +267,10 @@ function next_move(count){
                                 "background-size":"1020px 680px"});
             $('#input_text').val('');
             $("#RightSidebar").show();
+            $("#guide_text").text(result);
             break;
         case 5:
-            alert("담페이지");
+            sendToNextPage();
             break;
     }
 }
@@ -302,4 +438,16 @@ function show_text() {
     });
 }
 
+function sendToNextPage(){
+    //다음페이지로 POST 데이터 넘기기
+    jsonData = document.getElementById("jsonData").value;
+        // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
+    jsonData = jsonData.replaceAll('\'', '\"');
+    jsonObject = JSON.parse(jsonData);
+    console.log(jsonData);
+
+    document.getElementById("jsonData").value = jsonData;
+    document.getElementById("sendJson").submit();
+
+}
 
