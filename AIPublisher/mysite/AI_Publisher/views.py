@@ -158,4 +158,7 @@ def show_gallery(request):
     return render(request, 'AI_Publisher/show_gallery.html')
 
 def user_info(request):
-    return render(request, 'AI_Publisher/user_info.html')
+    # dummy data
+    background = ["Asset 004.png", "Asset 005.png", "Asset 001.png", "Asset 003.png"]
+    
+    return render(request, 'AI_Publisher/user_info.html',{'background': background})
