@@ -1,5 +1,9 @@
 // 사용자 위치
 var count = 0;
+var char_button = new Array(4);
+for(var i = 0; i < char_button.length; i++){
+    char_button[i] = false
+}
 
 // 사용자가 적은 글들 저장
 var arrtext = new Array(5);
@@ -22,25 +26,27 @@ var partner = "이희선";
 var emotion = new Array('사랑','행복','의심','분노','슬픔');
 
 // 발단
-var expos = new Array("- "+hero+"에게 "+ground+"은(는) 어떤 곳인가요?",
-            "- "+hero+"과 "+event+"은(는) 어떤 관련이 있나요?",
-            "- "+hero+"은(는) "+partner+"에게 왜 "+emotion[0]+"을 느끼나요?");
+var expos = new Array(hero+"에게 "+ground+"은(는) 어떤 곳인가요?",
+            hero+"과 "+event+"은(는) 어떤 관련이 있나요?",
+            hero+"은(는) "+partner+"에게 왜 "+emotion[0]+"을 느끼나요?");
 // 전개
-var compli = new Array("- "+hero+"은(는) 어떻게 "+event+"을 해결하고자 하나요?",
-                       "- 왜 "+hero+"은(는) "+emotion[0]+"에서 "+emotion[1]+"가 되었나요?");
+var compli = new Array(hero+"은(는) 어떻게 "+event+"을 해결하고자 하나요?",
+                       "왜 "+hero+"은(는) "+emotion[0]+"에서 "+emotion[1]+"가 되었나요?");
 // 위기
-var crisis = new Array("- 왜 "+hero+"은(는) "+emotion[1]+"에서 "+emotion[2]+"가 되었나요?")
+var crisis = new Array("왜 "+hero+"은(는) "+emotion[1]+"에서 "+emotion[2]+"가 되었나요?")
 
 //절정
-var climax = new Array("- 왜 "+hero+"은(는) "+emotion[2]+"에서 "+emotion[3]+"가 되었나요?")
+var climax = new Array("왜 "+hero+"은(는) "+emotion[2]+"에서 "+emotion[3]+"가 되었나요?")
 
 //결말
-var result = new Array("- 왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]+"가 되었나요?",
-                       "- 이 이야기의 결말은 어떻게 되나요?")
+var result = new Array("왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]+"가 되었나요?",
+                       "이 이야기의 결말은 어떻게 되나요?")
 
 
 function story_make(){
     $("#RightSidebar").hide();
+    $("#keyword_text").text(event);
+    $("#guide_text").text(expos);
 
     // 넥스트 버튼 눌렀을 때
     $("#next_shape").click(function () {
@@ -93,6 +99,7 @@ function next_move(count){
                                 "background-size":"1020px 680px"});
             $('#input_text').val('');
             $("#RightSidebar").hide();
+            $("#guide_text").text(expos);
             break;
         case 1:
             $("#left_frame").css( {"background-image":arrback[count],
@@ -103,6 +110,7 @@ function next_move(count){
                                 "background-size":"1020px 680px"});
             $('#input_text').val('');
             $("#RightSidebar").show();
+            $("#guide_text").text(compli);
             break;
         case 2:
             $("#left_frame").css( {"background-image":arrback[count],
@@ -113,6 +121,7 @@ function next_move(count){
                                 "background-size":"1020px 680px"});
             $('#input_text').val('');
             $("#RightSidebar").show();
+            $("#guide_text").text(crisis);
             break;
         case 3:
             $("#left_frame").css( {"background-image":arrback[count],
@@ -123,6 +132,7 @@ function next_move(count){
                                 "background-size":"1020px 680px"});
             $('#input_text').val('');
             $("#RightSidebar").show();
+            $("#guide_text").text(climax);
             break;
         case 4:
             $("#left_frame").css( {"background-image":arrback[count],
@@ -133,6 +143,7 @@ function next_move(count){
                                 "background-size":"1020px 680px"});
             $('#input_text').val('');
             $("#RightSidebar").show();
+            $("#guide_text").text(result);
             break;
         case 5:
             sendToNextPage();
@@ -305,7 +316,6 @@ function show_text() {
 
 function sendToNextPage(){
     //다음페이지로 POST 데이터 넘기기
-    alert("했는데?");
     jsonData = document.getElementById("jsonData").value;
         // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
     jsonData = jsonData.replaceAll('\'', '\"');

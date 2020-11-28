@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc92fb1b-8459-4c64-b59e-433edb93be73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI_Publisher/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI_Publisher/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/make_cover.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/make_cover.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/make_cover.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/make_cover.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/make_story.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/make_story.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/AI_Publisher/make_cover.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/AI_Publisher/make_cover.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/AI_Publisher/make_story.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/AI_Publisher/make_story.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606056629149</updated>
       <workItem from="1606525892412" duration="5027000" />
+      <workItem from="1606531769367" duration="2184000" />
     </task>
     <servers />
   </component>
@@ -74,7 +68,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
