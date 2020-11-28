@@ -269,7 +269,7 @@ body{
 
 #example_btn {
     position: absolute;
-    width: 166.29px;
+    width: 166px;
     height: 40px;
     left: calc(50% - 166.29px / 2);
     top: calc(50% - 47.85px / 2 + 200px);
@@ -278,6 +278,13 @@ body{
 
     background: #37966F;
 
+
+}
+
+#example_btn_text{
+    width: 60px;
+    height: 24px;
+    padding: 8px 53px;
     font-family: Inter;
     font-style: normal;
     font-weight: bold;
@@ -295,7 +302,6 @@ body{
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 10px 0px;
 }
 
 #introduction_box{
@@ -442,22 +448,17 @@ body{
 }
 
 #upload_text2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0px;
-
     position: absolute;
     width: 255px;
     height: 63px;
-    left: calc(50% - 255px / 2 );
-    top: calc(50% - 63px / 2 + 100px);
+    left: calc(50% - 255px / 2);
+    top: calc(50% - 63px / 2 + 25px);
 
-    position: absolute;
-    left: 0%;
-    right: -0.88%;
-    top: 0%;
-    bottom: 13.04%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0px;
+
 
     /* Text - Small */
 
@@ -531,6 +532,14 @@ body{
     background: #356859;
     border-radius: 24px;
 
+
+}
+
+#upload_btn_text{
+
+    width: 111px;
+    height: 24px;
+    padding: 13px 84px;
     font-family: Inter;
     font-style: normal;
     font-weight: bold;
