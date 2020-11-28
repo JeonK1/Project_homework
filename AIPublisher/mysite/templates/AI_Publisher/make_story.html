@@ -14,7 +14,7 @@
     <script type="text/javascript" src="{% static 'make_story.js' %}"></script>
     <title>Make Story</title>
     <!-- post values -->
-    <form method='post' action='/AI_Publisher/make_story/' target=_self style="display: none;" name="sendJson" id="sendJson">
+    <form method='post' action='/AI_Publisher/make_cover/' target=_self style="display: none;" name="sendJson" id="sendJson">
         <input type='hidden' name='jsonData' id='jsonData' value="{{getJSONData}}"/>
     </form>
 </head>
@@ -71,8 +71,6 @@
         <!-- 텍스트 입력 -->
         <input type="text" class="input_text" id="input_text">
 
-
-        <!-- 3단계 -->
         <!--오른쪽 메뉴-->
         <div class="RightSidebar" id="RightSidebar">
             <div class="Ground_small_1" id="Ground_small_1" style="background-image: url('../../static/img/ground/{{bookContetnsList.0}}');"></div>
@@ -82,8 +80,6 @@
             <div class="Ground_small_5" id="Ground_small_5" style="background-image: url('../../static/img/ground/{{bookContetnsList.4}}');"></div>
             <div class="camera" id="camera"></div>
         </div>
-
-
 
         <!-- 발단 전개 위기 절정 결말 -->
         <div class="STEP_BAR" id="STEP_BAR">
@@ -104,8 +100,8 @@
             </div>
         </div>
 
-        <!--다음 단계-->
-        <div class="next_shape" id="next_shape">
+        <!--다음 버튼-->
+        <div class="next_shape" id="next_shape" >
             <div class="next_step_body_1" id="next_step_body_1">
                 <div class="next_step_body_2" id="next_step_body_2">
                     <div class="next_step_text" id="next_step_text">Next</div>

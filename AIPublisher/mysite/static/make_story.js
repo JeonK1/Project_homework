@@ -42,13 +42,15 @@ var result = new Array("- 왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]
 function story_make(){
     $("#RightSidebar").hide();
 
+    // 넥스트 버튼 눌렀을 때
     $("#next_shape").click(function () {
         count += 1;
         next_move(count);
         step_color_change(count);
     });
 
-    $("#STEP_1").click(function() {
+    // 왼쪽 단계 눌렀을 때때
+   $("#STEP_1").click(function() {
         count = 0;
         next_move(count);
         step_color_change(count);
@@ -83,7 +85,6 @@ function next_move(count){
 
     switch(count){
         case 0:
-            alert(arrback[0][0]);
             $("#left_frame").css( {"background-image":arrback[count],
                                 "background-position":"left",
                                 "background-size":"1020px 680px"});
@@ -134,7 +135,7 @@ function next_move(count){
             $("#RightSidebar").show();
             break;
         case 5:
-            alert("담페이지");
+            sendToNextPage();
             break;
     }
 }
@@ -302,4 +303,17 @@ function show_text() {
     });
 }
 
+function sendToNextPage(){
+    //다음페이지로 POST 데이터 넘기기
+    alert("했는데?");
+    jsonData = document.getElementById("jsonData").value;
+        // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
+    jsonData = jsonData.replaceAll('\'', '\"');
+    jsonObject = JSON.parse(jsonData);
+    console.log(jsonData);
+
+    document.getElementById("jsonData").value = jsonData;
+    document.getElementById("sendJson").submit();
+
+}
 
