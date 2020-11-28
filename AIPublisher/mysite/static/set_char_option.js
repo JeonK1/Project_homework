@@ -119,6 +119,7 @@ function get_personality_word() {
     req.send();
 }
 
+// 말풍선
 function createSpeechBox(){
     document.getElementById("speech_box").style.display="";
 }

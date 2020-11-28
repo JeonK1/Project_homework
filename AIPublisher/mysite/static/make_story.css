@@ -630,6 +630,7 @@
     order: 1;
     flex-grow: 0;
     margin: 5px 0px;
+    z-index:2
 }
 
 /* GQbg */
@@ -660,6 +661,7 @@
     height: 43px;
     left: 0.5px;
     top: calc(50% - 43px/2 - 1px);
+    z-index:2
 
 }
 
@@ -943,4 +945,57 @@
     height:90%;
     object-fit: contain;
     margin: 5px;
+}
+
+/* 우측 상단에 있는 작은 말풍선 */
+#speech_box{
+    position: absolute;
+    width:214px;
+    height:123px;
+    top:175px;
+    left:1173px;
+    padding-top:10px;
+    background-image: url("../../static/img/bg_speechbox2.png");
+    background-repeat : no-repeat;
+    background-size : contain;
+    z-index:5;
+}
+#speech_box_closeBtn{
+    position: absolute;
+    right:0;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+#speech_box_context{
+    display:flex;
+
+    width:100%;
+    height:90%;
+
+    color: #FFFFFF;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+}
+#speech_box_wordBtn{
+    color: #FFFFFF;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+
+    background: #356859;
+    border-radius: 8px;
+
+    justify-content:center;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    margin: 8px 20px 0px 20px;
 }

@@ -179,3 +179,57 @@ function select_background(){
                             "background-size":"cover"});
     });
 }
+
+function makeBook(){
+    if(document.getElementById('Cover').style.backgroundImage == ""){
+        //배경 설정 안됨
+        createModal("warning","경고", "배경화면을 선택해주세요");
+    } else if(document.getElementById('Cover_title').innerText == ""){
+        createModal("warning","경고", "동화의 제목을 지어주세요");
+    } else {
+        createModal("book","동화를 완성합니다.", "나의 책장에서 확인할 수 있습니다.");
+    }
+}
+
+//모달창
+function createModal(type, title, message){
+    if(type=="warning"){
+        //경고일 때
+        document.querySelector('#modal_button_ok').style.display = '';
+        document.querySelector('#modal_button_yes').style.display = 'none';
+        document.querySelector('#modal_button_no').style.display = 'none';
+
+        document.querySelector('.modal_wrap').style.display ='block';
+        document.querySelector('.black_bg').style.display ='block';
+        document.querySelector('#modal_title').innerText = title;
+        document.querySelector('#modal_context').innerText = message;
+        document.querySelector('#modal_button_ok').style.color = "#FAC1D6";
+        document.querySelector('#modal_button_ok').style.background = "#A90E46";
+
+    } else if(type=="book"){
+        document.querySelector('#modal_button_ok').style.display = '';
+        document.querySelector('#modal_button_yes').style.display = 'none';
+        document.querySelector('#modal_button_no').style.display = 'none';
+
+        document.querySelector('.modal_wrap').style.display ='block';
+        document.querySelector('.black_bg').style.display ='block';
+        document.querySelector('#modal_title').innerText = title;
+        document.querySelector('#modal_context').innerText = message;
+        document.getElementById('modal_warning_img').src = document.getElementById('modal_warning_img').src+"/../ic_book.png";
+        document.querySelector('#modal_button_ok').style.color = "#C5F2C7";
+        document.querySelector('#modal_button_ok').style.background = "#F8B24";
+        document.getElementById("modal_button_ok").onclick = sendToNextPage;
+    }
+}
+function removeModal(){
+    document.querySelector('.modal_wrap').style.display ='none';
+    document.querySelector('.black_bg').style.display ='none';
+}
+function modalOk(){
+    //확인 누르면 자기 자신 페이지로 돌아옴
+    removeModal();
+}
+function sendToNextPage(){
+    removeModal();
+    window.location = '/AI_Publisher';
+}

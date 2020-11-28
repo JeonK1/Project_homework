@@ -451,3 +451,10 @@ function sendToNextPage(){
 
 }
 
+// 말풍선
+function createSpeechBox(){
+    document.getElementById("speech_box").style.display="";
+}
+function removeSpeechBox(){
+    document.getElementById("speech_box").style.display="none";
+}

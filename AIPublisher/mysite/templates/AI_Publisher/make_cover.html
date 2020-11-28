@@ -22,6 +22,23 @@
 </head>
 <body onload="navbar_function();select_background();cover_decoration();">
     <div class="BackGround" id="BackGround">
+        <!-- 모달창 -->
+        <div class="black_bg" onclick="removeModal();"></div>
+        <div class="modal_wrap">
+            <div id="modal_warning" > <img id="modal_warning_img" src="../../static/img/ic_warning.png"> </div>
+            <div id="modal_title">
+                모달제목
+            </div>
+            <div id="modal_context">
+                모달내용
+            </div>
+            <div id="modal_button_wrap">
+                <div class="modal_button" id="modal_button_ok" onclick="modalOk();">확인</div>
+                <div class="modal_button" id="modal_button_yes" onclick="modalYes();">예</div>
+                <div class="modal_button" id="modal_button_no" onclick="modalNo();">아니오</div>
+            </div>
+        </div>
+
         <!-- 살색 배경 -->
         <div class="Field" id="Field"></div>
 
@@ -77,7 +94,7 @@
 
         <!-- 동화 제작 완성 -->
 
-        <div class="make_shape" id="make_shape">
+        <div class="make_shape" id="make_shape" onclick="makeBook();">
             <div class="make_step_body_1" id="make_step_body_1">
                 <div class="make_step_body_2" id="make_step_body_2">
                     <div class="make_step_text" id="make_step_text">Make</div>

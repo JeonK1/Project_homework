@@ -19,7 +19,7 @@
     </form>
 </head>
 
-<body onload="navbar_function();story_make();select_background();">
+<body onload="navbar_function();story_make();select_background();removeSpeechBox();">
 
     <div class="BackGround" id="BackGround">
 
@@ -73,12 +73,21 @@
                 <div class="guide_box" id="guide_box"></div>
                 <div class="guide_text_box" id="guide_text_box">
                     <div class="guide_text" id="guide_text">가이드 질문</div>
-                    <div class="guide_image" id="guide_image"></div>
+                    <div class="guide_image" id="guide_image" onmouseenter="createSpeechBox()"></div>
+
                 </div>
             </div>
             <div class="keyword" id="keyword">
                 <div class="keyword_box" id="keyword_box"></div>
                 <div class="keyword_text" id="keyword_text">상황키워드</div>
+            </div>
+        </div>
+
+        <!-- 말풍선 -->
+        <div id="speech_box">
+            <img id="speech_box_closeBtn" src="../../static/img/close_white.png" onclick="removeSpeechBox()">
+            <div id="speech_box_context">
+                버튼을 클릭해서<br>대화창을 추가하거나<br>제거 할 수 있습니다.
             </div>
         </div>
 
