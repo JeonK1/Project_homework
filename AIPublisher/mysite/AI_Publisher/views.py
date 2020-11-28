@@ -155,7 +155,12 @@ def set_char_option(request):
 
 
 def show_gallery(request):
-    return render(request, 'AI_Publisher/show_gallery.html')
+
+    #dummy data
+    background = ["Asset 004.png", "Asset 005.png", "Asset 001.png", "Asset 003.png"]
+    title=['어느 평화로운 가을날','트와이스 파이팅!','계원이가 좋아하는 이달소']
+    return render(request, 'AI_Publisher/show_gallery.html', {'background':background,
+                                                              'title': title})
 
 def user_info(request):
     # dummy data
