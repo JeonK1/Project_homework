@@ -16,11 +16,37 @@
 <body onload="navbar_function()">
 
     <div class="background" id="backGround">
-
+        <div class="background" id="Field">
         <!-- 만든 동화책 -->
-        <div class="storybook_1" id="storybook_1"></div>
-        <div class="storybook_2" id="storybook_2"></div>
-        <div class="storybook_3" id="storybook_3"></div>
+            <div class="storybook_box" id="book_box">
+                <!-- DB에서 책 제목이랑 책 표지 불러와서~~~~~~~~~~~~~~~~~~~~~~~~~~~~여기에 출력~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="storybook" id="storybook_1"><img src="../../static/img/bg/{{background.0}}">
+                    <div class="storybook_title" id="storybook1_title">
+                        <div class="storybook_title_text">{{title.0}}</div>
+                    </div>
+                    <div class="storybook_btn" id="storybook1_btn">
+                        <div class="storybook_btn_text" id="storybook1_btn_text">책 읽기</div>
+                    </div>
+                </div>
+                <!-- DB에서 책 제목이랑 책 표지 불러와서~~~~~~~~~~~~~~~~~~~~~~~~~~~~여기에 출력~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="storybook" id="storybook_2"><img src="../../static/img/bg/{{background.1}}">
+                    <div class="storybook_title" id="storybook2_title">
+                        <div class="storybook_title_text">{{title.1}}</div>
+                    </div>
+                    <div class="storybook_btn" id="storybook2_btn">
+                        <div class="storybook_btn_text" id="storybook2_btn_text">책 읽기</div>
+                    </div>
+                </div>
+                <!-- DB에서 책 제목이랑 책 표지 불러와서~~~~~~~~~~~~~~~~~~~~~~~~~~~~여기에 출력~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="storybook" id="storybook_3"><img src="../../static/img/bg/{{background.2}}">
+                    <div class="storybook_title" id="storybook3_title">
+                        <div class="storybook_title_text">{{title.2}}</div>
+                    </div>
+                    <div class="storybook_btn" id="storybook3_btn">
+                        <div class="storybook_btn_text" id="storybook3_btn_text">책 읽기</div>
+                    </div>
+                </div>
+            </div>
 
         <!-- 왼쪽 넘기기 -->
         <div class="left_move" id="left_move"></div>
@@ -40,7 +66,7 @@
             <div class="user_icon" id="user_icon"></div>
             <div class="username" id="username"></div>
         </div>
-
+        </div>
     </div>
 </body>
 </html>
