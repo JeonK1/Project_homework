@@ -137,6 +137,13 @@ def get_random_character(request):
         pathlist.append(cards[i].CharPic)
     return JsonResponse({"result" : pathlist})
 
+def get_personality_word(request):
+    words = WordList.objects.filter(WordType=4)
+    wordlist = []
+    for i in range(len(words)):
+        wordlist.append(words[i].WordContext)
+    return JsonResponse({"result" : wordlist})
+
 def set_character(request):
     return render(request, 'AI_Publisher/set_character.html')
 

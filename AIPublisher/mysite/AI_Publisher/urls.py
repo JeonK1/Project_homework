@@ -17,4 +17,5 @@ urlpatterns = [
     path('show_gallery/', views.show_gallery),
     #
     path('get_random_character/', views.get_random_character),
+    path('get_personality_word/', views.get_personality_word),
 ]
