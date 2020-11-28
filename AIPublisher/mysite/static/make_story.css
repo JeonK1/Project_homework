@@ -749,12 +749,14 @@
 /* Auto Layout */
 #RightSidebar{
     /* BGbar */
-
     /* Auto Layout */
+    width:100%
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 40px 10px 40px 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 10px 40px 10px;
 
     position: absolute;
     width: 110px;
@@ -768,116 +770,35 @@
     box-shadow: -2px 1px 2px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
+#RightSidebar_scroll{
+    width:100%;
+    height:86%;
 
-#Ground_small_1{
-    position: absolute;
+    overflow:scroll;
+    -ms-overflow-style: none;
+}
+.Ground_small_img{
+    width:100%;
+    height:100%;
+    margin-left:13px;
+}
+.Ground_small{
+    position: flex;
+    display: static;
     width: 85px;
     height: 72px;
-    left: 5px;
-    top: 40px;
 
-    background: url(img/ground/1.png);
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 20px;
-}
-
-
-#Ground_small_2{
-    position: absolute;
-    width: 85px;
-    height: 76px;
-    left: 5px;
-    top: 132px;
-
-    background: url(img/ground/2.png);
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 20px;
-}
-
-#Ground_small_3{
-    position: absolute;
-    width: 85px;
-    height: 76px;
-    left: 5px;
-    top: 228px;
-
-    background: url(img/ground/3.png);
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 2;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 20px;
-}
-
-#Ground_small_4{
-    position: absolute;
-    width: 85px;
-    height: 76px;
-    left: 5px;
-    top: 324px;
-
-    background: url(img/ground/4.png);
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 3;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 20px;
-}
-
-#Ground_small_5{
-    position: absolute;
-    width: 85px;
-    height: 76px;
-    left: 5px;
-    top: 420px;
-
-    background: url(img/ground/5.png);
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 3;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 20px;
+    margin-bottom:20px;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
 }
 
 #camera{
     /* BG */
-
-
-    position: absolute;
-    width: 100px;
+    position: static;
+    width: 110px;
     height: 90px;
-    left: -5px;
-    top: 512px;
-
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 4;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 20px;
 
     background: url(img/camera.png);
     background-size : cover;
@@ -998,4 +919,120 @@
     text-align: center;
     padding: 10px 0px 10px 0px;
     margin: 8px 20px 0px 20px;
+}
+
+/* 모달창 */
+.modal_wrap{
+    display: none;
+    width: 760px;
+    height: 350px;
+
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -175px 0 0 -380px;
+
+    background:#ffffff;
+    border-radius: 24px;
+    border: 1px solid #000000;
+    z-index: 12;
+}
+.black_bg{
+    display: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0,0, 0.5);
+    top:0;
+    left: 0;
+    z-index: 10;
+}
+#image_wrap{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin:59px 35px 0px 35px;
+}
+.image_bg{
+    display:static;
+    width:201px;
+    height:110px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 12px;
+    margin-right:10px;
+
+    background-size:cover;
+}
+#modal_title{
+    color: #414141;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    /* identical to box height, or 26px */
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+
+    margin-top:18px;
+}
+#modal_button_wrap{
+    display: flex;
+    justify-content:center;
+    margin-top:40px;
+}
+.modal_button{
+    display: flex;
+
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    padding:12px 16px 12px 16px;
+
+    /* IBM Plex / Button */
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    /* identical to box height, or 24px */
+
+}
+#modal_button_yes{
+    color: #C5F2C7;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+
+    margin-left:8px;
+    background: #1F8B24;
+    box-shadow: 0px 1px 2px rgba(97, 97, 97, 0.2), 0px 2px 4px rgba(97, 97, 97, 0.2);
+    border-radius: 8px;
+}
+#modal_button_no{
+    color: #818181;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+
+    margin-right:8px;
+    background: #FFFFFF;
+    border: 1px solid #C0C0C0;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+}
+::-webkit-scrollbar {
+    display:none;
 }

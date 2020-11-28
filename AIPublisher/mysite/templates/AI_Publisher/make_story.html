@@ -22,6 +22,39 @@
 <body onload="navbar_function();story_make();select_background();removeSpeechBox();">
 
     <div class="BackGround" id="BackGround">
+        <!-- 나의 배경 모달창 -->
+        <div class="black_bg" onclick="removeModal();"></div>
+        <div class="modal_wrap">
+            <div id="image_wrap">
+                <img class="img_arrow" src="../../static/img/ic_left.png" style="margin-right:10px;" onclick="clickLeft();">
+                <form style="display:flex;" action="">
+                    <label for="radio_img1">
+                        <div class="image_bg" id="imgae_bg1" style="background-image: url('../../static/img/ground/{{bookContetnsList.0}}');">
+                            <input type="radio" id="radio_img1" name="select_bg" value="imgae_bg1">
+                        </div>
+                    </label>
+                    <label for="radio_img2">
+                        <div class="image_bg" id="imgae_bg2" style="background-image: url('../../static/img/ground/{{bookContetnsList.1}}');">
+                            <input type="radio" id="radio_img2" name="select_bg" value="imgae_bg2">
+                        </div>
+                    </label>
+                    <label for="radio_img3">
+                        <div class="image_bg" id="imgae_bg3" style="background-image: url('../../static/img/ground/{{bookContetnsList.2}}');">
+                            <input type="radio" id="radio_img3" name="select_bg" value="imgae_bg3">
+                        </div>
+                    </label>
+                </form>
+                <img src="../../static/img/ic_right.png" onclick="clickRight();">
+            </div>
+            <div id="modal_title">
+                선택된 배경 이미지를 추가합니다.
+            </div>
+            <div id="modal_context"></div>
+            <div id="modal_button_wrap">
+                <div class="modal_button" id="modal_button_no" onclick="bgModalNo();">불러오기 취소</div>
+                <div class="modal_button" id="modal_button_yes" onclick="bgModalYes();">배경 불러오기</div>
+            </div>
+        </div>
 
         <!-- 베이지색 바탕-->
         <div class="Field" id="Field"></div>
@@ -96,12 +129,27 @@
 
         <!--오른쪽 메뉴-->
         <div class="RightSidebar" id="RightSidebar">
-            <div class="Ground_small_1" id="Ground_small_1" style="background-image: url('../../static/img/ground/{{bookContetnsList.0}}');"></div>
-            <div class="Ground_small_2" id="Ground_small_2" style="background-image: url('../../static/img/ground/{{bookContetnsList.1}}');"></div>
-            <div class="Ground_small_3" id="Ground_small_3" style="background-image: url('../../static/img/ground/{{bookContetnsList.2}}');"></div>
-            <div class="Ground_small_4" id="Ground_small_4" style="background-image: url('../../static/img/ground/{{bookContetnsList.3}}');"></div>
-            <div class="Ground_small_5" id="Ground_small_5" style="background-image: url('../../static/img/ground/{{bookContetnsList.4}}');"></div>
-            <div class="camera" id="camera"></div>
+            <div id="RightSidebar_scroll">
+                <div class="Ground_small">
+                    <div class="Ground_small_img" id="Ground_small_1" style="background-image: url('../../static/img/ground/{{bookContetnsList.0}}');" onclick="select_background('Ground_small_1')"></div>
+                </div>
+                <div class="Ground_small">
+                    <div class="Ground_small_img" id="Ground_small_2" style="background-image: url('../../static/img/ground/{{bookContetnsList.1}}');" onclick="select_background('Ground_small_2')"></div>
+                </div>
+                <div class="Ground_small">
+                    <div class="Ground_small_img" id="Ground_small_3" style="background-image: url('../../static/img/ground/{{bookContetnsList.2}}');" onclick="select_background('Ground_small_3')"></div>
+                </div>
+                <div class="Ground_small">
+                    <div class="Ground_small_img" id="Ground_small_4" style="background-image: url('../../static/img/ground/{{bookContetnsList.3}}');" onclick="select_background('Ground_small_4')"></div>
+                </div>
+                <div class="Ground_small">
+                    <div class="Ground_small_img" id="Ground_small_5" style="background-image: url('../../static/img/ground/{{bookContetnsList.4}}');" onclick="select_background('Ground_small_5')"></div>
+                </div>
+                <div class="Ground_small">
+                    <div class="Ground_small_img" id="Ground_small_6" style="background-image: url('../../static/img/ground/{{bookContetnsList.0}}');" onclick="select_background('Ground_small_1')"></div>
+                </div>
+            </div>
+            <div class="camera" id="camera" onclick="createMyBgModal();"></div>
         </div>
 
         <!-- 발단 전개 위기 절정 결말 -->
