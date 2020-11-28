@@ -1,10 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="dc92fb1b-8459-4c64-b59e-433edb93be73" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/user_info.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/user_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/AI_Publisher/user_info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI_Publisher/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI_Publisher/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI_Publisher/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI_Publisher/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/set_relation.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/set_relation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/characters/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/characters/2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/characters/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/characters/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/characters/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/characters/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/AI_Publisher/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/AI_Publisher/main_page.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +62,9 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Project_homework\AIPublisher\mysite\templates\AI_Publisher" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ZickBakGuri\Laboratory\gitProjects\Noris\AIPublisher\mysite\static\img" />
       <recent name="D:\ZickBakGuri\Laboratory\gitProjects\Noris\AIPublisher\mysite\static" />
@@ -53,6 +85,8 @@
       <workItem from="1606525892412" duration="5027000" />
       <workItem from="1606531769367" duration="2184000" />
       <workItem from="1606555490513" duration="1428000" />
+      <workItem from="1606558848807" duration="1458000" />
+      <workItem from="1606560544774" duration="4782000" />
     </task>
     <servers />
   </component>

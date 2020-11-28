@@ -156,3 +156,6 @@ def set_char_option(request):
 
 def show_gallery(request):
     return render(request, 'AI_Publisher/show_gallery.html')
+
+def user_info(request):
+    return render(request, 'AI_Publisher/user_info.html')

@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% if user.is_authenticated %}
     <link rel="stylesheet" type="text/css" href="{% static 'main_page.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
+    <script type="text/javascript" src="{% static 'navbar.js' %}"></script>
     <title>main_page</title>
     {% else %}
     <link rel="stylesheet" type="text/css" href="{% static 'login_page.css' %}">
@@ -61,12 +63,19 @@
                     <div class="upload" id="upload_btn">Upload Now</div>
                 </div>
 
-                <div id="test"><a href="http://127.0.0.1:8000/accounts/logout/">{{user.email}}</a></div>
-                <form action="http://127.0.0.1:8000/accounts/logout/" method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="/AI_Publisher/"/>
-                    <input type="submit" value="로그아웃">
-                </form>
+<!--                <div id="test"><a href="http://127.0.0.1:8000/accounts/logout/">{{user.email}}</a></div>-->
+<!--                <form action="http://127.0.0.1:8000/accounts/logout/" method="post">-->
+<!--                    {% csrf_token %}-->
+<!--                    <input type="hidden" name="next" value="/AI_Publisher/"/>-->
+<!--                    <input type="submit" value="로그아웃">-->
+<!--                </form>-->
+
+                <!-- 네비게이션 바 -->
+                <div class="upper_bar" id="upper_bar">
+                    <div class="AI_Publisher_image" id="AI_Publisher_image"></div>
+                    <div class="user_icon" id="user_icon"></div>
+                    <div class="username" id="username"></div>
+                </div>
             </div>
         {% endif %}
 
