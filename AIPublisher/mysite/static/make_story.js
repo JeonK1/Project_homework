@@ -504,10 +504,6 @@ function modalOk(){
     //확인 누르면 자기 자신 페이지로 돌아옴
     removeModal();
 }
-function sendToNextPage(){
-    removeModal();
-    window.location = '/AI_Publisher';
-}
 
 //나의 배경 불러오기 모달창
 function createMyBgModal(){
