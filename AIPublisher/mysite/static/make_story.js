@@ -1,9 +1,9 @@
 // 사용자 위치
 var count = 0;
-var char_button = new Array(4);
-for(var i = 0; i < char_button.length; i++){
-    char_button[i] = false
-}
+//var char_button = new Array(4);
+//for(var i = 0; i < char_button.length; i++){
+//    char_button[i] = false
+//}
 
 // 사용자가 적은 글들 저장
 var arrtext = new Array(5);
@@ -20,30 +20,29 @@ for(var i = 0; i < arrback.length; i++) {
 // 각 페이지 정보들 (배경 제외) display width height top left
 var expos_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
 for (var i = 0; i < expos_info.length; i++){
-    expos_info[i] = new Array(); //
+    expos_info[i] = new Array(); // 발단
 }
 var compli_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
 for (var i = 0; i < compli_info.length; i++){
-    compli_info[i] = new Array(); //
+    compli_info[i] = new Array(); // 전개
 }
 var crisis_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
 for (var i = 0; i < crisis_info.length; i++){
-    crisis_info[i] = new Array(); //
+    crisis_info[i] = new Array(); // 위기
 }
 var climax_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
 for (var i = 0; i < climax_info.length; i++){
-    climax_info[i] = new Array(); //
+    climax_info[i] = new Array(); // 절정
 }
 var result_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
 for (var i = 0; i < result_info.length; i++){
-    result_info[i] = new Array(); //
+    result_info[i] = new Array(); // 결말
 }
 // 값정보 초기화
 for (var i = 0; i < expos_info.length; i++){
     expos_info[i][0] = "none";
     compli_info[i][0] = "none";
     crisis_info[i][0] = "none";
-    climax_info[i][0] = "none";
     climax_info[i][0] = "none";
     result_info[i][0] = "none";
 }
@@ -57,7 +56,7 @@ function story_make(){
     var ground = "학교";
     var event = "사랑";
     var partner = "이희선";
-    var emotion = new Array('사랑','행복','의심','분노','슬픔');
+    var emotion = new Array('사랑','행복','의심','분노','슬픔'); // Todo : 서버에서 받아오기
 
     // 발단
     var expos = new Array(hero+"에게 "+ground+"은(는) 어떤 곳인가요?",
@@ -771,6 +770,8 @@ function sendToNextPage(){
     jsonData = jsonData.replaceAll('\'', '\"');
     jsonObject = JSON.parse(jsonData);
     console.log(jsonData);
+
+    jsonObject.bookContents
 
     document.getElementById("jsonData").value = jsonData;
     document.getElementById("sendJson").submit();

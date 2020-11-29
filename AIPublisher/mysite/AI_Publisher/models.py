@@ -10,13 +10,27 @@ class UserInfo(models.Model):
     Birth = models.IntegerField(null=True)
     RegisterDateTime = models.DateTimeField()
 
+class BookElement(models.Model):
+    display = models.CharField(max_length=200)
+    imgUrl = models.CharField(max_length=200)
+    width= models.IntegerField(null=True)
+    height = models.IntegerField(null=True)
+    top = models.IntegerField(null=True)
+    left = models.IntegerField(null=True)
+
+class BookPage(models.Model):
+    backgroundUrl = models.CharField(max_length=200)
+    context = models.CharField(max_length=200)
+    elements = models.ManyToManyField(BookElement)
+
 class BookInfo(models.Model):
     BookNo = models.AutoField(primary_key=True)
-    UserNo = models.ForeignKey(User, on_delete=models.CASCADE)
-    BookTitle = models.CharField(max_length=30)
+    #UserNo = models.ForeignKey(User, on_delete=models.CASCADE)
+    # BookTitle = models.CharField(max_length=30)
+    bookPages = models.ManyToManyField(BookPage) #첫번째 페이지가 표지랑 제목 있음
     typeCnt = models.IntegerField(null=True)
     wordCnt = models.IntegerField(null=True)
-    CreateDateTime = models.DateTimeField()
+    #CreateDateTime = models.DateTimeField()
     ModifyDateTime = models.DateTimeField(null=True)
 
 class WordType(models.Model):
