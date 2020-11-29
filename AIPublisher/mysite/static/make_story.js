@@ -17,40 +17,67 @@ for(var i = 0; i < arrback.length; i++) {
     arrback[i] = "";
 }
 
-//어떤 캐릭터를 story에 넣을지
-var viewarray = new Array(4);
-    for (var i = 0; i < viewarray.length; i++){
-        viewarray[i] = true; //초기화
-    }
-
-// 주인공, 배경, 사건, 상대, 감정1, 감정2, 감정3, 감정4, 감정5
-// 여기서 받으면 될듯
-var hero = "이기철";
-var ground = "학교";
-var event = "사랑";
-var partner = "이희선";
-var emotion = new Array('사랑','행복','의심','분노','슬픔');
-
-// 발단
-var expos = new Array(hero+"에게 "+ground+"은(는) 어떤 곳인가요?",
-            hero+"과 "+event+"은(는) 어떤 관련이 있나요?",
-            hero+"은(는) "+partner+"에게 왜 "+emotion[0]+"을 느끼나요?");
-// 전개
-var compli = new Array(hero+"은(는) 어떻게 "+event+"을 해결하고자 하나요?",
-                       "왜 "+hero+"은(는) "+emotion[0]+"에서 "+emotion[1]+"가 되었나요?");
-// 위기
-var crisis = new Array("왜 "+hero+"은(는) "+emotion[1]+"에서 "+emotion[2]+"가 되었나요?")
-
-//절정
-var climax = new Array("왜 "+hero+"은(는) "+emotion[2]+"에서 "+emotion[3]+"가 되었나요?")
-
-//결말
-var result = new Array("왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]+"가 되었나요?",
-                       "이 이야기의 결말은 어떻게 되나요?")
+// 각 페이지 정보들 (배경 제외) display width height top left
+var expos_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
+for (var i = 0; i < expos_info.length; i++){
+    expos_info[i] = new Array(); //
+}
+var compli_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
+for (var i = 0; i < compli_info.length; i++){
+    compli_info[i] = new Array(); //
+}
+var crisis_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
+for (var i = 0; i < crisis_info.length; i++){
+    crisis_info[i] = new Array(); //
+}
+var climax_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
+for (var i = 0; i < climax_info.length; i++){
+    climax_info[i] = new Array(); //
+}
+var result_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
+for (var i = 0; i < result_info.length; i++){
+    result_info[i] = new Array(); //
+}
+// 값정보 초기화
+for (var i = 0; i < expos_info.length; i++){
+    expos_info[i][0] = "none";
+    compli_info[i][0] = "none";
+    crisis_info[i][0] = "none";
+    climax_info[i][0] = "none";
+    climax_info[i][0] = "none";
+    result_info[i][0] = "none";
+}
 
 
 
 function story_make(){
+    // 주인공, 배경, 사건, 상대, 감정1, 감정2, 감정3, 감정4, 감정5
+    // 여기서 받으면 될듯
+    var hero = "이기철";
+    var ground = "학교";
+    var event = "사랑";
+    var partner = "이희선";
+    var emotion = new Array('사랑','행복','의심','분노','슬픔');
+
+    // 발단
+    var expos = new Array(hero+"에게 "+ground+"은(는) 어떤 곳인가요?",
+                hero+"과 "+event+"은(는) 어떤 관련이 있나요?",
+                hero+"은(는) "+partner+"에게 왜 "+emotion[0]+"을 느끼나요?");
+    // 전개
+    var compli = new Array(hero+"은(는) 어떻게 "+event+"을 해결하고자 하나요?",
+                           "왜 "+hero+"은(는) "+emotion[0]+"에서 "+emotion[1]+"가 되었나요?");
+    // 위기
+    var crisis = new Array("왜 "+hero+"은(는) "+emotion[1]+"에서 "+emotion[2]+"가 되었나요?");
+
+    //절정
+    var climax = new Array("왜 "+hero+"은(는) "+emotion[2]+"에서 "+emotion[3]+"가 되었나요?");
+
+    //결말
+    var result = new Array("왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]+"가 되었나요?",
+                           "이 이야기의 결말은 어떻게 되나요?");
+
+
+
     $("#RightSidebar").hide();
     $("#keyword_text").text(event);
     $("#guide_text").text(expos);
@@ -58,52 +85,61 @@ function story_make(){
     $("#decorate_ch_2").hide();
     $("#decorate_ch_3").hide();
     $("#decorate_ch_4").hide();
+    $("#text_box").hide();
 
     // 넥스트 버튼 눌렀을 때
     $("#next_shape").click(function () {
+        store_content(count);
         count += 1;
-        next_move(count);
+        next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
     });
 
     // 왼쪽 단계 눌렀을 때때
     $("#STEP_1").click(function() {
+        store_content(count);
         count = 0;
-        next_move(count);
+        next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
     });
 
     $("#STEP_2").click(function() {
+        store_content(count);
         count = 1;
-        next_move(count);
+        next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
     });
 
     $("#STEP_3").click(function() {
+        store_content(count);
         count = 2;
-        next_move(count);
+        next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
     });
 
     $("#STEP_4").click(function() {
+        store_content(count);
         count = 3;
-        next_move(count);
+        next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
     });
 
     $("#STEP_5").click(function() {
+        store_content(count);
         count = 4;
-        next_move(count);
+        next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
     });
+
+
 
     // 캐릭터 눌렀을 때
     $("#decorate_ch_1").resizable({
         handles : 'se',
         containment:"#story_frame",
-        maxWidth: 500,
+        maxWidth: 900,
         minWidth: 85,
-        maxHeight: 400,
+        maxHeight: 1000,
         minHeight: 114,
         //비율유지
         aspectRatio: true,
@@ -119,9 +155,9 @@ function story_make(){
     $("#decorate_ch_2").resizable({
         handles : 'se',
         containment:"#story_frame",
-        maxWidth: 500,
+        maxWidth: 900,
         minWidth: 85,
-        maxHeight: 400,
+        maxHeight: 1000,
         minHeight: 114,
         //비율유지
         aspectRatio: true,
@@ -136,9 +172,9 @@ function story_make(){
     $("#decorate_ch_3").resizable({
         handles : 'se',
         containment:"#story_frame",
-        maxWidth: 500,
+        maxWidth: 900,
         minWidth: 85,
-        maxHeight: 400,
+        maxHeight: 1000,
         minHeight: 114,
         //비율유지
         aspectRatio: true,
@@ -154,9 +190,9 @@ function story_make(){
     $("#decorate_ch_4").resizable({
         handles : 'se',
         containment:"#story_frame",
-        maxWidth: 500,
+        maxWidth: 900,
         minWidth: 85,
-        maxHeight: 400,
+        maxHeight: 1000,
         minHeight: 114,
         //비율유지
         aspectRatio: true,
@@ -170,48 +206,63 @@ function story_make(){
         revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
     });
 
+    $("#text_box").resizable({
+        handles : 's,e',
+        containment:"#story_frame",
+        maxWidth: 510,
+        minWidth: 373,
+        maxHeight: 340,
+        minHeight: 129,
+    });
+
+    $("#text_box").draggable({
+        cursor:"pointer", // 커서 모양
+        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
+    });
+
     $("#Card_small_1").click(function () {
-    if(viewarray[0] == true){
-        viewarray[0] = false;
+    if($("#decorate_ch_1").css("display") == "none"){
         $("#decorate_ch_1").show();
         } else {
-        viewarray[0] = true;
         $("#decorate_ch_1").hide();
         }
     });
 
     $("#Card_small_2").click(function () {
-    if(viewarray[1] == true){
-        viewarray[1] = false;
+    if($("#decorate_ch_2").css("display") == "none"){
         $("#decorate_ch_2").show();
         } else {
-        viewarray[1] = true;
         $("#decorate_ch_2").hide();
         }
     });
 
     $("#Card_small_3").click(function () {
-    if(viewarray[2] == true){
-        viewarray[2] = false;
+    if($("#decorate_ch_3").css("display") == "none"){
         $("#decorate_ch_3").show();
         } else {
-        viewarray[2] = true;
         $("#decorate_ch_3").hide();
         }
     });
 
     $("#Card_small_4").click(function () {
-    if(viewarray[3] == true){
-        viewarray[3] = false;
+    if($("#decorate_ch_4").css("display") == "none"){
         $("#decorate_ch_4").show();
         } else {
-        viewarray[3] = true;
         $("#decorate_ch_4").hide();
+        }
+    });
+
+    $("#guide_image").click(function () {
+    if($("#text_box").css("display") == "none"){
+        $("#text_box").show();
+        } else {
+        $("#text_box").hide();
         }
     });
 }
 
-function next_move(count){
+function next_move(count,expos,compli,crisis,climax,result){
 
     switch(count){
         case 0:
@@ -221,6 +272,26 @@ function next_move(count){
             $("#right_frame").css( {"background-image":arrback[count],
                                 "background-position":"right",
                                 "background-size":"1020px 680px"});
+            $("#decorate_ch_1").css({"display":expos_info[0][0],
+                                        "width":expos_info[0][1],
+                                        "height":expos_info[0][2],
+                                        "top":expos_info[0][3],
+                                        "left":expos_info[0][4]});
+            $("#decorate_ch_2").css({"display":expos_info[1][0],
+                                        "width":expos_info[1][1],
+                                        "height":expos_info[1][2],
+                                        "top":expos_info[1][3],
+                                        "left":expos_info[1][4]});
+            $("#decorate_ch_3").css({"display":expos_info[2][0],
+                                        "width":expos_info[2][1],
+                                        "height":expos_info[2][2],
+                                        "top":expos_info[2][3],
+                                        "left":expos_info[2][4]});
+            $("#decorate_ch_4").css({"display":expos_info[3][0],
+                                        "width":expos_info[3][1],
+                                        "height":expos_info[3][2],
+                                        "top":expos_info[3][3],
+                                        "left":expos_info[3][4]});
             $('#input_text').val('');
             $("#RightSidebar").hide();
             $("#guide_text").text(expos);
@@ -232,6 +303,26 @@ function next_move(count){
             $("#right_frame").css( {"background-image":arrback[count],
                                 "background-position":"right",
                                 "background-size":"1020px 680px"});
+            $("#decorate_ch_1").css({"display":compli_info[0][0],
+                                        "width":compli_info[0][1],
+                                        "height":compli_info[0][2],
+                                        "top":compli_info[0][3],
+                                        "left":compli_info[0][4]});
+            $("#decorate_ch_2").css({"display":compli_info[1][0],
+                                        "width":compli_info[1][1],
+                                        "height":compli_info[1][2],
+                                        "top":compli_info[1][3],
+                                        "left":compli_info[1][4]});
+            $("#decorate_ch_3").css({"display":compli_info[2][0],
+                                        "width":compli_info[2][1],
+                                        "height":compli_info[2][2],
+                                        "top":compli_info[2][3],
+                                        "left":compli_info[2][4]});
+            $("#decorate_ch_4").css({"display":compli_info[3][0],
+                                        "width":compli_info[3][1],
+                                        "height":compli_info[3][2],
+                                        "top":compli_info[3][3],
+                                        "left":compli_info[3][4]});
             $('#input_text').val('');
             $("#RightSidebar").show();
             $("#guide_text").text(compli);
@@ -243,6 +334,26 @@ function next_move(count){
             $("#right_frame").css( {"background-image":arrback[count],
                                 "background-position":"right",
                                 "background-size":"1020px 680px"});
+            $("#decorate_ch_1").css({"display":crisis_info[0][0],
+                                        "width":crisis_info[0][1],
+                                        "height":crisis_info[0][2],
+                                        "top":crisis_info[0][3],
+                                        "left":crisis_info[0][4]});
+            $("#decorate_ch_2").css({"display":crisis_info[1][0],
+                                        "width":crisis_info[1][1],
+                                        "height":crisis_info[1][2],
+                                        "top":crisis_info[1][3],
+                                        "left":crisis_info[1][4]});
+            $("#decorate_ch_3").css({"display":crisis_info[2][0],
+                                        "width":crisis_info[2][1],
+                                        "height":crisis_info[2][2],
+                                        "top":crisis_info[2][3],
+                                        "left":crisis_info[2][4]});
+            $("#decorate_ch_4").css({"display":crisis_info[3][0],
+                                        "width":crisis_info[3][1],
+                                        "height":crisis_info[3][2],
+                                        "top":crisis_info[3][3],
+                                        "left":crisis_info[3][4]});
             $('#input_text').val('');
             $("#RightSidebar").show();
             $("#guide_text").text(crisis);
@@ -254,6 +365,26 @@ function next_move(count){
             $("#right_frame").css( {"background-image":arrback[count],
                                 "background-position":"right",
                                 "background-size":"1020px 680px"});
+            $("#decorate_ch_1").css({"display":climax_info[0][0],
+                                        "width":climax_info[0][1],
+                                        "height":climax_info[0][2],
+                                        "top":climax_info[0][3],
+                                        "left":climax_info[0][4]});
+            $("#decorate_ch_2").css({"display":climax_info[1][0],
+                                        "width":climax_info[1][1],
+                                        "height":climax_info[1][2],
+                                        "top":climax_info[1][3],
+                                        "left":climax_info[1][4]});
+            $("#decorate_ch_3").css({"display":climax_info[2][0],
+                                        "width":climax_info[2][1],
+                                        "height":climax_info[2][2],
+                                        "top":climax_info[2][3],
+                                        "left":climax_info[2][4]});
+            $("#decorate_ch_4").css({"display":climax_info[3][0],
+                                        "width":climax_info[3][1],
+                                        "height":climax_info[3][2],
+                                        "top":climax_info[3][3],
+                                        "left":climax_info[3][4]});
             $('#input_text').val('');
             $("#RightSidebar").show();
             $("#guide_text").text(climax);
@@ -265,6 +396,26 @@ function next_move(count){
             $("#right_frame").css( {"background-image":arrback[count],
                                 "background-position":"right",
                                 "background-size":"1020px 680px"});
+            $("#decorate_ch_1").css({"display":result_info[0][0],
+                                        "width":result_info[0][1],
+                                        "height":result_info[0][2],
+                                        "top":result_info[0][3],
+                                        "left":result_info[0][4]});
+            $("#decorate_ch_2").css({"display":result_info[1][0],
+                                        "width":result_info[1][1],
+                                        "height":result_info[1][2],
+                                        "top":result_info[1][3],
+                                        "left":result_info[1][4]});
+            $("#decorate_ch_3").css({"display":result_info[2][0],
+                                        "width":result_info[2][1],
+                                        "height":result_info[2][2],
+                                        "top":result_info[2][3],
+                                        "left":result_info[2][4]});
+            $("#decorate_ch_4").css({"display":result_info[3][0],
+                                        "width":result_info[3][1],
+                                        "height":result_info[3][2],
+                                        "top":result_info[3][3],
+                                        "left":result_info[3][4]});
             $('#input_text').val('');
             $("#RightSidebar").show();
             $("#guide_text").text(result);
@@ -409,6 +560,103 @@ function select_background(ground_id){
                             "background-position":"right",
                             "background-size":"1020px 680px"});
     arrback[count] = $( "#"+ground_id  ).css( "background-image" );
+}
+
+function store_content(){
+    var j = 0;
+    switch(count){
+        case 0:
+            for(var i = 0; i < expos_info.length; i++){
+                if(i < 4) {
+                    j = i + 1;
+                    expos_info[i][0] = $("#decorate_ch_" + j).css("display");
+                    expos_info[i][1] = $("#decorate_ch_" + j).css("width");
+                    expos_info[i][2] = $("#decorate_ch_" + j).css("height");
+                    expos_info[i][3] = $("#decorate_ch_" + j).css("top");
+                    expos_info[i][4] = $("#decorate_ch_" + j).css("left");
+                } else {
+                    expos_info[i][0] = $("#text_box").css("display");
+                    expos_info[i][1] = $("#text_box").css("width");
+                    expos_info[i][2] = $("#text_box").css("height");
+                    expos_info[i][3] = $("#text_box").css("top");
+                    expos_info[i][4] = $("#text_box").css("left");
+                }
+            }
+            break;
+        case 1:
+            for(var i = 0; i < compli_info.length; i++){
+                if(i < 4) {
+                    j = i + 1;
+                    compli_info[i][0] = $("#decorate_ch_" + j).css("display");
+                    compli_info[i][1] = $("#decorate_ch_" + j).css("width");
+                    compli_info[i][2] = $("#decorate_ch_" + j).css("height");
+                    compli_info[i][3] = $("#decorate_ch_" + j).css("top");
+                    compli_info[i][4] = $("#decorate_ch_" + j).css("left");
+                } else {
+                    compli_info[i][0] = $("#text_box").css("display");
+                    compli_info[i][1] = $("#text_box").css("width");
+                    compli_info[i][2] = $("#text_box").css("height");
+                    compli_info[i][3] = $("#text_box").css("top");
+                    compli_info[i][4] = $("#text_box").css("left");
+                }
+            }
+            break;
+        case 2:
+            for(var i = 0; i < crisis_info.length - 1; i++){
+                if(i < 4) {
+                    j = i + 1;
+                    crisis_info[i][0] = $("#decorate_ch_" + j).css("display");
+                    crisis_info[i][1] = $("#decorate_ch_" + j).css("width");
+                    crisis_info[i][2] = $("#decorate_ch_" + j).css("height");
+                    crisis_info[i][3] = $("#decorate_ch_" + j).css("top");
+                    crisis_info[i][4] = $("#decorate_ch_" + j).css("left");
+                } else {
+                    crisis_info[i][0] = $("#text_box").css("display");
+                    crisis_info[i][1] = $("#text_box").css("width");
+                    crisis_info[i][2] = $("#text_box").css("height");
+                    crisis_info[i][3] = $("#text_box").css("top");
+                    crisis_info[i][4] = $("#text_box").css("left");
+                }
+            }
+            break;
+        case 3:
+            for(var i = 0; i < climax_info.length - 1; i++){
+                if(i < 4) {
+                    j = i + 1;
+                    climax_info[i][0] = $("#decorate_ch_" + j).css("display");
+                    climax_info[i][1] = $("#decorate_ch_" + j).css("width");
+                    climax_info[i][2] = $("#decorate_ch_" + j).css("height");
+                    climax_info[i][3] = $("#decorate_ch_" + j).css("top");
+                    climax_info[i][4] = $("#decorate_ch_" + j).css("left");
+                } else {
+                    climax_info[i][0] = $("#text_box").css("display");
+                    climax_info[i][1] = $("#text_box").css("width");
+                    climax_info[i][2] = $("#text_box").css("height");
+                    climax_info[i][3] = $("#text_box").css("top");
+                    climax_info[i][4] = $("#text_box").css("left");
+                }
+            }
+            break;
+        case 4:
+            for(var i = 0; i < result_info.length - 1; i++){
+                if(i < 4) {
+                    j = i + 1;
+                    result_info[i][0] = $("#decorate_ch_" + j).css("display");
+                    result_info[i][1] = $("#decorate_ch_" + j).css("width");
+                    result_info[i][2] = $("#decorate_ch_" + j).css("height");
+                    result_info[i][3] = $("#decorate_ch_" + j).css("top");
+                    result_info[i][4] = $("#decorate_ch_" + j).css("left");
+                } else {
+                    result_info[i][0] = $("#text_box").css("display");
+                    result_info[i][1] = $("#text_box").css("width");
+                    result_info[i][2] = $("#text_box").css("height");
+                    result_info[i][3] = $("#text_box").css("top");
+                    result_info[i][4] = $("#text_box").css("left");
+                }
+            }
+            break;
+    }
+
 }
 // 사용자가 적은 글 보여주기
 function show_text() {

@@ -23,7 +23,7 @@
     position: absolute;
     width: 1340px;
     height: 30px;
-    left: calc(50% - 1340px/2);
+    left: calc(50% - 1337px/2 + 26px);
     top: calc(50% - 30px/2 + 460px);
 
     background: url("img/shelf.png");
@@ -33,10 +33,10 @@
 #book_box {
 
     position: absolute;
-    width: 1120px;
-    height: 562px;
-    left: calc(50% - 1120px/2);
-    top: calc(50% - 562px/2);
+    width: 1119px;
+    height: 561px;
+    left: 156px;
+    top: 258px;
 }
 
 .storybook{
@@ -156,29 +156,28 @@
 }
 
 /* 왼쪽 넘기기 */
-#left_move{
+#left_move {
     position: absolute;
-    width: 55px;
-    height: 55px;
-    left: 88px;
-    top: 542px;
-
-    /* Black */
-    background: #ffffff;
+    width: 69px;
+    height: 69px;
+    left: calc(50% - 69px / 2 - 619.5px);
+    top: calc(50% - 69px / 2 + 62.5px);
+    z-index: 3;
+    background: url("img/left.png");
+    border-radius: 8px;
 
 }
 
 /* 오른쪽 넘기기 */
-#right_move{
+#right_move {
     position: absolute;
-    width: 55px;
-    height: 55px;
-    left: 1922px;
-    top: 542px;
-
-    /* Black */
-    background: #ffffff;
-
+    width: 69px;
+    height: 69px;
+    left: calc(50% - 69px / 2 + 691.5px);
+    top: calc(50% - 69px / 2 + 54.5px);
+    z-index: 3;
+    background: url("img/right.png");
+    border-radius: 8px;
 }
 
 /* Rectangle 17 */
