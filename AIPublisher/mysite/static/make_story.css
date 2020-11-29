@@ -868,6 +868,34 @@
     margin: 5px;
 }
 
+#text_box{
+    position: absolute;
+    width: 373px;
+    height: 129px;
+    left: 38px;
+    top: 47px;
+
+    background: rgba(196, 196, 196, 0.29);
+    border: 1px dashed #666666;
+    box-sizing: border-box;
+
+    font-family: B612;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 150%;
+
+    /* or 22px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    /* 0040 */
+    color: #666666;
+}
+
 /* 우측 상단에 있는 작은 말풍선 */
 #speech_box{
     position: absolute;
