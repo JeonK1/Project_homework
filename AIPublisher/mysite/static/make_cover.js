@@ -128,11 +128,23 @@ function cover_decoration(){
         if (key.keyCode == 13) {
             $("#Cover_title").text($("#input_text").val());
             $('#input_text').val('');
+            $("#Cover_title").resizable({
+                handles : 'w,n,s,e',
+                containment:"#Cover",
+                maxWidth: 500,
+                minWidth: 200,
+                maxHeight: 400,
+                minHeight: 100,
+                //비율유지
+                aspectRatio: true,
+                //마우스 hover 아닐때 핸들러 숨기기
+                autoHide: true
+            });
         }
     });
 
     $("#Cover_title").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#Cover",
         maxWidth: 500,
         minWidth: 200,

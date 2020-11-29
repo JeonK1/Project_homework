@@ -135,7 +135,7 @@ function story_make(){
 
     // 캐릭터 눌렀을 때
     $("#decorate_ch_1").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#story_frame",
         maxWidth: 900,
         minWidth: 85,
@@ -153,7 +153,7 @@ function story_make(){
     });
 
     $("#decorate_ch_2").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#story_frame",
         maxWidth: 900,
         minWidth: 85,
@@ -170,7 +170,7 @@ function story_make(){
         revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
     });
     $("#decorate_ch_3").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#story_frame",
         maxWidth: 900,
         minWidth: 85,
@@ -188,7 +188,7 @@ function story_make(){
         revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
     });
     $("#decorate_ch_4").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#story_frame",
         maxWidth: 900,
         minWidth: 85,
@@ -207,7 +207,7 @@ function story_make(){
     });
 
     $("#text_box").resizable({
-        handles : 's,e',
+        handles : 'w,n,s,e',
         containment:"#story_frame",
         maxWidth: 510,
         minWidth: 373,
@@ -292,6 +292,12 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "height":expos_info[3][2],
                                         "top":expos_info[3][3],
                                         "left":expos_info[3][4]});
+            $("#text_box").text(arrtext[0].toString().replace(/,/g," "));
+            $("#text_box").css({"display":expos_info[4][0],
+                                        "width":expos_info[4][1],
+                                        "height":expos_info[4][2],
+                                        "top":expos_info[4][3],
+                                        "left":expos_info[4][4]});
             $('#input_text').val('');
             $("#RightSidebar").hide();
             $("#guide_text").text(expos);
@@ -323,6 +329,12 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "height":compli_info[3][2],
                                         "top":compli_info[3][3],
                                         "left":compli_info[3][4]});
+            $("#text_box").text(arrtext[1].toString().replace(/,/g," "));
+            $("#text_box").css({"display":compli_info[4][0],
+                                        "width":compli_info[4][1],
+                                        "height":compli_info[4][2],
+                                        "top":compli_info[4][3],
+                                        "left":compli_info[4][4]});
             $('#input_text').val('');
             $("#RightSidebar").show();
             $("#guide_text").text(compli);
@@ -354,6 +366,12 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "height":crisis_info[3][2],
                                         "top":crisis_info[3][3],
                                         "left":crisis_info[3][4]});
+            $("#text_box").text(arrtext[2].toString().replace(/,/g," "));
+            $("#text_box").css({"display":crisis_info[4][0],
+                                        "width":crisis_info[4][1],
+                                        "height":crisis_info[4][2],
+                                        "top":crisis_info[4][3],
+                                        "left":crisis_info[4][4]});
             $('#input_text').val('');
             $("#RightSidebar").show();
             $("#guide_text").text(crisis);
@@ -385,6 +403,12 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "height":climax_info[3][2],
                                         "top":climax_info[3][3],
                                         "left":climax_info[3][4]});
+            $("#text_box").text(arrtext[3].toString().replace(/,/g," "));
+            $("#text_box").css({"display":climax_info[4][0],
+                                        "width":climax_info[4][1],
+                                        "height":climax_info[4][2],
+                                        "top":climax_info[4][3],
+                                        "left":climax_info[4][4]});
             $('#input_text').val('');
             $("#RightSidebar").show();
             $("#guide_text").text(climax);
@@ -416,6 +440,12 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "height":result_info[3][2],
                                         "top":result_info[3][3],
                                         "left":result_info[3][4]});
+            $("#text_box").text(arrtext[4].toString().replace(/,/g," "));
+            $("#text_box").css({"display":result_info[4][0],
+                                        "width":result_info[4][1],
+                                        "height":result_info[4][2],
+                                        "top":result_info[4][3],
+                                        "left":result_info[4][4]});
             $('#input_text').val('');
             $("#RightSidebar").show();
             $("#guide_text").text(result);
@@ -602,7 +632,7 @@ function store_content(){
             }
             break;
         case 2:
-            for(var i = 0; i < crisis_info.length - 1; i++){
+            for(var i = 0; i < crisis_info.length; i++){
                 if(i < 4) {
                     j = i + 1;
                     crisis_info[i][0] = $("#decorate_ch_" + j).css("display");
@@ -620,7 +650,7 @@ function store_content(){
             }
             break;
         case 3:
-            for(var i = 0; i < climax_info.length - 1; i++){
+            for(var i = 0; i < climax_info.length; i++){
                 if(i < 4) {
                     j = i + 1;
                     climax_info[i][0] = $("#decorate_ch_" + j).css("display");
@@ -638,7 +668,7 @@ function store_content(){
             }
             break;
         case 4:
-            for(var i = 0; i < result_info.length - 1; i++){
+            for(var i = 0; i < result_info.length; i++){
                 if(i < 4) {
                     j = i + 1;
                     result_info[i][0] = $("#decorate_ch_" + j).css("display");
@@ -656,37 +686,78 @@ function store_content(){
             }
             break;
     }
-
 }
 // 사용자가 적은 글 보여주기
 function show_text() {
 
     $("#input_text").keydown(function (key) {
         if (key.keyCode == 13) {
-            if (count == 1) {
-                arrtext[0].push($("#input_text").val());
-                $("#question_string_text").text(arrtext[0].toString().replace(/,/g, " "));
-                $('#input_text').val('');
-
-            } else if (count == 4) {
-                arrtext[1].push($("#input_text").val());
-                $("#question_string_text").text(arrtext[1].toString().replace(/,/g, " "));
-                $('#input_text').val('');
-
-            } else if (count == 7) {
-                arrtext[2].push($("#input_text").val());
-                $("#question_string_text").text(arrtext[2].toString().replace(/,/g, " "));
-                $('#input_text').val('');
-
-            } else if (count == 10) {
-                arrtext[3].push($("#input_text").val());
-                $("#question_string_text").text(arrtext[3].toString().replace(/,/g, " "));
-                $('#input_text').val('');
-
-            } else if (count == 13) {
-                arrtext[4].push($("#input_text").val());
-                $("#question_string_text").text(arrtext[4].toString().replace(/,/g, " "));
-                $('#input_text').val('');
+            switch(count){
+                case 0:
+                    arrtext[0].push($("#input_text").val());
+                    $("#text_box").text(arrtext[0].toString().replace(/,/g, " "));
+                    $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#story_frame",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129,
+                    });
+                    $('#input_text').val('');
+                    break;
+                case 1:
+                    arrtext[1].push($("#input_text").val());
+                    $("#text_box").text(arrtext[1].toString().replace(/,/g, " "));
+                    $('#input_text').val('');
+                    $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#story_frame",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129,
+                    });
+                    break;
+                case 2:
+                    arrtext[2].push($("#input_text").val());
+                    $("#text_box").text(arrtext[2].toString().replace(/,/g, " "));
+                    $('#input_text').val('');
+                    $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#story_frame",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129,
+                    });
+                    break;
+                case 3:
+                    arrtext[3].push($("#input_text").val());
+                    $("#text_box").text(arrtext[3].toString().replace(/,/g, " "));
+                    $('#input_text').val('');
+                    $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#story_frame",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129,
+                    });
+                    break;
+                case 4:
+                    arrtext[4].push($("#input_text").val());
+                    $("#text_box").text(arrtext[4].toString().replace(/,/g, " "));
+                    $('#input_text').val('');
+                    $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#story_frame",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129,
+                    });
+                    break;
 
             }
         }
