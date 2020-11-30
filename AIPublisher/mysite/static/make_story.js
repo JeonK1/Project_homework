@@ -774,63 +774,113 @@ function sendToNextPage(){
     jsonObject = JSON.parse(jsonData);
     console.log(jsonData);
 
-    var sendJsonObject = new Object();
-    var bookPage = new Object();
-    var background = new Array();
-    var context = new Array();
-    var elements = new Array();
+    var bookPages = new Array();
+    for(i=0; i<5; i++){
+        // 단계별 내용
+        var bookPage = new Object();
 
-    for(i=0; i<5; i++) {
-
-        context.push(arrtext[i]);
-        background.push(arrback[i]);
-
-        expos_content = new Object();
-        expos_content.display = expos_info[i][0];
-        expos_content.width = expos_info[i][1];
-        expos_content.height = expos_info[i][2];
-        expos_content.top = expos_info[i][3];
-        expos_content.left = expos_info[i][4];
-        elements.push(expos_content);
-
-        compli_content = new Object();
-        compli_content.display = compli_info[i][0];
-        compli_content.width = compli_info[i][1];
-        compli_content.height = compli_info[i][2];
-        compli_content.top = compli_info[i][3];
-        compli_content.left = compli_info[i][4];
-        elements.push(compli_content);
-
-        crisis_content = new Object();
-        crisis_content.display = crisis_info [i][0];
-        crisis_content.width = crisis_info [i][1];
-        crisis_content.height = crisis_info [i][2];
-        crisis_content.top = crisis_info [i][3];
-        crisis_content.left = crisis_info [i][4];
-        elements.push(crisis_content);
-
-        climax_content = new Object();
-        climax_content.display = climax_info[i][0];
-        climax_content.width = climax_info[i][1];
-        climax_content.height = climax_info[i][2];
-        climax_content.top = climax_info[i][3];
-        climax_content.left = climax_info[i][4];
-        elements.push(climax_content);
-
-        result_content = new Object();
-        result_content.display = result_info[i][0];
-        result_content.width = result_info[i][1];
-        result_content.height = result_info[i][2];
-        result_content.top = result_info[i][3];
-        result_content.left = result_info[i][4];
-        elements.push(result_content);
+        backgroundUrl = arrback[i];
+        if(backgroundUrl!=null)
+            backgroundUrl = backgroundUrl.slice(5, -2);
+        bookPage.background = backgroundUrl;
+        bookPage.context = arrtext[i];
+        var elements = new Array();
+        for(j=0; j<5; j++){
+            var element = new Object();
+            if(i==0){
+                element.display = expos_info[j][0];
+                element.width = expos_info[j][1];
+                element.height = expos_info[j][2];
+                element.top = expos_info[j][3];
+                element.left = expos_info[j][4];
+            } else if(i==1){
+                element.display = compli_info[j][0];
+                element.width = compli_info[j][1];
+                element.height = compli_info[j][2];
+                element.top = compli_info[j][3];
+                element.left = compli_info[j][4];
+            } else if(i==2){
+                element.display = crisis_info[j][0];
+                element.width = crisis_info[j][1];
+                element.height = crisis_info[j][2];
+                element.top = crisis_info[j][3];
+                element.left = crisis_info[j][4];
+            } else if(i==3){
+                element.display = climax_info[j][0];
+                element.width = climax_info[j][1];
+                element.height = climax_info[j][2];
+                element.top = climax_info[j][3];
+                element.left = climax_info[j][4];
+            } else {
+                element.display = result_info[j][0];
+                element.width = result_info[j][1];
+                element.height = result_info[j][2];
+                element.top = result_info[j][3];
+                element.left = result_info[j][4];
+            }
+            elements.push(element);
+        }
+        bookPage.elements = elements;
+        bookPages.push(bookPage);
     }
 
-    bookPage.background = background;
-    bookPage.context = context;
-    bookPage.elements = elements;
-    sendJsonObject = jsonObject;
-    sendJsonObject.BookPage = bookPage;
+
+
+//    var bookPage = new Object();
+//    var background = new Array();
+//    var context = new Array();
+//    var elements = new Array();
+//
+//    for(i=0; i<5; i++) {
+//
+//        context.push(arrtext[i]);
+//        background.push(arrback[i]);
+//
+//        expos_content = new Object();
+//        expos_content.display = expos_info[i][0];
+//        expos_content.width = expos_info[i][1];
+//        expos_content.height = expos_info[i][2];
+//        expos_content.top = expos_info[i][3];
+//        expos_content.left = expos_info[i][4];
+//        elements.push(expos_content);
+//
+//        compli_content = new Object();
+//        compli_content.display = compli_info[i][0];
+//        compli_content.width = compli_info[i][1];
+//        compli_content.height = compli_info[i][2];
+//        compli_content.top = compli_info[i][3];
+//        compli_content.left = compli_info[i][4];
+//        elements.push(compli_content);
+//
+//        crisis_content = new Object();
+//        crisis_content.display = crisis_info [i][0];
+//        crisis_content.width = crisis_info [i][1];
+//        crisis_content.height = crisis_info [i][2];
+//        crisis_content.top = crisis_info [i][3];
+//        crisis_content.left = crisis_info [i][4];
+//        elements.push(crisis_content);
+//
+//        climax_content = new Object();
+//        climax_content.display = climax_info[i][0];
+//        climax_content.width = climax_info[i][1];
+//        climax_content.height = climax_info[i][2];
+//        climax_content.top = climax_info[i][3];
+//        climax_content.left = climax_info[i][4];
+//        elements.push(climax_content);
+//
+//        result_content = new Object();
+//        result_content.display = result_info[i][0];
+//        result_content.width = result_info[i][1];
+//        result_content.height = result_info[i][2];
+//        result_content.top = result_info[i][3];
+//        result_content.left = result_info[i][4];
+//        elements.push(result_content);
+//    }
+//    bookPage.background = background;
+//    bookPage.context = context;
+//    bookPage.elements = elements;
+
+    jsonObject.BookPages = bookPages;
 
     var jsonData = JSON.stringify(jsonObject);
 

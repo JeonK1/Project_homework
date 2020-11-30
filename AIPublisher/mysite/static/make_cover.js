@@ -13,7 +13,7 @@ function cover_decoration(){
         // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
     jsonData = jsonData.replaceAll('\'', '\"');
 
-    //alert(jsonData);
+    alert(jsonData);
 
 
     $("#decorate_ch_1").resizable({
@@ -248,5 +248,60 @@ function modalOk(){
 }
 function sendToNextPage(){
     removeModal();
+
+    //다음페이지로 POST 데이터 넘기기
+    jsonData = document.getElementById("jsonData").value;
+        // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
+    jsonData = jsonData.replaceAll('\'', '\"');
+    jsonObject = JSON.parse(jsonData);
+    console.log(jsonData);
+
+        $( "#Cover" ).css( {"background-image":($( "#Ground_small_1" ).css( "background-image" )),
+                            "background-size":"cover"});
+
+    var bookPage = new Object();
+    bookPage.background = ($("#Cover").css("background-image")).slice(5, -2);
+    bookPage.context = document.getElementById("Cover_title").innerText;
+    var elements = new Array();
+    for(j=1; j<=4; j++){
+        var element = new Object();
+        element.display = $("#decorate_ch_"+j).css("display");
+        element.width = $("#decorate_ch_"+j).css("width");
+        element.height = $("#decorate_ch_"+j).css("height");
+        element.top = $("#decorate_ch_"+j).css("top");
+        element.left = $("#decorate_ch_"+j).css("left");
+        elements.push(element);
+    }
+    bookPage.elements = elements;
+
+
+    jsonObject.BookCover = bookPage;
+
+    var jsonData = JSON.stringify(jsonObject);
+    document.getElementById("jsonData").value = jsonData;
+
+
+    var url_POST = '../update_book/';
+    var req = new XMLHttpRequest();
+    req.open('POST', url_POST, true);
+    req.responseType = 'json';
+    req.onreadystatechange = function(e) {
+        if (req.readyState === XMLHttpRequest.DONE) {
+            if (req.status == 200) {
+                var words = req.response["result"];
+                alert(words);
+            }
+        }
+    }
+    req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+    req.send("jsonData="+jsonData);
+
+//    document.getElementById("sendJson").submit();
+
+
+
+
+
+//    window.location = '/AI_Publisher';
     window.location = '/AI_Publisher/show_gallery';
 }

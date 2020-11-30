@@ -13,10 +13,10 @@ class UserInfo(models.Model):
 class BookElement(models.Model):
     display = models.CharField(max_length=200)
     imgUrl = models.CharField(max_length=200)
-    width= models.IntegerField(null=True)
-    height = models.IntegerField(null=True)
-    top = models.IntegerField(null=True)
-    left = models.IntegerField(null=True)
+    width= models.CharField(max_length=200)
+    height = models.CharField(max_length=200)
+    top = models.CharField(max_length=200)
+    left = models.CharField(max_length=200)
 
 class BookPage(models.Model):
     backgroundUrl = models.CharField(max_length=200)
