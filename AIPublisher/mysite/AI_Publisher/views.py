@@ -162,6 +162,9 @@ def show_gallery(request):
 
     if request.method == 'POST':
 
+        message = request.POST.get('jsonData')  # POST로 날라온 jsonData 받아주기
+        getjson = json.loads(message)  # Json 풀어주기
+
         return render(request, 'AI_Publisher/show_gallery.html', {'mybackground': background,
                                                                   'title': title,
                                                                   'userbook': userbook})
