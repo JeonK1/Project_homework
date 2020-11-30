@@ -161,7 +161,7 @@ def show_gallery(request):
 
     #dummy data
     background = ["Asset 004.png", "Asset 005.png", "Asset 001.png", "Asset 003.png", "Asset 008.png", "Asset 010.png","Asset 012.png"]
-    title=['어느 평화로운 가을날','트와이스 파이팅!','계원이가 좋아하는 이달소','계원이','팀장','왜 안했어','젤 잘어울리는데']
+    title=['어느 평화로운 가을날','더미 데이터1','데이터2','데이터9','데이터4','데이터5 데이터6','데이터3']
     userbook=[7]
     return render(request, 'AI_Publisher/show_gallery.html', {'mybackground':background,
                                                               'title': title,
