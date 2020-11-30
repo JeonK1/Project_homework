@@ -12,43 +12,19 @@
 </head>
 <body>
 
+<div class="container" id="background">
 
-<div class="background" id="baseground">
-    <div class="background" id="BackGround">
-        <!--프로필 -->
-        <div class="profile" id="profile">
-            <div class="profile" id="profile_text_box">
-                <div class="profile_text_title" id="profile_text1">username</div>
-                <!--DB에서 받아와야할 자료!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                <div class="profile_text_contents" id="profile_text2">가장 많이 사용한 단어: </div>
-                <div class="profile_text_contents" id="profile_text3">지금까지 만든 동화 수: </div>
-                <div class="profile_text_contents" id="profile_text4">평균 동화당 문장 수: </div>
-            </div>
-        </div>
-        <div class="profile" id="profile_img"></div>
+    <!--노리스 아이콘-->
+    <div class="icon" id="noris_icon"></div>
 
-        <!--갤러리 이동 -->
-        <div class="gallery" id="gallery">
-            <div class="gallery" id="gallery_text">나의 책장</div>
-            <div class="gallery" id="gallery_btn" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/show_gallery'">책장으로 이동하기</div>
-        </div>
+    <!--뒤로가기 버튼-->
+    <div class="backpage" id="backpage_btn">
+        <div class="backpage" id="backpage_arrow"></div>
+        <div class="backpage" id="backpage_text">뒤로가기</div>
+        <div class="backpage" id="backpage_img"></div>
     </div>
 
-    <!-- 배경 이미지 모음집 -->
-    <div class="user_background" id="my_back"></div>
-    <div class="user_background" id="my_back_deco"></div>
-    <div class="user_background" id="my_back_text">나의 배경화면</div>
-    <div class="user_background" id="my_back_box">
-        <!-- DB에서 받아오는걸로 수정작업을 거쳐야함 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-        <div class="user_background" id="my_back_1"><img src="../../static/img/bg/{{background.0}}" width="100%" height="100%"></div>
-    </div>
 
-    <!-- 네비게이션 바 -->
-    <div class="upper_bar" id="upper_bar">
-        <div class="AI_Publisher_image" id="AI_Publisher_image"></div>
-        <div class="user_icon" id="user_icon"></div>
-        <div class="username" id="username"></div>
-    </div>
 </div>
 
 
