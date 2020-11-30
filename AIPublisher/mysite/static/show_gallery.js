@@ -8,7 +8,10 @@ function set_page(){
     var String1 = document.getElementById("userbook").value.replace('[',"");
     String1 = String1.replace(']',"");
     madebook = String1;
-
+    if(madebook<=3){
+        document.getElementById("left_move").style.display="none";
+        document.getElementById("right_move").style.display="none";
+    }
 
     //책 커버의 그림
 
@@ -46,9 +49,9 @@ function set_page(){
             pagecount++;
             if(pagecount<(madebook/3)) {
                 $("#left_move").show();
-                $("#storybook1").attr('src',"../../static/img/bg/" + backgroundfile[index]);
-                $("#storybook2").attr('src',"../../static/img/bg/" + backgroundfile[index + 1]);
-                $("#storybook3").attr('src',"../../static/img/bg/" + backgroundfile[index + 2]);
+                $("#storybook1").attr('src',backgroundfile[index]);
+                $("#storybook2").attr('src',backgroundfile[index + 1]);
+                $("#storybook3").attr('src',backgroundfile[index + 2]);
                 $("#storybook1_title_text").text(title[index]);
                 $("#storybook2_title_text").text(title[index + 1]);
                 $("#storybook3_title_text").text(title[index + 2]);
@@ -57,7 +60,7 @@ function set_page(){
             else
             {
                 if((madebook%3)==1) {
-                    $("#storybook1").attr('src', "../../static/img/bg/" + backgroundfile[index]);
+                    $("#storybook1").attr('src',backgroundfile[index]);
                     $("#storybook2").attr('src'," ");
                     $("#storybook3").attr('src'," ");
                     $("#storybook1_title_text").text(title[index]);
@@ -68,10 +71,11 @@ function set_page(){
                     $("#storybook2_btn").hide();
                     $("#storybook3_btn").hide();
                     $("#right_move").hide();
+                    $("#left_move").show();
                 }
                 else if((madebook%3)==2) {
-                    $("#storybook1").attr('src', "../../static/img/bg/" + backgroundfile[index]);
-                    $("#storybook2").attr('src', "../../static/img/bg/" + backgroundfile[index + 1]);
+                    $("#storybook1").attr('src',backgroundfile[index]);
+                    $("#storybook2").attr('src',backgroundfile[index + 1]);
                     $("#storybook3").attr('src'," ");
                     $("#storybook1_title_text").text(title[index]);
                     $("#storybook2_title_text").text(title[index + 1]);
@@ -79,6 +83,7 @@ function set_page(){
                     $("#storybook3_title").hide();
                     $("#storybook3_btn").hide();
                     $("#right_move").hide();
+                    $("#left_move").show();
                 }
                 else {
                     $("#left_move").show();
@@ -93,9 +98,9 @@ function set_page(){
             pagecount--;
             if(pagecount>=1) {
                 $("#right_move").show();
-                $("#storybook1").attr('src',"../../static/img/bg/" + backgroundfile[index]);
-                $("#storybook2").attr('src',"../../static/img/bg/" + backgroundfile[index + 1]);
-                $("#storybook3").attr('src',"../../static/img/bg/" + backgroundfile[index + 2]);
+                $("#storybook1").attr('src',backgroundfile[index]);
+                $("#storybook2").attr('src',backgroundfile[index + 1]);
+                $("#storybook3").attr('src',backgroundfile[index + 2]);
                 $("#storybook1_title_text").text(title[index]);
                 $("#storybook2_title_text").text(title[index + 1]);
                 $("#storybook3_title_text").text(title[index + 2]);

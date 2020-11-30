@@ -6,7 +6,7 @@ from .models import WordList
 from .models import CharList
 from .models import BookTextList
 from .models import BookContetnsList
-from .models import BookInfo, BookPage, BookElement
+from .models import BookInfo, BookPage, BookElement, BookInfo_bookPages
 
 import json
 
@@ -158,22 +158,37 @@ def set_char_option(request):
 
 
 def show_gallery(request):
+    # if request.method == 'POST':
+    bookInfos = BookInfo.objects.raw('SELECT * FROM AI_Publisher_bookinfo WHERE length(BookTitle) > 0') # BookTitle 이 공백 아닌 값들 가져오기
+    backgroundList = []
+    titleList = []
+    userbook = []
+    for bookInfo in bookInfos:
+        no = bookInfo.BookNo # 책 번호
+        title = bookInfo.BookTitle
+        bookPage = BookInfo_bookPages.objects.filter(bookinfo_id = no)[0]
+        myBookCoverPage = BookPage.objects.filter(id = bookPage.bookpage_id)[0]
+        coverBackgroundUrl = myBookCoverPage.backgroundUrl
+        backgroundList.append(coverBackgroundUrl)
+        titleList.append(title)
 
+    print(backgroundList)
+    print(titleList)
+    print(len(backgroundList))
+    userbook.append(len(backgroundList))
+    return render(request, 'AI_Publisher/show_gallery.html', {'mybackground': backgroundList,
+                                                              'title': titleList,
+                                                              'userbook': userbook})
 
-    if request.method == 'POST':
-
-        return render(request, 'AI_Publisher/show_gallery.html', {'mybackground': background,
-                                                                  'title': title,
-                                                                  'userbook': userbook})
-    else:
-        # dummy data
-        background = ["Asset 004.png", "Asset 005.png", "Asset 001.png", "Asset 003.png", "Asset 008.png",
-                      "Asset 010.png", "Asset 012.png"]
-        title = ['어느 평화로운 가을날', '더미 데이터1', '데이터2', '데이터9', '데이터4', '데이터5 데이터6', '데이터3']
-        userbook = [7]
-        return render(request, 'AI_Publisher/show_gallery.html', {'mybackground': background,
-                                                                  'title': title,
-                                                                  'userbook': userbook})
+    # else:
+    # dummy data
+    background = ["Asset 004.png", "Asset 005.png", "Asset 001.png", "Asset 003.png", "Asset 008.png",
+                  "Asset 010.png", "Asset 012.png"]
+    title = ['어느 평화로운 가을날', '더미 데이터1', '데이터2', '데이터9', '데이터4', '데이터5 데이터6', '데이터3']
+    userbook = [7]
+    return render(request, 'AI_Publisher/show_gallery.html', {'mybackground': background,
+                                                              'title': title,
+                                                              'userbook': userbook})
 
 def user_info(request):
     # dummy data

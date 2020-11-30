@@ -13,9 +13,6 @@ function cover_decoration(){
         // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
     jsonData = jsonData.replaceAll('\'', '\"');
 
-    alert(jsonData);
-
-
     $("#decorate_ch_1").resizable({
         handles : 'se',
         containment:"#Cover",
@@ -255,9 +252,6 @@ function sendToNextPage(){
     jsonData = jsonData.replaceAll('\'', '\"');
     jsonObject = JSON.parse(jsonData);
     console.log(jsonData);
-
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_1" ).css( "background-image" )),
-                            "background-size":"cover"});
 
     var bookPage = new Object();
     bookPage.background = ($("#Cover").css("background-image")).slice(5, -2);

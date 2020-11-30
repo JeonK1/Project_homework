@@ -24,6 +24,10 @@ class BookPage(models.Model):
     context = models.CharField(max_length=200)
     elements = models.ManyToManyField(BookElement)
 
+class BookInfo_bookPages(models.Model):
+    bookinfo_id = models.IntegerField()
+    bookpage_id = models.IntegerField()
+
 class BookInfo(models.Model):
     BookNo = models.AutoField(primary_key=True)
     #UserNo = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -78,7 +78,11 @@
     z-index: 1;
 
 }
-
+.storybook_bg {
+    width:100%px;
+    height:100%px;
+    object-fit:contain;
+}
 #storybook1_title{
     left: calc(50% - 343px / 2);
 }
