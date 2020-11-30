@@ -303,4 +303,5 @@ function sendToNextPage(){
 
 
 //    window.location = '/AI_Publisher';
+    window.location = '/AI_Publisher/show_gallery';
 }
