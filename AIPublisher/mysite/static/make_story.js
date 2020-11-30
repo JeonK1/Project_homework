@@ -782,6 +782,8 @@ function sendToNextPage(){
         backgroundUrl = arrback[i];
         if(backgroundUrl!=null)
             backgroundUrl = backgroundUrl.slice(5, -2);
+           else
+            backgroundUrl = "";
         bookPage.background = backgroundUrl;
         bookPage.context = arrtext[i];
         var elements = new Array();

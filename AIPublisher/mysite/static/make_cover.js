@@ -289,19 +289,11 @@ function sendToNextPage(){
         if (req.readyState === XMLHttpRequest.DONE) {
             if (req.status == 200) {
                 var words = req.response["result"];
-                alert(words);
             }
         }
     }
     req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     req.send("jsonData="+jsonData);
 
-//    document.getElementById("sendJson").submit();
-
-
-
-
-
-//    window.location = '/AI_Publisher';
     window.location = '/AI_Publisher/show_gallery';
 }

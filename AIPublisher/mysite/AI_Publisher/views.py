@@ -187,8 +187,8 @@ def update_book(request):
         getjson = json.loads(message) #Json 풀어주기
 
         print(message)
-        bookInfo = BookInfo()
-
+        bookInfo = BookInfo(BookTitle=getjson['BookCover']['context'])
+        bookInfo.save()
         ### 책 표지 저장 ###
         # 배경과 내용 #
         coverBgUrl = getjson['BookCover']['background']
@@ -234,9 +234,14 @@ def update_book(request):
         ### 책 내용 저장 ###
         for i in range(len(getjson['BookPages'])):
             # 배경과 내용 #
-            tmpCoverBgUrl = getjson['BookPages'][i]['background']
-            tmpCoverContext = getjson['BookPages'][i]['context']
+            tmpCoverBgUrl = ""
+            if(getjson['BookPages'][i]['background']!=None):
+                tmpCoverBgUrl = getjson['BookPages'][i]['background']
+            tmpCoverContext = ""
+            if(getjson['BookPages'][i]['context']!=None):
+                tmpCoverContext = getjson['BookPages'][i]['context']
             tmpBookPage = BookPage(backgroundUrl=tmpCoverBgUrl, context=tmpCoverContext)
+            tmpBookPage.save()
             # 주인공 #
             if(getjson['BookPages'][i]['elements'][0]['display']!=None):
                 tmpCharMain = BookElement(display=getjson['BookPages'][i]['elements'][0]['display'],
@@ -245,7 +250,9 @@ def update_book(request):
                                           height=getjson['BookPages'][i]['elements'][0]['height'],
                                           top=getjson['BookPages'][i]['elements'][0]['top'],
                                           left=getjson['BookPages'][i]['elements'][0]['left'])
+                tmpCharMain.save()
                 tmpBookPage.elements.add(tmpCharMain)
+                tmpBookPage.save()
 
             # 서브 주인공 #
             if(getjson['BookPages'][i]['elements'][0]['display']!=None):
@@ -255,19 +262,23 @@ def update_book(request):
                                           height=getjson['BookPages'][i]['elements'][1]['height'],
                                           top=getjson['BookPages'][i]['elements'][1]['top'],
                                           left=getjson['BookPages'][i]['elements'][1]['left'])
+                tmpCharSub.save()
                 tmpBookPage.elements.add(tmpCharSub)
+                tmpBookPage.save()
 
             # 기타인물1, 2 #
             for j in range(len(getjson['charList'])):
                 tmpCharOther = BookElement(display=getjson['BookPages'][i]['elements'][2+j]['display'],
-                                           imgUrl=getjson['subChar'][j]['url'],
+                                          imgUrl=getjson['charList'][j]['url'],
                                           width=getjson['BookPages'][i]['elements'][2+j]['width'],
                                           height=getjson['BookPages'][i]['elements'][2+j]['height'],
                                           top=getjson['BookPages'][i]['elements'][2+j]['top'],
                                           left=getjson['BookPages'][i]['elements'][2+j]['left'])
+                tmpCharOther.save()
                 tmpBookPage.elements.add(tmpCharOther)
+                tmpBookPage.save()
             bookInfo.bookPages.add(tmpBookPage)
-        bookInfo.save()
+            bookInfo.save()
         print(bookInfo)
         return JsonResponse({"result" : "true" })
     else:

@@ -19,6 +19,7 @@ class BookElement(models.Model):
     left = models.CharField(max_length=200)
 
 class BookPage(models.Model):
+    id = models.AutoField(primary_key=True)
     backgroundUrl = models.CharField(max_length=200)
     context = models.CharField(max_length=200)
     elements = models.ManyToManyField(BookElement)
@@ -26,7 +27,7 @@ class BookPage(models.Model):
 class BookInfo(models.Model):
     BookNo = models.AutoField(primary_key=True)
     #UserNo = models.ForeignKey(User, on_delete=models.CASCADE)
-    # BookTitle = models.CharField(max_length=30)
+    BookTitle = models.CharField(max_length=30)
     bookPages = models.ManyToManyField(BookPage) #첫번째 페이지가 표지랑 제목 있음
     typeCnt = models.IntegerField(null=True)
     wordCnt = models.IntegerField(null=True)
