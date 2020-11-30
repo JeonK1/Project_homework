@@ -466,6 +466,7 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+    border: 1px dashed #666666;
 }
 
 
@@ -480,6 +481,7 @@
     flex: none;
     order: 1;
     flex-grow: 0;
+    border: 1px dashed #666666;
 }
 
 /* decorate_character */
@@ -492,6 +494,7 @@
     flex: none;
     order: 2;
     flex-grow: 0;
+    border: 1px dashed #666666;
 }
 
 /* decorate_character */
@@ -504,6 +507,7 @@
     flex: none;
     order: 3;
     flex-grow: 0;
+    border: 1px dashed #666666;
 }
 
 .deco_img {

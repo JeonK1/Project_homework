@@ -1,9 +1,5 @@
 // 사용자 위치
 var count = 0;
-var char_button = new Array(4);
-for(var i = 0; i < char_button.length; i++){
-    char_button[i] = false
-}
 
 // 사용자가 적은 글들 저장
 var arrtext = new Array(5);
@@ -44,7 +40,6 @@ for (var i = 0; i < expos_info.length; i++){
     compli_info[i][0] = "none";
     crisis_info[i][0] = "none";
     climax_info[i][0] = "none";
-    climax_info[i][0] = "none";
     result_info[i][0] = "none";
 }
 
@@ -53,27 +48,34 @@ for (var i = 0; i < expos_info.length; i++){
 function story_make(){
     // 주인공, 배경, 사건, 상대, 감정1, 감정2, 감정3, 감정4, 감정5
     // 여기서 받으면 될듯
-    var hero = "이기철";
+    jsonData = document.getElementById("jsonData").value;
+        // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
+    jsonData = jsonData.replaceAll('\'', '\"');
+    jsonObject = JSON.parse(jsonData);
+
+    var hero = jsonObject.mainChar.name;
     var ground = "학교";
     var event = "사랑";
-    var partner = "이희선";
-    var emotion = new Array('사랑','행복','의심','분노','슬픔');
+    var partner = jsonObject.subChar.name;
+    var emotion = new Array(jsonObject.relList);
+    emotion = emotion.toString();
+    var emotion_array =  emotion.split(",");
 
     // 발단
     var expos = new Array(hero+"에게 "+ground+"은(는) 어떤 곳인가요?",
                 hero+"과 "+event+"은(는) 어떤 관련이 있나요?",
-                hero+"은(는) "+partner+"에게 왜 "+emotion[0]+"을 느끼나요?");
+                hero+"은(는) "+partner+"에게 왜 "+emotion_array[0]+"을 느끼나요?");
     // 전개
     var compli = new Array(hero+"은(는) 어떻게 "+event+"을 해결하고자 하나요?",
-                           "왜 "+hero+"은(는) "+emotion[0]+"에서 "+emotion[1]+"가 되었나요?");
+                           "왜 "+hero+"은(는) "+emotion_array[0]+"에서 "+emotion_array[1]+"가 되었나요?");
     // 위기
-    var crisis = new Array("왜 "+hero+"은(는) "+emotion[1]+"에서 "+emotion[2]+"가 되었나요?");
+    var crisis = new Array("왜 "+hero+"은(는) "+emotion_array[1]+"에서 "+emotion_array[2]+"가 되었나요?");
 
     //절정
-    var climax = new Array("왜 "+hero+"은(는) "+emotion[2]+"에서 "+emotion[3]+"가 되었나요?");
+    var climax = new Array("왜 "+hero+"은(는) "+emotion_array[2]+"에서 "+emotion_array[3]+"가 되었나요?");
 
     //결말
-    var result = new Array("왜 "+hero+"은(는) "+emotion[3]+"에서 "+emotion[4]+"가 되었나요?",
+    var result = new Array("왜 "+hero+"은(는) "+emotion_array[3]+"에서 "+emotion_array[4]+"가 되었나요?",
                            "이 이야기의 결말은 어떻게 되나요?");
 
 
@@ -702,7 +704,7 @@ function show_text() {
                         maxWidth: 510,
                         minWidth: 373,
                         maxHeight: 340,
-                        minHeight: 129,
+                        minHeight: 129
                     });
                     $('#input_text').val('');
                     break;
@@ -716,7 +718,7 @@ function show_text() {
                         maxWidth: 510,
                         minWidth: 373,
                         maxHeight: 340,
-                        minHeight: 129,
+                        minHeight: 129
                     });
                     break;
                 case 2:
@@ -729,7 +731,7 @@ function show_text() {
                         maxWidth: 510,
                         minWidth: 373,
                         maxHeight: 340,
-                        minHeight: 129,
+                        minHeight: 129
                     });
                     break;
                 case 3:
@@ -742,7 +744,7 @@ function show_text() {
                         maxWidth: 510,
                         minWidth: 373,
                         maxHeight: 340,
-                        minHeight: 129,
+                        minHeight: 129
                     });
                     break;
                 case 4:
@@ -755,7 +757,7 @@ function show_text() {
                         maxWidth: 510,
                         minWidth: 373,
                         maxHeight: 340,
-                        minHeight: 129,
+                        minHeight: 129
                     });
                     break;
 
@@ -771,6 +773,66 @@ function sendToNextPage(){
     jsonData = jsonData.replaceAll('\'', '\"');
     jsonObject = JSON.parse(jsonData);
     console.log(jsonData);
+
+    var sendJsonObject = new Object();
+    var bookPage = new Object();
+    var background = new Array();
+    var context = new Array();
+    var elements = new Array();
+
+    for(i=0; i<5; i++) {
+
+        context.push(arrtext[i]);
+        background.push(arrback[i]);
+
+        expos_content = new Object();
+        expos_content.display = expos_info[i][0];
+        expos_content.width = expos_info[i][1];
+        expos_content.height = expos_info[i][2];
+        expos_content.top = expos_info[i][3];
+        expos_content.left = expos_info[i][4];
+        elements.push(expos_content);
+
+        compli_content = new Object();
+        compli_content.display = compli_info[i][0];
+        compli_content.width = compli_info[i][1];
+        compli_content.height = compli_info[i][2];
+        compli_content.top = compli_info[i][3];
+        compli_content.left = compli_info[i][4];
+        elements.push(compli_content);
+
+        crisis_content = new Object();
+        crisis_content.display = crisis_info [i][0];
+        crisis_content.width = crisis_info [i][1];
+        crisis_content.height = crisis_info [i][2];
+        crisis_content.top = crisis_info [i][3];
+        crisis_content.left = crisis_info [i][4];
+        elements.push(crisis_content);
+
+        climax_content = new Object();
+        climax_content.display = climax_info[i][0];
+        climax_content.width = climax_info[i][1];
+        climax_content.height = climax_info[i][2];
+        climax_content.top = climax_info[i][3];
+        climax_content.left = climax_info[i][4];
+        elements.push(climax_content);
+
+        result_content = new Object();
+        result_content.display = result_info[i][0];
+        result_content.width = result_info[i][1];
+        result_content.height = result_info[i][2];
+        result_content.top = result_info[i][3];
+        result_content.left = result_info[i][4];
+        elements.push(result_content);
+    }
+
+    bookPage.background = background;
+    bookPage.context = context;
+    bookPage.elements = elements;
+    sendJsonObject = jsonObject;
+    sendJsonObject.BookPage = bookPage;
+
+    var jsonData = JSON.stringify(jsonObject);
 
     document.getElementById("jsonData").value = jsonData;
     document.getElementById("sendJson").submit();
