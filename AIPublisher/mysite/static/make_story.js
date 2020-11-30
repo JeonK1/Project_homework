@@ -67,15 +67,15 @@ function story_make(){
                 hero+"은(는) "+partner+"에게 왜 "+emotion_array[0]+"을 느끼나요?");
     // 전개
     var compli = new Array(hero+"은(는) 어떻게 "+event+"을 해결하고자 하나요?",
-                           "왜 "+hero+"은(는) "+emotion_array[0]+"에서 "+emotion_array[1]+"가 되었나요?");
+                           "왜 "+hero+"은(는) "+emotion_array[0]+"한 상태에서 "+emotion_array[1]+"한 상태가 되었나요?");
     // 위기
-    var crisis = new Array("왜 "+hero+"은(는) "+emotion_array[1]+"에서 "+emotion_array[2]+"가 되었나요?");
+    var crisis = new Array("왜 "+hero+"은(는) "+emotion_array[1]+"한 상태에서 "+emotion_array[2]+"한 상태가 되었나요?");
 
     //절정
-    var climax = new Array("왜 "+hero+"은(는) "+emotion_array[2]+"에서 "+emotion_array[3]+"가 되었나요?");
+    var climax = new Array("왜 "+hero+"은(는) "+emotion_array[2]+"한 상태에서 "+emotion_array[3]+"한 상태가 되었나요?");
 
     //결말
-    var result = new Array("왜 "+hero+"은(는) "+emotion_array[3]+"에서 "+emotion_array[4]+"가 되었나요?",
+    var result = new Array("왜 "+hero+"은(는) "+emotion_array[3]+"한 상태에서 "+emotion_array[4]+"한 상태가 되었나요?",
                            "이 이야기의 결말은 어떻게 되나요?");
 
 

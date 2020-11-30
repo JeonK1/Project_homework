@@ -159,13 +159,21 @@ def set_char_option(request):
 
 def show_gallery(request):
 
-    #dummy data
-    background = ["Asset 004.png", "Asset 005.png", "Asset 001.png", "Asset 003.png", "Asset 008.png", "Asset 010.png","Asset 012.png"]
-    title=['어느 평화로운 가을날','더미 데이터1','데이터2','데이터9','데이터4','데이터5 데이터6','데이터3']
-    userbook=[7]
-    return render(request, 'AI_Publisher/show_gallery.html', {'mybackground':background,
-                                                              'title': title,
-                                                              'userbook': userbook})
+
+    if request.method == 'POST':
+
+        return render(request, 'AI_Publisher/show_gallery.html', {'mybackground': background,
+                                                                  'title': title,
+                                                                  'userbook': userbook})
+    else:
+        # dummy data
+        background = ["Asset 004.png", "Asset 005.png", "Asset 001.png", "Asset 003.png", "Asset 008.png",
+                      "Asset 010.png", "Asset 012.png"]
+        title = ['어느 평화로운 가을날', '더미 데이터1', '데이터2', '데이터9', '데이터4', '데이터5 데이터6', '데이터3']
+        userbook = [7]
+        return render(request, 'AI_Publisher/show_gallery.html', {'mybackground': background,
+                                                                  'title': title,
+                                                                  'userbook': userbook})
 
 def user_info(request):
     # dummy data

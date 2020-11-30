@@ -248,5 +248,5 @@ function modalOk(){
 }
 function sendToNextPage(){
     removeModal();
-    window.location = '/AI_Publisher';
+    window.location = '/AI_Publisher/show_gallery';
 }
