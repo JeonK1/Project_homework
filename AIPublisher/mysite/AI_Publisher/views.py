@@ -57,11 +57,14 @@ def make_cover(request):
 def make_story(request):
     if request.method == 'POST':
         message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
+        groundKeyword = get_ground_card()
+        eventKeyword = get_keyword_card()
         getjson = json.loads(message) #Json 풀어주기
         bookContetnsList = ["1.png", "2.png", "3.png", "4.png", "5.png"]
-        return render(request, 'AI_Publisher/make_story.html', {'getJSONData' : getjson,
-                                                                'bookContetnsList' : bookContetnsList})
- 
+        return render(request, 'AI_Publisher/make_story.html', {'groundKeyword' : groundKeyword,
+                                                                    'eventKeyword' : eventKeyword,
+                                                                    'getJSONData' : getjson,
+                                                                    'bookContetnsList' : bookContetnsList})
     else:
         # charList = CharList.objects
         bookTextList = BookTextList.objects
@@ -71,6 +74,14 @@ def make_story(request):
         return render(request, 'AI_Publisher/make_story.html', {'getJSONData' : charList,
                                                                 'bookTextList' : bookTextList,
                                                                 'bookContetnsList' : bookContetnsList})
+
+def get_keyword_card():
+    cards = WordList.objects.filter(WordType=0).order_by('?')[:1]
+    return cards[0].WordContext
+
+def get_ground_card():
+    cards = WordList.objects.filter(WordType=5).order_by('?')[:1]
+    return cards[0].WordContext
 
 # 단어 중에서 positive 3개 neutral 2개 negative 3개를 뽑아 리스트로 반환
 def get_relation_card():

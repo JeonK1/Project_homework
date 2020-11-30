@@ -54,8 +54,8 @@ function story_make(){
     jsonObject = JSON.parse(jsonData);
 
     var hero = jsonObject.mainChar.name;
-    var ground = "학교";
-    var event = "사랑";
+    var ground = document.getElementById('groundKeyword').value;
+    var event = document.getElementById('eventKeyword').value;
     var partner = jsonObject.subChar.name;
     var emotion = new Array(jsonObject.relList);
     emotion = emotion.toString();
