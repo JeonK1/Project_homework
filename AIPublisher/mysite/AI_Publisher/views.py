@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from .models import WordList
 from .models import CharList
+from .models import BackList
 from .models import BookTextList
 from .models import BookContetnsList
 from .models import BookInfo, BookPage, BookElement, BookInfo_bookPages
@@ -80,7 +81,7 @@ def get_keyword_card():
     return cards[0].WordContext
 
 def get_ground_card():
-    cards = WordList.objects.filter(WordType=5).order_by('?')[:1]
+    cards = WordList.objects.filter(WordType=4).order_by('?')[:1]
     return cards[0].WordContext
 
 # 단어 중에서 positive 3개 neutral 2개 negative 3개를 뽑아 리스트로 반환
@@ -167,6 +168,14 @@ def set_char_option(request):
     print(getjson)
     return render(request, 'AI_Publisher/set_char_option.html', {'getJSONData' : getjson})
 
+def get_background(request):
+    if (json.loads(request.GET.get('data')))['personal'] == False:
+        backs = BackList.objects.all()
+    pathlist = []
+    for i in range(len(backs)):
+        pathlist.append(backs[i].BackPic)
+    print(pathlist)
+    return JsonResponse({"result": pathlist})
 
 def show_gallery(request):
     # if request.method == 'POST':

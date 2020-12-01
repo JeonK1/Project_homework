@@ -54,6 +54,7 @@ class CharList(models.Model):
 class BackList(models.Model):
     BackNo = models.AutoField(primary_key=True)
     BackPic = models.CharField(max_length=50)
+    UserNo = models.ForeignKey(User, null=True, default=None, on_delete=models.CASCADE)
 
 class BookTextList(models.Model):
     index = models.AutoField(primary_key=True)
@@ -79,5 +80,5 @@ class BookContetnsList(models.Model):
     X = models.DecimalField(decimal_places=2, max_digits=4, default=0)
     Y = models.DecimalField(decimal_places=2, max_digits=4, default=0)
     Scale = models.DecimalField(decimal_places=2, max_digits=4, default=10)
-    Rotation = models.DecimalField(decimal_places=2, max_digits=4,default=0)
+    Rotation = models.DecimalField(decimal_places=2, max_digits=4, default=0)
     Reversed = models.BooleanField(default=False)

@@ -1,3 +1,45 @@
+var backArray;
+
+function get_background(personal = false) {
+    backArray = document.getElementById("RightSidebar_scroll");
+    var url_GET = '../get_background?data=';
+    url_GET = url_GET + JSON.stringify({"personal": personal});
+    var req = new XMLHttpRequest();
+    req.open('GET', url_GET, true);
+    req.responseType = 'json';
+    req.onreadystatechange = function(e) {
+        if (req.readyState === XMLHttpRequest.DONE) {
+            if (req.status == 200) {
+                var backs = req.response["result"];
+                for (var i = 0; i < backs.length; i++) {
+                    make_background_button(i, "../../static/img/bg/" + backs[i]);
+                }
+            }
+        }
+    }
+    req.send();
+}
+
+function make_background_button(i, src) {
+    var divElement = document.createElement("div");
+    divElement.className="Ground_small";
+    var picElement = document.createElement("div");
+    picElement.className="Ground_small_img";
+    picElement.id = "Ground_small_" + (i+1).toString();
+    picElement.style.backgroundImage = "url('"+src+"')";
+    divElement.onclick = function() {
+        $("#left_frame").css( {"background-image":($( "#"+picElement.id ).css( "background-image" )),
+                            "background-position":"left",
+                            "background-size":"1020px 680px"});
+        $("#right_frame").css( {"background-image":($( "#"+picElement.id ).css( "background-image" )),
+                            "background-position":"right",
+                            "background-size":"1020px 680px"});
+        arrback[count] = $( "#"+picElement.id  ).css( "background-image" );
+    };
+    divElement.append(picElement);
+    backArray.append(divElement);
+}
+
 var viewarray = new Array(4);
     for (var i = 0; i < viewarray.length; i++){
         viewarray[i] = true; //초기화
@@ -166,35 +208,8 @@ function cover_decoration(){
 
 }
 
-function select_background(){
-
-    $("#Ground_small_1").click(function () {
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_1" ).css( "background-image" )),
-                            "background-size":"cover"});
-    });
-
-    $("#Ground_small_2").click(function () {
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_2" ).css( "background-image" )),
-                            "background-size":"cover"});
-    });
-
-    $("#Ground_small_3").click(function () {
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_3" ).css( "background-image" )),
-                            "background-size":"cover"});
-    });
-
-    $("#Ground_small_4").click(function () {
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_4" ).css( "background-image" )),
-                            "background-size":"cover"});
-    });
-
-    $("#Ground_small_5").click(function () {
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_5" ).css( "background-image" )),
-                            "background-size":"cover"});
-    });
-}
-
 function makeBook(){
+    get_background();
     if(document.getElementById('Cover').style.backgroundImage == ""){
         //배경 설정 안됨
         createModal("warning","경고", "배경화면을 선택해주세요");
