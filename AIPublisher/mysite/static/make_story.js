@@ -109,9 +109,12 @@ function story_make(){
     var result = new Array("왜 "+hero+"은(는) "+emotion_array[3]+"한 상태에서 "+emotion_array[4]+"한 상태가 되었나요?",
                            "이 이야기의 결말은 어떻게 되나요?");
 
+<<<<<<< HEAD
     get_background();
 
     //$("#RightSidebar").hide();
+=======
+>>>>>>> 1448feb96e721c23d30e3748a00900137c99586d
     $("#keyword_text").text(event);
     $("#guide_text").text(expos);
     //$("#decorate_ch_1").hide();
@@ -332,7 +335,6 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "top":expos_info[4][3],
                                         "left":expos_info[4][4]});
             $('#input_text').val('');
-            $("#RightSidebar").hide();
             $("#guide_text").text(expos);
             break;
         case 1:
@@ -369,7 +371,6 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "top":compli_info[4][3],
                                         "left":compli_info[4][4]});
             $('#input_text').val('');
-            $("#RightSidebar").show();
             $("#guide_text").text(compli);
             break;
         case 2:
@@ -406,7 +407,6 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "top":crisis_info[4][3],
                                         "left":crisis_info[4][4]});
             $('#input_text').val('');
-            $("#RightSidebar").show();
             $("#guide_text").text(crisis);
             break;
         case 3:
@@ -443,7 +443,6 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "top":climax_info[4][3],
                                         "left":climax_info[4][4]});
             $('#input_text').val('');
-            $("#RightSidebar").show();
             $("#guide_text").text(climax);
             break;
         case 4:
@@ -480,7 +479,6 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "top":result_info[4][3],
                                         "left":result_info[4][4]});
             $('#input_text').val('');
-            $("#RightSidebar").show();
             $("#guide_text").text(result);
             break;
         case 5:

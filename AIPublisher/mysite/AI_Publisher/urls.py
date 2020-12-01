@@ -20,5 +20,9 @@ urlpatterns = [
     path('get_random_character/', views.get_random_character),
     path('get_personality_word/', views.get_personality_word),
     path('update_book/', views.update_book),
+<<<<<<< HEAD
     path('get_background/', views.get_background),
+=======
+    path('read_book/', views.read_book),
+>>>>>>> 1448feb96e721c23d30e3748a00900137c99586d
 ]

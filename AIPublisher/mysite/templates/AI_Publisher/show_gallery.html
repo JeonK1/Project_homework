@@ -20,55 +20,52 @@
 </head>
 <body onload="navbar_function(); set_page();">
 
-    <div class="background" id="backGround">
-        <div class="background" id="Field">
-        <!-- 만든 동화책 -->
-            <div class="storybook_box" id="book_box">
-                <!-- DB에서 책 제목이랑 책 표지 불러와서~~~~~~~~~~~~~~~~~~~~~~~~~~~~여기에 출력~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                <div class="storybook" id="storybook_1"><img class="storybook_bg" id="storybook1" src="{{mybackground.0}}">
-                    <div class="storybook_title" id="storybook1_title">
-                        <div class="storybook_title_text" id="storybook1_title_text">{{title.0}}</div>
-                    </div>
-                    <div class="storybook_btn" id="storybook1_btn">
-                        <div class="storybook_btn_text" id="storybook1_btn_text">책 읽기</div>
-                    </div>
-                </div>
-                <!-- DB에서 책 제목이랑 책 표지 불러와서~~~~~~~~~~~~~~~~~~~~~~~~~~~~여기에 출력~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                <div class="storybook" id="storybook_2"><img class="storybook_bg" id="storybook2" src="{{mybackground.1}}">
-                    <div class="storybook_title" id="storybook2_title">
-                        <div class="storybook_title_text" id="storybook2_title_text">{{title.1}}</div>
-                    </div>
-                    <div class="storybook_btn" id="storybook2_btn">
-                        <div class="storybook_btn_text" id="storybook2_btn_text">책 읽기</div>
-                    </div>
-                </div>
-                <!-- DB에서 책 제목이랑 책 표지 불러와서~~~~~~~~~~~~~~~~~~~~~~~~~~~~여기에 출력~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                <div class="storybook" id="storybook_3"><img class="storybook_bg" id="storybook3" src="{{mybackground.2}}">
-                    <div class="storybook_title" id="storybook3_title">
-                        <div class="storybook_title_text" id="storybook3_title_text">{{title.2}}</div>
-                    </div>
-                    <div class="storybook_btn" id="storybook3_btn">
-                        <div class="storybook_btn_text" id="storybook3_btn_text">책 읽기</div>
-                    </div>
-                </div>
-            </div>
+   <div class="container" id="background">
 
-        <!-- 왼쪽 넘기기 -->
-        <div class="left_move" id="left_move"></div>
+    <!--노리스 아이콘-->
+    <div class="icon" id="noris_icon"></div>
 
-        <!-- 오른쪽 넘기기 -->
-        <div class="right_move" id="right_move"></div>
-
-        <!-- 책상 -->
-        <div class="shelf" id="shelf"></div>
-
-        <!-- 네비게이션 바 -->
-        <div class="upper_bar" id="upper_bar">
-            <div class="AI_Publisher_image" id="AI_Publisher_image"></div>
-            <div class="user_icon" id="user_icon"></div>
-            <div class="username" id="username"></div>
-        </div>
-        </div>
+    <!--뒤로가기 버튼-->
+    <div class="backpage" id="backpage_btn">
+        <div class="backpage" id="backpage_arrow"></div>
+        <div class="backpage" id="backpage_text">뒤로가기</div>
+        <div class="backpage" id="backpage_img"></div>
     </div>
+
+        <!--다온이가 만든 동화책장이에요!-->
+       <div class="container" id="gallery_text_container">
+           <!--DB에서 유저 이름 출력시키는 곳!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+           <h3 class="gallery_text" id="gallery_text1">다온이가&nbsp;</h3>
+
+           <h3 class="gallery_text" id="gallery_text2">만든</h3><br>
+           <h3 class="gallery_text" id="gallery_text3">동화책장</h3>
+           <h3 class="gallery_text" id="gallery_text4">이에요!</h3>
+       </div>
+
+        <!--1번 책 출력되는곳.-->
+       <div class="container" id="book1_container">
+           <div class="container" id="book1_background"></div>
+           <div class="book1" id="book1"></div>
+       </div>
+
+       <!--2번 책 출력되는곳.-->
+       <div class="container" id="book2_background">
+           <div class="book2" id="book2"></div>
+           <div class="book2" id="book2_triange"></div>
+           <div class="book2" id="book2_sh"></div>
+       </div>
+
+       <!--3번 책 출력되는곳.-->
+       <div class="container" id="book3_background">
+           <div class="book3" id="book3"></div>
+           <div class="book3_deco" id="book3_tree"></div>
+           <div class="book3_deco" id="book3_person"></div>
+           <div class="book3_deco" id="book3_triange"></div>
+           <div class="book3_deco" id="book3_sh_big"></div>
+           <div class="book3_deco" id="book3_sh_small"></div>
+           <div class="book3_deco" id="book3_water"></div>
+       </div>
+
+   </div>
 </body>
 </html>
