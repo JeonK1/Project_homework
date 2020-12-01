@@ -310,3 +310,10 @@ def update_book(request):
     else:
         return JsonResponse({"result" : "false" })
 
+
+def read_book(request):
+    return render(request, 'AI_Publisher/read_book.html')
+
+    # message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
+    # getjson = json.loads(message) #Json 풀어주기
+    # return render(request, 'AI_Publisher/set_char_option.html', {'getJSONData' : getjson})

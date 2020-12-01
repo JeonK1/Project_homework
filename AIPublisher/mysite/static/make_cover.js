@@ -14,7 +14,7 @@ function cover_decoration(){
     jsonData = jsonData.replaceAll('\'', '\"');
 
     $("#decorate_ch_1").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#Cover",
         maxWidth: 500,
         minWidth: 85,
@@ -32,7 +32,7 @@ function cover_decoration(){
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
     $("#decorate_ch_2").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#Cover",
         maxWidth: 500,
         minWidth: 85,
@@ -50,7 +50,7 @@ function cover_decoration(){
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
     $("#decorate_ch_3").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#Cover",
         maxWidth: 500,
         minWidth: 85,
@@ -68,7 +68,7 @@ function cover_decoration(){
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
     $("#decorate_ch_4").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#Cover",
         maxWidth: 500,
         minWidth: 85,
@@ -137,10 +137,6 @@ function cover_decoration(){
                 minWidth: 200,
                 maxHeight: 400,
                 minHeight: 100,
-                //비율유지
-                aspectRatio: true,
-                //마우스 hover 아닐때 핸들러 숨기기
-                autoHide: true
             });
         }
     });
@@ -152,10 +148,7 @@ function cover_decoration(){
         minWidth: 200,
         maxHeight: 400,
         minHeight: 100,
-        //비율유지
-        aspectRatio: true,
-        //마우스 hover 아닐때 핸들러 숨기기
-        autoHide: true
+
     });
 
     $("#Cover_title").draggable({
