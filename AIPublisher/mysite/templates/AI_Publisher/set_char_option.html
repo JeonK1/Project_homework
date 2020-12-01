@@ -18,10 +18,26 @@
     </form>
 </head>
 <!--<body onload="navbar_function();setCard();">-->
-<body onload="navbar_function();initCharData();">
+<body onload="navbar_function();initCharData();removeSpeechBox();removeWordList();"remove>
     <!--배경 및 프레임-->
     <div class="BackGround" id="BackGround">
 
+        <!-- 모달창 -->
+        <div class="black_bg" onclick="removeModal();"></div>
+        <div class="modal_wrap">
+            <div id="modal_warning" > <img src="../../static/img/ic_warning.png"> </div>
+            <div id="modal_title">
+                모달제목
+            </div>
+            <div id="modal_context">
+                모달내용
+            </div>
+            <div id="modal_button_wrap">
+                <div class="modal_button" id="modal_button_ok" onclick="modalOk();">확인</div>
+                <div class="modal_button" id="modal_button_yes" onclick="modalYes_nav();">예</div>
+                <div class="modal_button" id="modal_button_no" onclick="modalNo_nav();">아니오</div>
+            </div>
+        </div>
         <!--제목-->
         <div class="Field" id="Field">
             <div class="stepbox" id="stepbar">
@@ -54,7 +70,7 @@
         {% endfor %}
         </div>
         <!--중간의 캐릭터 카드 메뉴-->
-        <div class="main_card" id="set_card"">
+        <div class="main_card" id="set_card">
             <img class="card_img" id="setCard" src={{getJSONData.charList.0}}>
         </div>
 
@@ -67,8 +83,31 @@
         <!--캐릭터 설정 성격-->
         <div class="card_option" id="personality_box">
             <div class="card_option" id="personality">성격</div>
-            <input class="char_input_text" id="personality_text" type="text" name="card_option" >
+            <div class="personality_wrap">
+                <img id="personality_comment" src="../../static/img/ic_comment.png" onmouseenter="createSpeechBox()">
+                <input class="char_input_text" id="personality_text" type="text" name="card_option" >
+            </div>
         </div>
+        <!-- 설정 옆의 말풍선 -->
+        <div id="speech_box">
+            <img id="speech_box_closeBtn" src="../../static/img/close_white.png" onclick="removeSpeechBox()">
+            <div id="speech_box_context">
+                잘 떠오르지 않는다면<br>도움을 받아보세요
+            </div>
+            <div id="speech_box_wordBtn" onclick="createWordList()">
+                단어 목록 보기
+            </div>
+        </div>
+        <!-- 성격 단어 목록 -->
+        <div id="charWord_wrap">
+            <img id="charWord_closeBtn" src="../../static/img/close_gray.png" onclick="removeWordList()">
+            <div id="charWord_title">성격단어목록</div>
+            <div id="charWord_line"></div>
+            <div id="charWord_list"></div>
+            <!-- charWord_list 안에 class가 charWord_word인 div가 들어간다.
+            js에서 hasChildNode()로 검사해서 빈칸인지 알아내기 때문에, 주석 포함해서 어떤 태그라도 들어가있으면 작동하지 않는다.-->
+        </div>
+
         <!--캐릭터 설정 기타-->
         <div class="card_option" id="etc_box">
             <div id="card_option" id="etc">기타</div>

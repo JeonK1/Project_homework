@@ -1,6 +1,7 @@
 var check = new Array(80);
 var imgArray = new Array(80);
 var imgNum = new Array(80);
+var cardSelected = [0,0,0,0];
 
 function random_character() {
     // 이미지 배열에 할당, [][0]은 이미지 내용, [][1]은 이미지가 사용되었는가를 표시.
@@ -60,56 +61,45 @@ function random_character() {
     var selectBoxShadowStr = "5px 5px 7px black";
     var unSelectBoxShadowStr = "0px 0px 0px black";
     $("#card_1").click(function() {
-        if (imgArray[imgNum[0]][1] == 0) {
+        if (!check[0]) {
             check[0] = true;
-            imgArray[imgNum[0]][1] = 1;
             document.getElementById("card_1").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[0] = false;
-            imgArray[imgNum[0]][1] = 0;
             document.getElementById("card_1").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
    $("#card_2").click(function() {
-        if (imgArray[imgNum[1]][1] == 0) {
-
+        if (!check[1]) {
             check[1] = true;
-            imgArray[imgNum[1]][1] = 1;
             document.getElementById("card_2").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[1] = false;
-            imgArray[imgNum[1]][1] = 0;
             document.getElementById("card_2").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
    $("#card_3").click(function() {
-        if (imgArray[imgNum[2]][1] == 0) {
-
+        if (!check[2]) {
             check[2] = true;
-            imgArray[imgNum[2]][1] = 1;
             document.getElementById("card_3").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[2] = false;
-            imgArray[imgNum[2]][1] = 0;
             document.getElementById("card_3").style.boxShadow = unSelectBoxShadowStr;
         }
     });
 
    $("#card_4").click(function() {
-        if (imgArray[imgNum[3]][1] == 0) {
-
+        if (!check[3]) {
             check[3] = true;
-            imgArray[imgNum[3]][1] = 1;
             document.getElementById("card_4").style.boxShadow = selectBoxShadowStr;
         }
         else{
             check[3] = false;
-            imgArray[imgNum[3]][1] = 0;
             document.getElementById("card_4").style.boxShadow = unSelectBoxShadowStr;
         }
     });
@@ -120,40 +110,52 @@ function random_character() {
    //이미지 다시뽑기
     $("#redraw_shape").click(function() {
         count += 1;
-
+        var num = 0;
         if(count < 3) {
-            //안 썼던 카드끼리 비교해서 섞어 버리기.
-            for (var i = 0; i < imgNum.length; i++) {
-                var j = Math.floor(Math.random() * imgNum.length);
-                // [array[i], array[j]] = [array[j], array[i]];
-                if(check[i] == false && check[j] == false) {
-                    var x = imgNum[i];
-                    imgNum[i] = imgNum[j];
-                    imgNum[j] = x;
+            for(var i = 0; i < imgNum.length; i++) {
+                if (check[i] == false) {
+                    num +=1;
                 }
             }
-
-            if(!check[0])
-            {
-                objImg1.src = imgArray[imgNum[0]][0];
+            var url_GET = '../get_random_character?data='
+            url_GET = url_GET + JSON.stringify({required: num, exclude: imgNum});
+            var req = new XMLHttpRequest();
+            req.open('GET', url_GET, true);
+            req.resposeType = 'json';
+            req.onreadystatechange = function(e) {
+                if (req.readyState === XMLHttpRequest.DONE) {
+                    if (req.status == 200) {
+                        newcards = JSON.parse(req.response)["result"];
+                        j = 0;
+                        for (var i = 0; i < imgNum.length; i++) {
+                            if(check[i] == false) {
+                                imgNum[i] = newcards[j];
+                                j++;
+                            }
+                        }
+                        if(!check[0])
+                        {
+                            objImg1.src = "/static/img/char/" + imgNum[0];
+                        }
+                        if(!check[1])
+                        {
+                            objImg2.src = "/static/img/char/" + imgNum[1];
+                        }
+                        if(!check[2])
+                        {
+                            objImg3.src = "/static/img/char/" + imgNum[2];
+                        }
+                        if(!check[3])
+                        {
+                            objImg4.src = "/static/img/char/" + imgNum[3];
+                        }
+                    }
+                }
             }
-
-            if(!check[1])
-            {
-                objImg2.src = imgArray[imgNum[1]][0];
-            }
-
-            if(!check[2])
-            {
-                objImg3.src = imgArray[imgNum[2]][0];
-            }
-
-            if(!check[3])
-            {
-                objImg4.src = imgArray[imgNum[3]][0];
-            }
+            req.send();
         }
     });
+
     $("#next_shape").click(function() {
         var arrCharacter = new Array();
 
@@ -164,17 +166,15 @@ function random_character() {
                 charCnt+=1;
         }
         if(charCnt<2){
-            alert('캐릭터를 적어도 두명 선택해주세요');
+            createModal("warning", "경고", "캐릭터를 적어도 두명 선택해주세요");
         } else {
             for(i=1;i<=4; i++){
                 if(check[i-1]) {
                     charIdName = "card"+i;
-
-                    bgImageUrl = imgArray[imgNum[i-1]][0];
+                    bgImageUrl = document.getElementById(charIdName).src;
                     arrCharacter.push(bgImageUrl);
                 }
             }
-
             var jsonObject = new Object();
             jsonObject.charList = arrCharacter;
             var jsonData = JSON.stringify(jsonObject);
@@ -183,6 +183,30 @@ function random_character() {
             document.getElementById("sendJson").submit();
         }
     });
+}
 
+function createModal(type, title, message){
+    if(type=="warning"){
+        //경고일 때
+        document.querySelector('#modal_button_ok').style.display = '';
+        document.querySelector('#modal_button_yes').style.display = 'none';
+        document.querySelector('#modal_button_no').style.display = 'none';
 
+        document.querySelector('.modal_wrap').style.display ='block';
+        document.querySelector('.black_bg').style.display ='block';
+        document.querySelector('#modal_title').innerText = title;
+        document.querySelector('#modal_context').innerText = message;
+    }
+}
+
+function removeModal(){
+    document.querySelector('.modal_wrap').style.display ='none';
+    document.querySelector('.black_bg').style.display ='none';
+}
+function modalOk(){
+    removeModal();
+}
+function modalYes(){
+}
+function modalNo(){
 }

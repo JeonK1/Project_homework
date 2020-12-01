@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% if user.is_authenticated %}
     <link rel="stylesheet" type="text/css" href="{% static 'main_page.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
+    <script type="text/javascript" src="{% static 'navbar.js' %}"></script>
+<!--    <script type="text/javascript" src="{% static 'dragndrop_upload.js' %}"></script>-->
     <title>main_page</title>
     {% else %}
     <link rel="stylesheet" type="text/css" href="{% static 'login_page.css' %}">
@@ -18,56 +21,61 @@
 <body>
 
         {% if user.is_anonymous %}
-            <div class="background" id="backGround">
+        <div class="container" id="background" onclick="location.href='http://127.0.0.1:8000/accounts/naver/login'">
+
             <div class="logo" id="mainlogo"></div>
-            <div class="logo" id="logo">AI PUBLISHER</div>
-            <div id="naverIdLogin" onclick="location.href='http://127.0.0.1:8000/accounts/naver/login'"></div>
-            </div>
+            <div class="logo" id="logo"></div>
+            <div class="logo" id="touch_screen">화면을 터치해서 로그인 해주세요.</div>
+
+        </div>
         {% else %}
-            <div class="background" id="baseground">
 
-
-                <div class="gallery" id="gallery">
-                    <div class="gallery" id="gallery_text">나의 책장</div>
-                    <div class="gallery" id="gallery_btn" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/show_gallery'">책장으로 이동</div>
-                </div>
-
-
-                <div claas="nextstep" id="make_str_box">
-                    <div class="nextstep" id="make_str_text1">나만의 동화 만들기</div>
-                    <div class="nextstep" id="make_str_text2">쉽고 재미있게 동화를 만들어보세요.</div>
-                    <div class="nextstep" id="make_str_btn"  onclick="location.href='http://127.0.0.1:8000/AI_Publisher/set_character'">새 동화 만들기</div>
-                </div>
-
-                <div class="example" id="example_box">
-                    <div class="example" id="example_text1">페페와<br>할아버지</div>
-                    <div class="example" id="example_text2">예시 동화를 읽어보세요.</div>
-                    <div class="example" id="example_btn">읽기</div>
-                </div>
-
-                <div class="introduce" id="introduction_box">
-                    <div class="introduce" id="introduction_text1">About us</div>
-                    <div class="introduce" id="introduction_text2">AI publisher는 무엇인가요?<br>어떤 일을 할  수 있나요?</div>
-                    <div class="introduce" id="introduction_btn">더 알아보기</div>
-                </div>
-
-                <div class="upload" id="upload_box">
-                    <div class="upload" id="upload_text1">Upload File</div>
-                    <div class="upload" id="upload_img_background">
-                        <div class="upload" id="upload_img"></div>
-                    </div>
-                    <div class="upload" id="upload_text2">Drag n Drop here<h1 id="browse_text1">Or</h1><h1 id="browse_text2">Browse</h1></div>
-                    <div class="upload" id="dragndrop"></div>
-                    <div class="upload" id="upload_btn">Upload Now</div>
-                </div>
-
-                <div id="test"><a href="http://127.0.0.1:8000/accounts/logout/">{{user.email}}</a></div>
-                <form action="http://127.0.0.1:8000/accounts/logout/" method="post">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="/AI_Publisher/"/>
-                    <input type="submit" value="로그아웃">
-                </form>
+        <div class="container" id="background_main">
+            <!--노리스 아이콘-->
+            <div class="icon" id="noris_icon"></div>
+            <!--오늘은 무엇을 해볼까요?-->
+            <div class="text" id="today_text">
+                <h3 class="text_font" id="text1">오늘은</h3><br>
+                <h3 class="text_font" id="text2"><strong>무엇을</strong></h3>
+                <h3 class="text_font" id="text3">&nbsp;해볼까요?</h3>
             </div>
+
+            <!--나의 책장-->
+            <div class="container" id="gallery_container" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/user_info'">
+                <div class="gallery" id="gallery_person"></div>
+                <div class="gallery" id="gallery_arrow"></div>
+                <div class="gallery" id="gallery_text_container">
+                    <h3 class="gallery_text" id="gallery_text1">나의</h3>
+                    <h3 class="gallery_text" id="gallery_text2">책장</h3>
+                </div>
+            </div>
+
+            <!--동화 읽으러가기-->
+            <div class="container" id="sample_container">
+                <div class="sample" id="sample_arrow"></div>
+                <div class="sample" id="sample_deco"></div>
+                <div class="sample" id="sample_text_container">
+                    <h3 class="sample" id="sample_text1">&nbsp;&nbsp;&nbsp;&nbsp;동화</h3>
+                    <h3 class="sample" id="sample_text2">읽으러가기</h3>
+                </div>
+            </div>
+
+            <!--나만의 동화 만들기-->
+            <div class="container" id="make_story_background" onclick="location.href='http://127.0.0.1:8000/AI_Publisher/set_character'">
+                <div class="container" id="make_story_container"></div>
+                <div class="make_story" id="make_story_arrow"></div>
+                <div class="make_story" id="make_story_person"></div>
+                <div class="make_story" id="make_story_sh"></div>
+                <div class="make_story" id="make_story_water"></div>
+                <div class="make_story" id="make_story_triangle"></div>
+                <div class="make_story" id="make_story_tree"></div>
+                <div class="make_story" id="make_story_text_container">
+                    <h3 class="make_story_text" id="make_story_text1">&nbsp;&nbsp;&nbsp;나만의</h3><br>
+                    <h3 class="make_story_text" id="make_story_text2">동화</h3>
+                    <h3 class="make_story_text" id="make_story_text3">만들기</h3>
+                </div></div>
+            </div>
+
         {% endif %}
 
 
