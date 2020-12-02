@@ -109,19 +109,16 @@ function story_make(){
     var result = new Array("왜 "+hero+"은(는) "+emotion_array[3]+"한 상태에서 "+emotion_array[4]+"한 상태가 되었나요?",
                            "이 이야기의 결말은 어떻게 되나요?");
 
-<<<<<<< HEAD
     get_background();
 
     //$("#RightSidebar").hide();
-=======
->>>>>>> 1448feb96e721c23d30e3748a00900137c99586d
     $("#keyword_text").text(event);
     $("#guide_text").text(expos);
-    //$("#decorate_ch_1").hide();
-    //$("#decorate_ch_2").hide();
-    //$("#decorate_ch_3").hide();
-    //$("#decorate_ch_4").hide();
-    //$("#text_box").hide();
+    $("#decorate_ch_1").hide();
+    $("#decorate_ch_2").hide();
+    $("#decorate_ch_3").hide();
+    $("#decorate_ch_4").hide();
+    $("#text_box").hide();
 
     // 넥스트 버튼 눌렀을 때
     $("#next_shape").click(function () {

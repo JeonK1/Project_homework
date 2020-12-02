@@ -1,5 +1,8 @@
 var backArray;
 
+// 사용자가 적용한 배경 저장
+var arrback = ""
+
 function get_background(personal = false) {
     backArray = document.getElementById("RightSidebar_scroll");
     var url_GET = '../get_background?data=';
@@ -28,22 +31,13 @@ function make_background_button(i, src) {
     picElement.id = "Ground_small_" + (i+1).toString();
     picElement.style.backgroundImage = "url('"+src+"')";
     divElement.onclick = function() {
-        $("#left_frame").css( {"background-image":($( "#"+picElement.id ).css( "background-image" )),
-                            "background-position":"left",
-                            "background-size":"1020px 680px"});
-        $("#right_frame").css( {"background-image":($( "#"+picElement.id ).css( "background-image" )),
-                            "background-position":"right",
-                            "background-size":"1020px 680px"});
-        arrback[count] = $( "#"+picElement.id  ).css( "background-image" );
+        $("#Cover").css( {"background-image":($( "#"+picElement.id ).css( "background-image" )),
+                            "background-size":"cover"});
+        arrback = $( "#"+picElement.id  ).css( "background-image" );
     };
     divElement.append(picElement);
     backArray.append(divElement);
 }
-
-var viewarray = new Array(4);
-    for (var i = 0; i < viewarray.length; i++){
-        viewarray[i] = true; //초기화
-    }
 
 function cover_decoration(){
     $("#decorate_ch_1").hide();
@@ -129,42 +123,42 @@ function cover_decoration(){
                     });
 
     $("#Card_small_1").click(function () {
-        if(viewarray[0] == true){
-            viewarray[0] = false;
-            $("#decorate_ch_1").show();
+    if($("#decorate_ch_1").css("display") == "none"){
+        $("#decorate_ch_1").show();
         } else {
-            viewarray[0] = true;
-            $("#decorate_ch_1").hide();
+        $("#decorate_ch_1").hide();
         }
     });
 
     $("#Card_small_2").click(function () {
-        if(viewarray[1] == true){
-            viewarray[1] = false;
-            $("#decorate_ch_2").show();
+    if($("#decorate_ch_2").css("display") == "none"){
+        $("#decorate_ch_2").show();
         } else {
-            viewarray[1] = true;
-            $("#decorate_ch_2").hide();
+        $("#decorate_ch_2").hide();
         }
     });
 
     $("#Card_small_3").click(function () {
-        if(viewarray[2] == true){
-            viewarray[2] = false;
-            $("#decorate_ch_3").show();
+    if($("#decorate_ch_3").css("display") == "none"){
+        $("#decorate_ch_3").show();
         } else {
-            viewarray[2] = true;
-            $("#decorate_ch_3").hide();
+        $("#decorate_ch_3").hide();
         }
     });
 
     $("#Card_small_4").click(function () {
-        if(viewarray[3] == true){
-            viewarray[3] = false;
-            $("#decorate_ch_4").show();
+    if($("#decorate_ch_4").css("display") == "none"){
+        $("#decorate_ch_4").show();
         } else {
-            viewarray[3] = true;
-            $("#decorate_ch_4").hide();
+        $("#decorate_ch_4").hide();
+        }
+    });
+
+    $("#guide_image").click(function () {
+    if($("#text_box").css("display") == "none"){
+        $("#text_box").show();
+        } else {
+        $("#text_box").hide();
         }
     });
 
