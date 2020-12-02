@@ -1,39 +1,88 @@
 
 function set_page(){
+//    var bookinfo = $("#userbook").val();    // 책 권수
+//    var bookinfo_id = $("#userbooknum").val(); // DB bookinfo에서 bookno 값
+//    var backgroundUrl = $("#mybackground").val(); // DB bookPage에 있는 배경url 값
+//    var booktitle = $("#title").val(); // DB bookinfo에서 BookTitle 값
 
-    //나중에 JSON으로 받아와서 넣어야함.
+        //만든 책의 권수
+    var String1 = document.getElementById("userbook").value.replace('[',"");
+    madebook = String1.replace(']',"");
 
-    alert($("#userbook").val());
-    alert($("#mybackground").val());
-    alert($("#title").val());
 
-//    //만든 책의 권수
-//    var String1 = document.getElementById("userbook").value.replace('[',"");
-//    String1 = String1.replace(']',"");
-//    madebook = String1;
-//    if(madebook<=3){
-//        document.getElementById("left_move").style.display="none";
-//        document.getElementById("right_move").style.display="none";
-//    }
-//
-//    //책 커버의 그림
-//
-//    var String2 = document.getElementById("mybackground").value.replace('[',"");
-//    String2 = String2.replace(']',"");
-//    String2 = String2.replaceAll("'","");
-//    String2 = String2.replaceAll("'","");
-//
-//    var backgroundfile = String2.split(', ');
-//
-//
-//    //책 제목
-//    var String3 = document.getElementById("title").value.replace('[',"");
-//    String3 = String3.replace(']',"");
-//    String3 = String3.replaceAll("'","");
-//    String3 = String3.replaceAll("'","");
-//
-//    var title = String3.split(', ');
-//    console.log(title)
+    //책 커버의 그림
+    var String2 = document.getElementById("mybackground").value.replace('[',"");
+    String2 = String2.replace(']',"");
+    String2 = String2.replaceAll("'","");
+    String2 = String2.replaceAll("'","");
+
+    var backgroundfile = String2.split(', ');
+
+
+    //책 제목
+    var String3 = document.getElementById("title").value.replace('[',"");
+    String3 = String3.replace(']',"");
+    String3 = String3.replaceAll("'","");
+    String3 = String3.replaceAll("'","");
+
+    var title = String3.split(', ');
+    console.log(title)
+
+    //책 bookinfo_id 값
+    var String4 = document.getElementById("userbooknum").value.replace('[',"");
+    String4 = String4.replace(']',"");
+    String4 = String4.replaceAll("'","");
+    String4 = String4.replaceAll("'","");
+
+    var booknum = String4.split(', ');
+
+//    alert(madebook);
+//    alert(backgroundfile[0]);
+//    alert(title);
+//    alert(booknum);
+
+
+    $("#book1").css( {"background-image":backgroundfile[0],
+                                "background-size":"cover"});
+    $("#book1").html("1번책");
+    $("#book2").css( {"background-image":backgroundfile[1],
+                                "background-size":"cover"});
+    $("#book2").html("2번책");
+//    $("#book2").css( {"background-image":backgroundfile[2],
+//                                "background-size":"cover"});
+//    $("#book2").html("3번책");
+
+    $("#book1").click(function () {
+
+        var jsonObject = new Object();
+//        jsonObject.charList = arrCharacter;
+        var jsonData = JSON.stringify(jsonObject);
+        console.log(jsonData);
+        document.getElementById("jsonData").value = jsonData;
+        document.getElementById("sendJson").submit();
+
+    });
+
+    $("#book2").click(function () {
+
+
+        var jsonObject = new Object();
+//        jsonObject.charList = arrCharacter;
+        var jsonData = JSON.stringify(jsonObject);
+        console.log(jsonData);
+        document.getElementById("jsonData").value = jsonData;
+        document.getElementById("sendJson").submit();
+
+    });
+
+//    $("#book3").click(function () {
+//        var jsonObject = new Object();
+//        jsonObject.charList = arrCharacter;
+//        var jsonData = JSON.stringify(jsonObject);
+//        console.log(jsonData);
+//        document.getElementById("jsonData").value = jsonData;
+//        document.getElementById("sendJson").submit();
+//    });
 
 
 
@@ -123,9 +172,4 @@ function set_page(){
 //            }
 //
 //        });
-
-
-
-
-
 }

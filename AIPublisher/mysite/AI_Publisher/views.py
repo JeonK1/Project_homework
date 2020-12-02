@@ -182,6 +182,7 @@ def show_gallery(request):
     bookInfos = BookInfo.objects.raw('SELECT * FROM AI_Publisher_bookinfo WHERE length(BookTitle) > 0') # BookTitle 이 공백 아닌 값들 가져오기
     backgroundList = []
     titleList = []
+    userbooknum = []
     userbook = []
     for bookInfo in bookInfos:
         no = bookInfo.BookNo # 책 번호
@@ -191,6 +192,7 @@ def show_gallery(request):
         coverBackgroundUrl = myBookCoverPage.backgroundUrl
         backgroundList.append(coverBackgroundUrl)
         titleList.append(title)
+        userbooknum.append(no)
 
     print(backgroundList)
     print(titleList)
@@ -198,7 +200,8 @@ def show_gallery(request):
     userbook.append(len(backgroundList))
     return render(request, 'AI_Publisher/show_gallery.html', {'mybackground': backgroundList,
                                                               'title': titleList,
-                                                              'userbook': userbook})
+                                                              'userbook': userbook,
+                                                              'userbooknum': userbooknum})
 
     # else:
     # dummy data
