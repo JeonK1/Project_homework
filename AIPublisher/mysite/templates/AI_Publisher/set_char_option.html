@@ -19,143 +19,67 @@
 </head>
 <!--<body onload="navbar_function();setCard();">-->
 <body onload="navbar_function();initCharData();removeSpeechBox();removeWordList();"remove>
+
     <!--배경 및 프레임-->
-    <div class="BackGround" id="BackGround">
+    <div class="container" id="background">
 
-        <!-- 모달창 -->
-        <div class="black_bg" onclick="removeModal();"></div>
-        <div class="modal_wrap">
-            <div id="modal_warning" > <img src="../../static/img/ic_warning.png"> </div>
-            <div id="modal_title">
-                모달제목
-            </div>
-            <div id="modal_context">
-                모달내용
-            </div>
-            <div id="modal_button_wrap">
-                <div class="modal_button" id="modal_button_ok" onclick="modalOk();">확인</div>
-                <div class="modal_button" id="modal_button_yes" onclick="modalYes_nav();">예</div>
-                <div class="modal_button" id="modal_button_no" onclick="modalNo_nav();">아니오</div>
-            </div>
-        </div>
-        <!--제목-->
-        <div class="Field" id="Field">
-            <div class="stepbox" id="stepbar">
-                <div class="step" id="step1">인물카드선택</div>
-                <div class="step" id="step2">인물카드설정</div>
-                <div class="step" id="step3">관계카드설정</div>
-            </div>
+        <!--노리스 아이콘 및 배경-->
+        <div class="icon" id="noris_icon"></div>
+        <div class="background" id="set_char_option_background"></div>
+
+        <!--텍스트-->
+        <div class="text_box" id="text_box">
+            <h3 class="text_deco" id="text1">이 인물은</h3><br>
+            <h3 class="text_deco" id="text2">어떤 사람</h3>
+            <h3 class="text_deco" id="text3">일까요?</h3>
         </div>
 
 
+        <!--이름표시-->
+        <h3 class="name_text" id="name_text1">- 이름은</h3>
+        <input class="name_text" id="name_box" type="text" name="card_option">
+        <h3 class="name_text" id="name_text2">이에요.</h3>
 
-        <!--다음 버튼-->
-        <div class="next_shape" id="next_shape" onclick="sendToNextPage();" >
-            <div class="next_step_body_1" id="next_step_body_1">
-                <div class="next_step_body_2" id="next_step_body_2">
-                    <div class="next_step_text" id="next_step_text">Next</div>
-                    <div class="next_step_image" id="next_step_image"></div>
-                </div>
-            </div>
-        </div>
-        <!--<a href="/AI_Publisher/get_relation_keyprob/" target=_self>-->
-            <!--<div class="next_step" id="next_step"></div></a>-->
+        <!--성격표시-->
+        <h3 class="personality_text" id="personality_text1">- 성격은</h3>
+        <!--성격표시 첫째줄-->
+        <div class="personality1" id="personality1">낭만적</div>
+        <div class="personality1" id="personality2">판단력이 좋은</div>
+        <div class="personality1" id="personality3"></div>
+        <div class="personality1" id="personality4"></div>
+        <!--성격표시 둘째줄-->
+        <div class="personality2" id="personality5"></div>
+        <div class="personality2" id="personality6"></div>
+        <div class="personality2" id="personality7"></div>
+        <div class="personality2" id="personality8"></div>
+        <!--성격표시 셋째줄-->
+        <div class="personality3" id="personality9"></div>
+        <div class="personality3" id="personality10"></div>
+        <div class="personality3" id="personality11"></div>
+        <h3 class="personality_text" id="personality_text2">이에요.</h3>
 
-        <!--왼쪽 캐릭터 카드 메뉴-->
-        <div class="character_card_wrap" id="character_card_wrap">
-        {% for character in getJSONData.charList %}
-            <div class="character_card" id="card{{forloop.counter}}" onclick="settingCharData({{forloop.counter | add:"-1"}})">
-                <img class="card_img" id="card_{{forloop.counter}}" src={{character}}>
-            </div>
-        {% endfor %}
-        </div>
-        <!--중간의 캐릭터 카드 메뉴-->
-        <div class="main_card" id="set_card">
-            <img class="card_img" id="setCard" src={{getJSONData.charList.0}}>
-        </div>
 
-        <!--캐릭터 설정 이름-->
-        <div class="card_option" id="name_box">
-            <div class="card_option" id="name">이름</div>
-            <input class="char_input_text" id="name_text" type="text" name="card_option" >
+        <!--주인공 표시-->
+        <h3 class="main_char_text" id="main_char_text1">- 이 친구는 주인공인가요?</h3>
+        <div class="main_char" id="main_char_yes">네</div>
+        <div class="main_char" id="main_char_no">아니에요</div>
 
-        </div>
-        <!--캐릭터 설정 성격-->
-        <div class="card_option" id="personality_box">
-            <div class="card_option" id="personality">성격</div>
-            <div class="personality_wrap">
-                <img id="personality_comment" src="../../static/img/ic_comment.png" onmouseenter="createSpeechBox()">
-                <input class="char_input_text" id="personality_text" type="text" name="card_option" >
-            </div>
-        </div>
-        <!-- 설정 옆의 말풍선 -->
-        <div id="speech_box">
-            <img id="speech_box_closeBtn" src="../../static/img/close_white.png" onclick="removeSpeechBox()">
-            <div id="speech_box_context">
-                잘 떠오르지 않는다면<br>도움을 받아보세요
-            </div>
-            <div id="speech_box_wordBtn" onclick="createWordList()">
-                단어 목록 보기
-            </div>
-        </div>
-        <!-- 성격 단어 목록 -->
-        <div id="charWord_wrap">
-            <img id="charWord_closeBtn" src="../../static/img/close_gray.png" onclick="removeWordList()">
-            <div id="charWord_title">성격단어목록</div>
-            <div id="charWord_line"></div>
-            <div id="charWord_list"></div>
-            <!-- charWord_list 안에 class가 charWord_word인 div가 들어간다.
-            js에서 hasChildNode()로 검사해서 빈칸인지 알아내기 때문에, 주석 포함해서 어떤 태그라도 들어가있으면 작동하지 않는다.-->
+
+
+        <!--이전 페이지-->
+        <div class="backpage" id="backpage_btn">
+            <div class="backpage" id="backpage_arrow"></div>
+            <div class="backpage" id="backpage_text">이전으로</div>
         </div>
 
-        <!--캐릭터 설정 기타-->
-        <div class="card_option" id="etc_box">
-            <div id="card_option" id="etc">기타</div>
-            <input class="char_input_text" id="etc_text" type="text" sname="card_option" >
-        </div>
-
-            <!--캐릭터 설정 기타-->
-        <div class="card_option" id="main_char_box">
-            <input id="ck1" type="checkbox" name="card_option">
-            <div class="card_option" id="main_char"> 주인공인가요?</div>
+        <!--다음 페이지-->
+        <div class="nextpage" id="nextpage_btn">
+            <div class="nextpage" id="nextpage_arrow"></div>
+            <div class="nextpage" id="nextpage_text">다음으로</div>
         </div>
 
 
-        <!-- 네비게이션 바 -->
-        <div class="upper_bar" id="upper_bar">
-            <div class="AI_Publisher_image" id="AI_Publisher_image"></div>
-            <div class="user_icon" id="user_icon"></div>
-            <div class="username" id="username"></div>
-        </div>
 
-        <!--계정 메뉴-->
-        <div class="ID_Menu" id="ID_Menu">
-            <div class="menu_1_item" id="menu_1_item">
-                <div class="menu_1_text_box" id="menu_1_text_box">
-                    <div class="menu_1_text" id="menu_1_text">내 정보 관리</div>
-                </div>
-            </div>
-            <div class="menu_2" id="menu_2">
-                <div class="menu_2_item" id="menu_2_item">
-                    <div class="menu_2_icon_box" id="menu_2_icon_box">
-                        <div class="menu_2_icon" id="menu_2_icon"></div>
-                    </div>
-                    <div class="menu_2_text_box" id="menu_2_text_box">
-                        <div class="menu_2_text" id="menu_2_text">Converted Photos</div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu_3" id="menu_3">
-                <div class="menu_3_item" id="menu_3_item">
-                    <div class="menu_3_icon_box" id="menu_3_icon_box">
-                        <div class="menu_3_icon" id="menu_3_icon"></div>
-                    </div>
-                    <div class="menu_3_text_box" id="menu_3_text_box">
-                        <div class="menu_3_text" id="menu_3_text">sharing</div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 </html>

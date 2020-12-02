@@ -108,7 +108,7 @@ function random_character() {
     var count = 0;
 
    //이미지 다시뽑기
-    $("#redraw_shape").click(function() {
+    $("#redraw_btn").click(function() {
         count += 1;
         var num = 0;
         if(count < 3) {
@@ -156,7 +156,7 @@ function random_character() {
         }
     });
 
-    $("#next_shape").click(function() {
+    $("#nextpage_btn").click(function() {
         var arrCharacter = new Array();
 
         //캐릭터 개수 세어서, 0명 선택인거 막아주기

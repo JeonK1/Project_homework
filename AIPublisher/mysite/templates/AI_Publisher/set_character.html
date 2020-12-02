@@ -21,77 +21,57 @@
 </head>
 <body onload="random_character();navbar_function();">
     <!--배경 및 프레임-->
-    <div class="BackGround" id="BackGround">
-        <!-- 모달창 -->
-        <div class="black_bg" onclick="removeModal();"></div>
-        <div class="modal_wrap">
-            <div id="modal_warning" > <img src="../../static/img/ic_warning.png"> </div>
-            <div id="modal_title">
-                모달제목
-            </div>
-            <div id="modal_context">
-                모달내용
-            </div>
-            <div id="modal_button_wrap">
-                <div class="modal_button" id="modal_button_ok" onclick="modalOk();">확인</div>
-                <div class="modal_button" id="modal_button_yes" onclick="modalYes_nav();">예</div>
-                <div class="modal_button" id="modal_button_no" onclick="modalNo_nav();">아니오</div>
-            </div>
-        </div>
+    <div class="container" id="background">
 
-        <div class="Field" id="Field">
-            <div class="stepbox" id="stepbar">
-                <div class="step" id="step1">인물카드선택</div>
-                <div class="step" id="step2">인물카드설정</div>
-                <div class="step" id="step3">관계카드설정</div>
-            </div>
-        </div>
-        <!--카드 뭉치-->
-        <div class="card_stack" id="card_stack_box">
-            <div class="cardstack1" id="card_stack_1"></div>
-            <div class="cardstack1" id="card_stack_2"></div>
-            <div class="cardstack1" id="card_stack_3"></div>
-        </div>
-        <!--화면아래 초록색 바-->
-        <div class="bottom_bar" id="bottom_bar"></div>
-
-        <!--캐릭터 배치-->
-
-        <div class="cardbox" id="card_box">
-            <div class="card1" id="card_1"><img id="card1"></div>
-            <div class="card2" id="card_2"><img id="card2" width="111px" height="181px"></div>
-            <div class="card3" id="card_3"><img id="card3" width="111px" height="181px"></div>
-            <div class="card4" id="card_4"><img id="card4" width="111px" height="181px"></div>
-        </div>
-
-
-
-        <!-- 네비게이션 바 -->
-        <div class="upper_bar" id="upper_bar">
-            <div class="AI_Publisher_image" id="AI_Publisher_image"></div>
-            <div class="user_icon" id="user_icon"></div>
-            <div class="username" id="username"></div>
-        </div>
-
-        <!--다음 단계-->
-        <div class="next_shape" id="next_shape">
-            <div class="next_step_body_1" id="next_step_body_1">
-                <div class="next_step_body_2" id="next_step_body_2">
-                    <div class="next_step_text" id="next_step_text">Next</div>
-                    <div class="next_step_image" id="next_step_image" onclick="next_page()"></div>
-                </div>
-            </div>
-        </div>
+        <!--노리스 아이콘-->
+        <div class="icon" id="noris_icon"></div>
 
         <!--다시 뽑기-->
-        <div class="redraw" id="redraw_shape">
-            <div class="redraw" id="redraw_body_1">
-                <div class="redraw" id="redraw_body_2">
-                    <div class="redraw" id="redraw_text">Again</div>
-                    <div class="redraw" id="redraw_image"></div>
-                </div>
-            </div>
+        <div class="redraw" id="redraw_btn">
+            <div class="redraw" id="redraw_img"></div>
+            <div class="redraw" id="redraw_text">다른 캐릭터들 볼래요!</div>
         </div>
+
+
+
+        <!--텍스트-->
+        <div class="text_box" id="text_box">
+            <h3 class="text_deco" id="text1">등장인물을</h3><br>
+            <h3 class="text_deco" id="text2">선택해볼게요!</h3>
+        </div>
+
+        <!--이전 페이지-->
+        <div class="backpage" id="backpage_btn">
+            <div class="backpage" id="backpage_arrow"></div>
+            <div class="backpage" id="backpage_text">이전으로</div>
+        </div>
+
+        <!--다음 페이지-->
+        <div class="nextpage" id="nextpage_btn">
+            <div class="nextpage" id="nextpage_arrow"></div>
+            <div class="nextpage" id="nextpage_text">다음으로</div>
+        </div>
+
+        <!--카드 정하기-->
+        <div class="background" id="set_character_background"></div>
+        <div class="card" id="card_1"><img class="character_card" id="card1"></div>
+        <div class="card" id="card_2"><img class="character_card" id="card2"></div>
+        <div class="card" id="card_3"><img class="character_card" id="card3"></div>
+        <div class="card" id="card_4"><img class="character_card" id="card4"></div>
+
+        <!--카드 가이드-->
+        <div class="guide_card" id="guide_card1"></div>
+        <div class="guide_card" id="guide_card2"></div>
+        <div class="guide_card" id="guide_card3"></div>
+
+
+        <!--카드 가이드 텍스트-->
+
+        <div class="guide" id="guide_img"></div>
+        <div class="guide" id="guide_text">카드를 눌러<br>캐릭터를<br>뽑아주세요</div>
+
+
+
     </div>
 </body>
 </html>
