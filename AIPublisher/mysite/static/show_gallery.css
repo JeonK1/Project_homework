@@ -119,7 +119,6 @@
     height: 462.99px;
     left: 90px;
     top: 393px;
-
 }
 
 #book1 {
@@ -128,7 +127,7 @@
     width: 185px;
     left: 235px;
     top: 155px;
-
+    transform: rotate(45.21deg);
     background-image: url("img/book1.svg");
 
 }
@@ -139,7 +138,6 @@
     height: 327.37px;
     left: 15px;
     top: 65px;
-
     transform: rotate(-20.79deg);
     background-image: url("img/book1background.svg");
 }
@@ -158,8 +156,9 @@
     position: absolute;
     height: 274px;
     width: 223px;
-    left: 70px;
-    top: 35px;
+    left: 27.17px;
+    top: 91px;
+    transform: rotate(70.88deg);
     background-image: url("img/book2.svg");
 }
 
@@ -199,11 +198,9 @@
     position: absolute;
     height: 321px;
     width: 263px;
-    left: 320px;
-    top: 30px;
-
-
-    transform: rotate(157.02deg);
+    left: 290px;
+    top: 0px;
+    transform: rotate(285deg);
     background-image: url("img/book3.svg");
 }
 
@@ -222,8 +219,8 @@
     position: absolute;
     height: 149.55px;
     width: 125.03px;
-    left: 80px;
-    top: 50px;
+    left: 30px;
+    top: 10px;
 
     transform: rotate(157.02deg);
     background-image: url("img/book3_person.svg");
@@ -234,11 +231,10 @@
     position: absolute;
     width: 74.08px;
     height: 44.03px;
-    left: 220px;
-    top: 250px;
+    left: 350px;
+    top: 330px;
 
-
-    transform: rotate(102.53deg);
+    transform: rotate(50deg);
     background-image: url("img/book3_water.svg");
 }
 
