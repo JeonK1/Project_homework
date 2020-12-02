@@ -1,5 +1,6 @@
 // 사용자 위치
 var count = 0;
+var backArray;
 
 // 사용자가 적은 글들 저장
 var arrtext = new Array(5);
@@ -43,7 +44,37 @@ for (var i = 0; i < expos_info.length; i++){
     result_info[i][0] = "none";
 }
 
+function get_background(personal = false) {
+    backArray = document.getElementById("RightSidebar_scroll");
+    var url_GET = '../get_background?data=';
+    url_GET = url_GET + JSON.stringify({"personal": personal});
+    var req = new XMLHttpRequest();
+    req.open('GET', url_GET, true);
+    req.responseType = 'json';
+    req.onreadystatechange = function(e) {
+        if (req.readyState === XMLHttpRequest.DONE) {
+            if (req.status == 200) {
+                var backs = req.response["result"];
+                for (var i = 0; i < backs.length; i++) {
+                    make_background_button(i, "../../static/img/bg/" + backs[i]);
+                }
+            }
+        }
+    }
+    req.send();
+}
 
+function make_background_button(i, src) {
+    var divElement = document.createElement("div");
+    divElement.className="Ground_small";
+    var picElement = document.createElement("div");
+    picElement.className="Ground_small_img";
+    picElement.id = "Ground_small_" + (i+1).toString();
+    picElement.style.backgroundImage = "url('"+src+"')";
+    divElement.onclick = function() {select_background(picElement.id);};
+    divElement.append(picElement);
+    backArray.append(divElement);
+}
 
 function story_make(){
     // 주인공, 배경, 사건, 상대, 감정1, 감정2, 감정3, 감정4, 감정5
@@ -78,9 +109,9 @@ function story_make(){
     var result = new Array("왜 "+hero+"은(는) "+emotion_array[3]+"한 상태에서 "+emotion_array[4]+"한 상태가 되었나요?",
                            "이 이야기의 결말은 어떻게 되나요?");
 
+    get_background();
 
-
-    $("#RightSidebar").hide();
+    //$("#RightSidebar").hide();
     $("#keyword_text").text(event);
     $("#guide_text").text(expos);
     $("#decorate_ch_1").hide();
@@ -301,7 +332,6 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "top":expos_info[4][3],
                                         "left":expos_info[4][4]});
             $('#input_text').val('');
-            $("#RightSidebar").hide();
             $("#guide_text").text(expos);
             break;
         case 1:
@@ -338,7 +368,6 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "top":compli_info[4][3],
                                         "left":compli_info[4][4]});
             $('#input_text').val('');
-            $("#RightSidebar").show();
             $("#guide_text").text(compli);
             break;
         case 2:
@@ -375,7 +404,6 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "top":crisis_info[4][3],
                                         "left":crisis_info[4][4]});
             $('#input_text').val('');
-            $("#RightSidebar").show();
             $("#guide_text").text(crisis);
             break;
         case 3:
@@ -412,7 +440,6 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "top":climax_info[4][3],
                                         "left":climax_info[4][4]});
             $('#input_text').val('');
-            $("#RightSidebar").show();
             $("#guide_text").text(climax);
             break;
         case 4:
@@ -449,7 +476,6 @@ function next_move(count,expos,compli,crisis,climax,result){
                                         "top":result_info[4][3],
                                         "left":result_info[4][4]});
             $('#input_text').val('');
-            $("#RightSidebar").show();
             $("#guide_text").text(result);
             break;
         case 5:

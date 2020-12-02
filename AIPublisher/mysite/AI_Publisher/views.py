@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from .models import WordList
 from .models import CharList
+from .models import BackList
 from .models import BookTextList
 from .models import BookContetnsList
 from .models import BookInfo, BookPage, BookElement, BookInfo_bookPages
@@ -80,7 +81,7 @@ def get_keyword_card():
     return cards[0].WordContext
 
 def get_ground_card():
-    cards = WordList.objects.filter(WordType=5).order_by('?')[:1]
+    cards = WordList.objects.filter(WordType=4).order_by('?')[:1]
     return cards[0].WordContext
 
 # 단어 중에서 positive 3개 neutral 2개 negative 3개를 뽑아 리스트로 반환
@@ -167,12 +168,21 @@ def set_char_option(request):
     print(getjson)
     return render(request, 'AI_Publisher/set_char_option.html', {'getJSONData' : getjson})
 
+def get_background(request):
+    if (json.loads(request.GET.get('data')))['personal'] == False:
+        backs = BackList.objects.all()
+    pathlist = []
+    for i in range(len(backs)):
+        pathlist.append(backs[i].BackPic)
+    print(pathlist)
+    return JsonResponse({"result": pathlist})
 
 def show_gallery(request):
     # if request.method == 'POST':
     bookInfos = BookInfo.objects.raw('SELECT * FROM AI_Publisher_bookinfo WHERE length(BookTitle) > 0') # BookTitle 이 공백 아닌 값들 가져오기
     backgroundList = []
     titleList = []
+    userbooknum = []
     userbook = []
     for bookInfo in bookInfos:
         no = bookInfo.BookNo # 책 번호
@@ -182,6 +192,7 @@ def show_gallery(request):
         coverBackgroundUrl = myBookCoverPage.backgroundUrl
         backgroundList.append(coverBackgroundUrl)
         titleList.append(title)
+        userbooknum.append(no)
 
     print(backgroundList)
     print(titleList)
@@ -189,7 +200,8 @@ def show_gallery(request):
     userbook.append(len(backgroundList))
     return render(request, 'AI_Publisher/show_gallery.html', {'mybackground': backgroundList,
                                                               'title': titleList,
-                                                              'userbook': userbook})
+                                                              'userbook': userbook,
+                                                              'userbooknum': userbooknum})
 
     # else:
     # dummy data
@@ -310,3 +322,10 @@ def update_book(request):
     else:
         return JsonResponse({"result" : "false" })
 
+
+def read_book(request):
+    return render(request, 'AI_Publisher/read_book.html')
+
+    # message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
+    # getjson = json.loads(message) #Json 풀어주기
+    # return render(request, 'AI_Publisher/set_char_option.html', {'getJSONData' : getjson})

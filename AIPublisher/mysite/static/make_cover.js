@@ -1,7 +1,43 @@
-var viewarray = new Array(4);
-    for (var i = 0; i < viewarray.length; i++){
-        viewarray[i] = true; //초기화
+var backArray;
+
+// 사용자가 적용한 배경 저장
+var arrback = ""
+
+function get_background(personal = false) {
+    backArray = document.getElementById("RightSidebar_scroll");
+    var url_GET = '../get_background?data=';
+    url_GET = url_GET + JSON.stringify({"personal": personal});
+    var req = new XMLHttpRequest();
+    req.open('GET', url_GET, true);
+    req.responseType = 'json';
+    req.onreadystatechange = function(e) {
+        if (req.readyState === XMLHttpRequest.DONE) {
+            if (req.status == 200) {
+                var backs = req.response["result"];
+                for (var i = 0; i < backs.length; i++) {
+                    make_background_button(i, "../../static/img/bg/" + backs[i]);
+                }
+            }
+        }
     }
+    req.send();
+}
+
+function make_background_button(i, src) {
+    var divElement = document.createElement("div");
+    divElement.className="Ground_small";
+    var picElement = document.createElement("div");
+    picElement.className="Ground_small_img";
+    picElement.id = "Ground_small_" + (i+1).toString();
+    picElement.style.backgroundImage = "url('"+src+"')";
+    divElement.onclick = function() {
+        $("#Cover").css( {"background-image":($( "#"+picElement.id ).css( "background-image" )),
+                            "background-size":"cover"});
+        arrback = $( "#"+picElement.id  ).css( "background-image" );
+    };
+    divElement.append(picElement);
+    backArray.append(divElement);
+}
 
 function cover_decoration(){
     $("#decorate_ch_1").hide();
@@ -14,7 +50,7 @@ function cover_decoration(){
     jsonData = jsonData.replaceAll('\'', '\"');
 
     $("#decorate_ch_1").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#Cover",
         maxWidth: 500,
         minWidth: 85,
@@ -32,7 +68,7 @@ function cover_decoration(){
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
     $("#decorate_ch_2").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#Cover",
         maxWidth: 500,
         minWidth: 85,
@@ -50,7 +86,7 @@ function cover_decoration(){
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
     $("#decorate_ch_3").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#Cover",
         maxWidth: 500,
         minWidth: 85,
@@ -68,7 +104,7 @@ function cover_decoration(){
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
     $("#decorate_ch_4").resizable({
-        handles : 'se',
+        handles : 'w,n,s,e',
         containment:"#Cover",
         maxWidth: 500,
         minWidth: 85,
@@ -87,42 +123,42 @@ function cover_decoration(){
                     });
 
     $("#Card_small_1").click(function () {
-        if(viewarray[0] == true){
-            viewarray[0] = false;
-            $("#decorate_ch_1").show();
+    if($("#decorate_ch_1").css("display") == "none"){
+        $("#decorate_ch_1").show();
         } else {
-            viewarray[0] = true;
-            $("#decorate_ch_1").hide();
+        $("#decorate_ch_1").hide();
         }
     });
 
     $("#Card_small_2").click(function () {
-        if(viewarray[1] == true){
-            viewarray[1] = false;
-            $("#decorate_ch_2").show();
+    if($("#decorate_ch_2").css("display") == "none"){
+        $("#decorate_ch_2").show();
         } else {
-            viewarray[1] = true;
-            $("#decorate_ch_2").hide();
+        $("#decorate_ch_2").hide();
         }
     });
 
     $("#Card_small_3").click(function () {
-        if(viewarray[2] == true){
-            viewarray[2] = false;
-            $("#decorate_ch_3").show();
+    if($("#decorate_ch_3").css("display") == "none"){
+        $("#decorate_ch_3").show();
         } else {
-            viewarray[2] = true;
-            $("#decorate_ch_3").hide();
+        $("#decorate_ch_3").hide();
         }
     });
 
     $("#Card_small_4").click(function () {
-        if(viewarray[3] == true){
-            viewarray[3] = false;
-            $("#decorate_ch_4").show();
+    if($("#decorate_ch_4").css("display") == "none"){
+        $("#decorate_ch_4").show();
         } else {
-            viewarray[3] = true;
-            $("#decorate_ch_4").hide();
+        $("#decorate_ch_4").hide();
+        }
+    });
+
+    $("#guide_image").click(function () {
+    if($("#text_box").css("display") == "none"){
+        $("#text_box").show();
+        } else {
+        $("#text_box").hide();
         }
     });
 
@@ -137,10 +173,6 @@ function cover_decoration(){
                 minWidth: 200,
                 maxHeight: 400,
                 minHeight: 100,
-                //비율유지
-                aspectRatio: true,
-                //마우스 hover 아닐때 핸들러 숨기기
-                autoHide: true
             });
         }
     });
@@ -152,10 +184,7 @@ function cover_decoration(){
         minWidth: 200,
         maxHeight: 400,
         minHeight: 100,
-        //비율유지
-        aspectRatio: true,
-        //마우스 hover 아닐때 핸들러 숨기기
-        autoHide: true
+
     });
 
     $("#Cover_title").draggable({
@@ -166,35 +195,8 @@ function cover_decoration(){
 
 }
 
-function select_background(){
-
-    $("#Ground_small_1").click(function () {
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_1" ).css( "background-image" )),
-                            "background-size":"cover"});
-    });
-
-    $("#Ground_small_2").click(function () {
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_2" ).css( "background-image" )),
-                            "background-size":"cover"});
-    });
-
-    $("#Ground_small_3").click(function () {
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_3" ).css( "background-image" )),
-                            "background-size":"cover"});
-    });
-
-    $("#Ground_small_4").click(function () {
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_4" ).css( "background-image" )),
-                            "background-size":"cover"});
-    });
-
-    $("#Ground_small_5").click(function () {
-        $( "#Cover" ).css( {"background-image":($( "#Ground_small_5" ).css( "background-image" )),
-                            "background-size":"cover"});
-    });
-}
-
 function makeBook(){
+    get_background();
     if(document.getElementById('Cover').style.backgroundImage == ""){
         //배경 설정 안됨
         createModal("warning","경고", "배경화면을 선택해주세요");

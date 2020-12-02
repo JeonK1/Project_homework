@@ -20,7 +20,7 @@
 
     <title>Make Cover</title>
 </head>
-<body onload="navbar_function();select_background();cover_decoration();">
+<body onload="navbar_function();cover_decoration();get_background();">
     <div class="BackGround" id="BackGround">
         <!-- 모달창 -->
         <div class="black_bg" onclick="removeModal();"></div>
@@ -65,11 +65,9 @@
 
         <!--오른쪽 메뉴-->
         <div class="RightSidebar" id="RightSidebar">
-            <div class="Ground_small_1" id="Ground_small_1" style="background-image: url('../../static/img/ground/{{bookContetnsList.0}}');"></div>
-            <div class="Ground_small_2" id="Ground_small_2" style="background-image: url('../../static/img/ground/{{bookContetnsList.1}}');"></div>
-            <div class="Ground_small_3" id="Ground_small_3" style="background-image: url('../../static/img/ground/{{bookContetnsList.2}}');"></div>
-            <div class="Ground_small_4" id="Ground_small_4" style="background-image: url('../../static/img/ground/{{bookContetnsList.3}}');"></div>
-            <div class="Ground_small_5" id="Ground_small_5" style="background-image: url('../../static/img/ground/{{bookContetnsList.4}}');"></div>
+            <div id="RightSidebar_scroll">
+
+            </div>
             <div class="camera" id="camera"></div>
         </div>
 
