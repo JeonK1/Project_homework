@@ -365,8 +365,10 @@ def update_book(request):
 
 
 def read_book(request):
-    return render(request, 'AI_Publisher/read_book.html')
-
-    # message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
-    # getjson = json.loads(message) #Json 풀어주기
-    # return render(request, 'AI_Publisher/set_char_option.html', {'getJSONData' : getjson})
+    message = request.POST.get('jsonData')  # POST로 날라온 jsonData 받아주기
+    getjson = json.loads(message)  # Json 풀어주기
+    print(getjson['bookinfo_id']);
+    # bookInfos = BookInfo.objects.raw(
+    #     'SELECT * FROM AI_Publisher_bookinfo WHERE length(BookTitle) > 0')  # BookTitle 이 공백 아닌 값들 가져오기
+    # print(bookInfos);
+    return render(request, 'AI_Publisher/read_book.html', {'getJSONData': getjson})

@@ -57,6 +57,12 @@ function move_book(){
 
 function view_book(count){
 
+    jsonData = document.getElementById("jsonData").value;
+    // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
+    jsonData = jsonData.replaceAll('\'', '\"');
+    jsonObject = JSON.parse(jsonData);
+    alert(jsonData);
+
     switch(count){
         case 0:
             $("#reading_border").css( {"background-image":arrback[count],

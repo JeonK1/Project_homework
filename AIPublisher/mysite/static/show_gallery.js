@@ -48,14 +48,14 @@ function set_page(){
     $("#book2").css( {"background-image":backgroundfile[1],
                                 "background-size":"cover"});
     $("#book2").html("2번책");
-//    $("#book2").css( {"background-image":backgroundfile[2],
-//                                "background-size":"cover"});
-//    $("#book2").html("3번책");
+    $("#book3").css( {"background-image":backgroundfile[2],
+                                "background-size":"cover"});
+    $("#book3").html("3번책");
 
     $("#book1").click(function () {
 
         var jsonObject = new Object();
-//        jsonObject.charList = arrCharacter;
+        jsonObject.bookinfo_id = booknum[0];
         var jsonData = JSON.stringify(jsonObject);
         console.log(jsonData);
         document.getElementById("jsonData").value = jsonData;
@@ -67,7 +67,7 @@ function set_page(){
 
 
         var jsonObject = new Object();
-//        jsonObject.charList = arrCharacter;
+        jsonObject.bookinfo_id = booknum[1];
         var jsonData = JSON.stringify(jsonObject);
         console.log(jsonData);
         document.getElementById("jsonData").value = jsonData;
@@ -75,14 +75,14 @@ function set_page(){
 
     });
 
-//    $("#book3").click(function () {
-//        var jsonObject = new Object();
-//        jsonObject.charList = arrCharacter;
-//        var jsonData = JSON.stringify(jsonObject);
-//        console.log(jsonData);
-//        document.getElementById("jsonData").value = jsonData;
-//        document.getElementById("sendJson").submit();
-//    });
+    $("#book3").click(function () {
+        var jsonObject = new Object();
+        jsonObject.bookinfo_id = booknum[2];
+        var jsonData = JSON.stringify(jsonObject);
+        console.log(jsonData);
+        document.getElementById("jsonData").value = jsonData;
+        document.getElementById("sendJson").submit();
+    });
 
 
 
