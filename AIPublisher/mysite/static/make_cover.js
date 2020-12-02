@@ -260,6 +260,7 @@ function sendToNextPage(){
     bookPage.context = document.getElementById("Cover_title").innerText;
     var elements = new Array();
     for(j=1; j<=4; j++){
+        // 캐릭터 업로드
         var element = new Object();
         element.display = $("#decorate_ch_"+j).css("display");
         element.width = $("#decorate_ch_"+j).css("width");
@@ -268,6 +269,15 @@ function sendToNextPage(){
         element.left = $("#decorate_ch_"+j).css("left");
         elements.push(element);
     }
+    // Cover textbox 추가
+    var element = new Object();
+    element.display = $("#Cover_title").css("display");
+    element.width = $("#Cover_title").css("width");
+    element.height = $("#Cover_title").css("height");
+    element.top = $("#Cover_title").css("top");
+    element.left = $("#Cover_title").css("left");
+    elements.push(element);
+
     bookPage.elements = elements;
 
 
@@ -291,5 +301,5 @@ function sendToNextPage(){
     req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     req.send("jsonData="+jsonData);
 
-    window.location = '/AI_Publisher/show_gallery';
+    //window.location = '/AI_Publisher/show_gallery';
 }
