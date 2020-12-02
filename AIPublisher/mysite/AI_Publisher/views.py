@@ -198,6 +198,9 @@ def show_gallery(request):
     for bookInfo in bookInfos:
         no = bookInfo.BookNo # 책 번호
         title = bookInfo.BookTitle
+        if(len(BookInfo_bookPages.objects.filter(bookinfo_id = no))==0):
+            # 제목은 있는데 내용물이 없어서 참조 못하는 에러 방지
+            continue
         bookPage = BookInfo_bookPages.objects.filter(bookinfo_id = no)[0]
         myBookCoverPage = BookPage.objects.filter(id = bookPage.bookpage_id)[0]
         coverBackgroundUrl = myBookCoverPage.backgroundUrl
