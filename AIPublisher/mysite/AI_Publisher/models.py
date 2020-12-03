@@ -17,6 +17,7 @@ class BookElement(models.Model):
     height = models.CharField(max_length=200)
     top = models.CharField(max_length=200)
     left = models.CharField(max_length=200)
+    elementId = models.IntegerField()
 
 class BookPage(models.Model):
     id = models.AutoField(primary_key=True)
@@ -27,6 +28,14 @@ class BookPage(models.Model):
 class BookInfo_bookPages(models.Model):
     bookinfo_id = models.IntegerField()
     bookpage_id = models.IntegerField()
+
+class Bookpages_elements(models.Model):
+    bookpage_id = models.IntegerField()
+    bookelement_id = models.IntegerField()
+
+# class elements_BookPage(models.Model):
+#     bookpage_id2 = models.IntegerField()
+#     bookelement_id2 = models.IntegerField()
 
 class BookInfo(models.Model):
     BookNo = models.AutoField(primary_key=True)

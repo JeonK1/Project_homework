@@ -7,7 +7,7 @@ from .models import CharList
 from .models import BackList
 from .models import BookTextList
 from .models import BookContetnsList
-from .models import BookInfo, BookPage, BookElement, BookInfo_bookPages
+from .models import BookInfo, BookPage, BookElement, BookInfo_bookPages, Bookpages_elements
 
 import json
 
@@ -367,8 +367,23 @@ def update_book(request):
 def read_book(request):
     message = request.POST.get('jsonData')  # POST로 날라온 jsonData 받아주기
     getjson = json.loads(message)  # Json 풀어주기
-    print(getjson['bookinfo_id']);
-    # bookInfos = BookInfo.objects.raw(
-    #     'SELECT * FROM AI_Publisher_bookinfo WHERE length(BookTitle) > 0')  # BookTitle 이 공백 아닌 값들 가져오기
-    # print(bookInfos);
-    return render(request, 'AI_Publisher/read_book.html', {'getJSONData': getjson})
+    bookInfos = BookInfo.objects.raw(
+        'SELECT * FROM AI_Publisher_bookinfo WHERE length(BookTitle) > 0')  # BookTitle 이 공백 아닌 값들 가져오기
+    bookPages = BookInfo_bookPages.objects.filter(bookinfo_id=getjson['bookinfo_id'])
+
+    outBook = []
+    for bookPage in bookPages:
+        bookElements = Bookpages_elements.objects.filter(bookpage_id=bookPage.bookpage_id)
+        outPage = []
+        for bookElement in bookElements:
+            bookElement = BookElement.objects.filter(elementId=bookElement.bookelement_id)[0]
+            outElement = []
+            outElement.append(bookElement.display) # 0번째, display
+            outElement.append(bookElement.imgUrl) # 1번째, imgUrl
+            outElement.append(bookElement.width) # 2번째, width
+            outElement.append(bookElement.height) # 3번째, height
+            outElement.append(bookElement.top) # 4번째, top
+            outElement.append(bookElement.left) # 5번째, left
+            outPage.append(outElement)
+        outBook.append(outPage)
+    return render(request, 'AI_Publisher/read_book.html', {'getJSONData': getjson, 'bookData': outBook},)

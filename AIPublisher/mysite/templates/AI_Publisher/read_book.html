@@ -3,7 +3,6 @@
 
 <html lang="ko">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'read_book.css' %}">
@@ -13,6 +12,7 @@
     <script src="{% static 'read_book.js' %}"></script>
     <!-- DB에서 불러와야함.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <input type='hidden' name='jsonData' id='jsonData' value="{{getJSONData}}"/>
+    <input type='hidden' name='bookData' id='bookData' value="{{bookData}}"/>
 
     <title>Read Book</title>
 </head>
