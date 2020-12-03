@@ -16,122 +16,64 @@
         <input type='hidden' name='jsonData' id='jsonData' value="{{getJSONData}}"/>
     </form>
 </head>
-<body onload="navbar_function();">
+<body>
     <!--배경 및 프레임-->
-    <div class="BackGround" id="BackGround">
+    <div class="container" id="background">
 
-         <!-- 모달창 -->
-        <div class="black_bg" onclick="removeModal();"></div>
-        <div class="modal_wrap">
-            <div id="modal_warning" > <img src="../../static/img/ic_warning.png"> </div>
-            <div id="modal_title">
-                모달제목
-            </div>
-            <div id="modal_context">
-                모달내용
-            </div>
-            <div id="modal_button_wrap">
-                <div class="modal_button" id="modal_button_ok" onclick="modalOk();">확인</div>
-                <div class="modal_button" id="modal_button_yes" onclick="modalYes_nav();">예</div>
-                <div class="modal_button" id="modal_button_no" onclick="modalNo_nav();">아니오</div>
-            </div>
+        <!--노리스 아이콘 및 배경-->
+        <div class="icon" id="noris_icon"></div>
+        <div class="background" id="set_relation_background"></div>
+
+        <!--텍스트-->
+        <div class="text_box" id="text_box">
+            <h3 class="text_deco" id="text1">등장 인물들의</h3><br>
+            <h3 class="text_deco" id="text2">관계는 어떨까요?</h3>
         </div>
 
-        <!--제목-->
-        <div class="Field" id="Field">
-            <div class="stepbox" id="stepbar">
-                <div class="step" id="step1">인물카드선택</div>
-                <div class="step" id="step2">인물카드설정</div>
-                <div class="step" id="step3">관계카드설정</div>
-            </div>
-        </div>
+        <!--관계설정 단계-->
+        <div class="deco" id="relation_line"></div>
+        <div class="relationship" id="relation1"></div>
+        <div class="relationship" id="relation2"></div>
+        <div class="relationship" id="relation3"></div>
+        <div class="relationship" id="relation4"></div>
+        <div class="relationship" id="relation5"></div>
 
 
-        <!--다음 버튼-->
-        <!--Todo : 나중에 5개 다 안채웠는데 넘어갈려고하면 막아줘야함-->
-        <div class="next_shape" id="next_shape" onclick="sendToNextPage();" >
-            <div class="next_step_body_1" id="next_step_body_1">
-                <div class="next_step_body_2" id="next_step_body_2">
-                    <div class="next_step_text" id="next_step_text">Next</div>
-                    <div class="next_step_image" id="next_step_image"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 왼쪽 인물 목록 메뉴 -->
-
-        <div class="character_menu" id="character_menu">
-            {% for character in charList %}
-                <div class="character_card" id="character_{{forloop.counter}}" onclick="sendSubChar({{forloop.counter}})">
-                    <img class="card_img" id="card_{{forloop.counter}}" src={{character.url}}>
-                </div>
-            {% endfor %}
-        </div>
-
-        <!-- 주인공과 서브인물 -->
-        <div div class="character_selected_card" id="character_main" >
-            <img class="card_img" src="{{ charMain.url }}"/>
-            <div class="img_star" id="img_star"></div>
-        </div>
-        <div class="character_selected_card" id="character_sub">
-            <img class="card_img" id="characterSub"/>
-        </div>
-
-        <!-- 중앙 5개 선택된 관계 카드-->
-        <div class="relation_selected_menu" id="relation_selected_menu">
-            <div class="relation_selected_card" id="relation_selected_card1">
-                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
-            </div>
-            <div class="relation_selected_card" id="relation_selected_card2">
-                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
-            </div>
-            <div class="relation_selected_card" id="relation_selected_card3">
-                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
-            </div>
-            <div class="relation_selected_card" id="relation_selected_card4">
-                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
-            </div>
-            <div class="relation_selected_card" id="relation_selected_card5">
-                <div class="relation_context" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div>
-            </div>
-        </div>
-
-        <!-- 하단 8개 관계 설정 카드-->
-        <div class="relation_menu" id="relation_menu">
-            <div class="relation_card_positive" id="relation_card_pos1">
-                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_pos.0}}</div>
-            </div>
-            <div class="relation_card_positive" id="relation_card_pos2">
-                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_pos.1}}</div>
-            </div>
-            <div class="relation_card_positive" id="relation_card_pos3">
-                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_pos.2}}</div>
-            </div>
-            <div class="relation_card_neutrality" id="relation_card_neu1">
-                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neu.0}}</div>
-            </div>
-            <div class="relation_card_neutrality" id="relation_card_neu2">
-                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neu.1}}</div>
-            </div>
-            <div class="relation_card_negative" id="relation_card_neg1">
-                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neg.0}}</div>
-            </div>
-            <div class="relation_card_negative" id="relation_card_neg2">
-                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neg.1}}</div>
-            </div>
-            <div class="relation_card_negative" id="relation_card_neg3">
-                <div class="relation_context" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{card_neg.2}}</div>
-            </div>
+        <!--메인 캐릭터 출력-->
+        <div class="character_card" id="main_card">
+            <img class="card_img" id="main_character" src={{charMain.url}}>
         </div>
 
 
+        <!--관계 설정 텍스트 출력-->
+        <div class="relation_card_1" id="relation_card1">text</div>
+        <div class="relation_card_1" id="relation_card2">text</div>
+        <div class="relation_card_1" id="relation_card3">text</div>
 
+        <div class="relation_card_2" id="relation_card4">text</div>
+        <div class="relation_card_2" id="relation_card5">text</div>
+        <div class="relation_card_2" id="relation_card6">text</div>
+        <div class="relation_card_2" id="relation_card7">text</div>
 
-                <!-- 네비게이션 바 -->
-        <div class="upper_bar" id="upper_bar">
-            <div class="AI_Publisher_image" id="AI_Publisher_image"></div>
-            <div class="user_icon" id="user_icon"></div>
-            <div class="username" id="username"></div>
+        <div class="relation_card_3" id="relation_card8">text</div>
+        <div class="relation_card_3" id="relation_card9">text</div>
+        <div class="relation_card_3" id="relation_card10">text</div>
+        <div class="relation_card_3" id="relation_card11">text</div>
+
+        <div class="relation_card_4" id="relation_card12">text</div>
+        <div class="relation_card_4" id="relation_card13">text</div>
+        <div class="relation_card_4" id="relation_card14">text</div>
+
+        <!--이전 페이지-->
+        <div class="backpage" id="backpage_btn">
+            <div class="backpage" id="backpage_arrow"></div>
+            <div class="backpage" id="backpage_text">이전으로</div>
+        </div>
+
+        <!--다음 페이지-->
+        <div class="nextpage" id="nextpage_btn" onclick="sendToNextPage()">
+            <div class="nextpage" id="nextpage_arrow"></div>
+            <div class="nextpage" id="nextpage_text">다음으로</div>
         </div>
 
     </div>
