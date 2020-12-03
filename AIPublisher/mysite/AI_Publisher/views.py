@@ -10,6 +10,7 @@ from .models import BookContetnsList
 from .models import BookInfo, BookPage, BookElement, BookInfo_bookPages, Bookpages_elements
 
 import json
+import random
 
 def index(request):
     return render(request, 'AI_Publisher/login_page.html')
@@ -166,7 +167,14 @@ def set_char_option(request):
     message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
     getjson = json.loads(message) #Json 풀어주기
     print(getjson)
-    return render(request, 'AI_Publisher/set_char_option.html', {'getJSONData' : getjson})
+
+    words = WordList.objects.filter(WordType=4)
+    wordlist = []
+    for i in range(len(words)):
+        wordlist.append(words[i].WordContext)
+    random.shuffle(wordlist)
+
+    return render(request, 'AI_Publisher/set_char_option.html', {'getJSONData' : getjson, 'wordList': wordlist[0:11]})
 
 def getBookTitleById(bookInfoId):
     ### Todo : 무성팀장님 여기 인자에 책의 고유번호를 넣으시면 책의 제목을 반환받으실 수 있습니다. ###
