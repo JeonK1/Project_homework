@@ -1,9 +1,11 @@
 var curNo = 0; //현재 작성중인 캐릭터 번호, 초기값은 첫번째 캐릭터라서 0이다.
 var arrCharacter = new Array();
 var pListObject;
+
 function initCharData(){
+
     arrCharacter = new Array();
-    for(i=0;i<4; i++){
+    for(var i=0;i<4; i++){
         charIdName = "card_"+(i+1);
         if(document.getElementById(charIdName)==null){
             break;
@@ -12,8 +14,10 @@ function initCharData(){
             characterObject = new Object();
             characterObject.url = document.getElementById(charIdName).src; // url 설정
             characterObject.name = "";
-            characterObject.personality = "";
-            characterObject.etc = "";
+            characterObject.personality = new Array(11);
+            for (var j = 1; j < 12; j++){
+                characterObject.personality[j-1] = ""
+            }
             characterObject.isMainChar = 0;
             arrCharacter.push(characterObject);
         }
@@ -22,10 +26,18 @@ function initCharData(){
 
 function saveCharData(){
     // 현재 작성된 캐릭터 정보 저장
-    arrCharacter[curNo].name = document.getElementById("name_text").value;
-    arrCharacter[curNo].personality = document.getElementById("personality_text").value;
-    arrCharacter[curNo].etc = document.getElementById("etc_text").value;
-    if(document.getElementById("ck1").checked){
+    arrCharacter[curNo].name = document.getElementById("name_box").value;
+
+
+    for (var i = 1; i < 12; i++)
+    {
+        person = "personality"+(i);
+        if($("#personality"+i).css("backgroundColor") == "rgb(81, 80, 57)"){
+            arrCharacter[curNo].personality[i-1] = document.getElementById(person).innerText;
+        }
+    }
+
+    if($("#main_char_yes").css("backgroundColor") == "rgb(81, 80, 57)"){
         //주인공이 체크되어 있을 때
         for(i=0; i<arrCharacter.length; i++){
             arrCharacter[i].isMainChar = 0;
@@ -38,17 +50,43 @@ function saveCharData(){
 function settingCharData(num){
     // 해당 num의 data를 불러와서 세팅해주기
     saveCharData();
+
     curNo = num; // 현재 보고잇는 캐릭터 바꾸고
+
     // 현재 캐릭터 정보 load하기
-    document.getElementById("name_text").value = arrCharacter[curNo].name;
-    document.getElementById("personality_text").value = arrCharacter[curNo].personality;
-    document.getElementById("etc_text").value = arrCharacter[curNo].etc;
-    if(arrCharacter[curNo].isMainChar == 1){
+    document.getElementById("name_box").value = arrCharacter[curNo].name;
+
+    for (var i = 1; i < 12; i++)
+    {
+        person = "personality"+(i);
+        person_id = "#personality"+(i);
+        if(arrCharacter[curNo].personality[i-1] == document.getElementById(person).innerText){
+
+            $(person_id).css("background","#515039");
+            $(person_id).css("color","#FFFEF1");
+        }
+
+        if(arrCharacter[curNo].personality[i-1] != document.getElementById(person).innerText){
+
+            $(person_id).css("background","");
+            $(person_id).css("color","#918F7B");
+        }
+    }
+
+    if(arrCharacter[curNo].isMainChar == 1) {
         //현재 선택한 번호가 주인공이면
-        document.getElementById("ck1").checked = true;
-    } else {
+        $("#main_char_yes").css("background", "#515039");
+        $("#main_char_yes").css("color", "#FFFEF1");
+        $("#main_char_no").css("background","");
+        $("#main_char_no").css("color","#918F7B");
+    }
+
+    else {
         //현재 선택한 번호가 주인공이 아닐 때
-        document.getElementById("ck1").checked = false;
+        $("#main_char_no").css("background","#515039");
+        $("#main_char_no").css("color","#FFFEF1");
+        $("#main_char_yes").css("background","");
+        $("#main_char_yes").css("color","#918F7B");
     }
     cardIdName = "card_"+(curNo+1);
     document.getElementById("setCard").src = document.getElementById(cardIdName).src;
@@ -64,20 +102,27 @@ function sendToNextPage(){
         if(arrCharacter[i].name != "")
             isCharNameAllExist += 1;
     }
-    if(isCharNameAllExist != arrCharacter.length){
-        // 이름을 작성하지 않은 인물이 있음
-        createModal("warning", "경고", "이름을 작성하지 않은 인물이 있어요");
-    } else if (isMainCharSelected == 0){
-        // 주인공을 설정하지 않은 인물이 있음
-        createModal("warning", "경고", "주인공을 설정해주세요");
-    } else {
-        //다음페이지로 POST 데이터 넘기기
+    // if(isCharNameAllExist != arrCharacter.length){
+    //     // 이름을 작성하지 않은 인물이 있음
+    //     createModal("warning", "경고", "이름을 작성하지 않은 인물이 있어요");
+    // } else if (isMainCharSelected == 0){
+    //     // 주인공을 설정하지 않은 인물이 있음
+    //     createModal("warning", "경고", "주인공을 설정해주세요");
+    // } else {
+    //     //다음페이지로 POST 데이터 넘기기
+    //     var jsonObject = new Object();
+    //     jsonObject.charList = arrCharacter;
+    //     var jsonData = JSON.stringify(jsonObject);
+    //     document.getElementById("jsonData").value = jsonData;
+    //     document.getElementById("sendJson").submit();
+    // }
+
+    //다음페이지로 POST 데이터 넘기기
         var jsonObject = new Object();
         jsonObject.charList = arrCharacter;
         var jsonData = JSON.stringify(jsonObject);
         document.getElementById("jsonData").value = jsonData;
         document.getElementById("sendJson").submit();
-    }
 }
 
 function createModal(type, title, message){
@@ -117,6 +162,56 @@ function get_personality_word() {
         }
     }
     req.send();
+}
+
+function click_effect(input){
+
+    if($("#"+input.id).css("backgroundColor") == "rgb(81, 80, 57)"){
+        $("#"+input.id).css("background","");
+        $("#"+input.id).css("color","#918F7B");
+
+    }
+    else{
+        $("#"+input.id).css("background","#515039");
+        $("#"+input.id).css("color","#FFFEF1");
+    }
+
+}
+
+function click_effect_yes(){
+
+    if($("#main_char_yes").css("backgroundColor") == "rgba(0, 0, 0, 0)"){
+        $("#main_char_yes").css("background","#515039");
+        $("#main_char_yes").css("color","#FFFEF1");
+        $("#main_char_no").css("background","");
+        $("#main_char_no").css("color","#918F7B");
+    }
+
+    else if($("#main_char_no").css("backgroundColor") == "rgba(0, 0, 0, 0)"){
+        $("#main_char_no").css("background","#515039");
+        $("#main_char_no").css("color","#FFFEF1");
+        $("#main_char_yes").css("background","");
+        $("#main_char_yes").css("color","#918F7B");
+    }
+
+}
+
+function click_effect_no(){
+
+    if($("#main_char_no").css("backgroundColor") == "rgba(0, 0, 0, 0)"){
+        $("#main_char_no").css("background","#515039");
+        $("#main_char_no").css("color","#FFFEF1");
+        $("#main_char_yes").css("background","");
+        $("#main_char_yes").css("color","#918F7B");
+    }
+
+    else if($("#main_char_yes").css("backgroundColor") == "rgba(0, 0, 0, 0)"){
+        $("#main_char_yes").css("background","#515039");
+        $("#main_char_yes").css("color","#FFFEF1");
+        $("#main_char_no").css("background","");
+        $("#main_char_no").css("color","#918F7B");
+    }
+
 }
 
 // 말풍선
