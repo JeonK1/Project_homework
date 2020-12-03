@@ -32,11 +32,27 @@
 
         <!--관계설정 단계-->
         <div class="deco" id="relation_line"></div>
-        <div class="relationship" id="relation1"></div>
-        <div class="relationship" id="relation2"></div>
-        <div class="relationship" id="relation3"></div>
-        <div class="relationship" id="relation4"></div>
-        <div class="relationship" id="relation5"></div>
+        <div id="relation1_wrap" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+            <div class="relationship" id="relation1"></div>
+            <div class="relation_text" id="relation1_text"></div>
+        </div>
+        <div id="relation2_wrap" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+            <div class="relationship" id="relation2"></div>
+            <div class="relation_text" id="relation2_text"></div>
+        </div>
+        <div id="relation3_wrap" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+            <div class="relationship" id="relation3"></div>
+            <div class="relation_text" id="relation3_text"></div>
+        </div>
+        <div id="relation4_wrap" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+            <div class="relationship" id="relation4"></div>
+            <div class="relation_text" id="relation4_text"></div>
+        </div>
+        <div id="relation5_wrap" droppable="true" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+            <div class="relationship" id="relation5"></div>
+            <div class="relation_text" id="relation5_text"></div>
+        </div>
+
 
 
         <!--메인 캐릭터 출력-->
@@ -54,25 +70,25 @@
                     <img class="card_img" id="card_{{forloop.counter}}" src={{character.url}}>
                 </div>
         {% endfor %}
-
+        {{cardList}}
         <!--관계 설정 텍스트 출력-->
-        <div class="relation_card_1" id="relation_card1">text</div>
-        <div class="relation_card_1" id="relation_card2">text</div>
-        <div class="relation_card_1" id="relation_card3">text</div>
+        <div class="relation_card_1" id="relation_card1" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList}}</div>
+        <div class="relation_card_1" id="relation_card2" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text2</div>
+        <div class="relation_card_1" id="relation_card3" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text3</div>
 
-        <div class="relation_card_2" id="relation_card4">text</div>
-        <div class="relation_card_2" id="relation_card5">text</div>
-        <div class="relation_card_2" id="relation_card6">text</div>
-        <div class="relation_card_2" id="relation_card7">text</div>
+        <div class="relation_card_2" id="relation_card4" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text4</div>
+        <div class="relation_card_2" id="relation_card5" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text5</div>
+        <div class="relation_card_2" id="relation_card6" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text6</div>
+        <div class="relation_card_2" id="relation_card7" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text7</div>
 
-        <div class="relation_card_3" id="relation_card8">text</div>
-        <div class="relation_card_3" id="relation_card9">text</div>
-        <div class="relation_card_3" id="relation_card10">text</div>
-        <div class="relation_card_3" id="relation_card11">text</div>
+        <div class="relation_card_3" id="relation_card8" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text8</div>
+        <div class="relation_card_3" id="relation_card9" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text9</div>
+        <div class="relation_card_3" id="relation_card10" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text10</div>
+        <div class="relation_card_3" id="relation_card11" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text11</div>
 
-        <div class="relation_card_4" id="relation_card12">text</div>
-        <div class="relation_card_4" id="relation_card13">text</div>
-        <div class="relation_card_4" id="relation_card14">text</div>
+        <div class="relation_card_4" id="relation_card12" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text12</div>
+        <div class="relation_card_4" id="relation_card13" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text13</div>
+        <div class="relation_card_4" id="relation_card14" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text14</div>
 
         <!--이전 페이지-->
         <div class="backpage" id="backpage_btn">

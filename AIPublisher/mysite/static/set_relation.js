@@ -4,9 +4,7 @@ var subCharNo = -1 // 대립되는 서브주인공 번호
 
 function onDragStart(e){
     console.warn('drag Start'+e.target.id);
-    var parentNode = e.target.parentElement;
-    e.dataTransfer.setData('parentClassName', e.target.parentElement.className); // 드래그해보세요 문자열 전달
-    e.dataTransfer.setData('parentIdName', e.target.parentElement.id); // 드래그해보세요 문자열 전달
+    e.dataTransfer.setData('IdName', e.target.id); // 드래그해보세요 문자열 전달
     e.dataTransfer.setData('innerText', e.target.innerText); // 드래그해보세요 문자열 전달
 }
 function onDrag(e){
@@ -20,30 +18,25 @@ function onDragOver(e){
 
 function onDrop(e){
     console.log("drop");
-    parentClassName = e.dataTransfer.getData('parentClassName');
-    idName = e.dataTransfer.getData('parentIdName');
+    idName = e.dataTransfer.getData('IdName');
     innerText = e.dataTransfer.getData('innerText');
-    console.warn(parentClassName);
     console.warn(idName);
     console.warn(innerText);
+    relationListPos = parseInt(idName.charAt(idName.length-1))-1;
 
-    myParentIdName = e.target.parentElement.id;
-    relationListPos = parseInt(myParentIdName.charAt(myParentIdName.length-1))-1;
+    console.warn(e.target.innerText);
+    targetId = e.target.id.substr(8,1);
     if(e.target.innerText.length>0) {
         //뭔가가 들어와있으면 원래있던거 빼고 교체해주는식으로 구현하기
-        document.getElementById(relationListId[relationListPos]).style.display="";
+        console.log(targetId);
+        console.log(relationListPos);
+        document.getElementById(relationListId[targetId-1]).style.display="";
     }
-    if(parentClassName.includes('positive')){
-        e.target.parentElement.className = "relation_selected_card_pos";
-    } else if(parentClassName.includes('neutrality')){
-        e.target.parentElement.className = "relation_selected_card_neu";
-    } else if(parentClassName.includes('negative')){
-        e.target.parentElement.className = "relation_selected_card_neg";
-    }
+    console.log(idName);
     document.getElementById(idName).style.display='none';
     e.target.innerText = innerText;
-    relationList[relationListPos] = innerText;
-    relationListId[relationListPos] = idName;
+    relationList[targetId-1] = innerText;
+    relationListId[targetId-1] = idName;
 }
 
 function sendSubChar(num){

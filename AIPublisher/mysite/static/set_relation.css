@@ -166,6 +166,7 @@
 #main_character{
     width: 171.84px;
     height: 341.83px;
+    object-fit:contain;
 }
 
 #character_sub {
@@ -177,6 +178,7 @@
     top: 120px;
 
     transform: rotate(-10deg);
+    object-fit:contain;
 }
 
 #characterSub{
@@ -244,67 +246,96 @@
     background-image: url("img/relation_line.svg");
 }
 
-#relation1 {
+.relation_text{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+#relation1_wrap {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
-    width: 200px;
-    height: 135px;
     left: 401.74px;
     top: 560px;
+}
+#relation1 {
+    width: 200px;
+    height: 135px;
     transform: rotate(-14.2deg);
-
     background-image: url("img/1.svg");
 }
 
-#relation2 {
+#relation2_wrap {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
-    width: 154px;
-    height: 115px;
     left: 421px;
     top: 400px;
+}
+
+#relation2 {
+    width: 154px;
+    height: 115px;
     transform: rotate(160.6deg);
     background-image: url("img/2.svg");
 }
 
-#relation3 {
+#relation3_wrap {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
-    width: 158.82px;
-    height: 101.74px;
     left: 620px;
     top: 510px;
-
+}
+#relation3 {
+    width: 158.82px;
+    height: 101.74px;
     transform: rotate(157.16deg);
-
     background-image: url("img/3.svg");
 }
 
-#relation4 {
+#relation4_wrap {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
-    width: 158px;
-    height: 102px;
     left: 580px;
     top: 340px;
-
+}
+#relation4 {
+    width: 158px;
+    height: 102px;
     transform: rotate(-42deg);
     background-image: url("img/4.svg");
-
 }
 
-#relation5 {
+#relation5_wrap {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
     position: absolute;
-    width: 153px;
-    height: 119px;
     left: 740px;
     top: 380px;
-
+}
+#relation5 {
+    width: 153px;
+    height: 119px;
     transform: rotate(159.23deg);
     background-image: url("img/5.svg");
 }
-
-
-
-
-
-
 
 .relation_card_1 {
     width: 128px;
