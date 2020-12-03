@@ -232,15 +232,3 @@ function createWordList(){
 function removeWordList(){
     document.getElementById("charWord_wrap").style.visibility="hidden";
 }
-// 모달 창
-function removeModal(){
-    document.querySelector('.modal_wrap').style.display ='none';
-    document.querySelector('.black_bg').style.display ='none';
-}
-function modalOk(){
-    removeModal();
-}
-function modalYes(){
-}
-function modalNo(){
-}

@@ -23,8 +23,22 @@
     <!--배경 및 프레임-->
     <div class="container" id="background">
 
+        <div class="black_bg" onclick="removeModal();"></div>
+        <div class="modal_wrap">
+            <div id="modal_context">
+                지금 나가면<br>제작한 이야기가<br>저장되지 않아요.
+            </div>
+            <div id="modal_title">
+                그래도 괜찮아요?
+            </div>
+            <div id="modal_button_wrap">
+                <div class="modal_button" id="modal_button_yes" onclick="modalYes_nav();">괜찮아요</div>
+                <div class="modal_button" id="modal_button_no" onclick="modalNo_nav();">안나갈래요</div>
+            </div>
+        </div>
+
         <!--노리스 아이콘 및 배경-->
-        <div class="icon" id="noris_icon"></div>
+        <div class="icon" id="noris_icon" onclick="createModal_nav('/AI_Publisher')"></div>
         <div class="background" id="set_char_option_background"></div>
 
         <!--텍스트-->
@@ -79,7 +93,7 @@
 
 
         <!--이전 페이지-->
-        <div class="backpage" id="backpage_btn">
+        <div class="backpage" id="backpage_btn" onclick="createModal_nav('/AI_Publisher/set_character')">
             <div class="backpage" id="backpage_arrow"></div>
             <div class="backpage" id="backpage_text">이전으로</div>
         </div>
