@@ -22,4 +22,5 @@ urlpatterns = [
     path('update_book/', views.update_book),
     path('get_background/', views.get_background),
     path('read_book/', views.read_book),
+    path('read_book_start/', views.read_book_start),
 ]

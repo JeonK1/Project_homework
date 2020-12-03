@@ -395,3 +395,11 @@ def read_book(request):
             outPage.append(outElement)
         outBook.append(outPage)
     return render(request, 'AI_Publisher/read_book.html', {'getJSONData': getjson, 'bookData': outBook},)
+
+
+def read_book_start(request):
+    message = request.POST.get('jsonData')  # POST로 날라온 jsonData 받아주기
+    getjson = json.loads(message)  # Json 풀어주기
+    bookId = getjson['bookinfo_id']
+
+    return render(request, 'AI_Publisher/read_book_start.html', {'getJSONData': getjson, 'coverBg': getBookCoverBackgroundById(bookId), 'bookTitle':getBookTitleById(bookId)})
