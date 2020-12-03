@@ -442,6 +442,60 @@
     border-radius: 35px;
     padding: 18px;
 }
+
+#set_card {
+    position: absolute;
+    width: 300px;
+    height: 528px;
+    left: 880px;
+    top: 258px;
+
+
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+#setCard {
+    width: 299.2px;
+    height: 528px;
+}
+
+.card_img{
+    width: 90px;
+    height: 127px;
+}
+
+#card1{
+    position: absolute;
+    width: 90px;
+    height: 127px;
+    left: 1260px;
+    top: 80px;
+
+}
+
+#card2{
+    position: absolute;
+    width: 90px;
+    height: 127px;
+    left: 1260px;
+    top: 280px;
+}
+
+#card3{
+    position: absolute;
+    width: 90px;
+    height: 127px;
+    left: 1260px;
+    top: 480px;
+}
+
+#card4{
+    position: absolute;
+    width: 90px;
+    height: 127px;
+    left: 1260px;
+    top: 680px;
+}
 /*#BackGround {*/
 /*    position: absolute;*/
 /*    width: 1440px;*/

@@ -18,7 +18,7 @@
     </form>
 </head>
 <!--<body onload="navbar_function();setCard();">-->
-<body onload="navbar_function();initCharData();removeSpeechBox();removeWordList();"remove>
+<body onload="initCharData();">
 
     <!--배경 및 프레임-->
     <div class="container" id="background">
@@ -43,26 +43,38 @@
         <!--성격표시-->
         <h3 class="personality_text" id="personality_text1">- 성격은</h3>
         <!--성격표시 첫째줄-->
-        <div class="personality1" id="personality1">낭만적</div>
-        <div class="personality1" id="personality2">판단력이 좋은</div>
-        <div class="personality1" id="personality3"></div>
-        <div class="personality1" id="personality4"></div>
+        <div class="personality1" id="personality1" onclick="click_effect(this)">낭만적</div>
+        <div class="personality1" id="personality2" onclick="click_effect(this)">판단력이 좋은</div>
+        <div class="personality1" id="personality3" onclick="click_effect(this)">a</div>
+        <div class="personality1" id="personality4" onclick="click_effect(this)">b</div>
         <!--성격표시 둘째줄-->
-        <div class="personality2" id="personality5"></div>
-        <div class="personality2" id="personality6"></div>
-        <div class="personality2" id="personality7"></div>
-        <div class="personality2" id="personality8"></div>
+        <div class="personality2" id="personality5" onclick="click_effect(this)">c</div>
+        <div class="personality2" id="personality6" onclick="click_effect(this)">d</div>
+        <div class="personality2" id="personality7" onclick="click_effect(this)">e</div>
+        <div class="personality2" id="personality8" onclick="click_effect(this)">f</div>
         <!--성격표시 셋째줄-->
-        <div class="personality3" id="personality9"></div>
-        <div class="personality3" id="personality10"></div>
-        <div class="personality3" id="personality11"></div>
+        <div class="personality3" id="personality9" onclick="click_effect(this)">g</div>
+        <div class="personality3" id="personality10" onclick="click_effect(this)">h</div>
+        <div class="personality3" id="personality11" onclick="click_effect(this)">i</div>
         <h3 class="personality_text" id="personality_text2">이에요.</h3>
 
 
         <!--주인공 표시-->
         <h3 class="main_char_text" id="main_char_text1">- 이 친구는 주인공인가요?</h3>
-        <div class="main_char" id="main_char_yes">네</div>
-        <div class="main_char" id="main_char_no">아니에요</div>
+        <div class="main_char" id="main_char_yes" onclick="click_effect_yes()">네</div>
+        <div class="main_char" id="main_char_no" onclick="click_effect_no()">아니에요</div>
+
+
+        <!--캐릭터 카드 표시-->
+        <div class="character_card" id="set_card">
+            <img class="card_img" id="setCard" src={{getJSONData.charList.0}}>
+        </div>
+        {% for character in getJSONData.charList %}
+            <div class="character_card" id="card{{forloop.counter}}" onclick="settingCharData({{forloop.counter | add:'-1'}})">
+                <img class="card_img" id="card_{{forloop.counter}}" src={{character}}>
+            </div>
+        {% endfor %}
+
 
 
 
@@ -73,7 +85,7 @@
         </div>
 
         <!--다음 페이지-->
-        <div class="nextpage" id="nextpage_btn">
+        <div class="nextpage" id="nextpage_btn" onclick="sendToNextPage()">
             <div class="nextpage" id="nextpage_arrow"></div>
             <div class="nextpage" id="nextpage_text">다음으로</div>
         </div>
