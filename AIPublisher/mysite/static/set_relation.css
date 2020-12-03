@@ -163,6 +163,77 @@
 
 }
 
+#main_character{
+    width: 171.84px;
+    height: 341.83px;
+}
+
+#character_sub {
+
+    position: absolute;
+    width: 303.2px;
+    height: 371.95px;
+    left: 860px;
+    top: 120px;
+
+    transform: rotate(-10deg);
+}
+
+#characterSub{
+    width: 300px;
+    height: 370px;
+}
+
+#character_1 {
+    position: absolute;
+    width: 75px;
+    height: 132px;
+    left: 1150px;
+    top: 329px;
+
+}
+
+#character_2 {
+    position: absolute;
+    width: 75px;
+    height: 132px;
+    left: 1240px;
+    top: 329px;
+
+}
+
+#character_3 {
+    position: absolute;
+    width: 75px;
+    height: 132px;
+    left: 1330px;
+    top: 329px;
+
+}
+
+#card_1{
+
+    width: 75px;
+    height: 132px;
+
+}
+
+#card_2{
+
+    width: 75px;
+    height: 132px;
+
+}
+
+#card_3{
+
+    width: 75px;
+    height: 132px;
+
+}
+
+
+
 #relation_line {
     position: absolute;
     width: 558.25px;
@@ -242,6 +313,21 @@
     border: 1px solid #908F7B;
     box-sizing: border-box;
     border-radius: 35px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 140%;
+    /* or 35px */
+    padding:10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #918F7B;
 }
 
 #relation_card1 {
@@ -267,6 +353,21 @@
     border: 1px solid #908F7B;
     box-sizing: border-box;
     border-radius: 35px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 140%;
+    /* or 35px */
+    padding:10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #918F7B;
 }
 
 #relation_card4 {
@@ -298,6 +399,21 @@
     border: 1px solid #908F7B;
     box-sizing: border-box;
     border-radius: 35px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 140%;
+    /* or 35px */
+    padding:10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #918F7B;
 }
 
 #relation_card8 {
@@ -331,6 +447,21 @@
     border: 1px solid #908F7B;
     box-sizing: border-box;
     border-radius: 35px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 140%;
+    /* or 35px */
+    padding:10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #918F7B;
 }
 
 #relation_card12 {

@@ -43,7 +43,17 @@
         <div class="character_card" id="main_card">
             <img class="card_img" id="main_character" src={{charMain.url}}>
         </div>
+         <!--서브 캐릭터 출력-->
+        <div class="character_selected_card" id="character_sub">
+            <img class="card_img" id="characterSub"/>
+        </div>
 
+        <!--주인공 이외의 캐릭터 출력-->
+        {% for character in charList %}
+                <div class="character_card" id="character_{{forloop.counter}}" onclick="sendSubChar({{forloop.counter}})">
+                    <img class="card_img" id="card_{{forloop.counter}}" src={{character.url}}>
+                </div>
+        {% endfor %}
 
         <!--관계 설정 텍스트 출력-->
         <div class="relation_card_1" id="relation_card1">text</div>
