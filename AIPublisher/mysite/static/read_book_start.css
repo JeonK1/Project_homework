@@ -118,193 +118,124 @@
 }
 
 
+#read_book_background {
+    position: absolute;
+    width: 577.54px;
+    height: 427.84px;
+    left: 580px;
+    top: 374px;
 
-/*//수정전.*/
+    background-image: url("img/read_start_background.svg");
+    transform: rotate(-20.79deg);
+}
 
-/*#BackGround {*/
-/*    position: absolute;*/
-/*    width: 1440px;*/
-/*    height: 1024px;*/
-/*    left: calc(50% - 1440px / 2);*/
-/*    top: calc(50% - 1024px / 2 );*/
-/*    z-index: 0;*/
-/*    background: #ffffff;*/
-/*}*/
+#book_cover {
+    position: absolute;
+    height: 383.32px;
+    width: 524px;
+    left: -70px;
+    top: 70px;
+    transform: rotate(270deg);
+    border-radius: 34px;
+}
 
-/*!* Group 19 *!*/
-/*#Field {*/
-/*    position: absolute;*/
-/*    width: 1340px;*/
-/*    height: 949px;*/
-/*    left: calc(50% - 1340px / 2);*/
-/*    top: calc(50% - 949px / 2 + 37.5px);*/
+#book1 {
+    position: absolute;
+    width: 383.32px;
+    height: 524px;
+    left: 796px;
+    top: 360px;
+    z-index: 3;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+    transform: rotate(62.68deg);
+    background: linear-gradient(0deg, #EDEDE0, #EDEDE0), linear-gradient(0deg, #EDEDE0, #EDEDE0), #EDEDE0;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+}
 
-/*    background: #ffffff;*/
-/*}*/
+#book2 {
+    position: absolute;
+    width: 383.32px;
+    height: 524px;
+    left: 800px;
+    top: 370px;
+    z-index: 2;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.15));
+    transform: rotate(62.68deg);
+    background: linear-gradient(0deg, #EDEDE0, #EDEDE0), linear-gradient(0deg, #EDEDE0, #EDEDE0), #EDEDE0;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+}
 
-/*#shelf {*/
-/*    position: absolute;*/
-/*    width: 1340px;*/
-/*    height: 30px;*/
-/*    left: calc(50% - 1337px/2 + 26px);*/
-/*    top: calc(50% - 30px/2 + 460px);*/
+#book3 {
+    position: absolute;
+    width: 383.32px;
+    height: 524px;
+    left: 800px;
+    top: 376px;
+    z-index: 1;
+    filter: drop-shadow(4px 4px 9px rgba(147, 147, 147, 0.2));
+    transform: rotate(62.68deg);
+    background: linear-gradient(0deg, #EDEDE0, #EDEDE0), linear-gradient(0deg, #EDEDE0, #EDEDE0), #EDEDE0;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+}
 
-/*    background: url("img/shelf.png");*/
-/*    background-repeat: no-repeat;*/
-/*}*/
+#go_read_btn {
+    position: absolute;
+    width: 189.29px;
+    height: 117.09px;
+    left: 1200px;
+    top: 800px;
+}
 
-/*#book_box {*/
+#go_read_img {
+    position: absolute;
+    width: 83.83px;
+    height: 63.82px;
+    left: 90px;
+    top: 35px;
 
-/*    position: absolute;*/
-/*    width: 1119px;*/
-/*    height: 561px;*/
-/*    left: 156px;*/
-/*    top: 258px;*/
-/*}*/
+    background-image: url("img/go_read_img.svg");
+    transform: rotate(48.67deg);
+}
 
-/*.storybook{*/
-/*    position: absolute;*/
-/*    width: 343px;*/
-/*    height: 562px;*/
-/*    top: calc(50% - 562px/2);*/
+#go_read_text {
+    position: absolute;
+    width: 160px;
+    height: 81px;
+    left: 0px;
+    top: 10px;
 
-/*    overflow: hidden;*/
-/*}*/
-/*#storybook_1 {*/
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 150%;
+    /* or 37px */
 
-/*    left: calc(50% - 343px / 2 - 392.5px);*/
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
 
-/*}*/
+    color: #000000;
 
-/*!* Rectangle 18 *!*/
-/*#storybook_2 {*/
+    opacity: 0.6;
+}
 
-/*    left: calc(50% - 343px / 2 - 5.5px);*/
-/*}*/
+#go_read_arrow {
+    position: absolute;
+    width: 160px;
+    height: 30px;
+    left: 10px;
+    top: 60px;
 
-/*!* Rectangle 19 *!*/
-/*#storybook_3 {*/
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 
-/*    left: calc(50% - 343px / 2 + 383.5px);*/
-/*}*/
-
-/*.storybook_title{*/
-/*    position: absolute;*/
-/*    width: 343px;*/
-/*    height: 108px;*/
-/*    border-radius: 0px;*/
-/*    top: calc(50% - 562px/2 + 151px);*/
-/*    background: linear-gradient(180deg, #FBEAAF 0%, rgba(137, 137, 137, 0) 100%), rgba(102, 102, 102, 0.3);*/
-/*    background-blend-mode: difference, normal;*/
-/*    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
-
-/*    z-index: 1;*/
-
-/*}*/
-/*.storybook_bg {*/
-/*    width:100%px;*/
-/*    height:100%px;*/
-/*    object-fit:contain;*/
-/*}*/
-/*#storybook1_title{*/
-/*    left: calc(50% - 343px / 2);*/
-/*}*/
-
-/*#storybook2_title{*/
-/*    left: calc(50% - 343px / 2);*/
-/*}*/
-
-/*#storybook3_title{*/
-/*    left: calc(50% - 343px / 2);*/
-/*}*/
-
-/*.storybook_title_text {*/
-/*    width: 300px;*/
-/*    height: 70px;*/
-/*    top: calc(50% - 70px/2);*/
-/*    font-family: Inter;*/
-/*    font-style: normal;*/
-/*    font-weight: bold;*/
-/*    font-size: 30px;*/
-/*    line-height: 26px;*/
-/*    !* identical to box height, or 88% *!*/
-
-/*    padding: 19px 21.5px;*/
-/*    text-align: center;*/
-
-/*    color: #FFFFFF;*/
-/*    z-index: 2;*/
-/*}*/
-
-
-
-/*.storybook_btn{*/
-/*    position: absolute;*/
-/*    width: 293px;*/
-/*    height: 52px;*/
-
-/*    background: #356859;*/
-/*    border-radius: 8px;*/
-/*}*/
-
-/*#storybook1_btn {*/
-
-/*    left: calc(50% - 293px / 2);*/
-/*    top: calc(50% - 52px / 2 + 220px);*/
-/*}*/
-
-/*#storybook2_btn {*/
-
-/*    left: calc(50% - 293px / 2);*/
-/*    top: calc(50% - 52px / 2 + 220px);*/
-/*}*/
-
-/*#storybook3_btn {*/
-
-/*    left: calc(50% - 293px / 2);*/
-/*    top: calc(50% - 52px / 2 + 220px);*/
-/*}*/
-
-/*.storybook_btn_text {*/
-
-/*    width: 60px;*/
-/*    height: 50px;*/
-/*    font-family: Inter;*/
-/*    font-style: normal;*/
-/*    font-weight: bold;*/
-/*    font-size: 16px;*/
-/*    line-height: 22px;*/
-/*    !* identical to box height, or 140% *!*/
-/*    color: #FFFFFF;*/
-/*    text-align: center;*/
-/*    !* Color - White *!*/
-
-/*    padding: 14px 121px;*/
-/*}*/
-
-/*!* 왼쪽 넘기기 *!*/
-/*#left_move {*/
-/*    position: absolute;*/
-/*    width: 69px;*/
-/*    height: 69px;*/
-/*    left: calc(50% - 69px / 2 - 619.5px);*/
-/*    top: calc(50% - 69px / 2 + 62.5px);*/
-/*    z-index: 3;*/
-/*    background: url("img/left.png");*/
-/*    border-radius: 8px;*/
-
-/*}*/
-
-/*!* 오른쪽 넘기기 *!*/
-/*#right_move {*/
-/*    position: absolute;*/
-/*    width: 69px;*/
-/*    height: 69px;*/
-/*    left: calc(50% - 69px / 2 + 691.5px);*/
-/*    top: calc(50% - 69px / 2 + 54.5px);*/
-/*    z-index: 3;*/
-/*    background: url("img/right.png");*/
-/*    border-radius: 8px;*/
-/*}*/
-
-/*!* Rectangle 17 *!*/
+    background-image: url("img/go_backpage_arrow.svg");
+}
