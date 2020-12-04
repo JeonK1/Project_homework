@@ -187,6 +187,15 @@
     /* 0040 */
     border: 3px dashed #666666;
     box-sizing: border-box;
+
+    font-size: 36px;
+    line-height: 150%;
+    /* or 30px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
 }
 
 /* 드래그 하여 문장 위치를 바꿔보세요. */
@@ -299,6 +308,49 @@
     -ms-overflow-style: none;
 }
 
+::-webkit-scrollbar {
+    display:none;
+}
+
+/* 문장을 입력하세요. */
+#input_text {
+    position: absolute;
+    width: 839px;
+    left: 301px;
+    top: 84.67%;
+    bottom: 9.38%;
+    border: none;
+    outline:none;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 140%;
+    /* or 35px */
+    display: flex;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #989898;
+}
+
+
+/* Line 1 */
+#text_line {
+    position: absolute;
+    width: 839px;
+    height: 0px;
+    left: 301px;
+    top: 933px;
+
+
+    opacity: 0.5;
+    border: 3px solid #414141;
+}
+
 
 /* 좌표값 넘겨받으면 넣어줄꺼임 */
 
@@ -310,8 +362,8 @@
 .Ground_small{
     position: flex;
     display: static;
-    width: 85px;
-    height: 72px;
+    width: 130px;
+    height: 100px;
 
     margin-bottom:20px;
     text-align:center;
