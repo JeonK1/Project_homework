@@ -367,30 +367,39 @@ def update_book(request):
 
 def read_book(request):
     # css 제작을 위해 주석
-    # message = request.POST.get('jsonData')  # POST로 날라온 jsonData 받아주기
-    # getjson = json.loads(message)  # Json 풀어주기
-    # bookInfos = BookInfo.objects.raw(
-    #     'SELECT * FROM AI_Publisher_bookinfo WHERE length(BookTitle) > 0')  # BookTitle 이 공백 아닌 값들 가져오기
-    # bookPages = BookInfo_bookPages.objects.filter(bookinfo_id=getjson['bookinfo_id'])
-    #
-    # outBook = []
-    # for bookPage in bookPages:
-    #     bookElements = Bookpages_elements.objects.filter(bookpage_id=bookPage.bookpage_id)
-    #     outPage = []
-    #     for bookElement in bookElements:
-    #         bookElement = BookElement.objects.filter(elementId=bookElement.bookelement_id)[0]
-    #         outElement = []
-    #         outElement.append(bookElement.display) # 0번째, display
-    #         outElement.append(bookElement.imgUrl) # 1번째, imgUrl
-    #         outElement.append(bookElement.width) # 2번째, width
-    #         outElement.append(bookElement.height) # 3번째, height
-    #         outElement.append(bookElement.top) # 4번째, top
-    #         outElement.append(bookElement.left) # 5번째, left
-    #         outPage.append(outElement)
-    #     outBook.append(outPage)
-    # print(outBook);
-    # return render(request, 'AI_Publisher/read_book.html', {'getJSONData': getjson, 'bookData': outBook},)
-    return render(request, 'AI_Publisher/read_book.html')
+    message = request.POST.get('jsonData')  # POST로 날라온 jsonData 받아주기
+    getjson = json.loads(message)  # Json 풀어주기
+    bookPages = BookInfo_bookPages.objects.filter(bookinfo_id=getjson['bookinfo_id'])
+    print(bookPages)
+    outBook = []
+    outground = []
+    i = 0
+    for bookPage in bookPages:
+        bookElements = Bookpages_elements.objects.filter(bookpage_id=bookPage.bookpage_id)
+        outPage = []
+        for bookElement in bookElements:
+            bookElement = BookElement.objects.filter(id=bookElement.bookelement_id_id)[0]
+            outElement = []
+            outElement.append(bookElement.display) # 0번째, display
+            outElement.append(bookElement.imgUrl) # 1번째, imgUrl
+            outElement.append(bookElement.width) # 2번째, width
+            outElement.append(bookElement.height) # 3번째, height
+            outElement.append(bookElement.top) # 4번째, top
+            outElement.append(bookElement.left) # 5번째, left
+            outPage.append(outElement)
+        outBook.append(outPage)
+
+        bookbacks = BookPage.objects.filter(id=bookPage.bookpage_id)
+        outtext = []
+        for bookback in bookbacks:
+            outback = []
+            outback.append(bookback.backgroundUrl) # 배경 URL
+            outback.append(bookback.context) # 사용자가 쓴 글
+            outtext.append(outback)
+        outground.append(outtext)
+    #bookcontext = BookPage.objects.filter()
+    return render(request, 'AI_Publisher/read_book.html', {'getJSONData': getjson, 'bookData': outBook, 'groundData': outground})
+    # return render(request, 'AI_Publisher/read_book.html')
 
 def read_book_start(request):
     message = request.POST.get('jsonData')  # POST로 날라온 jsonData 받아주기

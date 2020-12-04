@@ -2,43 +2,53 @@
 var count = 0;
 
 // 사용자가 적용한 배경 저장
+var arrtext = new Array(5);
+for(var i = 0; i < arrtext.length; i++) {
+    arrtext[i] = new Array();
+}
+
+// 사용자가 적용한 배경 저장
 var arrback = new Array(5);
 for(var i = 0; i < arrback.length; i++) {
     arrback[i] = "";
 }
 
 // 사용자가 적용한 배경 저장
-var arrimg = new Array(4);
-for(var i = 0; i < arrimg.length; i++) {
-    arrimg[i] = "";
-}
+// var arrimg = new Array(4);
+// for(var i = 0; i < arrimg.length; i++) {
+//     arrimg[i] = "";
+// }
 
+// 저장되는 순서들
+// display imgUrl width height top left
 // 각 페이지 정보들 (배경 제외) display width height top left
 var expos_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
 for (var i = 0; i < expos_info.length; i++){
-    expos_info[i] = new Array(); // 발단
+    expos_info[i] = "" // 발단
 }
 var compli_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
 for (var i = 0; i < compli_info.length; i++){
-    compli_info[i] = new Array(); // 전개
+    compli_info[i] = "" // 전개
 }
 var crisis_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
 for (var i = 0; i < crisis_info.length; i++){
-    crisis_info[i] = new Array(); // 위기
+    crisis_info[i] = "" // 위기
 }
 var climax_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
 for (var i = 0; i < climax_info.length; i++){
-    climax_info[i] = new Array(); // 절정
+    climax_info[i] = "" // 절정
 }
 var result_info = new Array(5); // 0-3 캐릭터 정보 4 글상자 정보
 for (var i = 0; i < result_info.length; i++){
-    result_info[i] = new Array(); // 결말
+    result_info[i] = "" // 결말
 }
 
 function move_book(){
 
+    view_book(count);
+
     // 왼쪽 넘기기 버튼 눌렀을 때
-    $("#left_move").click(function () {
+    $("#noris_icon").click(function () {
         count -= 1;
         if(count < 0) count += 1;
         else view_book(count);
@@ -46,7 +56,7 @@ function move_book(){
 
 
     // 오른쪽 넘기기 버튼 눌렀을 때
-    $("#right_move").click(function () {
+    $("#two_finger").click(function () {
         count += 1;
         if(count > 4) count -= 1;
         else view_book(count);
@@ -61,178 +71,201 @@ function view_book(count){
     // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
     jsonData = jsonData.replaceAll('\'', '\"');
     jsonObject = JSON.parse(jsonData);
-    alert(jsonData);
+    var String = document.getElementById("bookData").value;
+
+    var change = document.getElementById("bookData").value.replace('[[[',"[[");
+    change = change.replace(']]]',"]]");
+    change = change.replaceAll("'","");
+
+    var book_data = change.split(']], ');
+
+    for(var i = 0; i< book_data.length; i++){
+        book_data[i] = book_data[i] + "]]";
+        book_data[i] = book_data[i].replace(']]]]',"]]");
+        //alert(book_data[i])
+    }
+
+    // 저장되는 순서들
+    // display imgUrl width height top left
+    cover_info = book_data[0]; // 커버
+    expos_info = book_data[1]; // 발단
+    compli_info = book_data[2]; // 전개
+    crisis_info = book_data[3]; // 위기
+    climax_info = book_data[4]; // 절정
+    result_info = book_data[5]; // 결말
+
+    var String = cover_info.replace('[[',"[");
+    String = String.replace(']]',"]");
+    String = String.replaceAll("'","");
+    var String1 = expos_info.replace('[[',"[");
+    String1 = String1.replace(']]',"]");
+    String1 = String1.replaceAll("'","");
+    var String2 = compli_info.replace('[[',"[");
+    String2 = String2.replace(']]',"]");
+    String2 = String2.replaceAll("'","");
+    var String3 = crisis_info.replace('[[',"[");
+    String3 = String3.replace(']]',"]");
+    String3 = String3.replaceAll("'","");
+    var String4 = climax_info.replace('[[',"[");
+    String4 = String4.replace(']]',"]");
+    String4 = String4.replaceAll("'","");
+    var String5 = result_info.replace('[[',"[");
+    String5 = String5.replace(']]',"]");
+    String5 = String5.replaceAll("'","");
+
+    cover_info = String.split('], ');
+    expos_info = String1.split('], ');
+    compli_info = String2.split('], ');
+    crisis_info = String3.split('], ');
+    climax_info = String4.split('], ');
+    result_info = String5.split('], ');
+
+    for(var i = 0; i< cover_info.length; i++){
+        cover_info[i] = cover_info[i] + "]";
+        cover_info[i] = cover_info[i].replace(']]',"]");
+        expos_info[i] = expos_info[i] + "]";
+        expos_info[i] = expos_info[i].replace(']]',"]");
+        compli_info[i] = compli_info[i] + "]";
+        compli_info[i] = compli_info[i].replace(']]',"]");
+        crisis_info[i] = crisis_info[i] + "]";
+        crisis_info[i] = crisis_info[i].replace(']]',"]");
+        climax_info[i] = climax_info[i] + "]";
+        climax_info[i] = climax_info[i].replace(']]',"]");
+        result_info[i] = result_info[i] + "]";
+        result_info[i] = result_info[i].replace(']]',"]");
+
+        sub_string = cover_info[i].replace('[',"");
+        sub_string = sub_string.replace(']',"");
+        sub_string = sub_string.replaceAll("'","");
+        cover_info[i] = sub_string.split(', ');
+
+        sub_string1 = expos_info[i].replace('[',"");
+        sub_string1 = sub_string1.replace(']',"");
+        sub_string1 = sub_string1.replaceAll("'","");
+        expos_info[i] = sub_string1.split(', ');
+
+        sub_string2 = compli_info[i].replace('[',"");
+        sub_string2 = sub_string2.replace(']',"");
+        sub_string2 = sub_string2.replaceAll("'","");
+        compli_info[i] = sub_string2.split(', ');
+
+        sub_string3 = crisis_info[i].replace('[',"");
+        sub_string3 = sub_string3.replace(']',"");
+        sub_string3 = sub_string3.replaceAll("'","");
+        crisis_info[i] = sub_string3.split(', ');
+
+        sub_string4 = climax_info[i].replace('[',"");
+        sub_string4 = sub_string4.replace(']',"");
+        sub_string4 = sub_string4.replaceAll("'","");
+        climax_info[i] = sub_string4.split(', ');
+
+        sub_string5 = result_info[i].replace('[',"");
+        sub_string5 = sub_string5.replace(']',"");
+        sub_string5 = sub_string5.replaceAll("'","");
+        result_info[i] = sub_string5.split(', ');
+    }
+
 
     switch(count){
         case 0:
-            $("#reading_border").css( {"background-image":arrback[count],
+            alert(0);
+            $("#main_border").css( {"background-image":arrback[count],
                                 "background-size":"cover"});
-            $("#decorate_ch_1").css({"display":expos_info[0][0],
-                                        "width":expos_info[0][1],
-                                        "height":expos_info[0][2],
-                                        "top":expos_info[0][3],
-                                        "left":expos_info[0][4],
-                                        "background":arrimg[0]});
-            $("#decorate_ch_2").css({"display":expos_info[1][0],
-                                        "width":expos_info[1][1],
-                                        "height":expos_info[1][2],
-                                        "top":expos_info[1][3],
-                                        "left":expos_info[1][4],
-                                        "background":arrimg[1]});
-            $("#decorate_ch_3").css({"display":expos_info[2][0],
-                                        "width":expos_info[2][1],
-                                        "height":expos_info[2][2],
-                                        "top":expos_info[2][3],
-                                        "left":expos_info[2][4],
-                                        "background":arrimg[2]});
-            $("#decorate_ch_4").css({"display":expos_info[3][0],
-                                        "width":expos_info[3][1],
-                                        "height":expos_info[3][2],
-                                        "top":expos_info[3][3],
-                                        "left":expos_info[3][4],
-                                        "background":arrimg[3]});
+            for(var i = 1; i < expos_info.length; i++){
+                $("#Card_small_"+i).css({"display":expos_info[i][0],
+                                        "width":expos_info[i][2],
+                                        "height":expos_info[i][3],
+                                        "top":expos_info[i][4],
+                                        "left":expos_info[i][5],
+                                        "background":"url("+expos_info[i][1]+")",
+                                        "background-size":"cover"});
+            }
             $("#text_box").text(arrtext[0].toString().replace(/,/g," "));
-            $("#text_box").css({"display":expos_info[4][0],
-                                        "width":expos_info[4][1],
-                                        "height":expos_info[4][2],
-                                        "top":expos_info[4][3],
-                                        "left":expos_info[4][4]});
+            $("#text_box").css({"display":expos_info[0][0],
+                                        "width":expos_info[0][2],
+                                        "height":expos_info[0][3],
+                                        "top":expos_info[0][4],
+                                        "left":expos_info[0][5]});
             break;
         case 1:
-            $("#reading_border").css( {"background-image":arrback[count],
+            alert(1);
+            $("#main_border").css( {"background-image":arrback[count],
                                 "background-size":"cover"});
-            $("#decorate_ch_1").css({"display":compli_info[0][0],
-                                        "width":compli_info[0][1],
-                                        "height":compli_info[0][2],
-                                        "top":compli_info[0][3],
-                                        "left":compli_info[0][4],
-                                        "background":arrimg[0]});
-            $("#decorate_ch_2").css({"display":compli_info[1][0],
-                                        "width":compli_info[1][1],
-                                        "height":compli_info[1][2],
-                                        "top":compli_info[1][3],
-                                        "left":compli_info[1][4],
-                                        "background":arrimg[1]});
-            $("#decorate_ch_3").css({"display":compli_info[2][0],
-                                        "width":compli_info[2][1],
-                                        "height":compli_info[2][2],
-                                        "top":compli_info[2][3],
-                                        "left":compli_info[2][4],
-                                        "background":arrimg[2]});
-            $("#decorate_ch_4").css({"display":compli_info[3][0],
-                                        "width":compli_info[3][1],
-                                        "height":compli_info[3][2],
-                                        "top":compli_info[3][3],
-                                        "left":compli_info[3][4],
-                                        "background":arrimg[3]});
+            for(var i = 1; i < compli_info.length; i++){
+                $("#Card_small_"+i).css({"display":compli_info[i][0],
+                                        "width":compli_info[i][2],
+                                        "height":compli_info[i][3],
+                                        "top":compli_info[i][4],
+                                        "left":compli_info[i][5],
+                                        "background":"url("+compli_info[i][1]+")",
+                                        "background-size":"cover"});
+            }
             $("#text_box").text(arrtext[1].toString().replace(/,/g," "));
-            $("#text_box").css({"display":compli_info[4][0],
-                                        "width":compli_info[4][1],
-                                        "height":compli_info[4][2],
-                                        "top":compli_info[4][3],
-                                        "left":compli_info[4][4]});
+            $("#text_box").css({"display":compli_info[0][0],
+                                        "width":compli_info[0][2],
+                                        "height":compli_info[0][3],
+                                        "top":compli_info[0][4],
+                                        "left":compli_info[0][5]});
             break;
         case 2:
-            $("#reading_border").css( {"background-image":arrback[count],
+            alert(2);
+            $("#main_border").css( {"background-image":arrback[count],
                                 "background-size":"cover"});
-            $("#decorate_ch_1").css({"display":crisis_info[0][0],
-                                        "width":crisis_info[0][1],
-                                        "height":crisis_info[0][2],
-                                        "top":crisis_info[0][3],
-                                        "left":crisis_info[0][4],
-                                        "background":arrimg[0]});
-            $("#decorate_ch_2").css({"display":crisis_info[1][0],
-                                        "width":crisis_info[1][1],
-                                        "height":crisis_info[1][2],
-                                        "top":crisis_info[1][3],
-                                        "left":crisis_info[1][4],
-                                        "background":arrimg[1]});
-            $("#decorate_ch_3").css({"display":crisis_info[2][0],
-                                        "width":crisis_info[2][1],
-                                        "height":crisis_info[2][2],
-                                        "top":crisis_info[2][3],
-                                        "left":crisis_info[2][4],
-                                        "background":arrimg[2]});
-            $("#decorate_ch_4").css({"display":crisis_info[3][0],
-                                        "width":crisis_info[3][1],
-                                        "height":crisis_info[3][2],
-                                        "top":crisis_info[3][3],
-                                        "left":crisis_info[3][4],
-                                        "background":arrimg[3]});
+            for(var i = 1; i < crisis_info.length; i++){
+                $("#Card_small_"+i).css({"display":crisis_info[i][0],
+                                        "width":crisis_info[i][2],
+                                        "height":crisis_info[i][3],
+                                        "top":crisis_info[i][4],
+                                        "left":crisis_info[i][5],
+                                        "background":"url("+crisis_info[i][1]+")",
+                                        "background-size":"cover"});
+            }
             $("#text_box").text(arrtext[2].toString().replace(/,/g," "));
-            $("#text_box").css({"display":crisis_info[4][0],
-                                        "width":crisis_info[4][1],
-                                        "height":crisis_info[4][2],
-                                        "top":crisis_info[4][3],
-                                        "left":crisis_info[4][4]});
+            $("#text_box").css({"display":crisis_info[0][0],
+                                        "width":crisis_info[0][2],
+                                        "height":crisis_info[0][3],
+                                        "top":crisis_info[0][4],
+                                        "left":crisis_info[0][5]});
             break;
         case 3:
-            $("#reading_border").css( {"background-image":arrback[count],
+            alert(3);
+            $("#main_border").css( {"background-image":arrback[count],
                                 "background-size":"cover"});
-            $("#decorate_ch_1").css({"display":climax_info[0][0],
-                                        "width":climax_info[0][1],
-                                        "height":climax_info[0][2],
-                                        "top":climax_info[0][3],
-                                        "left":climax_info[0][4],
-                                        "background":arrimg[0]});
-            $("#decorate_ch_2").css({"display":climax_info[1][0],
-                                        "width":climax_info[1][1],
-                                        "height":climax_info[1][2],
-                                        "top":climax_info[1][3],
-                                        "left":climax_info[1][4],
-                                        "background":arrimg[1]});
-            $("#decorate_ch_3").css({"display":climax_info[2][0],
-                                        "width":climax_info[2][1],
-                                        "height":climax_info[2][2],
-                                        "top":climax_info[2][3],
-                                        "left":climax_info[2][4],
-                                        "background":arrimg[2]});
-            $("#decorate_ch_4").css({"display":climax_info[3][0],
-                                        "width":climax_info[3][1],
-                                        "height":climax_info[3][2],
-                                        "top":climax_info[3][3],
-                                        "left":climax_info[3][4],
-                                        "background":arrimg[3]});
+            for(var i = 1; i < climax_info.length; i++){
+                $("#Card_small_"+i).css({"display":climax_info[i][0],
+                                        "width":climax_info[i][2],
+                                        "height":climax_info[i][3],
+                                        "top":climax_info[i][4],
+                                        "left":climax_info[i][5],
+                                        "background":"url("+climax_info[i][1]+")",
+                                        "background-size":"cover"});
+            }
             $("#text_box").text(arrtext[3].toString().replace(/,/g," "));
-            $("#text_box").css({"display":climax_info[4][0],
-                                        "width":climax_info[4][1],
-                                        "height":climax_info[4][2],
-                                        "top":climax_info[4][3],
-                                        "left":climax_info[4][4]});
+            $("#text_box").css({"display":climax_info[0][0],
+                                        "width":climax_info[0][2],
+                                        "height":climax_info[0][3],
+                                        "top":climax_info[0][4],
+                                        "left":climax_info[0][5]});
             break;
         case 4:
-            $("#reading_border").css( {"background-image":arrback[count],
+            alert(4);
+            $("#main_border").css( {"background-image":arrback[count],
                                 "background-size":"cover"});
-            $("#decorate_ch_1").css({"display":result_info[0][0],
-                                        "width":result_info[0][1],
-                                        "height":result_info[0][2],
-                                        "top":result_info[0][3],
-                                        "left":result_info[0][4],
-                                        "background":arrimg[0]});
-            $("#decorate_ch_2").css({"display":result_info[1][0],
-                                        "width":result_info[1][1],
-                                        "height":result_info[1][2],
-                                        "top":result_info[1][3],
-                                        "left":result_info[1][4],
-                                        "background":arrimg[1]});
-            $("#decorate_ch_3").css({"display":result_info[2][0],
-                                        "width":result_info[2][1],
-                                        "height":result_info[2][2],
-                                        "top":result_info[2][3],
-                                        "left":result_info[2][4],
-                                        "background":arrimg[2]});
-            $("#decorate_ch_4").css({"display":result_info[3][0],
-                                        "width":result_info[3][1],
-                                        "height":result_info[3][2],
-                                        "top":result_info[3][3],
-                                        "left":result_info[3][4],
-                                        "background":arrimg[3]});
+            for(var i = 1; i < result_info.length; i++){
+                $("#Card_small_"+i).css({"display":result_info[i][0],
+                                        "width":result_info[i][2],
+                                        "height":result_info[i][3],
+                                        "top":result_info[i][4],
+                                        "left":result_info[i][5],
+                                        "background":"url("+result_info[i][1]+")",
+                                        "background-size":"cover"});
+            }
             $("#text_box").text(arrtext[4].toString().replace(/,/g," "));
-            $("#text_box").css({"display":result_info[4][0],
-                                        "width":result_info[4][1],
-                                        "height":result_info[4][2],
-                                        "top":result_info[4][3],
-                                        "left":result_info[4][4]});
+            $("#text_box").css({"display":result_info[0][0],
+                                        "width":result_info[0][2],
+                                        "height":result_info[0][3],
+                                        "top":result_info[0][4],
+                                        "left":result_info[0][5]});
             break;
     }
 }
