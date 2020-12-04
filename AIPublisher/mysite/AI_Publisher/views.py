@@ -313,7 +313,7 @@ def update_book(request):
             tmpBookPage.save()
             # 글상자 #
             tmpTextBox = BookElement(display=getjson['BookPages'][i]['elements'][4]['display'],
-                                      imgUrl=getjson['mainChar']['url'],
+                                      imgUrl="",
                                       width=getjson['BookPages'][i]['elements'][4]['width'],
                                       height=getjson['BookPages'][i]['elements'][4]['height'],
                                       top=getjson['BookPages'][i]['elements'][4]['top'],
