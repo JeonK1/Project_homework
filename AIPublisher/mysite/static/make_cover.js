@@ -1,5 +1,5 @@
 var backArray;
-
+var locate_url=""
 // 사용자가 적용한 배경 저장
 var arrback = ""
 
@@ -198,58 +198,70 @@ function cover_decoration(){
 
 function makeBook(){
     get_background();
+    document.getElementById('modal_end_cover').style.backgroundImage = document.getElementById('main_border').style.backgroundImage;
     if(document.getElementById('main_border').style.backgroundImage == ""){
         //배경 설정 안됨
-        createModal("warning","경고", "배경화면을 선택해주세요");
-    } else if(document.getElementById('text_box').innerText == ""){
-        createModal("warning","경고", "동화의 제목을 지어주세요");
+        createModal_warn("배경화면을\n선택해주세요");
+    } else if(document.getElementById('text_box').innerText == "드래그 하여 문장 위치를 바꿔보세요."){
+        createModal_warn("제목을\n입력해주세요");
     } else {
-        createModal("book","동화를 완성합니다.", "나의 책장에서 확인할 수 있습니다.");
+        createModal_end();
     }
 }
 
 //모달창
-function createModal(type, title, message){
-    if(type=="warning"){
-        //경고일 때
-        document.querySelector('#modal_button_ok').style.display = '';
-        document.querySelector('#modal_button_yes').style.display = 'none';
-        document.querySelector('#modal_button_no').style.display = 'none';
-
-        document.querySelector('.modal_wrap').style.display ='block';
-        document.querySelector('.black_bg').style.display ='block';
-        document.querySelector('#modal_title').innerText = title;
-        document.querySelector('#modal_context').innerText = message;
-        document.querySelector('#modal_button_ok').style.color = "#FAC1D6";
-        document.querySelector('#modal_button_ok').style.background = "#A90E46";
-
-    } else if(type=="book"){
-        document.querySelector('#modal_button_ok').style.display = '';
-        document.querySelector('#modal_button_yes').style.display = 'none';
-        document.querySelector('#modal_button_no').style.display = 'none';
-
-        document.querySelector('.modal_wrap').style.display ='block';
-        document.querySelector('.black_bg').style.display ='block';
-        document.querySelector('#modal_title').innerText = title;
-        document.querySelector('#modal_context').innerText = message;
-        document.getElementById('modal_warning_img').src = document.getElementById('modal_warning_img').src+"/../ic_book.png";
-        document.querySelector('#modal_button_ok').style.color = "#C5F2C7";
-        document.querySelector('#modal_button_ok').style.background = "#F8B24";
-        document.getElementById("modal_button_ok").onclick = sendToNextPage;
-    }
+function createModal_nav(url){
+    document.querySelector('#modal_button_yes').style.display = "";
+    document.querySelector('#modal_button_no').style.display = "";
+    document.querySelector('.modal_wrap').style.display ='block';
+    document.querySelector('.black_bg').style.display ='block';
+    locate_url = url
 }
 function removeModal(){
     document.querySelector('.modal_wrap').style.display ='none';
     document.querySelector('.black_bg').style.display ='none';
 }
+
 function modalOk(){
-    //확인 누르면 자기 자신 페이지로 돌아옴
     removeModal();
 }
-function sendToNextPage(){
-    removeModal();
 
-    //다음페이지로 POST 데이터 넘기기
+function modalYes_nav(){
+    removeModal();
+    if(locate_url=="back"){
+        //뒤로가기
+        history.back();
+    } else {
+        window.location = locate_url;
+    }
+}
+
+function modalNo_nav(){
+    removeModal();
+}
+
+function createModal_warn(message){
+    document.querySelector('.modal_warn_wrap').style.display ='block';
+    document.querySelector('.black_bg_warn').style.display ='block';
+    document.getElementById('modal_warn_title').innerText = message;
+}
+function removeModal_warn(){
+    document.querySelector('.modal_warn_wrap').style.display ='none';
+    document.querySelector('.black_bg_warn').style.display ='none';
+}
+function createModal_end(){
+    document.querySelector('.modal_end_wrap').style.display ='block';
+    document.querySelector('.black_bg_end').style.display ='block';
+    upload_book();
+}
+
+
+function removeModal_end(){
+    document.querySelector('.modal_end_wrap').style.display ='none';
+    document.querySelector('.black_bg_end').style.display ='none';
+}
+function upload_book(){
+//다음페이지로 POST 데이터 넘기기
     jsonData = document.getElementById("jsonData").value;
         // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
     jsonData = jsonData.replaceAll('\'', '\"');
@@ -287,7 +299,6 @@ function sendToNextPage(){
     var jsonData = JSON.stringify(jsonObject);
     document.getElementById("jsonData").value = jsonData;
 
-
     var url_POST = '../update_book/';
     var req = new XMLHttpRequest();
     req.open('POST', url_POST, true);
@@ -301,6 +312,8 @@ function sendToNextPage(){
     }
     req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     req.send("jsonData="+jsonData);
-
-    //window.location = '/AI_Publisher/show_gallery';
+}
+function sendToNextPage(){
+    removeModal_end();
+    window.location = '/AI_Publisher/';
 }

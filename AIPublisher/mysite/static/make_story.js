@@ -1047,68 +1047,109 @@ function removeSpeechBox(){
     document.getElementById("speech_box").style.display="none";
 }
 
-//모달창
-function createModal(type, title, message){
-    if(type=="warning"){
-        //경고일 때
-        document.querySelector('#modal_button_ok').style.display = '';
-        document.querySelector('#modal_button_yes').style.display = 'none';
-        document.querySelector('#modal_button_no').style.display = 'none';
+////모달창
+//function createModal(type, title, message){
+//    if(type=="warning"){
+//        //경고일 때
+//        document.querySelector('#modal_button_ok').style.display = '';
+//        document.querySelector('#modal_button_yes').style.display = 'none';
+//        document.querySelector('#modal_button_no').style.display = 'none';
+//
+//        document.querySelector('.modal_wrap').style.display ='block';
+//        document.querySelector('.black_bg').style.display ='block';
+//        document.querySelector('#modal_title').innerText = title;
+//        document.querySelector('#modal_context').innerText = message;
+//        document.querySelector('#modal_button_ok').style.color = "#FAC1D6";
+//        document.querySelector('#modal_button_ok').style.background = "#A90E46";
+//
+//    } else if(type=="book"){
+//        document.querySelector('#modal_button_ok').style.display = '';
+//        document.querySelector('#modal_button_yes').style.display = 'none';
+//        document.querySelector('#modal_button_no').style.display = 'none';
+//
+//        document.querySelector('.modal_wrap').style.display ='block';
+//        document.querySelector('.black_bg').style.display ='block';
+//        document.querySelector('#modal_title').innerText = title;
+//        document.querySelector('#modal_context').innerText = message;
+//        document.getElementById('modal_warning_img').src = document.getElementById('modal_warning_img').src+"/../ic_book.png";
+//        document.querySelector('#modal_button_ok').style.color = "#C5F2C7";
+//        document.querySelector('#modal_button_ok').style.background = "#F8B24";
+//        document.getElementById("modal_button_ok").onclick = sendToNextPage;
+//    }
+//}
+//function removeModal(){
+//    document.querySelector('.modal_wrap').style.display ='none';
+//    document.querySelector('.black_bg').style.display ='none';
+//}
+//function modalOk(){
+//    //확인 누르면 자기 자신 페이지로 돌아옴
+//    removeModal();
+//}
+//
+////나의 배경 불러오기 모달창
+//function createMyBgModal(){
+//    document.querySelector('.modal_wrap').style.display ='block';
+//    document.querySelector('.black_bg').style.display ='block';
+//}
+//function removeMyBgModal(){
+//    document.querySelector('.modal_wrap').style.display ='none';
+//    document.querySelector('.black_bg').style.display ='none';
+//}
+//function bgModalYes(){
+//    // 배경화면 적용 후 모달 종료
+//    var backgroundId = $("input[name='select_bg']:checked").val();
+//    select_background(backgroundId);
+//    removeMyBgModal();
+//}
+//function bgModalNo(){
+//    // 모달 종료
+//    removeMyBgModal();
+//}
+//function clickLeft(){
+//    // 왼쪽 버튼 클릭 시, 이전목록 3개의 background 세팅
+//}
+//
+//function clickRight(){
+//    // 오른쪽 버튼 클릭 시, 이전목록 3개의 background 세팅
+//}
 
-        document.querySelector('.modal_wrap').style.display ='block';
-        document.querySelector('.black_bg').style.display ='block';
-        document.querySelector('#modal_title').innerText = title;
-        document.querySelector('#modal_context').innerText = message;
-        document.querySelector('#modal_button_ok').style.color = "#FAC1D6";
-        document.querySelector('#modal_button_ok').style.background = "#A90E46";
 
-    } else if(type=="book"){
-        document.querySelector('#modal_button_ok').style.display = '';
-        document.querySelector('#modal_button_yes').style.display = 'none';
-        document.querySelector('#modal_button_no').style.display = 'none';
-
-        document.querySelector('.modal_wrap').style.display ='block';
-        document.querySelector('.black_bg').style.display ='block';
-        document.querySelector('#modal_title').innerText = title;
-        document.querySelector('#modal_context').innerText = message;
-        document.getElementById('modal_warning_img').src = document.getElementById('modal_warning_img').src+"/../ic_book.png";
-        document.querySelector('#modal_button_ok').style.color = "#C5F2C7";
-        document.querySelector('#modal_button_ok').style.background = "#F8B24";
-        document.getElementById("modal_button_ok").onclick = sendToNextPage;
-    }
+function createModal_nav(url){
+    document.querySelector('#modal_button_yes').style.display = "";
+    document.querySelector('#modal_button_no').style.display = "";
+    document.querySelector('.modal_wrap').style.display ='block';
+    document.querySelector('.black_bg').style.display ='block';
+    locate_url = url
 }
 function removeModal(){
     document.querySelector('.modal_wrap').style.display ='none';
     document.querySelector('.black_bg').style.display ='none';
 }
+
 function modalOk(){
-    //확인 누르면 자기 자신 페이지로 돌아옴
     removeModal();
 }
 
-//나의 배경 불러오기 모달창
-function createMyBgModal(){
-    document.querySelector('.modal_wrap').style.display ='block';
-    document.querySelector('.black_bg').style.display ='block';
-}
-function removeMyBgModal(){
-    document.querySelector('.modal_wrap').style.display ='none';
-    document.querySelector('.black_bg').style.display ='none';
-}
-function bgModalYes(){
-    // 배경화면 적용 후 모달 종료
-    var backgroundId = $("input[name='select_bg']:checked").val();
-    select_background(backgroundId);
-    removeMyBgModal();
-}
-function bgModalNo(){
-    // 모달 종료
-    removeMyBgModal();
-}
-function clickLeft(){
-    // 왼쪽 버튼 클릭 시, 이전목록 3개의 background 세팅
+function modalYes_nav(){
+    removeModal();
+    if(locate_url=="back"){
+        //뒤로가기
+        history.back();
+    } else {
+        window.location = locate_url;
+    }
 }
 
-function clickRight(){
-    // 오른쪽 버튼 클릭 시, 이전목록 3개의 background 세팅
+function modalNo_nav(){
+    removeModal();
+}
+
+function createModal_warn(message){
+    document.querySelector('.modal_warn_wrap').style.display ='block';
+    document.querySelector('.black_bg_warn').style.display ='block';
+    document.getElementById('modal_warn_title').innerText = message;
+}
+function removeModal_warn(){
+    document.querySelector('.modal_warn_wrap').style.display ='none';
+    document.querySelector('.black_bg_warn').style.display ='none';
 }

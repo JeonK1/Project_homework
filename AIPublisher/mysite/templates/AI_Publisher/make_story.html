@@ -23,39 +23,62 @@
 
     <div class="BackGround" id="BackGround">
         <div class="Field" id="Field"></div>
-        <!-- 나의 배경 모달창 -->
+        <!-- 모달창 -->
         <div class="black_bg" onclick="removeModal();"></div>
         <div class="modal_wrap">
-            <div id="image_wrap">
-                <img class="img_arrow" src="../../static/img/ic_left.png" style="margin-right:10px;" onclick="clickLeft();">
-                <form style="display:flex;" action="">
-                    <label for="radio_img1">
-                        <div class="image_bg" id="imgae_bg1" style="background-image: url('../../static/img/ground/{{bookContetnsList.0}}');">
-                            <input type="radio" id="radio_img1" name="select_bg" value="imgae_bg1">
-                        </div>
-                    </label>
-                    <label for="radio_img2">
-                        <div class="image_bg" id="imgae_bg2" style="background-image: url('../../static/img/ground/{{bookContetnsList.1}}');">
-                            <input type="radio" id="radio_img2" name="select_bg" value="imgae_bg2">
-                        </div>
-                    </label>
-                    <label for="radio_img3">
-                        <div class="image_bg" id="imgae_bg3" style="background-image: url('../../static/img/ground/{{bookContetnsList.2}}');">
-                            <input type="radio" id="radio_img3" name="select_bg" value="imgae_bg3">
-                        </div>
-                    </label>
-                </form>
-                <img src="../../static/img/ic_right.png" onclick="clickRight();">
+            <div id="modal_context">
+                지금 나가면<br>제작한 이야기가<br>저장되지 않아요.
             </div>
             <div id="modal_title">
-                선택된 배경 이미지를 추가합니다.
+                그래도 괜찮아요?
             </div>
-            <div id="modal_context"></div>
             <div id="modal_button_wrap">
-                <div class="modal_button" id="modal_button_no" onclick="bgModalNo();">불러오기 취소</div>
-                <div class="modal_button" id="modal_button_yes" onclick="bgModalYes();">배경 불러오기</div>
+                <div class="modal_button" id="modal_button_yes" onclick="modalYes_nav();">괜찮아요</div>
+                <div class="modal_button" id="modal_button_no" onclick="modalNo_nav();">안나갈래요</div>
             </div>
         </div>
+
+        <!-- 모달창(경고) -->
+        <div class="black_bg_warn" onclick="removeModal_warn();"></div>
+        <div class="modal_warn_wrap">
+            <div id="modal_warn_title">
+                등장인물은<br>적어도 2개 이상<br>선택해주세요
+            </div>
+        </div>
+
+        <!--&lt;!&ndash; 나의 배경 모달창 &ndash;&gt;-->
+        <!--<div class="black_bg" onclick="removeModal();"></div>-->
+        <!--<div class="modal_wrap">-->
+            <!--<div id="image_wrap">-->
+                <!--<img class="img_arrow" src="../../static/img/ic_left.png" style="margin-right:10px;" onclick="clickLeft();">-->
+                <!--<form style="display:flex;" action="">-->
+                    <!--<label for="radio_img1">-->
+                        <!--<div class="image_bg" id="imgae_bg1" style="background-image: url('../../static/img/ground/{{bookContetnsList.0}}');">-->
+                            <!--<input type="radio" id="radio_img1" name="select_bg" value="imgae_bg1">-->
+                        <!--</div>-->
+                    <!--</label>-->
+                    <!--<label for="radio_img2">-->
+                        <!--<div class="image_bg" id="imgae_bg2" style="background-image: url('../../static/img/ground/{{bookContetnsList.1}}');">-->
+                            <!--<input type="radio" id="radio_img2" name="select_bg" value="imgae_bg2">-->
+                        <!--</div>-->
+                    <!--</label>-->
+                    <!--<label for="radio_img3">-->
+                        <!--<div class="image_bg" id="imgae_bg3" style="background-image: url('../../static/img/ground/{{bookContetnsList.2}}');">-->
+                            <!--<input type="radio" id="radio_img3" name="select_bg" value="imgae_bg3">-->
+                        <!--</div>-->
+                    <!--</label>-->
+                <!--</form>-->
+                <!--<img src="../../static/img/ic_right.png" onclick="clickRight();">-->
+            <!--</div>-->
+            <!--<div id="modal_title">-->
+                <!--선택된 배경 이미지를 추가합니다.-->
+            <!--</div>-->
+            <!--<div id="modal_context"></div>-->
+            <!--<div id="modal_button_wrap">-->
+                <!--<div class="modal_button" id="modal_button_no" onclick="bgModalNo();">불러오기 취소</div>-->
+                <!--<div class="modal_button" id="modal_button_yes" onclick="bgModalYes();">배경 불러오기</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
 
         <!-- 스토리 보드 -->
@@ -83,13 +106,13 @@
         </div>
 
         <!--이전 페이지-->
-        <div class="backpage" id="backpage_btn">
+        <div class="backpage" id="backpage_btn" onclick="createModal_nav('/AI_Publisher');">
             <div class="backpage" id="backpage_arrow"></div>
             <div class="backpage" id="backpage_text">책장으로 돌아가기</div>
         </div>
 
         <!--노리스 아이콘 및 배경-->
-        <div class="icon" id="noris_icon"></div>
+        <div class="icon" id="noris_icon" onclick="createModal_nav('/AI_Publisher')"></div>
         <!-- 도움이 필요해요 -->
         <div class="question" id="question_mark"></div>
         <div class="need_help" id="need_help">도움이 필요해요</div>
@@ -139,7 +162,7 @@
 
         <!--오른쪽 메뉴-->
         <div class="RightSidebar" id="RightSidebar">
-            <div class="plus_mark" id="plus_mark" onclick="createMyBgModal();"></div>
+            <div class="plus_mark" id="plus_mark" ></div>
         </div>
         <div class="RightSidebar" id="RightSidebar_box">
             <div id="RightSidebar_scroll">

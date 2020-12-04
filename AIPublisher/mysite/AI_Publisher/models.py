@@ -23,19 +23,15 @@ class BookPage(models.Model):
     id = models.AutoField(primary_key=True)
     backgroundUrl = models.CharField(max_length=200)
     context = models.CharField(max_length=200)
-    elements = models.ManyToManyField(BookElement)
+    elements = models.ManyToManyField(BookElement, through="Bookpages_elements")
 
 class BookInfo_bookPages(models.Model):
     bookinfo_id = models.IntegerField()
     bookpage_id = models.IntegerField()
 
 class Bookpages_elements(models.Model):
-    bookpage_id = models.IntegerField()
-    bookelement_id = models.IntegerField()
-
-# class elements_BookPage(models.Model):
-#     bookpage_id2 = models.IntegerField()
-#     bookelement_id2 = models.IntegerField()
+    bookpage_id = models.ForeignKey(BookPage, on_delete=models.CASCADE)
+    bookelement_id = models.ForeignKey(BookElement, on_delete=models.CASCADE)
 
 class BookInfo(models.Model):
     BookNo = models.AutoField(primary_key=True)
