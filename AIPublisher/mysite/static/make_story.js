@@ -126,6 +126,14 @@ function story_make(){
         count += 1;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
     // 왼쪽 단계 눌렀을 때때
@@ -134,6 +142,14 @@ function story_make(){
         count = 0;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
     $("#STEP_2").click(function() {
@@ -141,6 +157,14 @@ function story_make(){
         count = 1;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
     $("#STEP_3").click(function() {
@@ -148,6 +172,14 @@ function story_make(){
         count = 2;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
     $("#STEP_4").click(function() {
@@ -155,6 +187,14 @@ function story_make(){
         count = 3;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
     $("#STEP_5").click(function() {
@@ -162,6 +202,14 @@ function story_make(){
         count = 4;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
 

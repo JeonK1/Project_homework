@@ -18,10 +18,8 @@
 
     <title>Make Cover</title>
 </head>
-<!--
+
 <body onload="cover_decoration();get_background();">
--->
-<body>
     <div class="BackGround" id="BackGround">
         <div class="Field" id="Field"></div>
         <!-- 모달창 -->
@@ -51,9 +49,9 @@
         <div class="icon" id="noris_icon"></div>
 
          <!--다음 페이지-->
-        <div class="nextpage" id="nextpage_btn">
+        <div class="nextpage" id="nextpage_btn" onclick="makeBook();">
             <div class="nextpage" id="nextpage_arrow"></div>
-            <div class="nextpage" id="nextpage_text">다음으로</div>
+            <div class="nextpage" id="nextpage_text">완성하기</div>
         </div>
 
         <!--북마크 표시-->
@@ -62,11 +60,10 @@
 
 
         <!--표지-->
-        <!-- 스토리 보드 -->
         <div class="story_border" id="story_border">
-            <div class="sub_border_1" id="sub_border_1"></div>
-            <div class="sub_border_1" id="sub_border_2"></div>
-            <div class="main_border" id="main_border">
+            <div class="story_border" id="sub_border_1"></div>
+            <div class="story_border" id="sub_border_2"></div>
+            <div class="story_border" id="main_border">
                 <!-- 표지 캐릭터 꾸미기 -->
                 <div class="decorate_ch_1" id="decorate_ch_1" >
                         <img class="deco_img" id="decorate_1" src={{getJSONData.mainChar.url}}>
@@ -85,33 +82,38 @@
                 </div>
             </div>
         </div>
+
         <div class="Cover_title" id="Cover_title">책 표지를 <br></br>꾸며보아요!</div>
 
         <!--오른쪽 메뉴-->
         <div class="RightSidebar" id="RightSidebar">
+            <div class="plus_mark" id="plus_mark" onclick="createMyBgModal();"></div>
+        </div>
+        <div class="RightSidebar" id="RightSidebar_box">
             <div id="RightSidebar_scroll">
 
             </div>
-            <div class="plus_mark" id="plus_mark" onclick="createMyBgModal();"></div>
         </div>
 
-         <!--왼쪽 메뉴-->
-        <div class="LeftSidebar" id="LeftSidebar">
-            <!--왼쪽 카드 뭉치-->
-            <div class="Card_small_1" id="Card_small_1">
-                    <img class="card_img" id="card_1" src={{getJSONData.mainChar.url}}>
+        <!--왼쪽 메뉴-->
+        <div class="LeftSidebar" id="LeftSidebar"></div>
+        <div class="LeftSidebar" id="LeftSidebar_box">
+        <!--왼쪽 카드 뭉치-->
+        <div class="Card_small_1" id="Card_small_1">
+                <img class="card_img" id="card_1" src={{getJSONData.mainChar.url}}>
+        </div>
+        <div class="Card_small_2" id="Card_small_2">
+                <img class="card_img" id="card_2" src={{getJSONData.subChar.url}}>
+        </div>
+        {% for character in getJSONData.charList %}
+            <div class="character_card" id="Card_small_{{forloop.counter | add:2}}">
+            <!--<div class="character_card" id="character_{{forloop.counter}}" onclick="sendSubChar({{forloop.counter}})">-->
+                <img class="card_img" id="card_{{forloop.counter}}" src={{character.url}}>
             </div>
-            <div class="Card_small_2" id="Card_small_2">
-                    <img class="card_img" id="card_2" src={{getJSONData.subChar.url}}>
-            </div>
-            {% for character in getJSONData.charList %}
-                <div class="character_card" id="Card_small_{{forloop.counter | add:2}}">
-                <!--<div class="character_card" id="character_{{forloop.counter}}" onclick="sendSubChar({{forloop.counter}})">-->
-                    <img class="card_img" id="card_{{forloop.counter}}" src={{character.url}}>
-                </div>
-            {% endfor %}
-            <!--<div class="Card_small_3" id="Card_small_3" style="background-image: url('{{getJSONData.charList.2}}');"></div>-->
-            <!--<div class="Card_small_4" id="Card_small_4" style="background-image: url('{{getJSONData.charList.3}}');"></div>-->
+        {% endfor %}
+        <!--<div class="Card_small_3" id="Card_small_3" style="background-image: url('{{getJSONData.charList.2}}');"></div>-->
+        <!--<div class="Card_small_4" id="Card_small_4" style="background-image: url('{{getJSONData.charList.3}}');"></div>-->
+
         </div>
 
 

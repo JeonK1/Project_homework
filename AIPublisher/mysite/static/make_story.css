@@ -286,6 +286,15 @@
     /* 0040 */
     border: 3px dashed #666666;
     box-sizing: border-box;
+
+    font-size: 20px;
+    line-height: 150%;
+    /* or 30px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
 }
 
 /* 드래그 하여 문장 위치를 바꿔보세요. */

@@ -31,7 +31,8 @@ function make_background_button(i, src) {
     picElement.id = "Ground_small_" + (i+1).toString();
     picElement.style.backgroundImage = "url('"+src+"')";
     divElement.onclick = function() {
-        $("#Cover").css( {"background-image":($( "#"+picElement.id ).css( "background-image" )),
+
+        $("#main_border").css( {"background-image":($( "#"+picElement.id ).css( "background-image" )),
                             "background-size":"cover"});
         arrback = $( "#"+picElement.id  ).css( "background-image" );
     };
@@ -51,7 +52,7 @@ function cover_decoration(){
 
     $("#decorate_ch_1").resizable({
         handles : 'w,n,s,e',
-        containment:"#Cover",
+        containment:"#main_border",
         maxWidth: 500,
         minWidth: 85,
         maxHeight: 400,
@@ -64,12 +65,12 @@ function cover_decoration(){
 
     $("#decorate_ch_1").draggable({
                          cursor:"pointer", // 커서 모양
-                         containment:"#Cover", // div영역 에서만 움직이도록 설정
+                         containment:"#main_border", // div영역 에서만 움직이도록 설정
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
     $("#decorate_ch_2").resizable({
         handles : 'w,n,s,e',
-        containment:"#Cover",
+        containment:"#main_border",
         maxWidth: 500,
         minWidth: 85,
         maxHeight: 400,
@@ -82,12 +83,12 @@ function cover_decoration(){
 
     $("#decorate_ch_2").draggable({
                          cursor:"pointer", // 커서 모양
-                         containment:"#Cover", // div영역 에서만 움직이도록 설정
+                         containment:"#main_border", // div영역 에서만 움직이도록 설정
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
     $("#decorate_ch_3").resizable({
         handles : 'w,n,s,e',
-        containment:"#Cover",
+        containment:"#main_border",
         maxWidth: 500,
         minWidth: 85,
         maxHeight: 400,
@@ -100,12 +101,12 @@ function cover_decoration(){
 
     $("#decorate_ch_3").draggable({
                          cursor:"pointer", // 커서 모양
-                         containment:"#Cover", // div영역 에서만 움직이도록 설정
+                         containment:"#main_border", // div영역 에서만 움직이도록 설정
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
     $("#decorate_ch_4").resizable({
         handles : 'w,n,s,e',
-        containment:"#Cover",
+        containment:"#main_border",
         maxWidth: 500,
         minWidth: 85,
         maxHeight: 400,
@@ -118,7 +119,7 @@ function cover_decoration(){
 
     $("#decorate_ch_4").draggable({
                          cursor:"pointer", // 커서 모양
-                         containment:"#Cover", // div영역 에서만 움직이도록 설정
+                         containment:"#main_border", // div영역 에서만 움직이도록 설정
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
 
@@ -164,11 +165,11 @@ function cover_decoration(){
 
     $("#input_text").keydown(function (key) {
         if (key.keyCode == 13) {
-            $("#Cover_title").text($("#input_text").val());
+            $("#text_box").text($("#input_text").val());
             $('#input_text').val('');
-            $("#Cover_title").resizable({
+            $("#text_box").resizable({
                 handles : 'w,n,s,e',
-                containment:"#Cover",
+                containment:"#main_border",
                 maxWidth: 500,
                 minWidth: 200,
                 maxHeight: 400,
@@ -177,9 +178,9 @@ function cover_decoration(){
         }
     });
 
-    $("#Cover_title").resizable({
+    $("#text_box").resizable({
         handles : 'w,n,s,e',
-        containment:"#Cover",
+        containment:"#main_border",
         maxWidth: 500,
         minWidth: 200,
         maxHeight: 400,
@@ -187,9 +188,9 @@ function cover_decoration(){
 
     });
 
-    $("#Cover_title").draggable({
+    $("#text_box").draggable({
                          cursor:"pointer", // 커서 모양
-                         containment:"#Cover", // div영역 에서만 움직이도록 설정
+                         containment:"#main_border", // div영역 에서만 움직이도록 설정
                          revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
                     });
 
@@ -197,10 +198,10 @@ function cover_decoration(){
 
 function makeBook(){
     get_background();
-    if(document.getElementById('Cover').style.backgroundImage == ""){
+    if(document.getElementById('main_border').style.backgroundImage == ""){
         //배경 설정 안됨
         createModal("warning","경고", "배경화면을 선택해주세요");
-    } else if(document.getElementById('Cover_title').innerText == ""){
+    } else if(document.getElementById('text_box').innerText == ""){
         createModal("warning","경고", "동화의 제목을 지어주세요");
     } else {
         createModal("book","동화를 완성합니다.", "나의 책장에서 확인할 수 있습니다.");
@@ -256,8 +257,8 @@ function sendToNextPage(){
     console.log(jsonData);
 
     var bookPage = new Object();
-    bookPage.background = ($("#Cover").css("background-image")).slice(5, -2);
-    bookPage.context = document.getElementById("Cover_title").innerText;
+    bookPage.background = ($("#main_border").css("background-image")).slice(5, -2);
+    bookPage.context = document.getElementById("text_box").innerText;
     var elements = new Array();
     for(j=1; j<=4; j++){
         // 캐릭터 업로드
@@ -271,11 +272,11 @@ function sendToNextPage(){
     }
     // Cover textbox 추가
     var element = new Object();
-    element.display = $("#Cover_title").css("display");
-    element.width = $("#Cover_title").css("width");
-    element.height = $("#Cover_title").css("height");
-    element.top = $("#Cover_title").css("top");
-    element.left = $("#Cover_title").css("left");
+    element.display = $("#text_box").css("display");
+    element.width = $("#text_box").css("width");
+    element.height = $("#text_box").css("height");
+    element.top = $("#text_box").css("top");
+    element.left = $("#text_box").css("left");
     elements.push(element);
 
     bookPage.elements = elements;
