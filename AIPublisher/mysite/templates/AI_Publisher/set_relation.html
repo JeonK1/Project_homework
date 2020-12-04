@@ -17,9 +17,31 @@
 <body>
     <!--배경 및 프레임-->
     <div class="container" id="background">
+        <!-- 모달창 -->
+        <div class="black_bg" onclick="removeModal();"></div>
+        <div class="modal_wrap">
+            <div id="modal_context">
+                지금 나가면<br>제작한 이야기가<br>저장되지 않아요.
+            </div>
+            <div id="modal_title">
+                그래도 괜찮아요?
+            </div>
+            <div id="modal_button_wrap">
+                <div class="modal_button" id="modal_button_yes" onclick="modalYes_nav();">괜찮아요</div>
+                <div class="modal_button" id="modal_button_no" onclick="modalNo_nav();">안나갈래요</div>
+            </div>
+        </div>
+
+        <!-- 모달창(경고) -->
+        <div class="black_bg_warn" onclick="removeModal_warn();"></div>
+        <div class="modal_warn_wrap">
+            <div id="modal_warn_title">
+                등장인물은<br>적어도 2개 이상<br>선택해주세요
+            </div>
+        </div>
 
         <!--노리스 아이콘 및 배경-->
-        <div class="icon" id="noris_icon"></div>
+        <div class="icon" id="noris_icon" onclick="createModal_nav('/AI_Publisher')"></div>
         <div class="background" id="set_relation_background"></div>
 
         <!--텍스트-->
@@ -68,28 +90,27 @@
                     <img class="card_img" id="card_{{forloop.counter}}" src={{character.url}}>
                 </div>
         {% endfor %}
-        {{cardList}}
         <!--관계 설정 텍스트 출력-->
-        <div class="relation_card_1" id="relation_card1" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList}}</div>
-        <div class="relation_card_1" id="relation_card2" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text2</div>
-        <div class="relation_card_1" id="relation_card3" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text3</div>
+        <div class="relation_card_1" id="relation_card1" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.0}}</div>
+        <div class="relation_card_1" id="relation_card2" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.1}}</div>
+        <div class="relation_card_1" id="relation_card3" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.2}}</div>
 
-        <div class="relation_card_2" id="relation_card4" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text4</div>
-        <div class="relation_card_2" id="relation_card5" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text5</div>
-        <div class="relation_card_2" id="relation_card6" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text6</div>
-        <div class="relation_card_2" id="relation_card7" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text7</div>
+        <div class="relation_card_2" id="relation_card4" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.3}}</div>
+        <div class="relation_card_2" id="relation_card5" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.4}}</div>
+        <div class="relation_card_2" id="relation_card6" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.5}}</div>
+        <div class="relation_card_2" id="relation_card7" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.6}}</div>
 
-        <div class="relation_card_3" id="relation_card8" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text8</div>
-        <div class="relation_card_3" id="relation_card9" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text9</div>
-        <div class="relation_card_3" id="relation_card10" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text10</div>
-        <div class="relation_card_3" id="relation_card11" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text11</div>
+        <div class="relation_card_3" id="relation_card8" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.7}}</div>
+        <div class="relation_card_3" id="relation_card9" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.8}}</div>
+        <div class="relation_card_3" id="relation_card10" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.9}}</div>
+        <div class="relation_card_3" id="relation_card11" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.10}}</div>
 
-        <div class="relation_card_4" id="relation_card12" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text12</div>
-        <div class="relation_card_4" id="relation_card13" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text13</div>
-        <div class="relation_card_4" id="relation_card14" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >text14</div>
+        <div class="relation_card_4" id="relation_card12" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.11}}</div>
+        <div class="relation_card_4" id="relation_card13" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.12}}</div>
+        <div class="relation_card_4" id="relation_card14" draggable="true" ondragstart="onDragStart(event)" ondrag="onDrag(event)" >{{cardList.13}}</div>
 
         <!--이전 페이지-->
-        <div class="backpage" id="backpage_btn">
+        <div class="backpage" id="backpage_btn" onclick="createModal_nav('back')">
             <div class="backpage" id="backpage_arrow"></div>
             <div class="backpage" id="backpage_text">이전으로</div>
         </div>

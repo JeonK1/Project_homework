@@ -102,27 +102,20 @@ function sendToNextPage(){
         if(arrCharacter[i].name != "")
             isCharNameAllExist += 1;
     }
-    // if(isCharNameAllExist != arrCharacter.length){
-    //     // 이름을 작성하지 않은 인물이 있음
-    //     createModal("warning", "경고", "이름을 작성하지 않은 인물이 있어요");
-    // } else if (isMainCharSelected == 0){
-    //     // 주인공을 설정하지 않은 인물이 있음
-    //     createModal("warning", "경고", "주인공을 설정해주세요");
-    // } else {
-    //     //다음페이지로 POST 데이터 넘기기
-    //     var jsonObject = new Object();
-    //     jsonObject.charList = arrCharacter;
-    //     var jsonData = JSON.stringify(jsonObject);
-    //     document.getElementById("jsonData").value = jsonData;
-    //     document.getElementById("sendJson").submit();
-    // }
-
-    //다음페이지로 POST 데이터 넘기기
-        var jsonObject = new Object();
-        jsonObject.charList = arrCharacter;
-        var jsonData = JSON.stringify(jsonObject);
-        document.getElementById("jsonData").value = jsonData;
-        document.getElementById("sendJson").submit();
+     if(isCharNameAllExist != arrCharacter.length){
+         // 이름을 작성하지 않은 인물이 있음
+         createModal_warn("이름을\n작성하지 않은\n인물이 있어요");
+     } else if (isMainCharSelected == 0){
+         // 주인공을 설정하지 않은 인물이 있음
+         createModal_warn("주인공을\n설정해주세요");
+     } else {
+         //다음페이지로 POST 데이터 넘기기
+         var jsonObject = new Object();
+         jsonObject.charList = arrCharacter;
+         var jsonData = JSON.stringify(jsonObject);
+         document.getElementById("jsonData").value = jsonData;
+         document.getElementById("sendJson").submit();
+     }
 }
 
 function createModal(type, title, message){
@@ -231,4 +224,44 @@ function createWordList(){
 }
 function removeWordList(){
     document.getElementById("charWord_wrap").style.visibility="hidden";
+}
+
+function createModal_nav(url){
+    document.querySelector('#modal_button_yes').style.display = "";
+    document.querySelector('#modal_button_no').style.display = "";
+    document.querySelector('.modal_wrap').style.display ='block';
+    document.querySelector('.black_bg').style.display ='block';
+    locate_url = url
+}
+function removeModal(){
+    document.querySelector('.modal_wrap').style.display ='none';
+    document.querySelector('.black_bg').style.display ='none';
+}
+
+function modalOk(){
+    removeModal();
+}
+
+function modalYes_nav(){
+    removeModal();
+    if(locate_url=="back"){
+        //뒤로가기
+        history.back();
+    } else {
+        window.location = locate_url;
+    }
+}
+
+function modalNo_nav(){
+    removeModal();
+}
+
+function createModal_warn(message){
+    document.querySelector('.modal_warn_wrap').style.display ='block';
+    document.querySelector('.black_bg_warn').style.display ='block';
+    document.getElementById('modal_warn_title').innerText = message;
+}
+function removeModal_warn(){
+    document.querySelector('.modal_warn_wrap').style.display ='none';
+    document.querySelector('.black_bg_warn').style.display ='none';
 }

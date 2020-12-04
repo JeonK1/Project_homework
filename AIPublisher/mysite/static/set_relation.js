@@ -56,10 +56,10 @@ function sendToNextPage(){
     }
     if(relCnt > 0){
         //비어있는 관계 카드가 1개 이상임
-        alert('관계 카드를 모두 설정해주세요');
+        createModal_warn('관계 카드를\n모두 설정해주세요');
     } else if(subCharNo==-1) {
         //부 주인공 선택안함
-        alert('관계 설정에 사용될 인물을 선택해주세요');
+        createModal_warn('관계 설정할 \n인물을\n선택해주세요');
     } else {
         jsonData = document.getElementById("jsonData").value;
         // 참조 : jsonParse 하기 위해선 key와 value는 "로 둘러쌓여있어야한다. 그리고 제일 겉은 '로 둘러쌓여야함
@@ -95,4 +95,44 @@ function sendToNextPage(){
         document.getElementById("jsonData").value = jsonData;
         document.getElementById("sendJson").submit();
     }
+}
+
+function createModal_nav(url){
+    document.querySelector('#modal_button_yes').style.display = "";
+    document.querySelector('#modal_button_no').style.display = "";
+    document.querySelector('.modal_wrap').style.display ='block';
+    document.querySelector('.black_bg').style.display ='block';
+    locate_url = url
+}
+function removeModal(){
+    document.querySelector('.modal_wrap').style.display ='none';
+    document.querySelector('.black_bg').style.display ='none';
+}
+
+function modalOk(){
+    removeModal();
+}
+
+function modalYes_nav(){
+    removeModal();
+    if(locate_url=="back"){
+        //뒤로가기
+        history.back();
+    } else {
+        window.location = locate_url;
+    }
+}
+
+function modalNo_nav(){
+    removeModal();
+}
+
+function createModal_warn(message){
+    document.querySelector('.modal_warn_wrap').style.display ='block';
+    document.querySelector('.black_bg_warn').style.display ='block';
+    document.getElementById('modal_warn_title').innerText = message;
+}
+function removeModal_warn(){
+    document.querySelector('.modal_warn_wrap').style.display ='none';
+    document.querySelector('.black_bg_warn').style.display ='none';
 }

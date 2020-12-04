@@ -166,7 +166,7 @@ function random_character() {
                 charCnt+=1;
         }
         if(charCnt<2){
-            createModal("warning", "경고", "캐릭터를 적어도 두명 선택해주세요");
+            createModal_warn();
         } else {
             for(i=1;i<=4; i++){
                 if(check[i-1]) {
@@ -185,28 +185,42 @@ function random_character() {
     });
 }
 
-function createModal(type, title, message){
-    if(type=="warning"){
-        //경고일 때
-        document.querySelector('#modal_button_ok').style.display = '';
-        document.querySelector('#modal_button_yes').style.display = 'none';
-        document.querySelector('#modal_button_no').style.display = 'none';
-
-        document.querySelector('.modal_wrap').style.display ='block';
-        document.querySelector('.black_bg').style.display ='block';
-        document.querySelector('#modal_title').innerText = title;
-        document.querySelector('#modal_context').innerText = message;
-    }
+function createModal_nav(url){
+    document.querySelector('#modal_button_yes').style.display = "";
+    document.querySelector('#modal_button_no').style.display = "";
+    document.querySelector('.modal_wrap').style.display ='block';
+    document.querySelector('.black_bg').style.display ='block';
+    locate_url = url
 }
-
 function removeModal(){
     document.querySelector('.modal_wrap').style.display ='none';
     document.querySelector('.black_bg').style.display ='none';
 }
+
 function modalOk(){
     removeModal();
 }
-function modalYes(){
+
+function modalYes_nav(){
+    removeModal();
+    if(locate_url=="back"){
+        //뒤로가기
+        history.back();
+    } else {
+        window.location = locate_url;
+    }
 }
-function modalNo(){
+
+function modalNo_nav(){
+    removeModal();
+}
+
+
+function createModal_warn(){
+    document.querySelector('.modal_warn_wrap').style.display ='block';
+    document.querySelector('.black_bg_warn').style.display ='block';
+}
+function removeModal_warn(){
+    document.querySelector('.modal_warn_wrap').style.display ='none';
+    document.querySelector('.black_bg_warn').style.display ='none';
 }

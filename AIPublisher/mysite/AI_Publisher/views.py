@@ -87,17 +87,18 @@ def get_ground_card():
 
 # 단어 중에서 positive 3개 neutral 2개 negative 3개를 뽑아 리스트로 반환
 def get_relation_card():
-    cards = WordList.objects.filter(WordType=1).order_by('?')[:3]
+    cards = WordList.objects.filter(WordType=1).order_by('?')[:5]
     cardlist = []
     for card in cards:
         cardlist.append(card.WordContext)
-    cards = WordList.objects.filter(WordType=2).order_by('?')[:2]
+    cards = WordList.objects.filter(WordType=2).order_by('?')[:4]
     for card in cards:
         cardlist.append(card.WordContext)
-    cards = WordList.objects.filter(WordType=3).order_by('?')[:3]
+    cards = WordList.objects.filter(WordType=3).order_by('?')[:5]
     for card in cards:
         cardlist.append(card.WordContext)
     return cardlist
+
 
 def set_relation(request):
     #dummy data
@@ -106,12 +107,8 @@ def set_relation(request):
     #card_pos = ['사이좋아요', '아주 좋아요', '약간 좋아요']
     #card_neu = ['모르는 사이', '애매한듯']
     #card_neg = ['사이안좋음', '아주 안좋아요', '약간 안좋아요']
-    cardlist = get_relation_card()
-    card_pos = cardlist[:3]
-    card_neu = cardlist[3:5]
-    card_neg = cardlist[5:8]
+    cardList = get_relation_card()
     #Json 정보확인은 set_char_option.js 의 sendToNextPage()함수를 참조하세요
-
     if request.method == 'POST':
         message = request.POST.get('jsonData')  #POST로 날라온 jsonData 받아주기
         getjson = json.loads(message) #Json 풀어주기
@@ -127,15 +124,11 @@ def set_relation(request):
         return render(request, 'AI_Publisher/set_relation.html', {'getJSONData' : getjson,
                                                                     'charList' : charList,
                                                                   'charMain': charMain,
-                                                                  'card_pos': card_pos,
-                                                                'card_neu': card_neu,
-                                                                'card_neg': card_neg})
+                                                                  'cardList': cardList})
     else:
         return render(request, 'AI_Publisher/set_relation.html', {'charList' : charList,
                                                                   'charMain': charMain,
-                                                                  'card_pos': card_pos,
-                                                                'card_neu': card_neu,
-                                                                'card_neg': card_neg})
+                                                                  'cardList': cardList})
 
 def get_relation_keyprob(request):
     return render(request, 'AI_Publisher/get_relation_keyprob.html')

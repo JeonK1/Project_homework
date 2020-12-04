@@ -35,6 +35,13 @@
             </div>
         </div>
 
+        <div class="black_bg_warn" onclick="removeModal_warn();"></div>
+        <div class="modal_warn_wrap">
+            <div id="modal_warn_title">
+                등장인물은<br>적어도 2개 이상<br>선택해주세요
+            </div>
+        </div>
+
         <!--노리스 아이콘-->
         <div class="icon" id="noris_icon" onclick="createModal_nav('/AI_Publisher')"></div>
 
@@ -53,7 +60,7 @@
         </div>
 
         <!--이전 페이지-->
-        <div class="backpage" id="backpage_btn" onclick="createModal_nav('/AI_Publisher')">
+        <div class="backpage" id="backpage_btn" onclick="createModal_nav('back')">
             <div class="backpage" id="backpage_arrow"></div>
             <div class="backpage" id="backpage_text">이전으로</div>
         </div>
@@ -81,9 +88,6 @@
 
         <div class="guide" id="guide_img"></div>
         <div class="guide" id="guide_text">카드를 눌러<br>캐릭터를<br>뽑아주세요</div>
-
-
-
     </div>
 </body>
 </html>

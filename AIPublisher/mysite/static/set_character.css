@@ -1086,4 +1086,71 @@
     background-image: url("img/btn_bottom_right_arrow.png");
     background-repeat: no-repeat;
 }
-*/
+
+
+/* 모달창 경고 */
+.modal_warn_wrap{
+    display: none;
+    width: 563px;
+    height: 394px;
+
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -175px 0 0 -182px;
+
+    background-image:url("img/bg_modal.png");
+    background-repeat:no-repeat;
+    padding-top:120px;
+    padding-left:80px;
+    z-index: 12;
+}
+.black_bg_warn{
+    display: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0,0, 0.5);
+    top:0;
+    left: 0;
+    z-index: 10;
+}
+#modal_warn_title{
+    color: #ffffff;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 160.5%;
+    /* identical to box height, or 26px */
+    margin-top:25px;
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+}
+#modal_warn_button_wrap{
+    display: flex;
+    justify-content:center;
+    margin-top:100px;
+}
+.modal_warn_button{
+    display: flex;
+
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    padding:12px 16px 12px 16px;
+
+    /* IBM Plex / Button */
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    /* identical to box height, or 24px */
+
+}
