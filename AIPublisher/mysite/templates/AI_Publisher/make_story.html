@@ -19,7 +19,7 @@
     </form>
 </head>
 
-<body>
+<body onload="story_make();select_background();show_text();">
 
     <div class="BackGround" id="BackGround">
         <div class="Field" id="Field"></div>
@@ -60,9 +60,9 @@
 
         <!-- 스토리 보드 -->
         <div class="story_border" id="story_border">
-            <div class="sub_border_1" id="sub_border_1"></div>
-            <div class="sub_border_1" id="sub_border_2"></div>
-            <div class="main_border" id="main_border">
+            <div class="story_border" id="sub_border_1"></div>
+            <div class="story_border" id="sub_border_2"></div>
+            <div class="story_border" id="main_border">
                 <!-- 표지 캐릭터 꾸미기 -->
                 <div class="decorate_ch_1" id="decorate_ch_1" >
                         <img class="deco_img" id="decorate_1" src={{getJSONData.mainChar.url}}>
@@ -91,10 +91,11 @@
         <!--노리스 아이콘 및 배경-->
         <div class="icon" id="noris_icon"></div>
         <!-- 도움이 필요해요 -->
+        <div class="question" id="question_mark"></div>
         <div class="need_help" id="need_help">도움이 필요해요</div>
 
          <!--다음 페이지-->
-        <div class="nextpage" id="nextpage_btn">
+        <div class="nextpage" id="nextpage_btn" >
             <div class="nextpage" id="nextpage_arrow"></div>
             <div class="nextpage" id="nextpage_text">다음으로</div>
         </div>
@@ -103,7 +104,7 @@
         <input type="text" class="input_text" id="input_text" placeholder="문장을 입력하세요.">
         <div class="text_line" id="text_line"></div>
 
-        <div class="question" id="question_mark"></div>
+
 
         <!-- 텍스트박스 생성 이미지 -->
         <div class="speech_box" id="speech_box"></div>
@@ -138,29 +139,33 @@
 
         <!--오른쪽 메뉴-->
         <div class="RightSidebar" id="RightSidebar">
+            <div class="plus_mark" id="plus_mark" onclick="createMyBgModal();"></div>
+        </div>
+        <div class="RightSidebar" id="RightSidebar_box">
             <div id="RightSidebar_scroll">
 
             </div>
-            <div class="plus_mark" id="plus_mark" onclick="createMyBgModal();"></div>
         </div>
 
-                <!--왼쪽 메뉴-->
-        <div class="LeftSidebar" id="LeftSidebar">
-            <!--왼쪽 카드 뭉치-->
-            <div class="Card_small_1" id="Card_small_1">
-                    <img class="card_img" id="card_1" src={{getJSONData.mainChar.url}}>
+        <!--왼쪽 메뉴-->
+        <div class="LeftSidebar" id="LeftSidebar"></div>
+        <div class="LeftSidebar" id="LeftSidebar_box">
+        <!--왼쪽 카드 뭉치-->
+        <div class="Card_small_1" id="Card_small_1">
+                <img class="card_img" id="card_1" src={{getJSONData.mainChar.url}}>
+        </div>
+        <div class="Card_small_2" id="Card_small_2">
+                <img class="card_img" id="card_2" src={{getJSONData.subChar.url}}>
+        </div>
+        {% for character in getJSONData.charList %}
+            <div class="character_card" id="Card_small_{{forloop.counter | add:2}}">
+            <!--<div class="character_card" id="character_{{forloop.counter}}" onclick="sendSubChar({{forloop.counter}})">-->
+                <img class="card_img" id="card_{{forloop.counter}}" src={{character.url}}>
             </div>
-            <div class="Card_small_2" id="Card_small_2">
-                    <img class="card_img" id="card_2" src={{getJSONData.subChar.url}}>
-            </div>
-            {% for character in getJSONData.charList %}
-                <div class="character_card" id="Card_small_{{forloop.counter | add:2}}">
-                <!--<div class="character_card" id="character_{{forloop.counter}}" onclick="sendSubChar({{forloop.counter}})">-->
-                    <img class="card_img" id="card_{{forloop.counter}}" src={{character.url}}>
-                </div>
-            {% endfor %}
-            <!--<div class="Card_small_3" id="Card_small_3" style="background-image: url('{{getJSONData.charList.2}}');"></div>-->
-            <!--<div class="Card_small_4" id="Card_small_4" style="background-image: url('{{getJSONData.charList.3}}');"></div>-->
+        {% endfor %}
+        <!--<div class="Card_small_3" id="Card_small_3" style="background-image: url('{{getJSONData.charList.2}}');"></div>-->
+        <!--<div class="Card_small_4" id="Card_small_4" style="background-image: url('{{getJSONData.charList.3}}');"></div>-->
+
         </div>
 
 

@@ -121,11 +121,19 @@ function story_make(){
     $("#text_box").hide();
 
     // 넥스트 버튼 눌렀을 때
-    $("#next_shape").click(function () {
+    $("#nextpage_btn").click(function () {
         store_content(count);
         count += 1;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
     // 왼쪽 단계 눌렀을 때때
@@ -134,6 +142,14 @@ function story_make(){
         count = 0;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
     $("#STEP_2").click(function() {
@@ -141,6 +157,14 @@ function story_make(){
         count = 1;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
     $("#STEP_3").click(function() {
@@ -148,6 +172,14 @@ function story_make(){
         count = 2;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
     $("#STEP_4").click(function() {
@@ -155,6 +187,14 @@ function story_make(){
         count = 3;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
     $("#STEP_5").click(function() {
@@ -162,6 +202,14 @@ function story_make(){
         count = 4;
         next_move(count,expos,compli,crisis,climax,result);
         step_color_change(count);
+        $("#text_box").resizable({
+                        handles : 'w,n,s,e',
+                        containment:"#main_border",
+                        maxWidth: 510,
+                        minWidth: 373,
+                        maxHeight: 340,
+                        minHeight: 129
+                    });
     });
 
 
@@ -169,10 +217,10 @@ function story_make(){
     // 캐릭터 눌렀을 때
     $("#decorate_ch_1").resizable({
         handles : 'w,n,s,e',
-        containment:"#story_frame",
-        maxWidth: 900,
+        containment:"#main_border",
+        maxWidth: 982,
         minWidth: 85,
-        maxHeight: 1000,
+        maxHeight: 769,
         minHeight: 114,
         //비율유지
         aspectRatio: true,
@@ -181,16 +229,17 @@ function story_make(){
     });
     $("#decorate_ch_1").draggable({
         cursor:"pointer", // 커서 모양
-        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        containment:"#main_border", // div영역 에서만 움직이도록 설정
         revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
+
     });
 
     $("#decorate_ch_2").resizable({
         handles : 'w,n,s,e',
-        containment:"#story_frame",
-        maxWidth: 900,
+        containment:"#main_border",
+        maxWidth: 982,
         minWidth: 85,
-        maxHeight: 1000,
+        maxHeight: 769,
         minHeight: 114,
         //비율유지
         aspectRatio: true,
@@ -199,15 +248,15 @@ function story_make(){
     });
     $("#decorate_ch_2").draggable({
         cursor:"pointer", // 커서 모양
-        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        containment:"#main_border", // div영역 에서만 움직이도록 설정
         revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
     });
     $("#decorate_ch_3").resizable({
         handles : 'w,n,s,e',
-        containment:"#story_frame",
-        maxWidth: 900,
+        containment:"#main_border",
+        maxWidth: 982,
         minWidth: 85,
-        maxHeight: 1000,
+        maxHeight: 769,
         minHeight: 114,
         //비율유지
         aspectRatio: true,
@@ -217,15 +266,15 @@ function story_make(){
 
     $("#decorate_ch_3").draggable({
         cursor:"pointer", // 커서 모양
-        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        containment:"#main_border", // div영역 에서만 움직이도록 설정
         revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
     });
     $("#decorate_ch_4").resizable({
         handles : 'w,n,s,e',
-        containment:"#story_frame",
-        maxWidth: 900,
+        containment:"#main_border",
+        maxWidth: 982,
         minWidth: 85,
-        maxHeight: 1000,
+        maxHeight: 769,
         minHeight: 114,
         //비율유지
         aspectRatio: true,
@@ -235,22 +284,22 @@ function story_make(){
 
     $("#decorate_ch_4").draggable({
         cursor:"pointer", // 커서 모양
-        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        containment:"#main_border", // div영역 에서만 움직이도록 설정
         revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
     });
 
     $("#text_box").resizable({
         handles : 'w,n,s,e',
-        containment:"#story_frame",
-        maxWidth: 510,
+        containment:"#main_border",
+        maxWidth: 900,
         minWidth: 373,
-        maxHeight: 340,
+        maxHeight: 400,
         minHeight: 129,
     });
 
     $("#text_box").draggable({
         cursor:"pointer", // 커서 모양
-        containment:"#story_frame", // div영역 에서만 움직이도록 설정
+        containment:"#main_border", // div영역 에서만 움직이도록 설정
         revert:false // true:드래그 후 원위치로 복귀, false:드래그 후 현재(이동한) 위치
     });
 
@@ -286,7 +335,7 @@ function story_make(){
         }
     });
 
-    $("#guide_image").click(function () {
+    $("#speech_box").click(function () {
     if($("#text_box").css("display") == "none"){
         $("#text_box").show();
         } else {
@@ -299,12 +348,8 @@ function next_move(count,expos,compli,crisis,climax,result){
 
     switch(count){
         case 0:
-            $("#left_frame").css( {"background-image":arrback[count],
-                                "background-position":"left",
-                                "background-size":"1020px 680px"});
-            $("#right_frame").css( {"background-image":arrback[count],
-                                "background-position":"right",
-                                "background-size":"1020px 680px"});
+            $("#main_border").css( {"background-image":arrback[count],
+                                "background-size":"cover"});
             $("#decorate_ch_1").css({"display":expos_info[0][0],
                                         "width":expos_info[0][1],
                                         "height":expos_info[0][2],
@@ -335,12 +380,8 @@ function next_move(count,expos,compli,crisis,climax,result){
             $("#guide_text").text(expos);
             break;
         case 1:
-            $("#left_frame").css( {"background-image":arrback[count],
-                                "background-position":"left",
-                                "background-size":"1020px 680px"});
-            $("#right_frame").css( {"background-image":arrback[count],
-                                "background-position":"right",
-                                "background-size":"1020px 680px"});
+            $("#main_border").css( {"background-image":arrback[count],
+                                "background-size":"cover"});
             $("#decorate_ch_1").css({"display":compli_info[0][0],
                                         "width":compli_info[0][1],
                                         "height":compli_info[0][2],
@@ -371,12 +412,8 @@ function next_move(count,expos,compli,crisis,climax,result){
             $("#guide_text").text(compli);
             break;
         case 2:
-            $("#left_frame").css( {"background-image":arrback[count],
-                                "background-position":"left",
-                                "background-size":"1020px 680px"});
-            $("#right_frame").css( {"background-image":arrback[count],
-                                "background-position":"right",
-                                "background-size":"1020px 680px"});
+            $("#main_border").css( {"background-image":arrback[count],
+                                "background-size":"cover"});
             $("#decorate_ch_1").css({"display":crisis_info[0][0],
                                         "width":crisis_info[0][1],
                                         "height":crisis_info[0][2],
@@ -407,12 +444,8 @@ function next_move(count,expos,compli,crisis,climax,result){
             $("#guide_text").text(crisis);
             break;
         case 3:
-            $("#left_frame").css( {"background-image":arrback[count],
-                                "background-position":"left",
-                                "background-size":"1020px 680px"});
-            $("#right_frame").css( {"background-image":arrback[count],
-                                "background-position":"right",
-                                "background-size":"1020px 680px"});
+            $("#main_border").css( {"background-image":arrback[count],
+                                "background-size":"cover"});
             $("#decorate_ch_1").css({"display":climax_info[0][0],
                                         "width":climax_info[0][1],
                                         "height":climax_info[0][2],
@@ -443,12 +476,8 @@ function next_move(count,expos,compli,crisis,climax,result){
             $("#guide_text").text(climax);
             break;
         case 4:
-            $("#left_frame").css( {"background-image":arrback[count],
-                                "background-position":"left",
-                                "background-size":"1020px 680px"});
-            $("#right_frame").css( {"background-image":arrback[count],
-                                "background-position":"right",
-                                "background-size":"1020px 680px"});
+            $("#main_border").css( {"background-image":arrback[count],
+                                "background-size":"cover"});
             $("#decorate_ch_1").css({"display":result_info[0][0],
                                         "width":result_info[0][1],
                                         "height":result_info[0][2],
@@ -488,72 +517,169 @@ function next_move(count,expos,compli,crisis,climax,result){
 function step_color_change(count){
     switch(count){
         case 0:
-            $("#STEP_1").css( "background", "#B9E4C9");
-            $("#STEP_1_TEXT").css( "color", "#000000");
+            $("#STEP_1").css( {"background": "#FEF6AC",
+                                "height": "73px",
+                                "width": "97px",
+                                "left": "140px",
+                                "opacity": "1"});
+            $("#STEP_1_TEXT").css("color", "#3AAA8F");
 
-            $("#STEP_2").css( "background", "#E6E2CF");
-            $("#STEP_2_TEXT").css( "color", "#666666");
-            $("#STEP_3").css( "background", "#E6E2CF");
-            $("#STEP_3_TEXT").css( "color", "#666666");
-            $("#STEP_4").css( "background", "#E6E2CF");
-            $("#STEP_4_TEXT").css( "color", "#666666");
-            $("#STEP_5").css( "background", "#E6E2CF");
-            $("#STEP_5_TEXT").css( "color", "#666666");
+            $("#STEP_2").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_2_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_3").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_3_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_4").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_4_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_5").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_5_TEXT").css( "color", "#FFFFFF");
             break;
         case 1:
-            $("#STEP_1").css( "background", "#E6E2CF");
-            $("#STEP_1_TEXT").css( "color", "#666666");
+            $("#STEP_2").css( {"background": "#FEF6AC",
+                                "height": "73px",
+                                "width": "97px",
+                                "left": "140px",
+                                "opacity": "1"});
+            $("#STEP_2_TEXT").css( "color", "#3AAA8F");
 
-            $("#STEP_2").css( "background", "#B9E4C9");
-            $("#STEP_2_TEXT").css( "color", "#000000");
-
-            $("#STEP_3").css( "background", "#E6E2CF");
-            $("#STEP_3_TEXT").css( "color", "#666666");
-            $("#STEP_4").css( "background", "#E6E2CF");
-            $("#STEP_4_TEXT").css( "color", "#666666");
-            $("#STEP_5").css( "background", "#E6E2CF");
-            $("#STEP_5_TEXT").css( "color", "#666666");
+            $("#STEP_1").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_1_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_3").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_3_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_4").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_4_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_5").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_5_TEXT").css( "color", "#FFFFFF");
             break;
         case 2:
-            $("#STEP_1").css( "background", "#E6E2CF");
-            $("#STEP_1_TEXT").css( "color", "#666666");
-            $("#STEP_2").css( "background", "#E6E2CF");
-            $("#STEP_2_TEXT").css( "color", "#666666");
+            $("#STEP_3").css( {"background": "#FEF6AC",
+                                "height": "73px",
+                                "width": "97px",
+                                "left": "140px",
+                                "opacity": "1"});
+            $("#STEP_3_TEXT").css( "color", "#3AAA8F");
 
-            $("#STEP_3").css( "background", "#B9E4C9");
-            $("#STEP_3_TEXT").css( "color", "#000000");
-
-            $("#STEP_4").css( "background", "#E6E2CF");
-            $("#STEP_4_TEXT").css( "color", "#666666");
-            $("#STEP_5").css( "background", "#E6E2CF");
-            $("#STEP_5_TEXT").css( "color", "#666666");
+            $("#STEP_1").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_1_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_2").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_2_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_4").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_4_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_5").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_5_TEXT").css( "color", "#FFFFFF");
             break;
         case 3:
-            $("#STEP_1").css( "background", "#E6E2CF");
-            $("#STEP_1_TEXT").css( "color", "#666666");
-            $("#STEP_2").css( "background", "#E6E2CF");
-            $("#STEP_2_TEXT").css( "color", "#666666");
-            $("#STEP_3").css( "background", "#E6E2CF");
-            $("#STEP_3_TEXT").css( "color", "#666666");
+            $("#STEP_4").css( {"background": "#FEF6AC",
+                                "height": "73px",
+                                "width": "97px",
+                                "left": "140px",
+                                "opacity": "1"});
+            $("#STEP_4_TEXT").css( "color", "#3AAA8F");
 
-            $("#STEP_4").css( "background", "#B9E4C9");
-            $("#STEP_4_TEXT").css( "color", "#000000");
-
-            $("#STEP_5").css( "background", "#E6E2CF");
-            $("#STEP_5_TEXT").css( "color", "#666666");
+            $("#STEP_1").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_1_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_2").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_2_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_3").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_3_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_5").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_5_TEXT").css( "color", "#FFFFFF");
             break;
         case 4:
-            $("#STEP_1").css( "background", "#E6E2CF");
-            $("#STEP_1_TEXT").css( "color", "#666666");
-            $("#STEP_2").css( "background", "#E6E2CF");
-            $("#STEP_2_TEXT").css( "color", "#666666");
-            $("#STEP_3").css( "background", "#E6E2CF");
-            $("#STEP_3_TEXT").css( "color", "#666666");
-            $("#STEP_4").css( "background", "#E6E2CF");
-            $("#STEP_4_TEXT").css( "color", "#666666");
+            $("#STEP_5").css( {"background": "#FEF6AC",
+                                "height": "73px",
+                                "width": "97px",
+                                "left": "140px",
+                                "opacity": "1"});
+            $("#STEP_5_TEXT").css( "color", "#3AAA8F");
 
-            $("#STEP_5").css( "background", "#B9E4C9");
-            $("#STEP_5_TEXT").css( "color", "#000000");
+            $("#STEP_1").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_1_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_2").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_2_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_3").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_3_TEXT").css( "color", "#FFFFFF");
+            $("#STEP_4").css( {"background": "#3AAA8F",
+                                "height": "55px",
+                                "width": "73px",
+                                "left": "160px",
+                                "opacity": "0.5"});
+            $("#STEP_4_TEXT").css( "color", "#FFFFFF");
             break;
     }
 }
@@ -611,12 +737,8 @@ function step_color_change(count){
 //    });
 //}
 function select_background(ground_id){
-    $("#left_frame").css( {"background-image":($( "#"+ground_id ).css( "background-image" )),
-                            "background-position":"left",
-                            "background-size":"1020px 680px"});
-    $("#right_frame").css( {"background-image":($( "#"+ground_id ).css( "background-image" )),
-                            "background-position":"right",
-                            "background-size":"1020px 680px"});
+    $("#main_border").css( {"background-image":($( "#"+ground_id ).css( "background-image" )),
+                                "background-size":"cover"});
     arrback[count] = $( "#"+ground_id  ).css( "background-image" );
 }
 
@@ -726,7 +848,7 @@ function show_text() {
                     $("#text_box").text(arrtext[0].toString().replace(/,/g, " "));
                     $("#text_box").resizable({
                         handles : 'w,n,s,e',
-                        containment:"#story_frame",
+                        containment:"#main_border",
                         maxWidth: 510,
                         minWidth: 373,
                         maxHeight: 340,
@@ -740,7 +862,7 @@ function show_text() {
                     $('#input_text').val('');
                     $("#text_box").resizable({
                         handles : 'w,n,s,e',
-                        containment:"#story_frame",
+                        containment:"#main_border",
                         maxWidth: 510,
                         minWidth: 373,
                         maxHeight: 340,
@@ -753,7 +875,7 @@ function show_text() {
                     $('#input_text').val('');
                     $("#text_box").resizable({
                         handles : 'w,n,s,e',
-                        containment:"#story_frame",
+                        containment:"#main_border",
                         maxWidth: 510,
                         minWidth: 373,
                         maxHeight: 340,
@@ -766,7 +888,7 @@ function show_text() {
                     $('#input_text').val('');
                     $("#text_box").resizable({
                         handles : 'w,n,s,e',
-                        containment:"#story_frame",
+                        containment:"#main_border",
                         maxWidth: 510,
                         minWidth: 373,
                         maxHeight: 340,
@@ -779,7 +901,7 @@ function show_text() {
                     $('#input_text').val('');
                     $("#text_box").resizable({
                         handles : 'w,n,s,e',
-                        containment:"#story_frame",
+                        containment:"#main_border",
                         maxWidth: 510,
                         minWidth: 373,
                         maxHeight: 340,
