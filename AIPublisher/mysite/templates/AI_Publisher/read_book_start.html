@@ -10,7 +10,7 @@
     <script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'read_book_start.js' %}"></script>
     <!-- DB에서 불러와야함.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <form method='post' action='/AI_Publisher/read_book_start/' target=_self style="display: none;" name="sendJson" id="sendJson">
+    <form method='post' action='/AI_Publisher/read_book/' target=_self style="display: none;" name="sendJson" id="sendJson">
         <input type='hidden' name='jsonData' id='jsonData' value="{{getJSONData}}"/>
     </form>
 
@@ -30,16 +30,28 @@
             <div class="backpage" id="backpage_img"></div>
         </div>
 
-        <!--다온이가 만든 동화책장이에요!-->
+        <!--다온이가 책읽기-->
        <div class="container" id="gallery_text_container">
            <!--DB에서 유저 이름 출력시키는 곳!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
            <h3 class="gallery_text" id="gallery_text1">오늘은</h3><br>
            <h3 class="gallery_text" id="gallery_text2">다온이의</h3><br>
-           <h3 class="gallery_text" id="gallery_text3">일상의 미로</h3><h3 class="gallery_text" id="gallery_text5">를</h3>
+           <h3 class="gallery_text" id="gallery_text3">{{bookTitle}}</h3><h3 class="gallery_text" id="gallery_text5">를</h3>
            <h3 class="gallery_text" id="gallery_text4">읽어볼까요?</h3>
        </div>
-        <div class="read_book_bg">
 
+       <!--배경 얼룩-->
+       <div class="read_book_bg"  id="read_book_background"></div>
+
+       <!--책표지-->
+       <div class="book"  id="book1"><img id="book_cover" src={{coverBg}}></div>
+       <div class="book"  id="book2"></div>
+       <div class="book"  id="book3"></div>
+
+       <!--책읽기 버튼-->
+        <div class="backpage" id="go_read_btn" onclick="sendToNextPage()">
+            <div class="backpage" id="go_read_img"></div>
+            <div class="backpage" id="go_read_text">책 읽을래요</div>
+            <div class="backpage" id="go_read_arrow"></div>
         </div>
 
    </div>
