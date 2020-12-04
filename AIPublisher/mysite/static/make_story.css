@@ -66,8 +66,7 @@
 
     background: #FFFEF6;
     box-shadow: 3px 0px 9px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 80px 80px;
-    transform: matrix(1, 0, 0, -1, 0, 0);
+    border-radius: 80px 80px 0px 0px;
 }
 
 /* Group 67 */
@@ -293,7 +292,6 @@
 #text_box_value {
     position: absolute;
     top: 40%;
-    transform: matrix(1, 0, 0, -1, 0, 0);
 
     font-family: Noto Sans KR;
     font-style: normal;
@@ -330,13 +328,13 @@
 /* Rectangle 94 */
 #STEP_1 {
     position: absolute;
-    width: 73px;
-    height: 55px;
-    left: 160px;
+    width: 97px;
+    height: 73px;
+    left: 140px;
     top: 390px;
-    opacity: 0.5;
+    opacity: 1;
 
-    background: #3AAA8F;
+    background: #FEF6AC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transform: rotate(90deg);
 }
@@ -360,7 +358,7 @@
     letter-spacing: 0.05em;
     text-transform: capitalize;
 
-    color: #FFFFFF;
+    color: #3AAA8F;
 }
 
 /* Rectangle 94 */
@@ -562,7 +560,7 @@
 /* - 원경에게 배경은 어떤 곳 인가요? */
 #guide_text {
     position: absolute;
-    width: 338px;
+    width: 300px;
     height: 56px;
     left: 800px;
     top: 158px;
@@ -639,6 +637,15 @@
     transform: matrix(0, -1, -1, 0, 0, 0);
 }
 
+#RightSidebar_box {
+    position: absolute;
+    width: 150px;
+    height: 400px;
+    left: 1270px;
+    top: 380px;
+
+}
+
 #LeftSidebar {
     position: absolute;
     width: 600px;
@@ -649,6 +656,16 @@
     background: rgba(202, 202, 202, 0.5);
     border-radius: 0px 0px 80px 80px;
     transform: matrix(0, 1, 1, 0, 0, 0);
+}
+
+#LeftSidebar_box {
+    position: absolute;
+    width: 150px;
+    height: 600px;
+    left: 0px;
+    top: 320px;
+
+
 }
 
 #RightSidebar_scroll{
@@ -670,8 +687,8 @@
 .Ground_small{
     position: flex;
     display: static;
-    width: 85px;
-    height: 72px;
+    width: 130px;
+    height: 100px;
 
     margin-bottom:20px;
     text-align:center;
@@ -681,19 +698,22 @@
 
 #plus_mark{
     /* BG */
-    position: static;
-    width: 110px;
-    height: 90px;
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    left: 49px;
+    top: 57px;
 
     background: url(img/plus_mark.png);
-    background-size : cover;
+    background-size : contain;
 
 }
 .card_img {
-    width:90%;
-    height:90%;
+    width:110px;
+    height:110px;
     object-fit: contain;
     margin: 5px;
+
  }
 
 /* decorate_character */
@@ -715,7 +735,6 @@
     position: absolute;
     width: 70px;
     height: 110px;
-
 
     /* Inside Auto Layout */
     flex: none;

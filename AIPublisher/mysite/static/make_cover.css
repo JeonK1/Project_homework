@@ -303,12 +303,14 @@
 
 #plus_mark{
     /* BG */
-    position: static;
-    width: 110px;
-    height: 90px;
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    left: 49px;
+    top: 57px;
 
     background: url(img/plus_mark.png);
-    background-size : cover;
+    background-size : contain;
 
 }
 .card_img {
