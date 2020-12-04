@@ -308,6 +308,10 @@
     -ms-overflow-style: none;
 }
 
+::-webkit-scrollbar {
+    display:none;
+}
+
 /* 문장을 입력하세요. */
 #input_text {
     position: absolute;
@@ -358,8 +362,8 @@
 .Ground_small{
     position: flex;
     display: static;
-    width: 85px;
-    height: 72px;
+    width: 130px;
+    height: 100px;
 
     margin-bottom:20px;
     text-align:center;
