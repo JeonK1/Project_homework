@@ -24,7 +24,7 @@
         <div class="icon" id="noris_icon"></div>
 
         <!--뒤로가기 버튼-->
-        <div class="backpage" id="backpage_btn">
+        <div class="backpage" id="backpage_btn"  onclick="location.href='http://127.0.0.1:8000/AI_Publisher/show_gallery'">
             <div class="backpage" id="backpage_arrow"></div>
             <div class="backpage" id="backpage_text">뒤로가기</div>
             <div class="backpage" id="backpage_img"></div>
@@ -34,7 +34,7 @@
        <div class="container" id="gallery_text_container">
            <!--DB에서 유저 이름 출력시키는 곳!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
            <h3 class="gallery_text" id="gallery_text1">오늘은</h3><br>
-           <h3 class="gallery_text" id="gallery_text2">다온이의</h3><br>
+           <h3 class="gallery_text" id="gallery_text2">친구의</h3><br>
            <h3 class="gallery_text" id="gallery_text3">{{bookTitle}}</h3><h3 class="gallery_text" id="gallery_text5">를</h3>
            <h3 class="gallery_text" id="gallery_text4">읽어볼까요?</h3>
        </div>
@@ -43,7 +43,7 @@
        <div class="read_book_bg"  id="read_book_background"></div>
 
        <!--책표지-->
-       <div class="book"  id="book1"><img id="book_cover" src={{coverBg}}></div>
+       <div class="book"  id="book1"><img id="book_cover" src="{{coverBg}}"></div>
        <div class="book"  id="book2"></div>
        <div class="book"  id="book3"></div>
 
