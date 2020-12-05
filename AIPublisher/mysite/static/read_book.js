@@ -1,24 +1,6 @@
 // 사용자 위치
 var count = 0;
 
-// 사용자가 적용한 배경 저장
-var arrtext = new Array(5);
-for(var i = 0; i < arrtext.length; i++) {
-    arrtext[i] = new Array();
-}
-
-// 사용자가 적용한 배경 저장
-var arrback = new Array(5);
-for(var i = 0; i < arrback.length; i++) {
-    arrback[i] = "";
-}
-
-// 사용자가 적용한 배경 저장
-// var arrimg = new Array(4);
-// for(var i = 0; i < arrimg.length; i++) {
-//     arrimg[i] = "";
-// }
-
 // 저장되는 순서들
 // display imgUrl width height top left
 // 각 페이지 정보들 (배경 제외) display width height top left
@@ -163,12 +145,13 @@ function view_book(count){
     climax[0] = climax[0].substring(1, climax[0].length);
     result[0] = result[0].substring(1, result[0].length);
 
-    expos[0] = "url(\""+expos[0]+"\")"
-    compli[0] = "url(\""+compli[0]+"\")"
-    crisis[0] = "url(\""+crisis[0]+"\")"
-    climax[0] = "url(\""+climax[0]+"\")"
-    result[0] = "url(\""+result[0]+"\")"
+    expos[0] = "url(\""+expos[0]+"\")";
+    compli[0] = "url(\""+compli[0]+"\")";
+    crisis[0] = "url(\""+crisis[0]+"\")";
+    climax[0] = "url(\""+climax[0]+"\")";
+    result[0] = "url(\""+result[0]+"\")";
 
+    $("#title").text(cover[1]);
 
     for(var i = 0; i< cover_info.length; i++){
         cover_info[i] = cover_info[i] + "]";
@@ -214,11 +197,11 @@ function view_book(count){
         sub_string5 = sub_string5.replaceAll("'","");
         result_info[i] = sub_string5.split(', ');
 
-        expos_info[i][1] = "url(\""+expos_info[i][1]+"\")"
-        compli_info[i][1] = "url(\""+compli_info[i][1]+"\")"
-        crisis_info[i][1] = "url(\""+crisis_info[i][1]+"\")"
-        climax_info[i][1] = "url(\""+climax_info[i][1]+"\")"
-        result_info[i][1] = "url(\""+result_info[i][1]+"\")"
+        expos_info[i][1] = "url(\""+expos_info[i][1]+"\")";
+        compli_info[i][1] = "url(\""+compli_info[i][1]+"\")";
+        crisis_info[i][1] = "url(\""+crisis_info[i][1]+"\")";
+        climax_info[i][1] = "url(\""+climax_info[i][1]+"\")";
+        result_info[i][1] = "url(\""+result_info[i][1]+"\")";
     }
 
 
