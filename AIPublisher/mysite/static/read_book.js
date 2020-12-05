@@ -157,6 +157,19 @@ function view_book(count){
     result[1] = result[1].substring(1, result[1].length-3);
 
 
+    expos[0] = expos[0].substring(1, expos[0].length);
+    compli[0] = compli[0].substring(1, compli[0].length);
+    crisis[0] = crisis[0].substring(1, crisis[0].length);
+    climax[0] = climax[0].substring(1, climax[0].length);
+    result[0] = result[0].substring(1, result[0].length);
+
+    expos[0] = "url(\""+expos[0]+"\")"
+    compli[0] = "url(\""+compli[0]+"\")"
+    crisis[0] = "url(\""+crisis[0]+"\")"
+    climax[0] = "url(\""+climax[0]+"\")"
+    result[0] = "url(\""+result[0]+"\")"
+
+
     for(var i = 0; i< cover_info.length; i++){
         cover_info[i] = cover_info[i] + "]";
         cover_info[i] = cover_info[i].replace(']]',"]");
@@ -200,12 +213,19 @@ function view_book(count){
         sub_string5 = sub_string5.replace(']',"");
         sub_string5 = sub_string5.replaceAll("'","");
         result_info[i] = sub_string5.split(', ');
+
+        expos_info[i][1] = "url(\""+expos_info[i][1]+"\")"
+        compli_info[i][1] = "url(\""+compli_info[i][1]+"\")"
+        crisis_info[i][1] = "url(\""+crisis_info[i][1]+"\")"
+        climax_info[i][1] = "url(\""+climax_info[i][1]+"\")"
+        result_info[i][1] = "url(\""+result_info[i][1]+"\")"
     }
+
+
 
 
     switch(count){
         case 0:
-            alert(0);
             $("#main_border").css( {"background-image":expos[0],
                                 "background-size":"cover"});
             for(var i = 1; i < expos_info.length; i++){
@@ -214,18 +234,21 @@ function view_book(count){
                                         "height":expos_info[i][3],
                                         "top":expos_info[i][4],
                                         "left":expos_info[i][5],
-                                        "background":"url("+expos_info[i][1]+")",
-                                        "background-size":"cover"});
+                                        "background":expos_info[i][1],
+                                        "background-size":"contain",
+                                        "background-repeat": "no-repeat",
+                                        "background-position":"center bottom",
+                                        "position": "absolute"});
             }
             $("#text_box").text(expos[1].toString().replace(/,/g," "));
             $("#text_box").css({"display":expos_info[0][0],
                                         "width":expos_info[0][2],
                                         "height":expos_info[0][3],
                                         "top":expos_info[0][4],
-                                        "left":expos_info[0][5]});
+                                        "left":expos_info[0][5],
+                                        "position": "absolute"});
             break;
         case 1:
-            alert(1);
             $("#main_border").css( {"background-image":compli[0],
                                 "background-size":"cover"});
             for(var i = 1; i < compli_info.length; i++){
@@ -234,18 +257,21 @@ function view_book(count){
                                         "height":compli_info[i][3],
                                         "top":compli_info[i][4],
                                         "left":compli_info[i][5],
-                                        "background":"url("+compli_info[i][1]+")",
-                                        "background-size":"cover"});
+                                        "background":compli_info[i][1],
+                                        "background-size":"contain",
+                                        "background-repeat": "no-repeat",
+                                        "background-position":"center bottom",
+                                        "position": "absolute"});
             }
             $("#text_box").text(compli[1].toString().replace(/,/g," "));
             $("#text_box").css({"display":compli_info[0][0],
                                         "width":compli_info[0][2],
                                         "height":compli_info[0][3],
                                         "top":compli_info[0][4],
-                                        "left":compli_info[0][5]});
+                                        "left":compli_info[0][5],
+                                        "position": "absolute"});
             break;
         case 2:
-            alert(2);
             $("#main_border").css( {"background-image":crisis[0],
                                 "background-size":"cover"});
             for(var i = 1; i < crisis_info.length; i++){
@@ -254,18 +280,21 @@ function view_book(count){
                                         "height":crisis_info[i][3],
                                         "top":crisis_info[i][4],
                                         "left":crisis_info[i][5],
-                                        "background":"url("+crisis_info[i][1]+")",
-                                        "background-size":"cover"});
+                                        "background":crisis_info[i][1],
+                                        "background-size":"contain",
+                                        "background-repeat": "no-repeat",
+                                        "background-position":"center bottom",
+                                        "position": "absolute"});
             }
             $("#text_box").text(crisis[1].toString().replace(/,/g," "));
             $("#text_box").css({"display":crisis_info[0][0],
                                         "width":crisis_info[0][2],
                                         "height":crisis_info[0][3],
                                         "top":crisis_info[0][4],
-                                        "left":crisis_info[0][5]});
+                                        "left":crisis_info[0][5],
+                                        "position": "absolute"});
             break;
         case 3:
-            alert(3);
             $("#main_border").css( {"background-image":climax[0],
                                 "background-size":"cover"});
             for(var i = 1; i < climax_info.length; i++){
@@ -274,18 +303,21 @@ function view_book(count){
                                         "height":climax_info[i][3],
                                         "top":climax_info[i][4],
                                         "left":climax_info[i][5],
-                                        "background":"url("+climax_info[i][1]+")",
-                                        "background-size":"cover"});
+                                        "background":climax_info[i][1],
+                                        "background-size":"contain",
+                                        "background-repeat": "no-repeat",
+                                        "background-position":"center bottom",
+                                        "position": "absolute"});
             }
             $("#text_box").text(climax[1].toString().replace(/,/g," "));
             $("#text_box").css({"display":climax_info[0][0],
                                         "width":climax_info[0][2],
                                         "height":climax_info[0][3],
                                         "top":climax_info[0][4],
-                                        "left":climax_info[0][5]});
+                                        "left":climax_info[0][5],
+                                        "position": "absolute"});
             break;
         case 4:
-            alert(4);
             $("#main_border").css( {"background-image":result[0],
                                 "background-size":"cover"});
             for(var i = 1; i < result_info.length; i++){
@@ -294,15 +326,19 @@ function view_book(count){
                                         "height":result_info[i][3],
                                         "top":result_info[i][4],
                                         "left":result_info[i][5],
-                                        "background":"url("+result_info[i][1]+")",
-                                        "background-size":"cover"});
+                                        "background":result_info[i][1],
+                                        "background-size":"contain",
+                                        "background-repeat": "no-repeat",
+                                        "background-position":"center bottom",
+                                        "position": "absolute"});
             }
             $("#text_box").text(result[1].toString().replace(/,/g," "));
             $("#text_box").css({"display":result_info[0][0],
                                         "width":result_info[0][2],
                                         "height":result_info[0][3],
                                         "top":result_info[0][4],
-                                        "left":result_info[0][5]});
+                                        "left":result_info[0][5],
+                                        "position": "absolute"});
             break;
     }
 }
