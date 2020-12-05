@@ -274,6 +274,54 @@
 
 }
 
+.book_title {
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 150%;
+    /* or 34px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+
+    color: #000000;
+
+    opacity: 0.6;
+}
+
+#book1_text {
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    left: 10px;
+    top: 70px;
+
+    transform: rotate(-90deg);
+}
+
+#book2_text {
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    left: 40px;
+    top: 70px;
+
+    transform: rotate(-90deg);
+}
+
+#book3_text {
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    left: 60px;
+    top: 120px;
+
+    transform: rotate(-90deg);
+}
 
 /*//수정전.*/
 

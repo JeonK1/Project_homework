@@ -44,13 +44,13 @@ function set_page(){
 
     $("#book1").css( {"background-image":backgroundfile[0],
                                 "background-size":"cover"});
-    $("#book1").html("1번책");
+
     $("#book2").css( {"background-image":backgroundfile[1],
                                 "background-size":"cover"});
-    $("#book2").html("2번책");
+
     $("#book3").css( {"background-image":backgroundfile[2],
                                 "background-size":"cover"});
-    $("#book3").html("3번책");
+
 
     $("#book1").click(function () {
 
