@@ -292,6 +292,37 @@
 
     opacity: 0.6;
 }
+#book_cover_img1{
+    position:absolute;
+    top:37px;
+    left:-4px;
+
+    width: 215px;
+    height: 155px;
+}
+#book_cover_img2{
+    position:absolute;
+    width: 262px;
+    height: 188px;
+
+    left: -5px;
+    top: 45px;
+}
+#book_cover_img3{
+    position:absolute;
+
+    width: 308px;
+    height: 218px;
+    left: -10px;
+    top: 50px;
+}
+.book_cover_img{
+    border-radius: 0px 0px 25px 25px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+
+    transform: rotate(-90deg);
+}
 
 #book1_text {
     position: absolute;
